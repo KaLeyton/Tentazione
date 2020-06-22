@@ -1,0 +1,2 @@
+C:\Users\jazz_\source\repos\Tentazione\CapaNegocio\obj\Debug\CapaNegocio.csprojAssemblyReference.cache
+C:\Users\jazz_\source\repos\Tentazione\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
