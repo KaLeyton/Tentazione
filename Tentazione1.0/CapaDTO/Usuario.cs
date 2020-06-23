@@ -12,9 +12,9 @@ namespace CapaDTO
         private String nombreUsuario;
         private String contrasena;
 
-        private int IdUsuario { get => idUsuario; set => idUsuario = value; }
-        private String NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
-        private String Contrasena { get => contrasena; set => contrasena = value; }
+        public int IdUsuario { get => idUsuario; set => idUsuario = value; }
+        public String NombreUsuario { get => nombreUsuario; set => nombreUsuario = value; }
+        public String Contrasena { get => contrasena; set => contrasena = value; }
 
     }
 }

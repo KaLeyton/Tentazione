@@ -44,6 +44,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -67,6 +69,16 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Connected Services\ServiceReferenceUsuario\CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Content>
+    <None Include="Connected Services\ServiceReferenceUsuario\WebServiceUsuario.disco" />
+    <None Include="Connected Services\ServiceReferenceUsuario\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceUsuario\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceReferenceUsuario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
     <Content Include="facebook%281%29.png" />
     <Content Include="instagram-bosquejado.png" />
     <Content Include="logoTentazione.png" />
@@ -75,6 +87,11 @@
     <Content Include="WebFormlogin.aspx" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ServiceReferenceUsuario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="MasterPageTentazione.Master.cs">
       <DependentUpon>MasterPageTentazione.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
@@ -93,6 +110,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="MasterPageTentazione.Master" />
+    <None Include="Connected Services\ServiceReferenceUsuario\WebServiceUsuario.wsdl" />
     <None Include="packages.config" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
@@ -102,14 +120,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaConexion\CapaConexion.csproj">
-      <Project>{5cdb4427-8c6b-42d9-b70b-7e7f519e2e93}</Project>
-      <Name>CapaConexion</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">
-      <Project>{01dd6b9c-7756-40c0-96b8-d2780e502124}</Project>
-      <Name>CapaDTO</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CapaGUI\CapaGUI.csproj">
       <Project>{6bf38db5-5c60-4431-8e12-224dc1e8cb21}</Project>
       <Name>CapaGUI</Name>
@@ -122,6 +132,12 @@
       <Project>{8af82a1e-f52d-4909-bc3f-6302c1f25b12}</Project>
       <Name>CapaServicios</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceReferenceUsuario\" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

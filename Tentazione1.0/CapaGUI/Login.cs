@@ -28,26 +28,46 @@ namespace CapaGUI
             conect.Open();
         }
 
+        //private void btnLogin_Click(object sender, EventArgs e)
+        //{
+        //    SqlConnection conect = new SqlConnection();
+        //    conect.ConnectionString = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
+        //    conect.Open();
+        //    string nombreUsuario = txtNombreUsuario.Text;
+        //    string contrasena = txtContrasena.Text;
+        //    SqlCommand cmd = new SqlCommand("select NombreUsuario,Contrasena from tbUsuario where Nombreusuario='" + txtNombreUsuario.Text + "'and Contrasena='" + txtContrasena.Text + "'", conect);
+        //    SqlDataAdapter da = new SqlDataAdapter(cmd);
+        //    DataTable dt = new DataTable();
+        //    da.Fill(dt);
+        //    if (dt.Rows.Count > 0)
+        //    {
+        //        MessageBox.Show("Login sucess");
+        //    }
+        //    else
+        //    {
+        //        MessageBox.Show("Invalid Login please check username and password");
+        //    }
+        //    conect.Close();
+        //}
+
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection conect = new SqlConnection();
-            conect.ConnectionString = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
-            conect.Open();
-            string nombreUsuario = txtNombreUsuario.Text;
-            string contrasena = txtContrasena.Text;
-            SqlCommand cmd = new SqlCommand("select NombreUsuario,Contrasena from tbUsuario where Nombreusuario='" + txtNombreUsuario.Text + "'and Contrasena='" + txtContrasena.Text + "'", conect);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-                MessageBox.Show("Login sucess");
-            }
-            else
-            {
-                MessageBox.Show("Invalid Login please check username and password");
-            }
-            conect.Close();
+            ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferencenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
+
+            ServiceReferenceUsuario.Usuario auxUsuario = new ServiceReferenceUsuario.Usuario();
+
+            Console.WriteLine("KAKAKAKKAKA");
+
+            String user = "kaka";
+            String contr = "faff";
+            int id = 1313;
+
+            auxUsuario.IdUsuario = id;
+            auxUsuario.NombreUsuario = user;
+            auxUsuario.Contrasena = contr;
+            Console.WriteLine(auxUsuario.Contrasena);
+            Console.WriteLine(auxUsuario.NombreUsuario);
+            Console.WriteLine(auxUsuario.IdUsuario);
         }
     }
 }

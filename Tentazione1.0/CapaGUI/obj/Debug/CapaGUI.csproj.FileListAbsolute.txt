@@ -20,3 +20,14 @@ C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\Capa
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.csproj.CoreCompileInputs.cache
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.exe
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.pdb
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUI\bin\Debug\CapaGUI.exe.config
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUI\bin\Debug\CapaGUI.exe
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUI\bin\Debug\CapaGUI.pdb
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.csprojAssemblyReference.cache
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.Login.resources
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.PantallaMantenedorProducto.resources
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.Properties.Resources.resources
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.csproj.GenerateResource.cache
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.csproj.CoreCompileInputs.cache
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.exe
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.pdb
