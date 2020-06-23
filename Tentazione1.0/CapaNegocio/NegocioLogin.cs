@@ -27,24 +27,24 @@ namespace CapaNegocio
 
         public void login()
         {
-            SqlConnection conect = new SqlConnection();
-            conect.ConnectionString = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
-            conect.Open();
-            string nombreUsuario = txtNombreUsuario.Text;
-            string contrasena = txtContrasena.Text;
-            SqlCommand cmd = new SqlCommand("select NombreUsuario,Contrasena from tbUsuario where Nombreusuario='" + txtNombreUsuario.Text + "'and Contrasena='" + txtContrasena.Text + "'", conect);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
-            {
-                MessageBox.Show("Login sucess");
-            }
-            else
-            {
-                MessageBox.Show("Invalid Login please check username and password");
-            }
-            conect.Close();
+            //SqlConnection conect = new SqlConnection();
+            //conect.ConnectionString = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
+            //conect.Open();
+            //string nombreUsuario = txtNombreUsuario.Text;
+            //string contrasena = txtContrasena.Text;
+            //SqlCommand cmd = new SqlCommand("select NombreUsuario,Contrasena from tbUsuario where Nombreusuario='" + txtNombreUsuario.Text + "'and Contrasena='" + txtContrasena.Text + "'", conect);
+            //SqlDataAdapter da = new SqlDataAdapter(cmd);
+            //DataTable dt = new DataTable();
+            //da.Fill(dt);
+            //if (dt.Rows.Count > 0)
+            //{
+            //    MessageBox.Show("Login sucess");
+            //}
+            //else
+            //{
+            //    MessageBox.Show("Invalid Login please check username and password");
+            //}
+            //conect.Close();
         }
 
 

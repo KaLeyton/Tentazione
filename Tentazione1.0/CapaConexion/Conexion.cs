@@ -197,7 +197,7 @@ namespace CapaConexion
         //    conec1.NombreTabla = "tbUsuario";
             conec1.CadenaConexion = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
         //    conec1.CadenaSQL = "INSERT INTO " + conec1.NombreTabla +
-        //                       " (IdUsuario,NombreUsuario,Contrasena) VALUES ('56789', 'Karen Leyt' ,'as12')";
+        //                      " (IdUsuario,NombreUsuario,Contrasena) VALUES ('56789', 'Karen Leyt' ,'as12')";
             conec1.EsSelect = false;
             conec1.conectar();
         }

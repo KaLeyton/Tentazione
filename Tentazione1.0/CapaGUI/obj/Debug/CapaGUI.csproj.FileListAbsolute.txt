@@ -9,3 +9,14 @@ C:\Users\jazz_\source\repos\Tentazione\CapaGUI\obj\Debug\CapaGUI.csproj.Generate
 C:\Users\jazz_\source\repos\Tentazione\CapaGUI\obj\Debug\CapaGUI.csproj.CoreCompileInputs.cache
 C:\Users\jazz_\source\repos\Tentazione\CapaGUI\obj\Debug\CapaGUI.exe
 C:\Users\jazz_\source\repos\Tentazione\CapaGUI\obj\Debug\CapaGUI.pdb
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\bin\Debug\CapaGUI.exe.config
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\bin\Debug\CapaGUI.exe
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\bin\Debug\CapaGUI.pdb
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.csprojAssemblyReference.cache
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.Login.resources
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.PantallaMantenedorProducto.resources
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.Properties.Resources.resources
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.csproj.GenerateResource.cache
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.csproj.CoreCompileInputs.cache
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.exe
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUI\obj\Debug\CapaGUI.pdb
