@@ -19,7 +19,7 @@ namespace CapaNegocio
         public void RegistrarUsuario(Usuario usuario)
         {
             //Declaracion de variables.
-            String tabla = "dbo.tbUsuario";
+            String tabla = "tbUsuario";
             bool select = false;
             string query = "INSERT INTO " + tabla + " (IdUsuario,NombreUsuario,Contrasena) VALUES ('" + usuario.IdUsuario + "','" + usuario.NombreUsuario + "','" + usuario.Contrasena + "');";
             //Seteo de variables.
