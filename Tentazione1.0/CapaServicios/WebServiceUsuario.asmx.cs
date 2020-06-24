@@ -5,6 +5,7 @@ using System.Web;
 using System.Web.Services;
 using CapaNegocio;
 using CapaDTO;
+using System.Data;
 
 namespace CapaServicios
 {
@@ -22,10 +23,32 @@ namespace CapaServicios
         [WebMethod]
         public void RegistrarUsuario(Usuario usuario)
         {
-            CapaNegocio.NegocioUsuario auxNegocio = new CapaNegocio.NegocioUsuario();
+            NegocioUsuario auxNegocio = new NegocioUsuario();
             auxNegocio.RegistrarUsuario(usuario);
-
-            Console.WriteLine("wea222");
+        }
+        [WebMethod]
+        public DataSet ListaUsuario()
+        {
+            NegocioUsuario auxNegocio = new NegocioUsuario();
+            return auxNegocio.ListarUsuario();
+        }
+        [WebMethod]
+        public Usuario BuscaUsuario(int id)
+        {
+            NegocioUsuario auxNegocio = new NegocioUsuario();
+            return auxNegocio.BuscaUsuario(id);
+        }
+        [WebMethod]
+        public void ActualizaUsuario(Usuario usuario)
+        {
+            NegocioUsuario auxNegocio = new NegocioUsuario();
+            auxNegocio.ActualizaUsuario(usuario);
+        }
+        [WebMethod]
+        public void EliminaUsuario(int id)
+        {
+            NegocioUsuario auxNegocio = new NegocioUsuario();
+            auxNegocio.EliminaUsuario(id);
         }
     }
 }

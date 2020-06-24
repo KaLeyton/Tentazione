@@ -99,3 +99,6 @@ ADD FOREIGN KEY (tbCliente_tbUsuario_IdUsuario) REFERENCES tbUsuario(IdUsuario);
 ALTER TABLE tbDetalleCotizacion
 ADD FOREIGN KEY (tbProducto_SkuProducto) REFERENCES tbProducto(SkuProducto);
 
+INSERT INTO tbUsuario (IdUsuario, NombreUsuario, Contrasena) VALUES (56789, 'Karen Leyt' ,'as12');
+INSERT INTO tbUsuario (IdUsuario, NombreUsuario, Contrasena) VALUES (1313, 'Mitchies' ,'jUEGAuRF');
+INSERT INTO tbUsuario (IdUsuario, NombreUsuario, Contrasena) VALUES (6969, 'Matias Vergas' ,'pelandoc');

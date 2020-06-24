@@ -190,20 +190,18 @@ namespace CapaConexion
 
         } //Fin conectar
 
-        public static void Main(String[] args)
-        {
-            Conexion conec1 = new Conexion();
-            conec1.NombreBaseDeDatos = "Tentazione";
-            conec1.NombreTabla = "tabla";
-            conec1.CadenaConexion = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
-            conec1.CadenaSQL = "INSERT INTO " + conec1.NombreTabla +
-                                 " (IdUsuario,NombreUsuario,Contrasena) VALUES ('56789', 'Karen Leyt' ,'as12')";
-            conec1.EsSelect = false;
-            conec1.conectar();
+        //public static void Main(String[] args)
+        //{
+        //    Conexion conec1 = new Conexion();
+        //    conec1.NombreBaseDeDatos = "Tentazione";
+        //    conec1.NombreTabla = "tabla";
+        //    conec1.CadenaConexion = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
+        //    conec1.CadenaSQL = "INSERT INTO " + conec1.NombreTabla +
+        //                         " (IdUsuario,NombreUsuario,Contrasena) VALUES ('101010', 'Tamponi Test' ,'ass69')";
+        //    conec1.EsSelect = false;
+        //    conec1.conectar();
 
-            Console.WriteLine("fasfas");
-        }
-
-
+        //    Console.WriteLine("fasfas");
+        //}
     } // Fin Clase Conexion
 }// Fin namespace

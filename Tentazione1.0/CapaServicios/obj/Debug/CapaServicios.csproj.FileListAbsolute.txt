@@ -181,9 +181,9 @@ C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServ
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\bin\CapaDTO.dll
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\bin\CapaNegocio.dll
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\bin\CapaConexion.exe
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\bin\CapaDTO.pdb
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\bin\CapaNegocio.pdb
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\bin\CapaConexion.pdb
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\obj\Debug\CapaServicios.csproj.CopyComplete
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\bin\CapaConexion.dll
