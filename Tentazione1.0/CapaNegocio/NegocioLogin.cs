@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace CapaNegocio
 {
-    class NegocioLogin
+    public class NegocioLogin
     {
 
         private Conexion conect;

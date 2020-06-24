@@ -9,6 +9,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
+using CapaDTO;
+using CapaNegocio;
 
 namespace CapaGUI
 {
@@ -28,26 +30,20 @@ namespace CapaGUI
             conect.Open();
         }
 
+        //Como hacer todo esto.
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            SqlConnection conect = new SqlConnection();
-            conect.ConnectionString = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
-            conect.Open();
-            string nombreUsuario = txtNombreUsuario.Text;
-            string contrasena = txtContrasena.Text;
-            SqlCommand cmd = new SqlCommand("select NombreUsuario,Contrasena from tbUsuario where Nombreusuario='" + txtNombreUsuario.Text + "'and Contrasena='" + txtContrasena.Text + "'", conect);
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            DataTable dt = new DataTable();
-            da.Fill(dt);
-            if (dt.Rows.Count > 0)
+            ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
+            ServiceReferenceUsuario.Usuario auxUsuario = new ServiceReferenceUsuario.Usuario
             {
-                MessageBox.Show("Login sucess");
-            }
-            else
-            {
-                MessageBox.Show("Invalid Login please check username and password");
-            }
-            conect.Close();
+                IdUsuario = 1111,
+                NombreUsuario = "Chupalo",
+                Contrasena = "Entonces"
+            };
+
+            auxServiceReferenceUsuario.RegistrarUsuario(auxUsuario);
+
         }
+
     }
 }
