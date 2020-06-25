@@ -45,7 +45,7 @@ namespace CapaNegocio
             try
             {
                 this.configurarConexion();
-                this.Conect.CadenaSQL = "SELECT * FROM tbUsuario";
+                this.Conect.CadenaSQL = "SELECT * FROM tbUsuario;";
                 this.Conect.EsSelect = true;
                 this.Conect.conectar();
             }
@@ -64,8 +64,8 @@ namespace CapaNegocio
             try
             {
                 this.configurarConexion();
-                this.Conect.CadenaSQL = "SELECT * FROM tbUsuario WHERE IdUsuario = '" 
-                                         + id + "';";
+                this.Conect.CadenaSQL = "SELECT * FROM tbUsuario WHERE IdUsuario = " 
+                                         + id + ";";
                 this.Conect.EsSelect = true;
                 this.Conect.conectar();
                 dt = this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];

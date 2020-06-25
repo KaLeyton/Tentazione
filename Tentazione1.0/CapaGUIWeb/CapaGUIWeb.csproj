@@ -69,7 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Connected Services\ServiceReferenceUsuario\CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioResponse.datasource">
+    <Content Include="Connected Services\ServiceReferenceUsuario\CapaGUIWeb.ServiceReferenceUsuario.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
     <None Include="Connected Services\ServiceReferenceUsuario\WebServiceUsuario.disco" />
@@ -112,6 +112,7 @@
     <Content Include="MasterPageTentazione.Master" />
     <None Include="Connected Services\ServiceReferenceUsuario\WebServiceUsuario.wsdl" />
     <None Include="packages.config" />
+    <Content Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

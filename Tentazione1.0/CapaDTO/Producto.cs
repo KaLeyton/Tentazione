@@ -14,10 +14,10 @@ namespace CapaDTO
         private String imagen;
         private String unidadMedida;
 
-        private String Sku { get => sku; set => sku = value; }
-        private String NombreProducto { get => nombreProducto; set => nombreProducto = value; }
-        private int Valor { get => valor; set => valor = value; }
-        private String Imagen { get => imagen; set => imagen = value; }
-        private String UnidadMedida { get => unidadMedida; set => unidadMedida = value; }
+        public String Sku { get => sku; set => sku = value; }
+        public String NombreProducto { get => nombreProducto; set => nombreProducto = value; }
+        public int Valor { get => valor; set => valor = value; }
+        public String Imagen { get => imagen; set => imagen = value; }
+        public String UnidadMedida { get => unidadMedida; set => unidadMedida = value; }
     }
 }
