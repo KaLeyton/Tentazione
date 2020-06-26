@@ -71,10 +71,19 @@
     <Compile Include="PantallaMantenedorProducto.Designer.cs">
       <DependentUpon>PantallaMantenedorProducto.cs</DependentUpon>
     </Compile>
+    <Compile Include="PantallaAdministradorClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaAdministradorClientes.Designer.cs">
+      <DependentUpon>PantallaAdministradorClientes.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaAdministradorClientes.resx">
+      <DependentUpon>PantallaAdministradorClientes.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaMantenedorProducto.resx">
       <DependentUpon>PantallaMantenedorProducto.cs</DependentUpon>
@@ -88,10 +97,13 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+<<<<<<< HEAD
     <None Include="Connected Services\ServiceReferenceProducto\CapaGUI.ServiceReferenceProducto.Producto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
     <None Include="Connected Services\ServiceReferenceProducto\WebServiceProducto.wsdl" />
+=======
+>>>>>>> 07a584c... agregue pantallas capaGUI, Modifique base de datos y capa DTO, agregue vistas capaGUIWeb
     <None Include="Connected Services\ServiceReferenceUsuario\CapaGUI.ServiceReferenceUsuario.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>

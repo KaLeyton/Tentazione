@@ -1,12 +1,12 @@
 C:\Users\jazz_\source\repos\Tentazione\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache
-C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaConexion\bin\Debug\CapaConexion.exe
-C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaConexion\bin\Debug\CapaConexion.pdb
-C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache
-C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaConexion\obj\Debug\CapaConexion.exe
-C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaConexion\obj\Debug\CapaConexion.pdb
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaConexion\obj\Debug\CapaConexion.csprojAssemblyReference.cache
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaConexion\obj\Debug\CapaConexion.pdb
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaConexion\bin\Debug\CapaConexion.pdb
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaConexion\bin\Debug\CapaConexion.dll
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaConexion\obj\Debug\CapaConexion.dll
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaConexion\bin\Debug\CapaConexion.dll
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaConexion\bin\Debug\CapaConexion.pdb
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaConexion\obj\Debug\CapaConexion.csproj.CoreCompileInputs.cache
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaConexion\obj\Debug\CapaConexion.dll
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaConexion\obj\Debug\CapaConexion.pdb

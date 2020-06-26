@@ -69,6 +69,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+<<<<<<< HEAD
     <Content Include="Connected Services\ServiceReferenceProducto\CapaGUIWeb.ServiceReferenceProducto.Producto.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -79,6 +80,8 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+=======
+>>>>>>> 07a584c... agregue pantallas capaGUI, Modifique base de datos y capa DTO, agregue vistas capaGUIWeb
     <Content Include="Connected Services\ServiceReferenceUsuario\CapaGUIWeb.ServiceReferenceUsuario.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>
@@ -89,6 +92,7 @@
       <Generator>WCF Proxy Generator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>
     </None>
+    <Content Include="WebFormMantenedorUsuario.aspx" />
     <Content Include="facebook%281%29.png" />
     <Content Include="instagram-bosquejado.png" />
     <Content Include="logoTentazione.png" />
@@ -121,6 +125,13 @@
     </Compile>
     <Compile Include="WebFormlogin.aspx.designer.cs">
       <DependentUpon>WebFormlogin.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="WebFormMantenedorUsuario.aspx.cs">
+      <DependentUpon>WebFormMantenedorUsuario.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="WebFormMantenedorUsuario.aspx.designer.cs">
+      <DependentUpon>WebFormMantenedorUsuario.aspx</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>

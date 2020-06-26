@@ -1,5 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
+<<<<<<< HEAD
 <ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="d7aacf1d-dac0-4f6a-9019-9dd987da9aec" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+=======
+<ReferenceGroup xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" ID="e77b14e0-138a-4005-9c32-e53f5ea9cbc5" xmlns="urn:schemas-microsoft-com:xml-wcfservicemap">
+>>>>>>> 07a584c... agregue pantallas capaGUI, Modifique base de datos y capa DTO, agregue vistas capaGUIWeb
   <ClientOptions>
     <GenerateAsynchronousMethods>false</GenerateAsynchronousMethods>
     <GenerateTaskBasedAsynchronousMethod>true</GenerateTaskBasedAsynchronousMethod>
@@ -22,8 +26,13 @@
     <MetadataSource Address="https://localhost:44362/WebServiceUsuario.asmx" Protocol="http" SourceId="1" />
   </MetadataSources>
   <Metadata>
+<<<<<<< HEAD
     <MetadataFile FileName="WebServiceUsuario.disco" MetadataType="Disco" ID="11b4ae92-c118-4f36-ac97-ff22cb84ca26" SourceId="1" SourceUrl="https://localhost:44362/WebServiceUsuario.asmx?disco" />
     <MetadataFile FileName="WebServiceUsuario.wsdl" MetadataType="Wsdl" ID="d1eb11d1-6332-4dff-acf6-c171e0883a1f" SourceId="1" SourceUrl="https://localhost:44362/WebServiceUsuario.asmx?wsdl" />
+=======
+    <MetadataFile FileName="WebServiceUsuario.disco" MetadataType="Disco" ID="ae54339d-b80a-455c-b5a6-32b69feb2343" SourceId="1" SourceUrl="https://localhost:44362/WebServiceUsuario.asmx?disco" />
+    <MetadataFile FileName="WebServiceUsuario.wsdl" MetadataType="Wsdl" ID="85907120-06a2-4f14-a851-20e9fa003027" SourceId="1" SourceUrl="https://localhost:44362/WebServiceUsuario.asmx?wsdl" />
+>>>>>>> 07a584c... agregue pantallas capaGUI, Modifique base de datos y capa DTO, agregue vistas capaGUIWeb
   </Metadata>
   <Extensions>
     <ExtensionFile FileName="configuration91.svcinfo" Name="configuration91.svcinfo" />
