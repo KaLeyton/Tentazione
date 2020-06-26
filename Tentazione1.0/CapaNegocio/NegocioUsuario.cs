@@ -28,9 +28,9 @@ namespace CapaNegocio
             try
             {
                 this.configurarConexion();
-                this.Conect.CadenaSQL = "INSERT INTO tbUsuario (IdUsuario,NombreUsuario,Contrasena) VALUES (" 
+                this.Conect.CadenaSQL = "INSERT INTO tbUsuario (IdUsuario,NombreUsuario,Contrasena,Rol) VALUES (" 
                                          + usuario.IdUsuario + ",'" + usuario.NombreUsuario + "','" 
-                                         + usuario.Contrasena + "');";
+                                         + usuario.Contrasena + "','" + usuario.Rol + "');";
                 this.Conect.EsSelect = false;
                 this.Conect.conectar();
             }

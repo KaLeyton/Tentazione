@@ -14,6 +14,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="NombreUsuario" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rol" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="ServiceRegistrarUsuarioResponse">
@@ -70,55 +71,14 @@
       <s:element name="ServiceEliminaUsuarioResponse">
         <s:complexType />
       </s:element>
-      <s:element name="ListaUsuario">
-        <s:complexType />
-      </s:element>
-      <s:element name="ListaUsuarioResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ListaUsuarioResult">
-              <s:complexType>
-                <s:sequence>
-                  <s:element ref="s:schema" />
-                  <s:any />
-                </s:sequence>
-              </s:complexType>
-            </s:element>
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="BuscaUsuario">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="BuscaUsuarioResponse">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="BuscaUsuarioResult" type="tns:Usuario" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="ActualizaUsuario">
+      <s:element name="ServiceValidaLogIn">
         <s:complexType>
           <s:sequence>
             <s:element minOccurs="0" maxOccurs="1" name="usuario" type="tns:Usuario" />
           </s:sequence>
         </s:complexType>
       </s:element>
-      <s:element name="ActualizaUsuarioResponse">
-        <s:complexType />
-      </s:element>
-      <s:element name="EliminaUsuario">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
-      <s:element name="EliminaUsuarioResponse">
+      <s:element name="ServiceValidaLogInResponse">
         <s:complexType />
       </s:element>
     </s:schema>
@@ -153,29 +113,11 @@
   <wsdl:message name="ServiceEliminaUsuarioSoapOut">
     <wsdl:part name="parameters" element="tns:ServiceEliminaUsuarioResponse" />
   </wsdl:message>
-  <wsdl:message name="ListaUsuarioSoapIn">
-    <wsdl:part name="parameters" element="tns:ListaUsuario" />
+  <wsdl:message name="ServiceValidaLogInSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceValidaLogIn" />
   </wsdl:message>
-  <wsdl:message name="ListaUsuarioSoapOut">
-    <wsdl:part name="parameters" element="tns:ListaUsuarioResponse" />
-  </wsdl:message>
-  <wsdl:message name="BuscaUsuarioSoapIn">
-    <wsdl:part name="parameters" element="tns:BuscaUsuario" />
-  </wsdl:message>
-  <wsdl:message name="BuscaUsuarioSoapOut">
-    <wsdl:part name="parameters" element="tns:BuscaUsuarioResponse" />
-  </wsdl:message>
-  <wsdl:message name="ActualizaUsuarioSoapIn">
-    <wsdl:part name="parameters" element="tns:ActualizaUsuario" />
-  </wsdl:message>
-  <wsdl:message name="ActualizaUsuarioSoapOut">
-    <wsdl:part name="parameters" element="tns:ActualizaUsuarioResponse" />
-  </wsdl:message>
-  <wsdl:message name="EliminaUsuarioSoapIn">
-    <wsdl:part name="parameters" element="tns:EliminaUsuario" />
-  </wsdl:message>
-  <wsdl:message name="EliminaUsuarioSoapOut">
-    <wsdl:part name="parameters" element="tns:EliminaUsuarioResponse" />
+  <wsdl:message name="ServiceValidaLogInSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceValidaLogInResponse" />
   </wsdl:message>
   <wsdl:portType name="WebServiceUsuarioSoap">
     <wsdl:operation name="ServiceRegistrarUsuario">
@@ -198,21 +140,9 @@
       <wsdl:input message="tns:ServiceEliminaUsuarioSoapIn" />
       <wsdl:output message="tns:ServiceEliminaUsuarioSoapOut" />
     </wsdl:operation>
-    <wsdl:operation name="ListaUsuario">
-      <wsdl:input message="tns:ListaUsuarioSoapIn" />
-      <wsdl:output message="tns:ListaUsuarioSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="BuscaUsuario">
-      <wsdl:input message="tns:BuscaUsuarioSoapIn" />
-      <wsdl:output message="tns:BuscaUsuarioSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="ActualizaUsuario">
-      <wsdl:input message="tns:ActualizaUsuarioSoapIn" />
-      <wsdl:output message="tns:ActualizaUsuarioSoapOut" />
-    </wsdl:operation>
-    <wsdl:operation name="EliminaUsuario">
-      <wsdl:input message="tns:EliminaUsuarioSoapIn" />
-      <wsdl:output message="tns:EliminaUsuarioSoapOut" />
+    <wsdl:operation name="ServiceValidaLogIn">
+      <wsdl:input message="tns:ServiceValidaLogInSoapIn" />
+      <wsdl:output message="tns:ServiceValidaLogInSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceUsuarioSoap" type="tns:WebServiceUsuarioSoap">
@@ -262,35 +192,8 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ListaUsuario">
-      <soap:operation soapAction="http://tempuri.org/ListaUsuario" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="BuscaUsuario">
-      <soap:operation soapAction="http://tempuri.org/BuscaUsuario" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ActualizaUsuario">
-      <soap:operation soapAction="http://tempuri.org/ActualizaUsuario" style="document" />
-      <wsdl:input>
-        <soap:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EliminaUsuario">
-      <soap:operation soapAction="http://tempuri.org/EliminaUsuario" style="document" />
+    <wsdl:operation name="ServiceValidaLogIn">
+      <soap:operation soapAction="http://tempuri.org/ServiceValidaLogIn" style="document" />
       <wsdl:input>
         <soap:body use="literal" />
       </wsdl:input>
@@ -346,35 +249,8 @@
         <soap12:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
-    <wsdl:operation name="ListaUsuario">
-      <soap12:operation soapAction="http://tempuri.org/ListaUsuario" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="BuscaUsuario">
-      <soap12:operation soapAction="http://tempuri.org/BuscaUsuario" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="ActualizaUsuario">
-      <soap12:operation soapAction="http://tempuri.org/ActualizaUsuario" style="document" />
-      <wsdl:input>
-        <soap12:body use="literal" />
-      </wsdl:input>
-      <wsdl:output>
-        <soap12:body use="literal" />
-      </wsdl:output>
-    </wsdl:operation>
-    <wsdl:operation name="EliminaUsuario">
-      <soap12:operation soapAction="http://tempuri.org/EliminaUsuario" style="document" />
+    <wsdl:operation name="ServiceValidaLogIn">
+      <soap12:operation soapAction="http://tempuri.org/ServiceValidaLogIn" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>
