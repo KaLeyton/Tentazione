@@ -20,7 +20,7 @@ namespace CapaNegocio
             this.conect = new Conexion();
             this.Conect.NombreBaseDeDatos = "Tentazione";
             this.Conect.NombreTabla = "tbUsuario";
-            this.Conect.CadenaConexion = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
+            this.Conect.CadenaConexion = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
         }
 
         public void RegistrarUsuario(Usuario usuario)

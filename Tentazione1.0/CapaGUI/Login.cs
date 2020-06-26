@@ -20,47 +20,67 @@ namespace CapaGUI
         public Login()
         {
             //SqlConnection conect = new SqlConnection();
-            conect.ConnectionString = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
+            conect.ConnectionString = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
             InitializeComponent();
         }
 
-        public void login()
-        {
-            SqlConnection conect = new SqlConnection("Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True");
-            conect.Open();
-        }
-
-        //Como hacer todo esto.
-        //private void btnLogin_Click(object sender, EventArgs e)
-        //{
-        //    ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxLogin = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
-        //    ServiceReferenceUsuario.Usuario newUsuario = new ServiceReferenceUsuario.Usuario();
-        //    newUsuario.NombreUsuario = this.txtNombreUsuario.Text;
-        //    newUsuario.Contrasena = this.txtContrasena.Text;
-        //    auxLogin.ServiceValidaLogIn(newUsuario);
-        //}
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
             {
-                ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
-                ServiceReferenceUsuario.Usuario auxUsuario = new ServiceReferenceUsuario.Usuario
+                ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxLogin = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
+                ServiceReferenceUsuario.Usuario newUsuario = new ServiceReferenceUsuario.Usuario();
+                newUsuario.NombreUsuario = this.txtNombreUsuario.Text;
+                newUsuario.Contrasena = this.txtContrasena.Text;
+                auxLogin.ServiceValidaLogIn(newUsuario);
+
+                if (true)
                 {
-                    IdUsuario = 7777,
-                    NombreUsuario = "qeuis",
-                    Contrasena = "Uno",
-                    Rol = "Cliente"
-                };
+                    MessageBox.Show("Pititoooo y a mimir");
+                }
 
-                auxServiceReferenceUsuario.ServiceRegistrarUsuario(auxUsuario);
-
+                    MessageBox.Show("uwu");
             }
             catch (Exception ex)
             {
                 Console.WriteLine("error ql :  " + ex + "\n");
             }
-            
+
         }
+
+        ////Como hacer todo esto.
+        ////private void btnLogin_Click(object sender, EventArgs e)
+        ////{
+        //ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxLogin = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
+        //ServiceReferenceUsuario.Usuario newUsuario = new ServiceReferenceUsuario.Usuario();
+        //newUsuario.NombreUsuario = this.txtNombreUsuario.Text;
+        //    newUsuario.Contrasena = this.txtContrasena.Text;
+        //    auxLogin.ServiceValidaLogIn(newUsuario);
+        ////}
+
+        //metodo de prueba para ver si funciona.
+        //private void btnLogin_Click(object sender, EventArgs e)
+        //{
+        //    try
+        //    {
+        //        ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
+        //        ServiceReferenceUsuario.Usuario auxUsuario = new ServiceReferenceUsuario.Usuario
+        //        {
+        //            IdUsuario = 7777,
+        //            NombreUsuario = "qeuis",
+        //            Contrasena = "Uno",
+        //            Rol = "Cliente"
+        //        };
+
+        //        auxServiceReferenceUsuario.ServiceRegistrarUsuario(auxUsuario);
+
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        Console.WriteLine("error ql :  " + ex + "\n");
+        //    }
+
+        //}
 
     }
 }
