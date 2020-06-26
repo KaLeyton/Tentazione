@@ -69,10 +69,15 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="WebServiceProducto.asmx" />
     <Content Include="WebServiceUsuario.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebServiceProducto.asmx.cs">
+      <DependentUpon>WebServiceProducto.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="WebServiceUsuario.asmx.cs">
       <DependentUpon>WebServiceUsuario.asmx</DependentUpon>
     </Compile>

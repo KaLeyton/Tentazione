@@ -41,7 +41,7 @@ namespace CapaGUI
                 Contrasena = "Entonces"
             };
 
-            auxServiceReferenceUsuario.RegistrarUsuario(auxUsuario);
+            auxServiceReferenceUsuario.ServiceRegistrarUsuario(auxUsuario);
 
         }
 

@@ -125,7 +125,6 @@ C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIW
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\bin\CapaNegocio.dll
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\bin\CapaServicios.dll
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\bin\CapaConexion.exe
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\bin\CapaDTO.dll
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\bin\CapaGUI.pdb
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\bin\CapaGUI.exe.config
@@ -140,3 +139,4 @@ C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIW
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\CapaGUIWeb.csproj.CopyComplete
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\CapaGUIWeb.dll
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\CapaGUIWeb.pdb
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\bin\CapaConexion.dll

@@ -9,73 +9,96 @@
 //------------------------------------------------------------------------------
 
 namespace CapaGUIWeb.ServiceReferenceUsuario {
-    using System.Runtime.Serialization;
-    using System;
+    using System.Data;
     
     
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Runtime.Serialization", "4.0.0.0")]
-    [System.Runtime.Serialization.DataContractAttribute(Name="Usuario", Namespace="http://tempuri.org/")]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
+    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceUsuario.WebServiceUsuarioSoap")]
+    public interface WebServiceUsuarioSoap {
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceRegistrarUsuario", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void ServiceRegistrarUsuario(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceRegistrarUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task ServiceRegistrarUsuarioAsync(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceListaUsuario", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataSet ServiceListaUsuario();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceListaUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataSet> ServiceListaUsuarioAsync();
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaUsuario", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        CapaGUIWeb.ServiceReferenceUsuario.Usuario ServiceBuscaUsuario(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task<CapaGUIWeb.ServiceReferenceUsuario.Usuario> ServiceBuscaUsuarioAsync(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceActualizaUsuario", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void ServiceActualizaUsuario(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceActualizaUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task ServiceActualizaUsuarioAsync(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceEliminaUsuario", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        void ServiceEliminaUsuario(int id);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceEliminaUsuario", ReplyAction="*")]
+        System.Threading.Tasks.Task ServiceEliminaUsuarioAsync(int id);
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
     [System.SerializableAttribute()]
-    public partial class Usuario : object, System.Runtime.Serialization.IExtensibleDataObject, System.ComponentModel.INotifyPropertyChanged {
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Usuario : object, System.ComponentModel.INotifyPropertyChanged {
         
-        [System.NonSerializedAttribute()]
-        private System.Runtime.Serialization.ExtensionDataObject extensionDataField;
+        private int idUsuarioField;
         
-        private int IdUsuarioField;
+        private string nombreUsuarioField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string NombreUsuarioField;
+        private string contrasenaField;
         
-        [System.Runtime.Serialization.OptionalFieldAttribute()]
-        private string ContrasenaField;
-        
-        [global::System.ComponentModel.BrowsableAttribute(false)]
-        public System.Runtime.Serialization.ExtensionDataObject ExtensionData {
-            get {
-                return this.extensionDataField;
-            }
-            set {
-                this.extensionDataField = value;
-            }
-        }
-        
-        [System.Runtime.Serialization.DataMemberAttribute(IsRequired=true)]
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
         public int IdUsuario {
             get {
-                return this.IdUsuarioField;
+                return this.idUsuarioField;
             }
             set {
-                if ((this.IdUsuarioField.Equals(value) != true)) {
-                    this.IdUsuarioField = value;
-                    this.RaisePropertyChanged("IdUsuario");
-                }
+                this.idUsuarioField = value;
+                this.RaisePropertyChanged("IdUsuario");
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false)]
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
         public string NombreUsuario {
             get {
-                return this.NombreUsuarioField;
+                return this.nombreUsuarioField;
             }
             set {
-                if ((object.ReferenceEquals(this.NombreUsuarioField, value) != true)) {
-                    this.NombreUsuarioField = value;
-                    this.RaisePropertyChanged("NombreUsuario");
-                }
+                this.nombreUsuarioField = value;
+                this.RaisePropertyChanged("NombreUsuario");
             }
         }
         
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=2)]
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
         public string Contrasena {
             get {
-                return this.ContrasenaField;
+                return this.contrasenaField;
             }
             set {
-                if ((object.ReferenceEquals(this.ContrasenaField, value) != true)) {
-                    this.ContrasenaField = value;
-                    this.RaisePropertyChanged("Contrasena");
-                }
+                this.contrasenaField = value;
+                this.RaisePropertyChanged("Contrasena");
             }
         }
         
@@ -86,79 +109,6 @@ namespace CapaGUIWeb.ServiceReferenceUsuario {
             if ((propertyChanged != null)) {
                 propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
             }
-        }
-    }
-    
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceUsuario.WebServiceUsuarioSoap")]
-    public interface WebServiceUsuarioSoap {
-        
-        // CODEGEN: Generating message contract since element name usuario from namespace http://tempuri.org/ is not marked nillable
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarUsuario", ReplyAction="*")]
-        CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioResponse RegistrarUsuario(CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequest request);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarUsuario", ReplyAction="*")]
-        System.Threading.Tasks.Task<CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioResponse> RegistrarUsuarioAsync(CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequest request);
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class RegistrarUsuarioRequest {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RegistrarUsuario", Namespace="http://tempuri.org/", Order=0)]
-        public CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequestBody Body;
-        
-        public RegistrarUsuarioRequest() {
-        }
-        
-        public RegistrarUsuarioRequest(CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequestBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute(Namespace="http://tempuri.org/")]
-    public partial class RegistrarUsuarioRequestBody {
-        
-        [System.Runtime.Serialization.DataMemberAttribute(EmitDefaultValue=false, Order=0)]
-        public CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario;
-        
-        public RegistrarUsuarioRequestBody() {
-        }
-        
-        public RegistrarUsuarioRequestBody(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
-            this.usuario = usuario;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.ServiceModel.MessageContractAttribute(IsWrapped=false)]
-    public partial class RegistrarUsuarioResponse {
-        
-        [System.ServiceModel.MessageBodyMemberAttribute(Name="RegistrarUsuarioResponse", Namespace="http://tempuri.org/", Order=0)]
-        public CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioResponseBody Body;
-        
-        public RegistrarUsuarioResponse() {
-        }
-        
-        public RegistrarUsuarioResponse(CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioResponseBody Body) {
-            this.Body = Body;
-        }
-    }
-    
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
-    [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-    [System.Runtime.Serialization.DataContractAttribute()]
-    public partial class RegistrarUsuarioResponseBody {
-        
-        public RegistrarUsuarioResponseBody() {
         }
     }
     
@@ -189,28 +139,44 @@ namespace CapaGUIWeb.ServiceReferenceUsuario {
                 base(binding, remoteAddress) {
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioResponse CapaGUIWeb.ServiceReferenceUsuario.WebServiceUsuarioSoap.RegistrarUsuario(CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequest request) {
-            return base.Channel.RegistrarUsuario(request);
+        public void ServiceRegistrarUsuario(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
+            base.Channel.ServiceRegistrarUsuario(usuario);
         }
         
-        public void RegistrarUsuario(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
-            CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequest inValue = new CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequest();
-            inValue.Body = new CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequestBody();
-            inValue.Body.usuario = usuario;
-            CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioResponse retVal = ((CapaGUIWeb.ServiceReferenceUsuario.WebServiceUsuarioSoap)(this)).RegistrarUsuario(inValue);
+        public System.Threading.Tasks.Task ServiceRegistrarUsuarioAsync(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
+            return base.Channel.ServiceRegistrarUsuarioAsync(usuario);
         }
         
-        [System.ComponentModel.EditorBrowsableAttribute(System.ComponentModel.EditorBrowsableState.Advanced)]
-        System.Threading.Tasks.Task<CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioResponse> CapaGUIWeb.ServiceReferenceUsuario.WebServiceUsuarioSoap.RegistrarUsuarioAsync(CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequest request) {
-            return base.Channel.RegistrarUsuarioAsync(request);
+        public System.Data.DataSet ServiceListaUsuario() {
+            return base.Channel.ServiceListaUsuario();
         }
         
-        public System.Threading.Tasks.Task<CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioResponse> RegistrarUsuarioAsync(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
-            CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequest inValue = new CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequest();
-            inValue.Body = new CapaGUIWeb.ServiceReferenceUsuario.RegistrarUsuarioRequestBody();
-            inValue.Body.usuario = usuario;
-            return ((CapaGUIWeb.ServiceReferenceUsuario.WebServiceUsuarioSoap)(this)).RegistrarUsuarioAsync(inValue);
+        public System.Threading.Tasks.Task<System.Data.DataSet> ServiceListaUsuarioAsync() {
+            return base.Channel.ServiceListaUsuarioAsync();
+        }
+        
+        public CapaGUIWeb.ServiceReferenceUsuario.Usuario ServiceBuscaUsuario(int id) {
+            return base.Channel.ServiceBuscaUsuario(id);
+        }
+        
+        public System.Threading.Tasks.Task<CapaGUIWeb.ServiceReferenceUsuario.Usuario> ServiceBuscaUsuarioAsync(int id) {
+            return base.Channel.ServiceBuscaUsuarioAsync(id);
+        }
+        
+        public void ServiceActualizaUsuario(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
+            base.Channel.ServiceActualizaUsuario(usuario);
+        }
+        
+        public System.Threading.Tasks.Task ServiceActualizaUsuarioAsync(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
+            return base.Channel.ServiceActualizaUsuarioAsync(usuario);
+        }
+        
+        public void ServiceEliminaUsuario(int id) {
+            base.Channel.ServiceEliminaUsuario(id);
+        }
+        
+        public System.Threading.Tasks.Task ServiceEliminaUsuarioAsync(int id) {
+            return base.Channel.ServiceEliminaUsuarioAsync(id);
         }
     }
 }

@@ -21,31 +21,31 @@ namespace CapaServicios
     {
 
         [WebMethod]
-        public void RegistrarUsuario(Usuario usuario)
+        public void ServiceRegistrarUsuario(Usuario usuario)
         {
             NegocioUsuario auxNegocio = new NegocioUsuario();
             auxNegocio.RegistrarUsuario(usuario);
         }
         [WebMethod]
-        public DataSet ListaUsuario()
+        public DataSet ServiceListaUsuario()
         {
             NegocioUsuario auxNegocio = new NegocioUsuario();
             return auxNegocio.ListarUsuario();
         }
         [WebMethod]
-        public Usuario BuscaUsuario(int id)
+        public Usuario ServiceBuscaUsuario(int id)
         {
             NegocioUsuario auxNegocio = new NegocioUsuario();
             return auxNegocio.BuscaUsuario(id);
         }
         [WebMethod]
-        public void ActualizaUsuario(Usuario usuario)
+        public void ServiceActualizaUsuario(Usuario usuario)
         {
             NegocioUsuario auxNegocio = new NegocioUsuario();
             auxNegocio.ActualizaUsuario(usuario);
         }
         [WebMethod]
-        public void EliminaUsuario(int id)
+        public void ServiceEliminaUsuario(int id)
         {
             NegocioUsuario auxNegocio = new NegocioUsuario();
             auxNegocio.EliminaUsuario(id);
