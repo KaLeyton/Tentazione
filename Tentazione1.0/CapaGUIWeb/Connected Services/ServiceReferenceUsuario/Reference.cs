@@ -16,56 +16,6 @@ namespace CapaGUIWeb.ServiceReferenceUsuario {
     [System.ServiceModel.ServiceContractAttribute(ConfigurationName="ServiceReferenceUsuario.WebServiceUsuarioSoap")]
     public interface WebServiceUsuarioSoap {
         
-<<<<<<< HEAD
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceRegistrarUsuario", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void ServiceRegistrarUsuario(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceRegistrarUsuario", ReplyAction="*")]
-        System.Threading.Tasks.Task ServiceRegistrarUsuarioAsync(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceListaUsuario", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        System.Data.DataSet ServiceListaUsuario();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceListaUsuario", ReplyAction="*")]
-        System.Threading.Tasks.Task<System.Data.DataSet> ServiceListaUsuarioAsync();
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaUsuario", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CapaGUIWeb.ServiceReferenceUsuario.Usuario ServiceBuscaUsuario(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaUsuario", ReplyAction="*")]
-        System.Threading.Tasks.Task<CapaGUIWeb.ServiceReferenceUsuario.Usuario> ServiceBuscaUsuarioAsync(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceActualizaUsuario", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void ServiceActualizaUsuario(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceActualizaUsuario", ReplyAction="*")]
-        System.Threading.Tasks.Task ServiceActualizaUsuarioAsync(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceEliminaUsuario", ReplyAction="*")]
-        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void ServiceEliminaUsuario(int id);
-        
-        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceEliminaUsuario", ReplyAction="*")]
-        System.Threading.Tasks.Task ServiceEliminaUsuarioAsync(int id);
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Usuario : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int idUsuarioField;
-        
-        private string nombreUsuarioField;
-        
-=======
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/RegistrarUsuario", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
         void RegistrarUsuario(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario);
@@ -114,7 +64,6 @@ namespace CapaGUIWeb.ServiceReferenceUsuario {
         
         private string nombreUsuarioField;
         
->>>>>>> 07a584c... agregue pantallas capaGUI, Modifique base de datos y capa DTO, agregue vistas capaGUIWeb
         private string contrasenaField;
         
         /// <remarks/>
@@ -190,46 +139,6 @@ namespace CapaGUIWeb.ServiceReferenceUsuario {
                 base(binding, remoteAddress) {
         }
         
-<<<<<<< HEAD
-        public void ServiceRegistrarUsuario(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
-            base.Channel.ServiceRegistrarUsuario(usuario);
-        }
-        
-        public System.Threading.Tasks.Task ServiceRegistrarUsuarioAsync(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
-            return base.Channel.ServiceRegistrarUsuarioAsync(usuario);
-        }
-        
-        public System.Data.DataSet ServiceListaUsuario() {
-            return base.Channel.ServiceListaUsuario();
-        }
-        
-        public System.Threading.Tasks.Task<System.Data.DataSet> ServiceListaUsuarioAsync() {
-            return base.Channel.ServiceListaUsuarioAsync();
-        }
-        
-        public CapaGUIWeb.ServiceReferenceUsuario.Usuario ServiceBuscaUsuario(int id) {
-            return base.Channel.ServiceBuscaUsuario(id);
-        }
-        
-        public System.Threading.Tasks.Task<CapaGUIWeb.ServiceReferenceUsuario.Usuario> ServiceBuscaUsuarioAsync(int id) {
-            return base.Channel.ServiceBuscaUsuarioAsync(id);
-        }
-        
-        public void ServiceActualizaUsuario(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
-            base.Channel.ServiceActualizaUsuario(usuario);
-        }
-        
-        public System.Threading.Tasks.Task ServiceActualizaUsuarioAsync(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
-            return base.Channel.ServiceActualizaUsuarioAsync(usuario);
-        }
-        
-        public void ServiceEliminaUsuario(int id) {
-            base.Channel.ServiceEliminaUsuario(id);
-        }
-        
-        public System.Threading.Tasks.Task ServiceEliminaUsuarioAsync(int id) {
-            return base.Channel.ServiceEliminaUsuarioAsync(id);
-=======
         public void RegistrarUsuario(CapaGUIWeb.ServiceReferenceUsuario.Usuario usuario) {
             base.Channel.RegistrarUsuario(usuario);
         }
@@ -268,7 +177,6 @@ namespace CapaGUIWeb.ServiceReferenceUsuario {
         
         public System.Threading.Tasks.Task EliminaUsuarioAsync(int id) {
             return base.Channel.EliminaUsuarioAsync(id);
->>>>>>> 07a584c... agregue pantallas capaGUI, Modifique base de datos y capa DTO, agregue vistas capaGUIWeb
         }
     }
 }

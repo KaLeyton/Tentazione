@@ -80,6 +80,7 @@
     </Compile>
     <Compile Include="WebServiceUsuario.asmx.cs">
       <DependentUpon>WebServiceUsuario.asmx</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
   </ItemGroup>
   <ItemGroup>

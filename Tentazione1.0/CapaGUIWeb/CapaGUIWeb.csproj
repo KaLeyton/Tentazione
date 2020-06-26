@@ -69,19 +69,6 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
-<<<<<<< HEAD
-    <Content Include="Connected Services\ServiceReferenceProducto\CapaGUIWeb.ServiceReferenceProducto.Producto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </Content>
-    <None Include="Connected Services\ServiceReferenceProducto\WebServiceProducto.disco" />
-    <None Include="Connected Services\ServiceReferenceProducto\configuration91.svcinfo" />
-    <None Include="Connected Services\ServiceReferenceProducto\configuration.svcinfo" />
-    <None Include="Connected Services\ServiceReferenceProducto\Reference.svcmap">
-      <Generator>WCF Proxy Generator</Generator>
-      <LastGenOutput>Reference.cs</LastGenOutput>
-    </None>
-=======
->>>>>>> 07a584c... agregue pantallas capaGUI, Modifique base de datos y capa DTO, agregue vistas capaGUIWeb
     <Content Include="Connected Services\ServiceReferenceUsuario\CapaGUIWeb.ServiceReferenceUsuario.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Content>

@@ -97,13 +97,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-<<<<<<< HEAD
-    <None Include="Connected Services\ServiceReferenceProducto\CapaGUI.ServiceReferenceProducto.Producto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReferenceProducto\WebServiceProducto.wsdl" />
-=======
->>>>>>> 07a584c... agregue pantallas capaGUI, Modifique base de datos y capa DTO, agregue vistas capaGUIWeb
     <None Include="Connected Services\ServiceReferenceUsuario\CapaGUI.ServiceReferenceUsuario.Usuario.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
