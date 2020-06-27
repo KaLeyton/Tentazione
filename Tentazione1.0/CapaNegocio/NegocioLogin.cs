@@ -24,23 +24,36 @@ namespace CapaNegocio
             this.conect = new Conexion();
             this.Conect.NombreBaseDeDatos = "Tentazione";
             this.Conect.NombreTabla = "tbUsuario";
-            this.Conect.CadenaConexion = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
+            this.Conect.CadenaConexion = "Data Source=KALEYTON;Initial Catalog=Tentazione;Integrated Security=True";
         }
 
-        //public bool Validalogin(String nombre, String contrasena)
-        //{
-        //    List<Usuario> usuario = new List<Usuario> usuario();
-        //    this.configurarConexion();
-        //    this.Conect.CadenaSQL = "SELECT NombreUsuario, Contrasena FROM tbUsuario WHERE NombreUsuario = '"
-        //                             + nombre + "' AND Contrasena = '" + contrasena + "';";
-        //    this.Conect.EsSelect = true;
-        //    this.Conect.conectar();
-
-        //    foreach (DataRow test in this.Conect.DbDataSet)
-        //    {
-        //        if (test[0].Equals(nombre) && test[1].Equals(contrasena)return true;
-        //    }
-        //    return false;
-        //}
+        public void ValidaLogIn(Usuario usuario)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                this.configurarConexion();
+                //this.Conect.CadenaSQL = "SELECT NombreUsuario, Contrasena FROM tbUsuario WHERE NombreUsuario = '"
+                //                         + usuario.NombreUsuario + "' AND Contrasena = '" + usuario.Contrasena + "';";
+                this.Conect.EsSelect = true;
+                this.Conect.conectar();
+                ////Opcion1 uwu, creo que esto sirve.
+                //this.Conect.DbDataSet(dt);
+                //Opcion2 owo, probar con esto equisde.
+                dt = this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
+                if (dt.Rows.Count==1)
+                {
+                    MessageBox.Show("Por fin dice que esta wea funciona WHOHOO");
+                }
+                else
+                {
+                    MessageBox.Show("Esta mala tu wea de credencial equide xd");
+                }
+            }
+            catch (Exception e)
+            {
+                _ = e.Message;
+            }
+        }
     }
 }

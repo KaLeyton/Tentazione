@@ -31,18 +31,35 @@ namespace CapaGUI
         }
 
         //Como hacer todo esto.
+        //private void btnLogin_Click(object sender, EventArgs e)
+        //{
+        //    ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxLogin = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
+        //    ServiceReferenceUsuario.Usuario newUsuario = new ServiceReferenceUsuario.Usuario();
+        //    newUsuario.NombreUsuario = this.txtNombreUsuario.Text;
+        //    newUsuario.Contrasena = this.txtContrasena.Text;
+        //    auxLogin.ServiceValidaLogIn(newUsuario);
+        //}
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
-            ServiceReferenceUsuario.Usuario auxUsuario = new ServiceReferenceUsuario.Usuario
+            try
             {
-                IdUsuario = 1111,
-                NombreUsuario = "Chupalo",
-                Contrasena = "Entonces"
-            };
+                ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
+                ServiceReferenceUsuario.Usuario auxUsuario = new ServiceReferenceUsuario.Usuario
+                {
+                    IdUsuario = 7777,
+                    NombreUsuario = "qeuis",
+                    Contrasena = "Uno",
+                    Rol = "Cliente"
+                };
 
-            auxServiceReferenceUsuario.ServiceRegistrarUsuario(auxUsuario);
+                auxServiceReferenceUsuario.ServiceRegistrarUsuario(auxUsuario);
 
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error ql :  " + ex + "\n");
+            }
+            
         }
 
     }

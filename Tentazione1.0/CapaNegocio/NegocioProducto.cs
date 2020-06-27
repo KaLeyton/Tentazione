@@ -19,16 +19,16 @@ namespace CapaNegocio
             this.conect = new Conexion();
             this.Conect.NombreBaseDeDatos = "Tentazione";
             this.Conect.NombreTabla = "tbUsuario";
-            this.Conect.CadenaConexion = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
+            this.Conect.CadenaConexion = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
         }
         public void RegistrarProducto(Producto producto)
         {
             try
             {
                 this.configurarConexion();
-                this.Conect.CadenaSQL = "INSERT INTO tbProducto (SkuProducto,NombreProducto,Valor,Imagen,UnidadMedida) VALUES ('"
+                this.Conect.CadenaSQL = "INSERT INTO tbProducto (SkuProducto,NombreProducto,Valor,CantPaquete,UnidadMedida) VALUES ('"
                                          + producto.Sku + "','" + producto.NombreProducto + "',"
-                                         + producto.Valor + ",'" + producto.Imagen + "','" + producto.UnidadMedida + "');";
+                                         + producto.Valor + ",'" + producto.CantPaquete + "','" + producto.UnidadMedida + "');";
                 this.Conect.EsSelect = false;
                 this.Conect.conectar();
             }
@@ -100,7 +100,7 @@ namespace CapaNegocio
                 this.configurarConexion();
                 this.Conect.EsSelect = false;
                 this.Conect.CadenaSQL = "UPDATE tbProducto SET NombreProducto = '" + producto.NombreProducto + "', Valor = " 
-                                        + producto.Valor + ", Imagen = '" + producto.Imagen + "', UnidadMedida = '"
+                                        + producto.Valor + ", CantPaquete = '" + producto.CantPaquete + "', UnidadMedida = '"
                                         + producto.UnidadMedida + "' WHERE SkuProducto = '" + producto.Sku + "';"; 
                 this.Conect.conectar();
             }

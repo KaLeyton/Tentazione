@@ -50,5 +50,11 @@ namespace CapaServicios
             NegocioUsuario auxNegocio = new NegocioUsuario();
             auxNegocio.EliminaUsuario(id);
         }
+        [WebMethod]
+        public void ServiceValidaLogIn(Usuario usuario)
+        {
+            NegocioLogin auxLogin = new NegocioLogin();
+            auxLogin.ValidaLogIn(usuario);
+        }
     }
 }
