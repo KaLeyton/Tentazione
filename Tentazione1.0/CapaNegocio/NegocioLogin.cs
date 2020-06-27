@@ -24,10 +24,10 @@ namespace CapaNegocio
             this.conect = new Conexion();
             this.Conect.NombreBaseDeDatos = "Tentazione";
             this.Conect.NombreTabla = "tbUsuario";
-            this.Conect.CadenaConexion = "Data Source=KALEYTON;Initial Catalog=Tentazione;Integrated Security=True";
+            this.Conect.CadenaConexion = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
         }
 
-        public void ValidaLogIn(Usuario usuario)
+        public bool ValidaLogIn(Usuario usuario)
         {
             DataTable dt = new DataTable();
             try
@@ -44,15 +44,17 @@ namespace CapaNegocio
                 if (dt.Rows.Count==1)
                 {
                     MessageBox.Show("Por fin dice que esta wea funciona WHOHOO");
+                    return true;
                 }
                 else
                 {
-                    MessageBox.Show("Esta mala tu wea de credencial equide xd");
+                    return false;
                 }
             }
             catch (Exception e)
             {
                 _ = e.Message;
+                return false;
             }
         }
     }

@@ -9,3 +9,14 @@ C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\bin\Debug\CapaNegocio.dll
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\bin\Debug\CapaNegocio.pdb
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\bin\Debug\CapaConexion.dll
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\bin\Debug\CapaDTO.dll
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\bin\Debug\CapaConexion.pdb
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\bin\Debug\CapaDTO.pdb
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\CapaNegocio.csprojAssemblyReference.cache
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\CapaNegocio.csproj.CoreCompileInputs.cache
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\CapaNegocio.dll
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\CapaNegocio.pdb
