@@ -10,23 +10,11 @@ using System.Windows.Forms;
 
 namespace CapaGUI
 {
-    public partial class PantallaAdministrarProductos : Form
+    public partial class PantallaGenerarCotizacion : Form
     {
-        public PantallaAdministrarProductos()
+        public PantallaGenerarCotizacion()
         {
             InitializeComponent();
-        }
-
-        private void btnListarProducto_Click(object sender, EventArgs e)
-        {
-            ServiceReferenceProducto.WebServiceProductoSoapClient auxServiceProducto = new ServiceReferenceProducto.WebServiceProductoSoapClient();
-            this.dataGridViewProductos.DataSource = auxServiceProducto.ServiceListaProducto();
-            this.dataGridViewProductos.DataMember = "tbProducto";
-        }
-
-        private void cbxUnidadMedida_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -44,8 +32,10 @@ namespace CapaGUI
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            MenuEmpleado pantEmpleado = new MenuEmpleado();
-            pantEmpleado.ShowDialog();
+            MenuCliente pantCliente = new MenuCliente();
+            pantCliente.ShowDialog();
         }
     }
 }
+
+

@@ -11,17 +11,17 @@ namespace CapaGUIWeb
 {
 
 
-    public partial class WebFormAdministrarProductos
+    public partial class WebFormPerfilCliente
     {
 
         /// <summary>
-        /// Control lblAdministrarClientes.
+        /// Control lblEditarPerfil.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblAdministrarClientes;
+        protected global::System.Web.UI.WebControls.Label lblEditarPerfil;
 
         /// <summary>
         /// Control btnCerrarSesion.
@@ -33,13 +33,13 @@ namespace CapaGUIWeb
         protected global::System.Web.UI.WebControls.Button btnCerrarSesion;
 
         /// <summary>
-        /// Control GridView1.
+        /// Control lblIdCliente.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.GridView GridView1;
+        protected global::System.Web.UI.WebControls.Label lblIdCliente;
 
         /// <summary>
         /// Control txtIdCliente.
@@ -51,121 +51,94 @@ namespace CapaGUIWeb
         protected global::System.Web.UI.WebControls.TextBox txtIdCliente;
 
         /// <summary>
-        /// Control lblSku.
+        /// Control lblNombreCompleto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblSku;
+        protected global::System.Web.UI.WebControls.Label lblNombreCompleto;
 
         /// <summary>
-        /// Control lblNombreProducto.
+        /// Control txtNombreCompleto.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblNombreProducto;
+        protected global::System.Web.UI.WebControls.TextBox txtNombreCompleto;
 
         /// <summary>
-        /// Control lblCantPaquete.
+        /// Control lblEdad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblCantPaquete;
+        protected global::System.Web.UI.WebControls.Label lblEdad;
 
         /// <summary>
-        /// Control lblValor.
+        /// Control txtEdad.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblValor;
+        protected global::System.Web.UI.WebControls.TextBox txtEdad;
 
         /// <summary>
-        /// Control lblUnidadMedida.
+        /// Control lblTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Label lblUnidadMedida;
+        protected global::System.Web.UI.WebControls.Label lblTelefono;
 
         /// <summary>
-        /// Control btnNuevoCliente.
+        /// Control txtTelefono.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnNuevoCliente;
+        protected global::System.Web.UI.WebControls.TextBox txtTelefono;
 
         /// <summary>
-        /// Control btnBuscarCliente.
+        /// Control lblEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnBuscarCliente;
+        protected global::System.Web.UI.WebControls.Label lblEmail;
 
         /// <summary>
-        /// Control txtSku.
+        /// Control txtEmail.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtSku;
+        protected global::System.Web.UI.WebControls.TextBox txtEmail;
 
         /// <summary>
-        /// Control txtNombreProducto.
+        /// Control lblSexo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtNombreProducto;
+        protected global::System.Web.UI.WebControls.Label lblSexo;
 
         /// <summary>
-        /// Control txtValor.
+        /// Control txtSexo.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtValor;
-
-        /// <summary>
-        /// Control txtCantPaquete.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox txtCantPaquete;
-
-        /// <summary>
-        /// Control btnGuardar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnGuardar;
-
-        /// <summary>
-        /// Control btnListar.
-        /// </summary>
-        /// <remarks>
-        /// Campo generado automáticamente.
-        /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnListar;
+        protected global::System.Web.UI.WebControls.TextBox txtSexo;
 
         /// <summary>
         /// Control btnEditar.
@@ -177,21 +150,21 @@ namespace CapaGUIWeb
         protected global::System.Web.UI.WebControls.Button btnEditar;
 
         /// <summary>
-        /// Control btnEliminarCliente.
+        /// Control btnGuardar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnEliminarCliente;
+        protected global::System.Web.UI.WebControls.Button btnGuardar;
 
         /// <summary>
-        /// Control btnSalir.
+        /// Control btnCancelar.
         /// </summary>
         /// <remarks>
         /// Campo generado automáticamente.
         /// Para modificarlo, mueva la declaración del campo del archivo del diseñador al archivo de código subyacente.
         /// </remarks>
-        protected global::System.Web.UI.WebControls.Button btnSalir;
+        protected global::System.Web.UI.WebControls.Button btnCancelar;
     }
 }

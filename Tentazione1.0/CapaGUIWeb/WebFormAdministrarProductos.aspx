@@ -142,8 +142,7 @@
                     </tr>
                     <tr>
                         <td class="auto-style67">
-                            <asp:Label ID="lblValor" runat="server" BackColor="White" Text="Valor :"></asp:Label>
-                        </td>
+                            &nbsp;</td>
                     </tr>
                     <tr>
                         <td class="auto-style67">
@@ -152,6 +151,7 @@
                     </tr>
                     <tr>
                         <td class="auto-style67">
+                            <asp:Label ID="lblValor" runat="server" BackColor="White" Text="Valor :"></asp:Label>
                             <asp:Label ID="lblUnidadMedida" runat="server" BackColor="White" Text="Unidad Medida :"></asp:Label>
                         </td>
                     </tr>

@@ -32,18 +32,20 @@
             this.lblIdCliente = new System.Windows.Forms.Label();
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
-            this.txtEmail = new System.Windows.Forms.Label();
+            this.lblEmail = new System.Windows.Forms.Label();
             this.lblSexo = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtIdCliente = new System.Windows.Forms.TextBox();
+            this.txtNombreCompleto = new System.Windows.Forms.TextBox();
+            this.txtTelefono = new System.Windows.Forms.TextBox();
+            this.txtEmail = new System.Windows.Forms.TextBox();
+            this.txtSexo = new System.Windows.Forms.TextBox();
             this.btnEditar = new System.Windows.Forms.Button();
             this.btnGuardar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.lblEdad = new System.Windows.Forms.Label();
+            this.txtEdad = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
             // 
             // lblPerfil
@@ -68,7 +70,7 @@
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Location = new System.Drawing.Point(11, 158);
+            this.lblNombreCliente.Location = new System.Drawing.Point(11, 153);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(129, 17);
             this.lblNombreCliente.TabIndex = 2;
@@ -77,68 +79,68 @@
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(68, 201);
+            this.lblTelefono.Location = new System.Drawing.Point(68, 229);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(72, 17);
             this.lblTelefono.TabIndex = 3;
             this.lblTelefono.Text = "Telefono :";
             // 
-            // txtEmail
+            // lblEmail
             // 
-            this.txtEmail.AutoSize = true;
-            this.txtEmail.Location = new System.Drawing.Point(90, 244);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(50, 17);
-            this.txtEmail.TabIndex = 4;
-            this.txtEmail.Text = "Email :";
+            this.lblEmail.AutoSize = true;
+            this.lblEmail.Location = new System.Drawing.Point(90, 272);
+            this.lblEmail.Name = "lblEmail";
+            this.lblEmail.Size = new System.Drawing.Size(50, 17);
+            this.lblEmail.TabIndex = 4;
+            this.lblEmail.Text = "Email :";
             // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(93, 287);
+            this.lblSexo.Location = new System.Drawing.Point(93, 315);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(47, 17);
             this.lblSexo.TabIndex = 5;
             this.lblSexo.Text = "Sexo :";
             // 
-            // textBox1
+            // txtIdCliente
             // 
-            this.textBox1.Location = new System.Drawing.Point(150, 115);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 22);
-            this.textBox1.TabIndex = 6;
+            this.txtIdCliente.Location = new System.Drawing.Point(150, 115);
+            this.txtIdCliente.Name = "txtIdCliente";
+            this.txtIdCliente.Size = new System.Drawing.Size(100, 22);
+            this.txtIdCliente.TabIndex = 6;
             // 
-            // textBox2
+            // txtNombreCompleto
             // 
-            this.textBox2.Location = new System.Drawing.Point(150, 158);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(100, 22);
-            this.textBox2.TabIndex = 7;
+            this.txtNombreCompleto.Location = new System.Drawing.Point(150, 153);
+            this.txtNombreCompleto.Name = "txtNombreCompleto";
+            this.txtNombreCompleto.Size = new System.Drawing.Size(100, 22);
+            this.txtNombreCompleto.TabIndex = 7;
             // 
-            // textBox3
+            // txtTelefono
             // 
-            this.textBox3.Location = new System.Drawing.Point(150, 201);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 22);
-            this.textBox3.TabIndex = 8;
+            this.txtTelefono.Location = new System.Drawing.Point(150, 229);
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.Size = new System.Drawing.Size(100, 22);
+            this.txtTelefono.TabIndex = 8;
             // 
-            // textBox4
+            // txtEmail
             // 
-            this.textBox4.Location = new System.Drawing.Point(150, 244);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 22);
-            this.textBox4.TabIndex = 9;
+            this.txtEmail.Location = new System.Drawing.Point(150, 272);
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.Size = new System.Drawing.Size(100, 22);
+            this.txtEmail.TabIndex = 9;
             // 
-            // textBox5
+            // txtSexo
             // 
-            this.textBox5.Location = new System.Drawing.Point(150, 287);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 10;
+            this.txtSexo.Location = new System.Drawing.Point(150, 315);
+            this.txtSexo.Name = "txtSexo";
+            this.txtSexo.Size = new System.Drawing.Size(100, 22);
+            this.txtSexo.TabIndex = 10;
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(24, 351);
+            this.btnEditar.Location = new System.Drawing.Point(24, 379);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(75, 23);
             this.btnEditar.TabIndex = 11;
@@ -147,7 +149,7 @@
             // 
             // btnGuardar
             // 
-            this.btnGuardar.Location = new System.Drawing.Point(128, 351);
+            this.btnGuardar.Location = new System.Drawing.Point(128, 379);
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Size = new System.Drawing.Size(75, 23);
             this.btnGuardar.TabIndex = 12;
@@ -156,48 +158,69 @@
             // 
             // btnCancelar
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(232, 351);
+            this.btnCancelar.Location = new System.Drawing.Point(232, 379);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(75, 23);
             this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(232, 406);
+            this.btnSalir.Location = new System.Drawing.Point(232, 434);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(75, 23);
             this.btnSalir.TabIndex = 14;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(218, 86);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(268, 45);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(114, 23);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(73, 44);
             this.btnCerrarSesion.TabIndex = 15;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // lblEdad
+            // 
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.Location = new System.Drawing.Point(91, 190);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(49, 17);
+            this.lblEdad.TabIndex = 16;
+            this.lblEdad.Text = "Edad :";
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(150, 190);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(100, 22);
+            this.txtEdad.TabIndex = 17;
             // 
             // PantallaPerfilCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(343, 447);
+            this.ClientSize = new System.Drawing.Size(345, 490);
+            this.Controls.Add(this.txtEdad);
+            this.Controls.Add(this.lblEdad);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox1);
-            this.Controls.Add(this.lblSexo);
+            this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtTelefono);
+            this.Controls.Add(this.txtNombreCompleto);
+            this.Controls.Add(this.txtIdCliente);
+            this.Controls.Add(this.lblSexo);
+            this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblNombreCliente);
             this.Controls.Add(this.lblIdCliente);
@@ -215,17 +238,19 @@
         private System.Windows.Forms.Label lblIdCliente;
         private System.Windows.Forms.Label lblNombreCliente;
         private System.Windows.Forms.Label lblTelefono;
-        private System.Windows.Forms.Label txtEmail;
+        private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblSexo;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtIdCliente;
+        private System.Windows.Forms.TextBox txtNombreCompleto;
+        private System.Windows.Forms.TextBox txtTelefono;
+        private System.Windows.Forms.TextBox txtEmail;
+        private System.Windows.Forms.TextBox txtSexo;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.Button btnGuardar;
         private System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Label lblEdad;
+        private System.Windows.Forms.TextBox txtEdad;
     }
 }

@@ -49,6 +49,7 @@
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.btnNuevoCliente = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).BeginInit();
             this.SuspendLayout();
             // 
@@ -235,12 +236,24 @@
             this.btnCerrarSesion.TabIndex = 22;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(428, 399);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(89, 43);
+            this.btnCancelar.TabIndex = 23;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // PantallaAdministradorClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(657, 463);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnNuevoCliente);
             this.Controls.Add(this.btnBuscarCliente);
@@ -293,5 +306,6 @@
         private System.Windows.Forms.Button btnBuscarCliente;
         private System.Windows.Forms.Button btnNuevoCliente;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

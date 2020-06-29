@@ -49,6 +49,7 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.btnBuscarProducto = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
+            this.btnCancelar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -160,10 +161,15 @@
             // cbxUnidadMedida
             // 
             this.cbxUnidadMedida.FormattingEnabled = true;
+            this.cbxUnidadMedida.Items.AddRange(new object[] {
+            "Unidad",
+            "Gramos ",
+            "Mililitros"});
             this.cbxUnidadMedida.Location = new System.Drawing.Point(602, 310);
             this.cbxUnidadMedida.Name = "cbxUnidadMedida";
             this.cbxUnidadMedida.Size = new System.Drawing.Size(119, 24);
             this.cbxUnidadMedida.TabIndex = 12;
+            this.cbxUnidadMedida.SelectedIndexChanged += new System.EventHandler(this.cbxUnidadMedida_SelectedIndexChanged);
             // 
             // btnGuardar
             // 
@@ -182,6 +188,7 @@
             this.btnSalir.TabIndex = 14;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
             // lblCantidadUnidad
             // 
@@ -232,12 +239,24 @@
             this.btnCerrarSesion.TabIndex = 20;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Location = new System.Drawing.Point(453, 438);
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Size = new System.Drawing.Size(91, 47);
+            this.btnCancelar.TabIndex = 21;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // PantallaAdministrarProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(737, 510);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnBuscarProducto);
             this.Controls.Add(this.textBox1);
@@ -290,5 +309,6 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button btnBuscarProducto;
         private System.Windows.Forms.Button btnCerrarSesion;
+        private System.Windows.Forms.Button btnCancelar;
     }
 }

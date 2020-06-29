@@ -65,6 +65,18 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="MenuCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuCliente.Designer.cs">
+      <DependentUpon>MenuCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="MenuEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MenuEmpleado.Designer.cs">
+      <DependentUpon>MenuEmpleado.cs</DependentUpon>
+    </Compile>
     <Compile Include="PantallaAdministrarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -95,16 +107,22 @@
     <Compile Include="PantallaPerfilCliente.Designer.cs">
       <DependentUpon>PantallaPerfilCliente.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaProductosCliente.cs">
+    <Compile Include="PantallaGenerarCotizacion.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="PantallaProductosCliente.Designer.cs">
-      <DependentUpon>PantallaProductosCliente.cs</DependentUpon>
+    <Compile Include="PantallaGenerarCotizacion.Designer.cs">
+      <DependentUpon>PantallaGenerarCotizacion.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuCliente.resx">
+      <DependentUpon>MenuCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MenuEmpleado.resx">
+      <DependentUpon>MenuEmpleado.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaAdministradorClientes.resx">
       <DependentUpon>PantallaAdministradorClientes.cs</DependentUpon>
@@ -121,8 +139,8 @@
     <EmbeddedResource Include="PantallaPerfilCliente.resx">
       <DependentUpon>PantallaPerfilCliente.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PantallaProductosCliente.resx">
-      <DependentUpon>PantallaProductosCliente.cs</DependentUpon>
+    <EmbeddedResource Include="PantallaGenerarCotizacion.resx">
+      <DependentUpon>PantallaGenerarCotizacion.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
