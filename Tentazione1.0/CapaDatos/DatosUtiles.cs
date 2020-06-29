@@ -53,10 +53,10 @@ namespace CapaDatos
                 return false;
             }
         }
-
         //Utilitario, recibe los datos para query configurados desde negocio y devuelve un DataSet.
         //Valor puede ser numerico o un String, para esto se aplicara una expresion regular.
-        public DataSet ListaUtils(String filtro, String valor, bool sentido, String tabla)
+        //Lista por valor de columna.
+        public DataTable ListaUtils(String filtro, String valor, bool sentido, String tabla)
         {
             try
             {
@@ -86,7 +86,32 @@ namespace CapaDatos
             {
                 _ = e.Message;
             }
-            return this.conect.DbDataSet;
+            return Conect.DbDataSet.Tables[this.Conect.NombreTabla];
+        }
+        //Override para el metodo de Listar, este trae todos los resultados.
+        public DataTable ListaUtils(String filtro, bool sentido, String tabla)
+        {
+            try
+            {
+                this.ConfigurarConexion(tabla);
+                this.Conect.EsSelect = true;
+                this.Conect.CadenaSQL = "SELECT * FROM " + tabla + " ORDER BY " + filtro;
+                //Valida si es numerico para realizar la consulta correspondiente.
+                if (sentido)
+                {
+                    this.Conect.CadenaSQL += "DESC;";
+                }
+                else
+                {
+                    this.Conect.CadenaSQL += "ASC;";
+                }
+                this.Conect.conectar();
+            }
+            catch (Exception e)
+            {
+                _ = e.Message;
+            }
+            return Conect.DbDataSet.Tables[this.Conect.NombreTabla];
         }
     }
 }

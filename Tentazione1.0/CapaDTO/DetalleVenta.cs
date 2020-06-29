@@ -12,9 +12,9 @@ namespace CapaDTO
         private double unidadesProducto;
         private String tbProductoExtendido_CodBarra;
 
-        private int IdDetalleVenta { get => idDetalleVenta; set => idDetalleVenta = value; }
-        private double UnidadesProducto { get => unidadesProducto; set => unidadesProducto = value; }
-        private String TbProductoExtendido_CodBarra { get => tbProductoExtendido_CodBarra; set => tbProductoExtendido_CodBarra = value; }
+        public int IdDetalleVenta { get => idDetalleVenta; set => idDetalleVenta = value; }
+        public double UnidadesProducto { get => unidadesProducto; set => unidadesProducto = value; }
+        public String TbProductoExtendido_CodBarra { get => tbProductoExtendido_CodBarra; set => tbProductoExtendido_CodBarra = value; }
 
     }
 }

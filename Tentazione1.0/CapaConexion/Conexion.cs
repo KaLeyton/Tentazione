@@ -60,6 +60,7 @@ namespace CapaConexion
             set { dbDataSet = value; }
         }
 
+
         private SqlDataAdapter dbDataAdapter;
 
         public SqlDataAdapter DbDataAdapter
@@ -109,7 +110,6 @@ namespace CapaConexion
         }//Fin cerrar
 
         //Metodo de coneccion
-
         public void conectar()
         { 
             //Se validan variables de instancia

@@ -55,11 +55,11 @@ namespace CapaNegocio
                 Utils util = new Utils();
                 DataTable dt = util.ListaUtils(filtro, valor, true, "tbProducto");
 
-                auxProducto.Sku = (String)dt.Rows[0]["sku"];
-                auxProducto.NombreProducto = (String)dt.Rows[0]["nombreProducto"];
-                auxProducto.Valor = (int)dt.Rows[0]["valor"];
-                auxProducto.CantPaquete = (int)dt.Rows[0]["cantPaquete"];
-                auxProducto.UnidadMedida = (String)dt.Rows[0]["unidadMedida"];
+                auxProducto.Sku = (String)dt.Rows[0]["Sku"];
+                auxProducto.NombreProducto = (String)dt.Rows[0]["NombreProducto"];
+                auxProducto.Valor = (int)dt.Rows[0]["Valor"];
+                auxProducto.CantPaquete = (int)dt.Rows[0]["CantPaquete"];
+                auxProducto.UnidadMedida = (String)dt.Rows[0]["UnidadMedida"];
             }
             catch (Exception e)
             {

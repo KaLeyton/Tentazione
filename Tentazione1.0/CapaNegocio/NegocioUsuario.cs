@@ -53,10 +53,10 @@ namespace CapaNegocio
                 Utils util = new Utils();
                 DataTable dt = util.ListaUtils(filtro, valor, true, "tbUsuario");
 
-                auxUsuario.IdUsuario = (int)dt.Rows[0]["idUsuario"];
-                auxUsuario.NombreUsuario = (String)dt.Rows[0]["nombreUsuario"];
-                auxUsuario.Contrasena = (String)dt.Rows[0]["contrasena"];
-                auxUsuario.Rol = (String)dt.Rows[0]["rol"];
+                auxUsuario.IdUsuario = (int)dt.Rows[0]["IdUsuario"];
+                auxUsuario.NombreUsuario = (String)dt.Rows[0]["NombreUsuario"];
+                auxUsuario.Contrasena = (String)dt.Rows[0]["Contrasena"];
+                auxUsuario.Rol = (String)dt.Rows[0]["Rol"];
             }
             catch (Exception e)
             {
@@ -68,6 +68,22 @@ namespace CapaNegocio
         //Insertar metodo que liste varios usuarios por filtro.
         //[MEJORA CONTINUA]
 
+        //busca el id del usuario, en formato de string.
+        public string BuscaUsuario(String filtro, String valor, bool esId)
+        {
+            try
+            {
+                Utils util = new Utils();
+                DataTable dt = util.ListaUtils(filtro, valor, esId, "tbUsuario");
+                int n = (int)dt.Rows[0]["idUsuario"];
+                return Convert.ToString(n);
+            }
+            catch (Exception e)
+            {
+                _ = e.Message;
+                return null;
+            }
+        }
         //Actualiza usuario y devuelve una confirmacion.
         public bool ActualizaUsuario(Usuario usuario)
         {
@@ -102,6 +118,5 @@ namespace CapaNegocio
                 return false;
             }
         }
-
     }
 }

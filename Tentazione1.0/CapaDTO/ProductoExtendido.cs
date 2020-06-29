@@ -13,10 +13,10 @@ namespace CapaDTO
         private DateTime fechaVencimiento;
         private String tbProducto_SkuProducto;
 
-        private String CodBarra { get => codBarra; set => codBarra = value; }
-        private DateTime FechaElaboracion { get => fechaElaboracion; set => fechaElaboracion = value; }
-        private DateTime FechaVencimiento { get => fechaVencimiento; set => fechaVencimiento = value; }
-        private String TbProducto_SkuProducto { get => tbProducto_SkuProducto; set => tbProducto_SkuProducto = value; }
+        public String CodBarra { get => codBarra; set => codBarra = value; }
+        public DateTime FechaElaboracion { get => fechaElaboracion; set => fechaElaboracion = value; }
+        public DateTime FechaVencimiento { get => fechaVencimiento; set => fechaVencimiento = value; }
+        public String TbProducto_SkuProducto { get => tbProducto_SkuProducto; set => tbProducto_SkuProducto = value; }
 
     }
 }

@@ -16,14 +16,6 @@ namespace CapaGUI
 {
     public partial class Login : Form
     {
-        SqlConnection conect = new SqlConnection();
-        public Login()
-        {
-            //SqlConnection conect = new SqlConnection();
-            conect.ConnectionString = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
-            InitializeComponent();
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             try
@@ -33,12 +25,10 @@ namespace CapaGUI
                 newUsuario.NombreUsuario = this.txtNombreUsuario.Text;
                 newUsuario.Contrasena = this.txtContrasena.Text;
                 auxLogin.ServiceValidaLogIn(newUsuario);
-
                 if (true)
                 {
                     MessageBox.Show("Pititoooo y a mimir");
                 }
-
                     MessageBox.Show("uwu");
             }
             catch (Exception ex)
