@@ -6,11 +6,11 @@
         <br />
     </p>
     <p>
-        <asp:Label ID="lblNombreUsuario" runat="server" Text="Usuario"></asp:Label>
+        <asp:Label ID="lblNombreUsuario" runat="server" Text="Usuario" BackColor="White"></asp:Label>
         <asp:TextBox ID="txtNombreUsuario" runat="server" ></asp:TextBox>
     </p>
     <p>
-        <asp:Label ID="LblContrasena" runat="server" Text="Contraseña"></asp:Label>
+        <asp:Label ID="LblContrasena" runat="server" Text="Contraseña" BackColor="White"></asp:Label>
         <asp:TextBox ID="txtContrasena" runat="server"></asp:TextBox>
     </p>
     <p>

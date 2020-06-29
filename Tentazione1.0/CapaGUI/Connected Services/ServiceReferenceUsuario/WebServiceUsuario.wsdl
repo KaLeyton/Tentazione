@@ -14,6 +14,7 @@
           <s:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="s:int" />
           <s:element minOccurs="0" maxOccurs="1" name="NombreUsuario" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rol" type="s:string" />
         </s:sequence>
       </s:complexType>
       <s:element name="ServiceRegistrarUsuarioResponse">
@@ -70,6 +71,16 @@
       <s:element name="ServiceEliminaUsuarioResponse">
         <s:complexType />
       </s:element>
+      <s:element name="ServiceValidaLogIn">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceValidaLogInResponse">
+        <s:complexType />
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ServiceRegistrarUsuarioSoapIn">
@@ -102,6 +113,12 @@
   <wsdl:message name="ServiceEliminaUsuarioSoapOut">
     <wsdl:part name="parameters" element="tns:ServiceEliminaUsuarioResponse" />
   </wsdl:message>
+  <wsdl:message name="ServiceValidaLogInSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceValidaLogIn" />
+  </wsdl:message>
+  <wsdl:message name="ServiceValidaLogInSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceValidaLogInResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceUsuarioSoap">
     <wsdl:operation name="ServiceRegistrarUsuario">
       <wsdl:input message="tns:ServiceRegistrarUsuarioSoapIn" />
@@ -122,6 +139,10 @@
     <wsdl:operation name="ServiceEliminaUsuario">
       <wsdl:input message="tns:ServiceEliminaUsuarioSoapIn" />
       <wsdl:output message="tns:ServiceEliminaUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceValidaLogIn">
+      <wsdl:input message="tns:ServiceValidaLogInSoapIn" />
+      <wsdl:output message="tns:ServiceValidaLogInSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceUsuarioSoap" type="tns:WebServiceUsuarioSoap">
@@ -171,6 +192,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ServiceValidaLogIn">
+      <soap:operation soapAction="http://tempuri.org/ServiceValidaLogIn" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceUsuarioSoap12" type="tns:WebServiceUsuarioSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -212,6 +242,15 @@
     </wsdl:operation>
     <wsdl:operation name="ServiceEliminaUsuario">
       <soap12:operation soapAction="http://tempuri.org/ServiceEliminaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceValidaLogIn">
+      <soap12:operation soapAction="http://tempuri.org/ServiceValidaLogIn" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -10,21 +10,15 @@
     </asp:ContentPlaceHolder>
     <style type="text/css">
         .auto-style1 {
-            width: 89%;
+            width: 100%;
             height: 510px;
         }
         .auto-style3 {
             width: 159px;
             height: 83px;
         }
-        .auto-style4 {
-            height: 83px;
-        }
         .auto-style5 {
             width: 159px;
-            height: 265px;
-        }
-        .auto-style6 {
             height: 265px;
         }
         .auto-style7 {
@@ -35,20 +29,33 @@
             width: 159px;
             height: 116px;
         }
-        .auto-style10 {
-            height: 116px;
-        }
         .auto-style11 {
             width: 68px;
             height: 68px;
         }
         .auto-style12 {
             height: 83px;
-            width: 1119px;
+            width: 806px;
         }
         .auto-style14 {
             height: 116px;
-            width: 1119px;
+            width: 806px;
+        }
+        .auto-style15 {
+            width: 806px;
+            height: 510px;
+        }
+        .auto-style16 {
+            width: 132px;
+            height: 83px;
+        }
+        .auto-style17 {
+            width: 132px;
+            height: 265px;
+        }
+        .auto-style18 {
+            width: 132px;
+            height: 116px;
         }
     </style>
 </head>
@@ -61,25 +68,24 @@
                 <td class="auto-style3">
                     <img alt="" class="auto-style7" src="logoTentazione.png" /></td>
                 <td class="auto-style12" style="font-family: 'Segoe Script'; font-style: oblique; font-size: 57px; background-color: #FF0000; color: #FFFFFF; font-weight: bolder;">Distribuidora Tentazione</td>
-                <td class="auto-style4"></td>
+                <td class="auto-style16"></td>
             </tr>
             <tr>
                 <td class="auto-style5" style="background-color: #FF3300">
                     <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/WebFormlogin.aspx">Login.</asp:HyperLink>
                     <br />
                     <br />
-                    <asp:HyperLink ID="HyperLink3" runat="server">Mantenedor Productos.</asp:HyperLink>
+                    Productos<br />
                     <br />
+                    Usuarios<br />
                     <br />
-                    <asp:HyperLink ID="HyperLink4" runat="server">Mantenedor Cliente.</asp:HyperLink>
-                    <br />
-                    <br />
-                    Mantenedor Cotizaciones.</td>
-                <td class="auto-style1" style="background-image: url('/Tienda.jpg')">
+                    Cotizaciones<br />
+                    .</td>
+                <td class="auto-style15" style="background-image: url('/Tienda.jpg')">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
                 </td>
-                <td class="auto-style6"></td>
+                <td class="auto-style17"></td>
             </tr>
             <tr>
                 <td class="auto-style9" style="background-color: #FF3300">
@@ -94,7 +100,7 @@
                     <br />
                     <asp:HyperLink ID="HyperLink1" runat="server">Lo Errazuriz 270, Los Cerrillos, Cerrillos</asp:HyperLink>
                 </td>
-                <td class="auto-style10"></td>
+                <td class="auto-style18"></td>
             </tr>
         </table>
     </form>
