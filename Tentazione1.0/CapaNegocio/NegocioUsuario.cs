@@ -66,6 +66,7 @@ namespace CapaNegocio
             return auxUsuario;
         }
         //Insertar metodo que liste varios usuarios por filtro.
+        //[MEJORA CONTINUA]
 
         //Actualiza usuario y devuelve una confirmacion.
         public bool ActualizaUsuario(Usuario usuario)
