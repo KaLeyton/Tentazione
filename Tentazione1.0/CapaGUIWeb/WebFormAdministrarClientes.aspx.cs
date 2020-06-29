@@ -19,7 +19,7 @@ namespace CapaGUIWeb
         {
             ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
 
-            this.GridViewUsuario.DataSource = auxServiceReferenceUsuario.ListaUsuario();
+            this.GridViewUsuario.DataSource = auxServiceReferenceUsuario.ServiceListaUsuario();
             this.GridViewUsuario.DataMember = "tbUsuario";
             this.GridViewUsuario.DataBind();
 
