@@ -1,5 +1,4 @@
-﻿using CapaConexion;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -7,110 +6,99 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDTO;
-using CapaUtiles;
+using CapaDatos;
 
 namespace CapaNegocio
 {
     public class NegocioUsuario
     {
-        private Conexion conect;
-        public Conexion Conect { get => conect; set => conect = value; }
-
-        public void configurarConexion()
-        {
-            this.conect = new Conexion();
-            this.Conect.NombreBaseDeDatos = "Tentazione";
-            this.Conect.NombreTabla = "tbUsuario";
-            this.Conect.CadenaConexion = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
-        }
-
-        //Falta configurar esto para que funcione llamando la funcion de ListaUtils.
-
-        //FALTA esto
-        public DataSet ListarUsuario(String filtro, String valor, bool sentido, bool number)
+        //Debe recibir usuario.rol como por defecto como Cliente.
+        public bool RegistrarUsuario(Usuario usuario)
         {
             try
             {
                 Utils util = new Utils();
-                util.ListaUtils();
+                string CadenaSQL = "INSERT INTO tbUsuario (IdUsuario,NombreUsuario,Contrasena,Rol) VALUES ("
+                                         + usuario.IdUsuario + ",'" + usuario.NombreUsuario + "','"
+                                         + usuario.Contrasena + "','" + usuario.Rol + "');";
+
+                return util.ConfigurarConexion("tbUsuario", CadenaSQL, false);
             }
             catch (Exception e)
             {
-                //return null;
                 _ = e.Message;
+                return false;
             }
-            return this.conect.DbDataSet;
         }
-
-        //debe recibir usuario.rol como por defecto como Cliente.
-        public void RegistrarUsuario(Usuario usuario)
+        //Listara los usuarios
+        public DataTable ListarUsuario(String filtro, bool sentido)
         {
             try
             {
-                this.configurarConexion();
-                this.Conect.CadenaSQL = "INSERT INTO tbUsuario (IdUsuario,NombreUsuario,Contrasena,Rol) VALUES (" 
-                                         + usuario.IdUsuario + ",'" + usuario.NombreUsuario + "','" 
-                                         + usuario.Contrasena + "','" + usuario.Rol + "');";
-                this.Conect.EsSelect = false;
-                this.Conect.conectar();
+                Utils util = new Utils();
+                return util.ListaUtils(filtro, sentido, "tbUsuario");
             }
             catch (Exception e)
             {
                 _ = e.Message;
+                return null;
             }
         }
-
-        public Usuario BuscaUsuario(int id)
+        //Busca 1 usuario por columna.
+        public Usuario BuscaUsuario(String filtro, String valor)
         {
             Usuario auxUsuario = new Usuario();
-            DataTable dt = new DataTable();
             try
             {
-                this.configurarConexion();
-                this.Conect.CadenaSQL = "SELECT * FROM tbUsuario WHERE IdUsuario = " 
-                                         + id + ";";
-                this.Conect.EsSelect = true;
-                this.Conect.conectar();
-                dt = this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
+                Utils util = new Utils();
+                DataTable dt = util.ListaUtils(filtro, valor, true, "tbUsuario");
+
+                auxUsuario.IdUsuario = (int)dt.Rows[0]["idUsuario"];
+                auxUsuario.NombreUsuario = (String)dt.Rows[0]["nombreUsuario"];
+                auxUsuario.Contrasena = (String)dt.Rows[0]["contrasena"];
+                auxUsuario.Rol = (String)dt.Rows[0]["rol"];
             }
             catch (Exception e)
             {
                 _ = e.Message;
+                return null;
             }
             return auxUsuario;
         }
+        //Insertar metodo que liste varios usuarios por filtro.
 
-        public void ActualizaUsuario(Usuario usuario)
+        //Actualiza usuario y devuelve una confirmacion.
+        public bool ActualizaUsuario(Usuario usuario)
         {
             try
             {
-                this.configurarConexion();
-                this.Conect.EsSelect = false;
-                this.Conect.CadenaSQL = "UPDATE tbUsuario SET NombreUsuario = '" 
+                Utils util = new Utils();
+                String CadenaSQL = "UPDATE tbUsuario SET NombreUsuario = '" 
                                             + usuario.NombreUsuario + "', Contrasena = '" 
                                             + usuario.Contrasena + "' WHERE IdUsuario = " 
                                             + usuario.IdUsuario + ";";
-                this.Conect.conectar();
+
+                return util.ConfigurarConexion("tbUsuario", CadenaSQL, false);
             }
             catch (Exception e)
             {
                 _ = e.Message;
+                return false;
             }
         }
-
-        public void EliminaUsuario(int id)
+        //Elimina Usuario y devuelve una confirmacion
+        public bool EliminaUsuario(String id)
         {
             try
             {
-                this.configurarConexion();
-                this.Conect.EsSelect = false;
-                this.Conect.CadenaSQL = "DELETE FROM tbUsuario WHERE IdUsuario = " + id + ";";
-                this.Conect.conectar();
+                Utils util = new Utils();
+                String CadenaSQL = "DELETE FROM tbUsuario WHERE IdUsuario = " + id + ";";
+                return util.ConfigurarConexion("tbUsuario", CadenaSQL, false);
             }
             catch (Exception e)
             {
-
                 _ = e.Message;
+                return false;
             }
         }
 
