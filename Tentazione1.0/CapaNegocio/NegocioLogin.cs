@@ -5,43 +5,38 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDTO;
-using CapaConexion;
 using System.Data;
 using System.Windows.Forms;
 using System.Runtime.InteropServices.WindowsRuntime;
+using CapaDatos;
 
 namespace CapaNegocio
 {
     public class NegocioLogin
     {
-
-        private Conexion conect;
-
-        public Conexion Conect { get => conect; set => conect = value; }
-
-        public void configurarConexion()
+        //Recibe la tabla para abir conexion, en este caso solo busca.
+        private DataTable BuscaDatos(String sqlQuery, String tabla)
         {
-            this.conect = new Conexion();
-            this.Conect.NombreBaseDeDatos = "Tentazione";
-            this.Conect.NombreTabla = "tbUsuario";
-            this.Conect.CadenaConexion = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
+            try
+            {
+                Utils util = new Utils();
+                return util.ConfigurarConexion(tabla, sqlQuery);
+            }
+            catch (Exception e)
+            {
+                _ = e.Message;
+                return null;
+            }
         }
 
         public bool ValidaLogIn(Usuario usuario)
         {
-            DataTable dt = new DataTable();
             try
             {
-                this.configurarConexion();
-                //this.Conect.CadenaSQL = "SELECT NombreUsuario, Contrasena FROM tbUsuario WHERE NombreUsuario = '"
-                //                         + usuario.NombreUsuario + "' AND Contrasena = '" + usuario.Contrasena + "';";
-                this.Conect.EsSelect = true;
-                this.Conect.conectar();
-                ////Opcion1 uwu, creo que esto sirve.
-                //this.Conect.DbDataSet(dt);
-                //Opcion2 owo, probar con esto equisde.
-                dt = this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
-                if (dt.Rows.Count==1)
+                String CadenaSQL = "SELECT NombreUsuario, Contrasena FROM tbUsuario WHERE NombreUsuario = '"
+                                         + usuario.NombreUsuario + "' AND Contrasena = '" + usuario.Contrasena + "';";
+                //Valida que esto retorne un valor bueno.
+                if (BuscaDatos("tbUsuario", CadenaSQL).Rows.Count == 1)
                 {
                     MessageBox.Show("Por fin dice que esta wea funciona WHOHOO");
                     return true;

@@ -42,15 +42,18 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="NegocioCliente.cs" />
+    <Compile Include="NegocioCotizacion.cs" />
+    <Compile Include="NegocioEmpleado.cs" />
     <Compile Include="NegocioLogin.cs" />
     <Compile Include="NegocioProducto.cs" />
     <Compile Include="NegocioUsuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaConexion\CapaConexion.csproj">
-      <Project>{5cdb4427-8c6b-42d9-b70b-7e7f519e2e93}</Project>
-      <Name>CapaConexion</Name>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{b4489824-6d79-42b5-ae0f-3f612c9148fa}</Project>
+      <Name>CapaDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">
       <Project>{01dd6b9c-7756-40c0-96b8-d2780e502124}</Project>

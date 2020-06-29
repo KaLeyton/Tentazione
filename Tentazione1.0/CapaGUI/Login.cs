@@ -17,14 +17,6 @@ namespace CapaGUI
 {
     public partial class Login : Form
     {
-        SqlConnection conect = new SqlConnection();
-        public Login()
-        {
-            //SqlConnection conect = new SqlConnection();
-            conect.ConnectionString = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
-            InitializeComponent();
-        }
-
         private void btnLogin_Click(object sender, EventArgs e)
         {
             //this.Dispose();
