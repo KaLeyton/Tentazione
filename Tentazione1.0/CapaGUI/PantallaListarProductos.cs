@@ -10,13 +10,16 @@ using System.Windows.Forms;
 
 namespace CapaGUI
 {
-    public partial class PantallaMantenedorProducto : Form
+    public partial class PantallaListarProductos : Form
     {
-        public PantallaMantenedorProducto()
+        public PantallaListarProductos()
         {
             InitializeComponent();
         }
 
-       
+        private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

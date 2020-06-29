@@ -14,7 +14,7 @@
           <s:element minOccurs="0" maxOccurs="1" name="Sku" type="s:string" />
           <s:element minOccurs="0" maxOccurs="1" name="NombreProducto" type="s:string" />
           <s:element minOccurs="1" maxOccurs="1" name="Valor" type="s:int" />
-          <s:element minOccurs="0" maxOccurs="1" name="Imagen" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="CantPaquete" type="s:double" />
           <s:element minOccurs="0" maxOccurs="1" name="UnidadMedida" type="s:string" />
         </s:sequence>
       </s:complexType>

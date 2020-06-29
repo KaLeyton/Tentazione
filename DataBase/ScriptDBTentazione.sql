@@ -1,12 +1,12 @@
---DROP TABLE tbProducto ;
---DROP TABLE tbDetalleCotizacion ;
---DROP TABLE tbProductoExtendido ;
---DROP TABLE tbDetalleVenta ;
---DROP TABLE tbCotizacion ;
---DROP TABLE tbEmpleado ;
---DROP TABLE tbVenta ;
---DROP TABLE tbCliente ;
---DROP TABLE tbUsuario ;
+DROP TABLE tbVenta ;
+DROP TABLE tbCliente ;
+DROP TABLE tbEmpleado ;
+DROP TABLE tbDetalleCotizacion ;
+DROP TABLE tbCotizacion ;
+DROP TABLE tbUsuario ;
+DROP TABLE tbDetalleVenta ;
+DROP TABLE tbProductoExtendido ;
+DROP TABLE tbProducto ;
 
 create table tbUsuario(IdUsuario int not null,
 					   NombreUsuario varchar(20) unique not null,
@@ -62,7 +62,8 @@ create table tbProducto(SkuProducto varchar(30) not null,
 					    NombreProducto varchar(50) not null,
 					    Valor int not null,
 						CantPaquete decimal not null,
-					    UnidadMedida varchar(15) not null);
+					    UnidadMedida varchar(15) not null,
+						Foto image );
 
 
 
