@@ -34,13 +34,14 @@
             this.lblContrasena = new System.Windows.Forms.Label();
             this.txtContrasena = new System.Windows.Forms.TextBox();
             this.btnLogin = new System.Windows.Forms.Button();
+            this.btnVerProductos = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Calibri", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(84, 40);
+            this.lblLogin.Location = new System.Drawing.Point(64, 35);
             this.lblLogin.Name = "lblLogin";
             this.lblLogin.Size = new System.Drawing.Size(103, 46);
             this.lblLogin.TabIndex = 0;
@@ -82,7 +83,7 @@
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(92, 320);
+            this.btnLogin.Location = new System.Drawing.Point(72, 280);
             this.btnLogin.Name = "btnLogin";
             this.btnLogin.Size = new System.Drawing.Size(75, 23);
             this.btnLogin.TabIndex = 5;
@@ -90,11 +91,21 @@
             this.btnLogin.UseVisualStyleBackColor = true;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 
+            // btnVerProductos
+            // 
+            this.btnVerProductos.Location = new System.Drawing.Point(52, 341);
+            this.btnVerProductos.Name = "btnVerProductos";
+            this.btnVerProductos.Size = new System.Drawing.Size(115, 23);
+            this.btnVerProductos.TabIndex = 6;
+            this.btnVerProductos.Text = "Ver Productos";
+            this.btnVerProductos.UseVisualStyleBackColor = true;
+            // 
             // Login
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(283, 396);
+            this.ClientSize = new System.Drawing.Size(236, 406);
+            this.Controls.Add(this.btnVerProductos);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.lblContrasena);
@@ -116,5 +127,6 @@
         private System.Windows.Forms.Label lblContrasena;
         private System.Windows.Forms.TextBox txtContrasena;
         private System.Windows.Forms.Button btnLogin;
+        private System.Windows.Forms.Button btnVerProductos;
     }
 }

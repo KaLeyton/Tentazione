@@ -53,10 +53,10 @@ namespace CapaGUI.ServiceReferenceUsuario {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceValidaLogIn", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        void ServiceValidaLogIn(CapaGUI.ServiceReferenceUsuario.Usuario usuario);
+        bool ServiceValidaLogIn(CapaGUI.ServiceReferenceUsuario.Usuario usuario);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceValidaLogIn", ReplyAction="*")]
-        System.Threading.Tasks.Task ServiceValidaLogInAsync(CapaGUI.ServiceReferenceUsuario.Usuario usuario);
+        System.Threading.Tasks.Task<bool> ServiceValidaLogInAsync(CapaGUI.ServiceReferenceUsuario.Usuario usuario);
     }
     
     /// <remarks/>
@@ -73,7 +73,7 @@ namespace CapaGUI.ServiceReferenceUsuario {
         
         private string contrasenaField;
         
-        private string rolField;
+        private bool rolField;
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=0)]
@@ -113,7 +113,7 @@ namespace CapaGUI.ServiceReferenceUsuario {
         
         /// <remarks/>
         [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string Rol {
+        public bool Rol {
             get {
                 return this.rolField;
             }
@@ -200,11 +200,11 @@ namespace CapaGUI.ServiceReferenceUsuario {
             return base.Channel.ServiceEliminaUsuarioAsync(id);
         }
         
-        public void ServiceValidaLogIn(CapaGUI.ServiceReferenceUsuario.Usuario usuario) {
-            base.Channel.ServiceValidaLogIn(usuario);
+        public bool ServiceValidaLogIn(CapaGUI.ServiceReferenceUsuario.Usuario usuario) {
+            return base.Channel.ServiceValidaLogIn(usuario);
         }
         
-        public System.Threading.Tasks.Task ServiceValidaLogInAsync(CapaGUI.ServiceReferenceUsuario.Usuario usuario) {
+        public System.Threading.Tasks.Task<bool> ServiceValidaLogInAsync(CapaGUI.ServiceReferenceUsuario.Usuario usuario) {
             return base.Channel.ServiceValidaLogInAsync(usuario);
         }
     }

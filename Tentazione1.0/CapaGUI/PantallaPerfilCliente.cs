@@ -10,13 +10,13 @@ using System.Windows.Forms;
 
 namespace CapaGUI
 {
-    public partial class PantallaMantenedorProducto : Form
+    public partial class PantallaPerfilCliente : Form
     {
-        public PantallaMantenedorProducto()
+        public PantallaPerfilCliente()
         {
             InitializeComponent();
         }
 
-       
+        
     }
 }

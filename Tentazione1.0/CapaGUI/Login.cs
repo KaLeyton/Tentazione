@@ -20,7 +20,7 @@ namespace CapaGUI
         public Login()
         {
             //SqlConnection conect = new SqlConnection();
-            conect.ConnectionString = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
+            conect.ConnectionString = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
             InitializeComponent();
         }
 
@@ -39,7 +39,7 @@ namespace CapaGUI
                     MessageBox.Show("Pititoooo y a mimir");
                 }
 
-                    MessageBox.Show("uwu");
+                    //MessageBox.Show("uwu");
             }
             catch (Exception ex)
             {

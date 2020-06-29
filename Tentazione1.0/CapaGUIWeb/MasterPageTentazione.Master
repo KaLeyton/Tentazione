@@ -72,20 +72,14 @@
             </tr>
             <tr>
                 <td class="auto-style5" style="background-color: #FF3300">
-                    <asp:HyperLink ID="HyperLink2" runat="server" NavigateUrl="~/WebFormlogin.aspx">Login.</asp:HyperLink>
-                    <br />
-                    <br />
-                    Productos<br />
-                    <br />
-                    Usuarios<br />
-                    <br />
-                    Cotizaciones<br />
-                    .</td>
-                <td class="auto-style15" style="background-image: url('/Tienda.jpg')">
+                    <asp:ContentPlaceHolder ID="ContentPlaceHolder2" runat="server">
+                    </asp:ContentPlaceHolder>
+                </td>
+                <td class="auto-style1" style="background-image: url('/Tienda.jpg')">
             <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
             </asp:ContentPlaceHolder>
                 </td>
-                <td class="auto-style17"></td>
+                <td class="auto-style10"></td>
             </tr>
             <tr>
                 <td class="auto-style9" style="background-color: #FF3300">
