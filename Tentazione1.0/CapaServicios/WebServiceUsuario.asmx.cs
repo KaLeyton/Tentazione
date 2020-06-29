@@ -16,7 +16,7 @@ namespace CapaServicios
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    // [System.Web.Script.Services.ScriptService]
+    [System.Web.Script.Services.ScriptService]
     public class WebServiceUsuario : System.Web.Services.WebService
     {
 
@@ -49,12 +49,6 @@ namespace CapaServicios
         {
             NegocioUsuario auxNegocio = new NegocioUsuario();
             auxNegocio.EliminaUsuario(id);
-        }
-        [WebMethod]
-        public bool ServiceValidaLogIn(Usuario usuario)
-        {
-            NegocioLogin auxLogin = new NegocioLogin();
-            return auxLogin.ValidaLogIn(usuario);
         }
     }
 }
