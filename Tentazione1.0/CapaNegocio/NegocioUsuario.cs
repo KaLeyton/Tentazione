@@ -7,6 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaDTO;
+using CapaUtiles;
 
 namespace CapaNegocio
 {
@@ -23,6 +24,25 @@ namespace CapaNegocio
             this.Conect.CadenaConexion = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
         }
 
+        //Falta configurar esto para que funcione llamando la funcion de ListaUtils.
+
+        //FALTA esto
+        public DataSet ListarUsuario(String filtro, String valor, bool sentido, bool number)
+        {
+            try
+            {
+                Utils util = new Utils();
+                util.ListaUtils();
+            }
+            catch (Exception e)
+            {
+                //return null;
+                _ = e.Message;
+            }
+            return this.conect.DbDataSet;
+        }
+
+        //debe recibir usuario.rol como por defecto como Cliente.
         public void RegistrarUsuario(Usuario usuario)
         {
             try
@@ -38,23 +58,6 @@ namespace CapaNegocio
             {
                 _ = e.Message;
             }
-        }
-
-        public DataSet ListarUsuario()
-        {
-            try
-            {
-                this.configurarConexion();
-                this.Conect.CadenaSQL = "SELECT * FROM tbUsuario;";
-                this.Conect.EsSelect = true;
-                this.Conect.conectar();
-            }
-            catch (Exception e)
-            {
-                //return null;
-                _ = e.Message;
-            }
-            return this.conect.DbDataSet;
         }
 
         public Usuario BuscaUsuario(int id)

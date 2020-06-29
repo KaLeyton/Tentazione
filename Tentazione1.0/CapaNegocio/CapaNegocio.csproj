@@ -56,6 +56,10 @@
       <Project>{01dd6b9c-7756-40c0-96b8-d2780e502124}</Project>
       <Name>CapaDTO</Name>
     </ProjectReference>
+    <ProjectReference Include="..\CapaUtiles\CapaUtil.csproj">
+      <Project>{9098a625-f399-4c27-905f-7bc1ef8eca16}</Project>
+      <Name>CapaUtil</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

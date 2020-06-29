@@ -33,13 +33,9 @@ namespace CapaNegocio
             try
             {
                 this.configurarConexion();
-                //this.Conect.CadenaSQL = "SELECT NombreUsuario, Contrasena FROM tbUsuario WHERE NombreUsuario = '"
-                //                         + usuario.NombreUsuario + "' AND Contrasena = '" + usuario.Contrasena + "';";
                 this.Conect.EsSelect = true;
                 this.Conect.conectar();
-                ////Opcion1 uwu, creo que esto sirve.
-                //this.Conect.DbDataSet(dt);
-                //Opcion2 owo, probar con esto equisde.
+
                 dt = this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
                 if (dt.Rows.Count==1)
                 {

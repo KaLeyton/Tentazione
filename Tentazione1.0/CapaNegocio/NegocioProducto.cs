@@ -39,12 +39,15 @@ namespace CapaNegocio
         }
         public DataSet ListarProducto()
         {
+            DataSet dt = new DataSet();
             try
             {
                 this.configurarConexion();
                 this.Conect.CadenaSQL = "SELECT * FROM tbProducto;";
                 this.Conect.EsSelect = true;
                 this.Conect.conectar();
+
+                return NegocioUtils
             }
             catch (Exception e)
             {
@@ -53,16 +56,18 @@ namespace CapaNegocio
             }
             return this.conect.DbDataSet;
         }
-        //Metodo para buscar productos por Sku, util para el admin.
-        public Producto BuscaProductoSku(String sku)
+        //Metodo para buscar productos columna, debe recibir un bool que indicara si es descendiente o ascediente. 
+        //Filtro corresponde al valor de la columna y columna a segun que realiza el filtro. 
+        //Puede recibir cualquier cosa.
+        public Producto BuscaProducto(String filtro, String valor, bool sentido)
         {
             Producto auxProducto = new Producto();
             DataTable dt = new DataTable();
             try
             {
                 this.configurarConexion();
-                this.Conect.CadenaSQL = "SELECT * FROM tbProducto WHERE SkuProducto = '"
-                                         + sku + "';";
+                this.Conect.CadenaSQL = "SELECT * FROM tbProducto WHERE " + filtro + " = '"
+                                         + valor + "' ORDER BY ;";
                 this.Conect.EsSelect = true;
                 this.Conect.conectar();
                 dt = this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
@@ -73,26 +78,7 @@ namespace CapaNegocio
             }
             return auxProducto;
         }
-        //Metodo para buscar productos por nombre, util para usuario.
-        public Producto BuscaProductoNombre(String nombre)
-        {
-            Producto auxProducto = new Producto();
-            DataTable dt = new DataTable();
-            try
-            {
-                this.configurarConexion();
-                this.Conect.CadenaSQL = "SELECT * FROM tbProducto WHERE SkuProducto = '"
-                                         + nombre + "';";
-                this.Conect.EsSelect = true;
-                this.Conect.conectar();
-                dt = this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
-            }
-            catch (Exception e)
-            {
-                _ = e.Message;
-            }
-            return auxProducto;
-        }
+
         public void ActualizaProducto(Producto producto)
         {
             try
