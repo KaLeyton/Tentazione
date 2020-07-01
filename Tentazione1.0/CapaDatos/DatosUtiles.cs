@@ -31,7 +31,7 @@ namespace CapaDatos
             this.Conect.EsSelect = true;
             this.Conect.conectar();
             //Devulve un DataTable con los datos resultantes de la query
-            return Conect.DbDataSet.Tables[this.Conect.NombreTabla];
+            return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
         }
         //Metodo para insertar datos segun parametros a base de datos.
         public bool ConfigurarConexion(String tabla, String sqlQuery, bool NoSelect)
@@ -67,10 +67,12 @@ namespace CapaDatos
                 if (Regex.IsMatch(valor, @"^\d+$"))
                 {
                     this.Conect.CadenaSQL += " = " + valor + " ORDER BY ";
+                    Console.WriteLine("uwuwuwu");
                 }
                 else
                 {
                     this.Conect.CadenaSQL += " = '" + valor + "' ORDER BY ";
+                    Console.WriteLine("awawawwawa");
                 }
                 if (sentido)
                 {
@@ -86,7 +88,7 @@ namespace CapaDatos
             {
                 _ = e.Message;
             }
-            return Conect.DbDataSet.Tables[this.Conect.NombreTabla];
+            return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
         }
         //Override para el metodo de Listar, este trae todos los resultados.
         public DataTable ListaUtils(String filtro, bool sentido, String tabla)
@@ -99,11 +101,11 @@ namespace CapaDatos
                 //Valida si es numerico para realizar la consulta correspondiente.
                 if (sentido)
                 {
-                    this.Conect.CadenaSQL += "DESC;";
+                    this.Conect.CadenaSQL += " DESC;";
                 }
                 else
                 {
-                    this.Conect.CadenaSQL += "ASC;";
+                    this.Conect.CadenaSQL += " ASC;";
                 }
                 this.Conect.conectar();
             }
@@ -111,7 +113,7 @@ namespace CapaDatos
             {
                 _ = e.Message;
             }
-            return Conect.DbDataSet.Tables[this.Conect.NombreTabla];
+            return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
         }
     }
 }

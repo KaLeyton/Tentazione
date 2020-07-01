@@ -41,46 +41,52 @@
             // dataGridViewListaProductos
             // 
             this.dataGridViewListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewListaProductos.Location = new System.Drawing.Point(67, 136);
+            this.dataGridViewListaProductos.Location = new System.Drawing.Point(50, 110);
+            this.dataGridViewListaProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewListaProductos.Name = "dataGridViewListaProductos";
             this.dataGridViewListaProductos.RowHeadersWidth = 51;
             this.dataGridViewListaProductos.RowTemplate.Height = 24;
-            this.dataGridViewListaProductos.Size = new System.Drawing.Size(391, 216);
+            this.dataGridViewListaProductos.Size = new System.Drawing.Size(293, 176);
             this.dataGridViewListaProductos.TabIndex = 0;
             // 
             // lblProductos
             // 
             this.lblProductos.AutoSize = true;
             this.lblProductos.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductos.Location = new System.Drawing.Point(170, 9);
+            this.lblProductos.Location = new System.Drawing.Point(128, 7);
+            this.lblProductos.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(227, 59);
+            this.lblProductos.Size = new System.Drawing.Size(178, 46);
             this.lblProductos.TabIndex = 1;
             this.lblProductos.Text = "Productos";
             // 
             // btnLogIn
             // 
-            this.btnLogIn.Location = new System.Drawing.Point(219, 376);
+            this.btnLogIn.Location = new System.Drawing.Point(164, 306);
+            this.btnLogIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnLogIn.Name = "btnLogIn";
-            this.btnLogIn.Size = new System.Drawing.Size(79, 39);
+            this.btnLogIn.Size = new System.Drawing.Size(59, 32);
             this.btnLogIn.TabIndex = 2;
             this.btnLogIn.Text = "LogIn";
             this.btnLogIn.UseVisualStyleBackColor = true;
             // 
             // btnListar
             // 
-            this.btnListar.Location = new System.Drawing.Point(19, 376);
+            this.btnListar.Location = new System.Drawing.Point(14, 306);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnListar.Name = "btnListar";
-            this.btnListar.Size = new System.Drawing.Size(79, 39);
+            this.btnListar.Size = new System.Drawing.Size(59, 32);
             this.btnListar.TabIndex = 3;
             this.btnListar.Text = "Listar";
             this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(419, 375);
+            this.btnSalir.Location = new System.Drawing.Point(314, 305);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(79, 39);
+            this.btnSalir.Size = new System.Drawing.Size(59, 32);
             this.btnSalir.TabIndex = 4;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -88,25 +94,27 @@
             // 
             // btnBuscarProducto
             // 
-            this.btnBuscarProducto.Location = new System.Drawing.Point(335, 98);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(251, 80);
+            this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarProducto.Size = new System.Drawing.Size(56, 19);
             this.btnBuscarProducto.TabIndex = 5;
             this.btnBuscarProducto.Text = "Buscar";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
             // 
             // txtBuscarProducto
             // 
-            this.txtBuscarProducto.Location = new System.Drawing.Point(112, 98);
+            this.txtBuscarProducto.Location = new System.Drawing.Point(84, 80);
+            this.txtBuscarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtBuscarProducto.Name = "txtBuscarProducto";
-            this.txtBuscarProducto.Size = new System.Drawing.Size(100, 22);
+            this.txtBuscarProducto.Size = new System.Drawing.Size(76, 20);
             this.txtBuscarProducto.TabIndex = 6;
             // 
             // PantallaListarProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(528, 450);
+            this.ClientSize = new System.Drawing.Size(396, 366);
             this.Controls.Add(this.txtBuscarProducto);
             this.Controls.Add(this.btnBuscarProducto);
             this.Controls.Add(this.btnSalir);
@@ -114,6 +122,7 @@
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.lblProductos);
             this.Controls.Add(this.dataGridViewListaProductos);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PantallaListarProductos";
             this.Text = "PantallaListarProductos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaProductos)).EndInit();

@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaServicios;
 
 namespace CapaGUI
 {
@@ -19,10 +20,10 @@ namespace CapaGUI
 
         private void btnListarClientes_Click(object sender, EventArgs e)
         {
-            //ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceCliente = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
-            //this.dataGridViewClientes.DataSource = auxServiceCliente.ServiceListaUsuario();
-            //this.dataGridViewClientes.DataMember = "tbUsuario";
-            ////this.dataGridViewClientes.DataBindings();
+            ServiceReferenceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxServiceCliente = new ServiceReferenceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+            this.dataGridViewClientes.DataSource = auxServiceCliente.ServiceListaClienteAsync("tbUsuario_IdUsuario", true);
+            this.dataGridViewClientes.DataMember = "tbUsuario";
+            //this.dataGridViewClientes.DataBindings();
         }
 
         private void btnEliminarCliente_Click(object sender, EventArgs e)

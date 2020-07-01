@@ -20,11 +20,12 @@ namespace CapaServicios
     public class WebServiceUsuarioWeb : System.Web.Services.WebService
     {
         // Se le entrega un usuario y este valida que se encuentre en la base de datos con nombre y contraseña.
+        // Retorna el rol de usuario.
         [WebMethod]
-        public bool ServiceValidaLogIn(Usuario usuario)
+        public String ServiceValidaLogIn(String nombre, String contrasena)
         {
             NegocioLogin auxLogin = new NegocioLogin();
-            return auxLogin.ValidaLogIn(usuario);
+            return auxLogin.ValidaLogIn(nombre, contrasena);
         }
         // Busca todos los productos y ordena segun parametro.
         [WebMethod]
