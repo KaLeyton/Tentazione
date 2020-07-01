@@ -10,8 +10,9 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using CapaDTO;
-using CapaNegocio;
 using System.Threading;
+using CapaServicios;
+
 
 namespace CapaGUI
 {
@@ -23,102 +24,49 @@ namespace CapaGUI
         }
         private void btnLogin_Click(object sender, EventArgs e)
         {
-            //this.Dispose();
-            MenuCliente pantCliente = new MenuCliente();
             Login aLogin = new Login();
+            ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxLogin = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
+            String nombre = this.txtNombreUsuario.Text;
+            String contrasena = this.txtContrasena.Text;
             try
             {
-                //ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxLogin = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
-                //ServiceReferenceUsuario.Usuario newUsuario = new ServiceReferenceUsuario.Usuario();
-                //newUsuario.NombreUsuario = this.txtNombreUsuario.Text;
-                //newUsuario.Contrasena = this.txtContrasena.Text;
-                //auxLogin.ServiceValidaLogIn(newUsuario);
-                //bool duro = true;
-                //if (duro)
-
-                //{
-                
-                if (this.txtNombreUsuario.Text.Equals("Cliente"))
-                    {
-                        
-                        MessageBox.Show("Cliente", "Bienvenido");
-                        //this.Dispose();
-                        
-                        pantCliente.ShowDialog();
-                        //this.Close();
-                    }
-                    else if (this.txtNombreUsuario.Text.Equals("Empleado"))
-                    {
-                        MessageBox.Show("Empleado", "Bienvenido");
-                        MenuEmpleado pantEmpleado = new MenuEmpleado();
-                        pantEmpleado.ShowDialog();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Ingresar Datos Válidos", "Alerta!");
-                    }
-                   // this.Close();
-                //}
+                String respuesta = auxLogin.ServiceValidaLogIn(nombre, contrasena);
+                if (respuesta.Equals("Cliente"))
+                {
+                    MessageBox.Show("Estimado Cliente, Bienvenido");
+                    MenuCliente pantCliente = new MenuCliente();
+                    pantCliente.ShowDialog();
+                }
+                else if (respuesta.Equals("Empleado"))
+                {
+                    MessageBox.Show("Estimado Empleado, produce plata");
+                    MenuEmpleado pantEmpleado = new MenuEmpleado();
+                    pantEmpleado.ShowDialog();
+                }
+                else
+                {
+                    MessageBox.Show("Ingresar Datos Válidos", "Alerta! nos tan hackian2");
+                }
             }
             catch (Exception ex)
             {
-                Console.WriteLine("error ql :  " + ex + "\n");
+                Console.WriteLine("error de logIn :  " + ex + "\n");
             }
-            //this.Dispose();
             aLogin.Dispose();
         }
-
         private void btnVerProductos_Click(object sender, EventArgs e)
         {
             PantallaListarProductos pantListar = new PantallaListarProductos();
             pantListar.ShowDialog();
         }
-
         private void BtnCrearUsuario_Click(object sender, EventArgs e)
         {
             PantallaCrearCliente pCrear = new PantallaCrearCliente();
             pCrear.ShowDialog();
         }
-
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-
-        ////Como hacer todo esto.
-        ////private void btnLogin_Click(object sender, EventArgs e)
-        ////{
-        //ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxLogin = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
-        //ServiceReferenceUsuario.Usuario newUsuario = new ServiceReferenceUsuario.Usuario();
-        //newUsuario.NombreUsuario = this.txtNombreUsuario.Text;
-        //    newUsuario.Contrasena = this.txtContrasena.Text;
-        //    auxLogin.ServiceValidaLogIn(newUsuario);
-        ////}
-
-        //metodo de prueba para ver si funciona.
-        //private void btnLogin_Click(object sender, EventArgs e)
-        //{
-        //    try
-        //    {
-        //        ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
-        //        ServiceReferenceUsuario.Usuario auxUsuario = new ServiceReferenceUsuario.Usuario
-        //        {
-        //            IdUsuario = 7777,
-        //            NombreUsuario = "qeuis",
-        //            Contrasena = "Uno",
-        //            Rol = "Cliente"
-        //        };
-
-        //        auxServiceReferenceUsuario.ServiceRegistrarUsuario(auxUsuario);
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("error ql :  " + ex + "\n");
-        //    }
-
-        //}
-
     }
 }
