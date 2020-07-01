@@ -10,42 +10,49 @@ using System.Data;
 namespace CapaServicios
 {
     /// <summary>
-    /// Summary description for WebServiceUsuarioWeb
+    /// Summary description for WebServiceUsuarioCliente
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
-    [System.Web.Script.Services.ScriptService]
-    public class WebServiceUsuarioWeb : System.Web.Services.WebService
+    // [System.Web.Script.Services.ScriptService]
+    public class WebServiceUsuarioCliente : System.Web.Services.WebService
     {
-        // Se le entrega un usuario y este valida que se encuentre en la base de datos con nombre y contraseña.
+        // Actualiza datos de usuario, pw y correo.
         [WebMethod]
-        public bool ServiceValidaLogIn(Usuario usuario)
+        public bool ServiceActualizaUsuario(Usuario usuario)
         {
-            NegocioLogin auxLogin = new NegocioLogin();
-            return auxLogin.ValidaLogIn(usuario);
+            NegocioUsuario auxUsuario = new NegocioUsuario();
+            return auxUsuario.ActualizaUsuario(usuario);
         }
-        // Busca todos los productos y ordena segun parametro.
+        // Registra datos de cliente.
+        [WebMethod]
+        public bool ServiceRegistraCliente(Cliente cliente)
+        {
+            NegocioCliente auxCliente = new NegocioCliente();
+            return auxCliente.RegistrarCliente(cliente);
+        }
+        // Actualiza datos de cliente
+        [WebMethod]
+        public bool ServiceActualizaCliente(Cliente cliente)
+        {
+            NegocioCliente auxCliente = new NegocioCliente();
+            return auxCliente.ActualizaCliente(cliente);
+        }
+        // Lista todos los productos y ordena segun parametro.
         [WebMethod]
         public DataTable ServiceListaProducto(String filtro, bool sentido)
         {
             NegocioProducto auxProducto = new NegocioProducto();
             return auxProducto.ListaProducto(filtro, sentido);
         }
-        // Busca 1 solo producto por valor. (aunque existan 2 iguales e DB)
+        // Busca un producto en particular.
         [WebMethod]
         public Producto ServiceBuscaProducto(String filtro, String valor)
         {
             NegocioProducto auxProducto = new NegocioProducto();
             return auxProducto.BuscaProducto(filtro, valor);
-        }
-        // Crea un nuevo usuario
-        [WebMethod]
-        public bool ServiceRegistrarUsuario(Usuario usuario)
-        {
-            NegocioUsuario auxUsuario = new NegocioUsuario();
-            return auxUsuario.RegistrarUsuario(usuario);
         }
     }
 }
