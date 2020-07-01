@@ -19,9 +19,9 @@ namespace CapaGUI
 
         private void btnListarProducto_Click(object sender, EventArgs e)
         {
-            ServiceReferenceProducto.WebServiceProductoSoapClient auxServiceProducto = new ServiceReferenceProducto.WebServiceProductoSoapClient();
-            this.dataGridViewProductos.DataSource = auxServiceProducto.ServiceListaProducto();
-            this.dataGridViewProductos.DataMember = "tbProducto";
+            //ServiceReferenceProducto.WebServiceProductoSoapClient auxServiceProducto = new ServiceReferenceProducto.WebServiceProductoSoapClient();
+            //this.dataGridViewProductos.DataSource = auxServiceProducto.ServiceListaProducto();
+            //this.dataGridViewProductos.DataMember = "tbProducto";
         }
 
         private void cbxUnidadMedida_SelectedIndexChanged(object sender, EventArgs e)

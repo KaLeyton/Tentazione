@@ -19,10 +19,10 @@ namespace CapaGUI
 
         private void btnListarClientes_Click(object sender, EventArgs e)
         {
-            ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceCliente = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
-            this.dataGridViewClientes.DataSource = auxServiceCliente.ServiceListaUsuario();
-            this.dataGridViewClientes.DataMember = "tbUsuario";
-            //this.dataGridViewClientes.DataBindings();
+            //ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceCliente = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
+            //this.dataGridViewClientes.DataSource = auxServiceCliente.ServiceListaUsuario();
+            //this.dataGridViewClientes.DataMember = "tbUsuario";
+            ////this.dataGridViewClientes.DataBindings();
         }
 
         private void btnEliminarCliente_Click(object sender, EventArgs e)

@@ -17,11 +17,11 @@ namespace CapaGUIWeb
 
         protected void btnListarUsuario_Click(object sender, EventArgs e)
         {
-            ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
+            //ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
 
-            this.GridViewUsuario.DataSource = auxServiceReferenceUsuario.ServiceListaUsuario();
-            this.GridViewUsuario.DataMember = "tbUsuario";
-            this.GridViewUsuario.DataBind();
+            //this.GridViewUsuario.DataSource = auxServiceReferenceUsuario.ServiceListaUsuario();
+            //this.GridViewUsuario.DataMember = "tbUsuario";
+            //this.GridViewUsuario.DataBind();
 
         }
     }

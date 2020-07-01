@@ -18,17 +18,17 @@ namespace CapaGUIWeb
 
         protected void btnEntrar_Click(object sender, EventArgs e)
         {
-            ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferencenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
+            //ServiceReferenceUsuario.WebServiceUsuarioSoapClient auxServiceReferencenceUsuario = new ServiceReferenceUsuario.WebServiceUsuarioSoapClient();
 
-            ServiceReferenceUsuario.Usuario auxUsuario = new ServiceReferenceUsuario.Usuario();
+            //ServiceReferenceUsuario.Usuario auxUsuario = new ServiceReferenceUsuario.Usuario();
 
-            String user = "kaka";
-            String contr = "faff";
-            int id = 1313;
+            //String user = "kaka";
+            //String contr = "faff";
+            //int id = 1313;
 
-            auxUsuario.IdUsuario = id;
-            auxUsuario.NombreUsuario = user;
-            auxUsuario.Contrasena = contr;
+            //auxUsuario.IdUsuario = id;
+            //auxUsuario.NombreUsuario = user;
+            //auxUsuario.Contrasena = contr;
         }
     }
 }
