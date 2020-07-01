@@ -11,7 +11,7 @@ namespace CapaNegocio
 {
     public class NegocioCliente
     {
-        //Metodo para listar clientes por columna.
+        // Metodo para listar clientes por columna.
         public DataTable ListaCliente(String filtro, bool sentido)
         {
             try
@@ -26,7 +26,7 @@ namespace CapaNegocio
             }
         }
 
-        //Envia un registro de cliente, retorna una confirmacion.
+        // Envia un registro de cliente, retorna una confirmacion.
         public bool RegistrarCliente(Cliente cliente)
         {
             try
@@ -35,7 +35,7 @@ namespace CapaNegocio
                 String CadenaSQL = "INSERT INTO tbCliente (tbUsuario_IdUsuario, nombreCompleto,edad,telefono,email,sexo) VALUES ("
                                          + cliente.TbUsuario_IdUsuario + ",'" + cliente.NombreCompleto+ "',"+ cliente.Edad + ","
                                          + cliente.Telefono + ",'" + cliente.Email + "','" + cliente.Sexo + "');";
-                //Entrega confirmacion.
+                // Entrega confirmacion.
                 return utils.ConfigurarConexion("tbCliente", CadenaSQL, false);
             }
             catch (Exception e)
@@ -46,8 +46,8 @@ namespace CapaNegocio
         }
 
 
-        //Metodo para buscar 1 cliente, se entrega un filtro correspondiente a la columa para el Where, y el valor para cerrar la clausula.
-        //Selecciona solo el primer resultado.
+        // Metodo para buscar 1 cliente, se entrega un filtro correspondiente a la columa para el Where, y el valor para cerrar la clausula.
+        // Selecciona solo el primer resultado.
         public Cliente BuscaCliente(String filtro, String valor)
         {
             Cliente auxCliente = new Cliente();
@@ -71,11 +71,11 @@ namespace CapaNegocio
             return auxCliente;
         }
 
-        //Insertar metodo que liste varios clientes por filtro.
-        //[MEJORA CONTINUA]
+        // Insertar metodo que liste varios clientes por filtro.
+        // [MEJORA CONTINUA]
 
 
-        //Actualiza un cliente, seleccionado por id
+        // Actualiza un cliente, seleccionado por objeto
         public bool ActualizaCliente(Cliente cliente)
         {
             try
@@ -93,7 +93,7 @@ namespace CapaNegocio
             }
         }
 
-        //Elimina un cliente, filtrado por su id
+        // Elimina un cliente, filtrado por su id
         public bool EliminaCliente(int id)
         {
             try

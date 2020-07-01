@@ -32,3 +32,5 @@ C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\C
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\CapaGUIWeb.csproj.CopyComplete
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\CapaGUIWeb.dll
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\CapaGUIWeb.pdb
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\CapaGUIWeb.csprojAssemblyReference.cache
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\CapaGUIWeb.csproj.CoreCompileInputs.cache
