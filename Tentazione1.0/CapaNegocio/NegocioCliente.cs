@@ -21,11 +21,10 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo el listado de clientes " + e + "\n");
                 return null;
             }
         }
-
         // Envia un registro de cliente, retorna una confirmacion.
         public bool RegistrarCliente(Cliente cliente)
         {
@@ -40,7 +39,7 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al registrar clientes " + e + "\n");
                 return false;
             }
         }
@@ -65,7 +64,7 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al buscar cliente " + e + "\n");
                 return null;
             }
             return auxCliente;
@@ -88,7 +87,7 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al actualizar clientes " + e + "\n");
                 return false;
             }
         }
@@ -104,7 +103,7 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al eliminar clientes " + e + "\n");
                 return false;
             }
         }

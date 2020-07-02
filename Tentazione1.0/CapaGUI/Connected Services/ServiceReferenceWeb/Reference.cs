@@ -39,10 +39,10 @@ namespace CapaGUI.ServiceReferenceWeb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceRegistrarUsuario", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        bool ServiceRegistrarUsuario(CapaGUI.ServiceReferenceWeb.Usuario usuario);
+        bool ServiceRegistrarUsuario(string nombre, string contra);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceRegistrarUsuario", ReplyAction="*")]
-        System.Threading.Tasks.Task<bool> ServiceRegistrarUsuarioAsync(CapaGUI.ServiceReferenceWeb.Usuario usuario);
+        System.Threading.Tasks.Task<bool> ServiceRegistrarUsuarioAsync(string nombre, string contra);
     }
     
     /// <remarks/>
@@ -133,80 +133,6 @@ namespace CapaGUI.ServiceReferenceWeb {
         }
     }
     
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Usuario : object, System.ComponentModel.INotifyPropertyChanged {
-        
-        private int idUsuarioField;
-        
-        private string nombreUsuarioField;
-        
-        private string contrasenaField;
-        
-        private string rolField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public int IdUsuario {
-            get {
-                return this.idUsuarioField;
-            }
-            set {
-                this.idUsuarioField = value;
-                this.RaisePropertyChanged("IdUsuario");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string NombreUsuario {
-            get {
-                return this.nombreUsuarioField;
-            }
-            set {
-                this.nombreUsuarioField = value;
-                this.RaisePropertyChanged("NombreUsuario");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public string Contrasena {
-            get {
-                return this.contrasenaField;
-            }
-            set {
-                this.contrasenaField = value;
-                this.RaisePropertyChanged("Contrasena");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public string Rol {
-            get {
-                return this.rolField;
-            }
-            set {
-                this.rolField = value;
-                this.RaisePropertyChanged("Rol");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
-    }
-    
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
     public interface WebServiceUsuarioWebSoapChannel : CapaGUI.ServiceReferenceWeb.WebServiceUsuarioWebSoap, System.ServiceModel.IClientChannel {
     }
@@ -258,12 +184,12 @@ namespace CapaGUI.ServiceReferenceWeb {
             return base.Channel.ServiceBuscaProductoAsync(filtro, valor);
         }
         
-        public bool ServiceRegistrarUsuario(CapaGUI.ServiceReferenceWeb.Usuario usuario) {
-            return base.Channel.ServiceRegistrarUsuario(usuario);
+        public bool ServiceRegistrarUsuario(string nombre, string contra) {
+            return base.Channel.ServiceRegistrarUsuario(nombre, contra);
         }
         
-        public System.Threading.Tasks.Task<bool> ServiceRegistrarUsuarioAsync(CapaGUI.ServiceReferenceWeb.Usuario usuario) {
-            return base.Channel.ServiceRegistrarUsuarioAsync(usuario);
+        public System.Threading.Tasks.Task<bool> ServiceRegistrarUsuarioAsync(string nombre, string contra) {
+            return base.Channel.ServiceRegistrarUsuarioAsync(nombre, contra);
         }
     }
 }

@@ -12,15 +12,15 @@ namespace CapaNegocio
 {
     public class NegocioUsuario
     {
-        //Debe recibir usuario.rol como por defecto como Cliente.
-        public bool RegistrarUsuario(Usuario usuario)
+        // Debe recibir usuario.rol como por defecto como Cliente.
+        public bool RegistrarUsuario(String nombre, String contra)
         {
+            String rol = "Cliente";
             try
             {
                 Utils util = new Utils();
-                string CadenaSQL = "INSERT INTO tbUsuario (IdUsuario,NombreUsuario,Contrasena,Rol) VALUES ("
-                                         + usuario.IdUsuario + ",'" + usuario.NombreUsuario + "','"
-                                         + usuario.Contrasena + "','" + usuario.Rol + "');";
+                string CadenaSQL = "INSERT INTO tbUsuario (NombreUsuario,Contrasena,Rol) VALUES ('" 
+                                    + nombre + "','"+ contra + "','" + rol + "');";
 
                 return util.ConfigurarConexion("tbUsuario", CadenaSQL, false);
             }
@@ -30,7 +30,7 @@ namespace CapaNegocio
                 return false;
             }
         }
-        //Listara los usuarios
+        // Listara los usuarios
         public DataTable ListarUsuario(String filtro, bool sentido)
         {
             try
@@ -44,7 +44,7 @@ namespace CapaNegocio
                 return null;
             }
         }
-        //Busca 1 usuario por columna.
+        // Busca 1 usuario por columna.
         public Usuario BuscaUsuario(String filtro, String valor)
         {
             Usuario auxUsuario = new Usuario();
@@ -65,10 +65,10 @@ namespace CapaNegocio
             }
             return auxUsuario;
         }
-        //Insertar metodo que liste varios usuarios por filtro.
-        //[MEJORA CONTINUA]
+        // Insertar metodo que liste varios usuarios por filtro.
+        // [MEJORA CONTINUA]
 
-        //busca el id del usuario, en formato de string.
+        // busca el id del usuario, en formato de string.
         public string BuscaUsuario(String filtro, String valor, bool esId)
         {
             try
@@ -80,11 +80,11 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al buscar usuarios " + e + "\n");
                 return null;
             }
         }
-        //Actualiza usuario y devuelve una confirmacion.
+        // Actualiza usuario y devuelve una confirmacion.
         public bool ActualizaUsuario(Usuario usuario)
         {
             try
@@ -99,11 +99,11 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al actualizar usuarios " + e + "\n");
                 return false;
             }
         }
-        //Elimina Usuario y devuelve una confirmacion
+        // Elimina Usuario y devuelve una confirmacion
         public bool EliminaUsuario(String id)
         {
             try
@@ -114,7 +114,7 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al eliminar usuarios " + e + "\n");
                 return false;
             }
         }
