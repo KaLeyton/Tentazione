@@ -26,7 +26,7 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al registrar su usuario " + e + "\n");
                 return false;
             }
         }
@@ -40,7 +40,7 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al listar usuarios " + e + "\n");
                 return null;
             }
         }
@@ -60,7 +60,7 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al buscar el usuario " + e + "\n");
                 return null;
             }
             return auxUsuario;

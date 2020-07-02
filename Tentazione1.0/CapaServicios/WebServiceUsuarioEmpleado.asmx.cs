@@ -42,7 +42,7 @@ namespace CapaServicios
         }
         // Busca un solo producto por columna y valor.
         [WebMethod]
-        public Producto ServiceBuscaProducto(String filtro, String valor)
+        public DataTable ServiceBuscaProducto(String filtro, String valor)
         {
             NegocioProducto auxProducto = new NegocioProducto();
             return auxProducto.BuscaProducto(filtro, valor);
@@ -63,7 +63,7 @@ namespace CapaServicios
         }
         // Busca a un cliente por columna
         [WebMethod]
-        public Cliente ServiceBuscaCliente(String filtro, String valor)
+        public DataTable ServiceBuscaCliente(String filtro, String valor)
         {
             NegocioCliente auxCliente = new NegocioCliente();
             return auxCliente.BuscaCliente(filtro, valor);

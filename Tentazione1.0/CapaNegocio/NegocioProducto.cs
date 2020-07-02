@@ -43,28 +43,19 @@ namespace CapaNegocio
                 return null;
             }
         }
-        // Metodo para buscar 1 producto, se entrega un filtro correspondiente a la columa para el Where, y el valor para cerrar la clausula.
-        // Selecciona solo el primer resultado.
-        public Producto BuscaProducto(String filtro, String valor)
+        // Metodo para buscar productos por datatable
+        public DataTable BuscaProducto(String filtro, String valor)
         {
-            Producto auxProducto = new Producto();
             try
             {
                 Utils util = new Utils();
-                DataTable dt = util.ListaUtils(filtro, valor, true, "tbProducto");
-
-                auxProducto.Sku = (String)dt.Rows[0]["Sku"];
-                auxProducto.NombreProducto = (String)dt.Rows[0]["NombreProducto"];
-                auxProducto.Valor = (int)dt.Rows[0]["Valor"];
-                auxProducto.CantPaquete = (int)dt.Rows[0]["CantPaquete"];
-                auxProducto.UnidadMedida = (String)dt.Rows[0]["UnidadMedida"];
+                return util.ListaUtils(filtro, valor, true, "tbProducto");
             }
             catch (Exception e)
             {
                 Console.WriteLine("error, fallo al buscar productos " + e + "\n");
                 return null;
             }
-            return auxProducto;
         }
         // Insertar metodo que liste varios productos por filtro.
         // [MEJORA CONTINUA]

@@ -47,6 +47,19 @@
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
+            // lblPerfil
+            // 
+            this.lblPerfil.AutoSize = true;
+            this.lblPerfil.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblPerfil.Location = new System.Drawing.Point(55, 24);
+            this.lblPerfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblPerfil.Name = "lblPerfil";
+            this.lblPerfil.Size = new System.Drawing.Size(102, 46);
+            this.lblPerfil.TabIndex = 0;
+            this.lblPerfil.Text = "Perfil";
+            // 
+            // lblIdCliente
+            // 
             // lblIdCliente
             // 
             this.lblIdCliente.AutoSize = true;
@@ -245,9 +258,11 @@
             this.btnGuardar.TabIndex = 26;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
+            this.btnGuardar.Click += new System.EventHandler(this.btnGuardar_Click);
             // 
             // btnCancelar
             // 
+
             this.btnCancelar.Depth = 0;
             this.btnCancelar.Location = new System.Drawing.Point(134, 401);
             this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
@@ -272,10 +287,42 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.Location = new System.Drawing.Point(201, 37);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2);
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Size = new System.Drawing.Size(55, 36);
+            this.btnCerrarSesion.TabIndex = 15;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // lblEdad
+            // 
+            this.lblEdad.AutoSize = true;
+            this.lblEdad.Location = new System.Drawing.Point(68, 154);
+            this.lblEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblEdad.Name = "lblEdad";
+            this.lblEdad.Size = new System.Drawing.Size(38, 13);
+            this.lblEdad.TabIndex = 16;
+            this.lblEdad.Text = "Edad :";
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Location = new System.Drawing.Point(112, 154);
+            this.txtEdad.Margin = new System.Windows.Forms.Padding(2);
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.Size = new System.Drawing.Size(76, 20);
+            this.txtEdad.TabIndex = 17;
+            // 
             // PantallaPerfilCliente
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.txtEdad);
+            this.Controls.Add(this.lblEdad);
+            this.Controls.Add(this.btnCerrarSesion);
             this.ClientSize = new System.Drawing.Size(409, 467);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCancelar);
@@ -294,7 +341,10 @@
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblNombreCliente);
             this.Controls.Add(this.lblIdCliente);
+            this.Controls.Add(this.lblPerfil);
             this.Name = "PantallaPerfilCliente";
+            this.Text = "PantallaPerfilCliente";
+            this.Load += new System.EventHandler(this.PantallaPerfilCliente_Load);
             this.Text = "Perfil";
             this.ResumeLayout(false);
             this.PerformLayout();

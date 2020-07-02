@@ -39,14 +39,13 @@ namespace CapaDatos
                 this.Conect.CadenaSQL = sqlQuery;
                 this.Conect.EsSelect = true;
                 this.Conect.conectar();
+                return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
             }
             catch (Exception e)
             {
                 Console.WriteLine("error, fallo al configurar conexion2 " + e + "\n");
                 return null;
             }
-            // Devulve un DataTable con los datos resultantes de la query
-            return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
         }
         // Metodo para insertar datos segun parametros a base de datos.
         public bool ConfigurarConexion(String tabla, String sqlQuery, bool NoSelect)
@@ -55,7 +54,7 @@ namespace CapaDatos
             {
                 this.conect = new Conexion();
                 this.Conect.NombreBaseDeDatos = "Tentazione";
-                this.Conect.CadenaConexion = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
+                this.Conect.CadenaConexion = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
                 this.Conect.NombreTabla = tabla;
                 this.Conect.CadenaSQL = sqlQuery;
                 this.Conect.EsSelect = NoSelect;
@@ -68,8 +67,7 @@ namespace CapaDatos
                 return false;
             }
         }
-        // Utilitario, recibe los datos para query configurados desde negocio y devuelve un DataSet.
-        // Valor puede ser numerico o un String, para esto se aplicara una expresion regular.
+        // Utilitario, recibe los datos para query configurados desde negocio y devuelve un DataSet, version para strings.
         // Lista por valor de columna.
         public DataTable ListaUtils(String filtro, String valor, bool sentido, String tabla)
         {
@@ -78,22 +76,40 @@ namespace CapaDatos
                 this.ConfigurarConexion(tabla);
                 this.Conect.EsSelect = true;
                 this.Conect.CadenaSQL = "SELECT * FROM " + tabla + " WHERE " + filtro;
-                // Valida si es numerico para realizar la consulta correspondiente.
-                if (Regex.IsMatch(valor, @"^\d+$"))
+                this.Conect.CadenaSQL += " = '" + valor + "' ORDER BY " + filtro;
+                if (sentido == true)
                 {
-                    this.Conect.CadenaSQL += " = " + valor + " ORDER BY ";
+                    this.Conect.CadenaSQL += " DESC;";
                 }
-                else
+                else if(sentido == false)
                 {
-                    this.Conect.CadenaSQL += " = '" + valor + "' ORDER BY ";
+                    this.Conect.CadenaSQL += " ASC;";
                 }
-                if (sentido)
+                this.Conect.conectar();
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("error, fallo al utilizar listaUtil1 " + e + "\n");
+                return null;
+            }
+            return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
+        }
+        // Version para int
+        public DataTable ListaUtils(String filtro, int valor, bool sentido, String tabla)
+        {
+            try
+            {
+                this.ConfigurarConexion(tabla);
+                this.Conect.EsSelect = true;
+                this.Conect.CadenaSQL = "SELECT * FROM " + tabla + " WHERE " + filtro;
+                this.Conect.CadenaSQL += " = " + valor + " ORDER BY " + filtro;
+                if (sentido == true)
                 {
-                    this.Conect.CadenaSQL += "DESC;";
+                    this.Conect.CadenaSQL += " DESC;";
                 }
-                else
+                else if (sentido == false)
                 {
-                    this.Conect.CadenaSQL += "ASC;";
+                    this.Conect.CadenaSQL += " ASC;";
                 }
                 this.Conect.conectar();
             }
@@ -129,6 +145,40 @@ namespace CapaDatos
                 return null;
             }
             return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
+        }
+        // Configura el id del usuario
+        public bool ConfiguraSesion(String nombre, String contra)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                String CadenaSQL = "SELECT IdUsuario FROM tbUsuario WHERE NombreUsuario = '"
+                                         + nombre + "' AND Contrasena = '" + contra + "';";
+                dt = this.ConfigurarConexion("tbUsuario", CadenaSQL);
+                String id = (String)dt.Rows[0]["IdUsuario"].ToString();
+                return RegistraSesion(id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error, fallo al configurar la sesion actual " + ex + "\n");
+                return false;
+            }
+        }
+        // Registra la sesion actual.
+        private bool RegistraSesion(String id)
+        {
+            try
+            {
+                String CadenaSQL = "UPDATE tbSesion SET Sesion = '"
+                                    + id + "' WHERE id = 0;";
+                return ConfigurarConexion("tbSesion", CadenaSQL, false);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error, fallo al registrar la sesion actual " + ex + "\n");
+                return false;
+            }
         }
     }
 }

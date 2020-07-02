@@ -72,6 +72,17 @@
             this.btnLogIn.TabIndex = 8;
             this.btnLogIn.Text = "LogIn";
             this.btnLogIn.UseVisualStyleBackColor = true;
+            this.btnListar.Location = new System.Drawing.Point(14, 306);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(2);
+            this.btnListar.Name = "btnListar";
+            this.btnListar.Size = new System.Drawing.Size(59, 32);
+            this.btnListar.TabIndex = 3;
+            this.btnListar.Text = "Listar";
+            this.btnListar.UseVisualStyleBackColor = true;
+            this.btnListar.Click += new System.EventHandler(this.btnListar_Click);
+            // 
+            // btnSalir
+            // 
             this.btnLogIn.Click += new System.EventHandler(this.btnLogIn_Click);
             // 
             // btnSalir

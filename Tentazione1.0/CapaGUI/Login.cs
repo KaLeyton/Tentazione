@@ -66,11 +66,12 @@ namespace CapaGUI
             ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxUsuario = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
+            bool validad = auxUsuario.ServiceRegistrarUsuario(nombre, contrasena);
             try
             {   // Verifica si se creo correctamente el usuario
-                if (auxUsuario.ServiceRegistrarUsuario(nombre,contrasena))
+                if (validad == true)
                 {
-                    MessageBox.Show("Ingresar Datos Válidos", "Utilice sus credeciales para iniciar sesion.");
+                    MessageBox.Show("Datos Válidos", "Utilice sus credeciales para iniciar sesion.");
                 }
             }
             catch (Exception ex)

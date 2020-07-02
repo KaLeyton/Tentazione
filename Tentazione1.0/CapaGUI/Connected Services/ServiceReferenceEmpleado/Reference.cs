@@ -39,10 +39,10 @@ namespace CapaGUI.ServiceReferenceEmpleado {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaProducto", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CapaGUI.ServiceReferenceEmpleado.Producto ServiceBuscaProducto(string filtro, string valor);
+        System.Data.DataTable ServiceBuscaProducto(string filtro, string valor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaProducto", ReplyAction="*")]
-        System.Threading.Tasks.Task<CapaGUI.ServiceReferenceEmpleado.Producto> ServiceBuscaProductoAsync(string filtro, string valor);
+        System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscaProductoAsync(string filtro, string valor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceEliminaProducto", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -60,10 +60,10 @@ namespace CapaGUI.ServiceReferenceEmpleado {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaCliente", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CapaGUI.ServiceReferenceEmpleado.Cliente ServiceBuscaCliente(string filtro, string valor);
+        System.Data.DataTable ServiceBuscaCliente(string filtro, string valor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaCliente", ReplyAction="*")]
-        System.Threading.Tasks.Task<CapaGUI.ServiceReferenceEmpleado.Cliente> ServiceBuscaClienteAsync(string filtro, string valor);
+        System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscaClienteAsync(string filtro, string valor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceActualizaCliente", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -402,11 +402,11 @@ namespace CapaGUI.ServiceReferenceEmpleado {
             return base.Channel.ServiceListaProductoAsync(filtro, sentido);
         }
         
-        public CapaGUI.ServiceReferenceEmpleado.Producto ServiceBuscaProducto(string filtro, string valor) {
+        public System.Data.DataTable ServiceBuscaProducto(string filtro, string valor) {
             return base.Channel.ServiceBuscaProducto(filtro, valor);
         }
         
-        public System.Threading.Tasks.Task<CapaGUI.ServiceReferenceEmpleado.Producto> ServiceBuscaProductoAsync(string filtro, string valor) {
+        public System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscaProductoAsync(string filtro, string valor) {
             return base.Channel.ServiceBuscaProductoAsync(filtro, valor);
         }
         
@@ -426,11 +426,11 @@ namespace CapaGUI.ServiceReferenceEmpleado {
             return base.Channel.ServiceListaClienteAsync(filtro, sentido);
         }
         
-        public CapaGUI.ServiceReferenceEmpleado.Cliente ServiceBuscaCliente(string filtro, string valor) {
+        public System.Data.DataTable ServiceBuscaCliente(string filtro, string valor) {
             return base.Channel.ServiceBuscaCliente(filtro, valor);
         }
         
-        public System.Threading.Tasks.Task<CapaGUI.ServiceReferenceEmpleado.Cliente> ServiceBuscaClienteAsync(string filtro, string valor) {
+        public System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscaClienteAsync(string filtro, string valor) {
             return base.Channel.ServiceBuscaClienteAsync(filtro, valor);
         }
         

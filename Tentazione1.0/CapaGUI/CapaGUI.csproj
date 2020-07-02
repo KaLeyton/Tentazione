@@ -168,20 +168,8 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\ServiceReferenceCliente\CapaGUI.ServiceReferenceCliente.Producto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ServiceReferenceCliente\WebServiceUsuarioCliente.wsdl" />
-    <None Include="Connected Services\ServiceReferenceEmpleado\CapaGUI.ServiceReferenceEmpleado.Cliente.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
-    <None Include="Connected Services\ServiceReferenceEmpleado\CapaGUI.ServiceReferenceEmpleado.Producto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ServiceReferenceEmpleado\WebServiceUsuarioEmpleado.wsdl" />
-    <None Include="Connected Services\ServiceReferenceWeb\CapaGUI.ServiceReferenceWeb.Producto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ServiceReferenceWeb\WebServiceUsuarioWeb.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
