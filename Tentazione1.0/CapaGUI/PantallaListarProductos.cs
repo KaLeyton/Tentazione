@@ -37,5 +37,21 @@ namespace CapaGUI
             }
 
         }
+
+        private void btnBuscarProducto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxProducto = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
+                String filtro = "NombreProducto";
+                this.dataGridViewListaProductos.DataSource = auxProducto.ServiceBuscaProducto(filtro, txtBuscarProducto.Text);
+                Console.WriteLine("sdfasfa" + filtro + " " + txtBuscarProducto.Text);
+            }
+            catch (Exception ex)
+            {
+
+                Console.WriteLine("Error al buscar Productos " + ex + "\n");
+            }
+        }
     }
 }

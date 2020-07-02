@@ -32,10 +32,10 @@ namespace CapaGUI.ServiceReferenceWeb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaProducto", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        CapaGUI.ServiceReferenceWeb.Producto ServiceBuscaProducto(string filtro, string valor);
+        System.Data.DataTable ServiceBuscaProducto(string filtro, string valor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaProducto", ReplyAction="*")]
-        System.Threading.Tasks.Task<CapaGUI.ServiceReferenceWeb.Producto> ServiceBuscaProductoAsync(string filtro, string valor);
+        System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscaProductoAsync(string filtro, string valor);
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceRegistrarUsuario", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
@@ -43,94 +43,13 @@ namespace CapaGUI.ServiceReferenceWeb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceRegistrarUsuario", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> ServiceRegistrarUsuarioAsync(string nombre, string contra);
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
-    [System.SerializableAttribute()]
-    [System.Diagnostics.DebuggerStepThroughAttribute()]
-    [System.ComponentModel.DesignerCategoryAttribute("code")]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
-    public partial class Producto : object, System.ComponentModel.INotifyPropertyChanged {
         
-        private string skuField;
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceSesion", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        int ServiceSesion();
         
-        private string nombreProductoField;
-        
-        private int valorField;
-        
-        private double cantPaqueteField;
-        
-        private string unidadMedidaField;
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
-        public string Sku {
-            get {
-                return this.skuField;
-            }
-            set {
-                this.skuField = value;
-                this.RaisePropertyChanged("Sku");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
-        public string NombreProducto {
-            get {
-                return this.nombreProductoField;
-            }
-            set {
-                this.nombreProductoField = value;
-                this.RaisePropertyChanged("NombreProducto");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
-        public int Valor {
-            get {
-                return this.valorField;
-            }
-            set {
-                this.valorField = value;
-                this.RaisePropertyChanged("Valor");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
-        public double CantPaquete {
-            get {
-                return this.cantPaqueteField;
-            }
-            set {
-                this.cantPaqueteField = value;
-                this.RaisePropertyChanged("CantPaquete");
-            }
-        }
-        
-        /// <remarks/>
-        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
-        public string UnidadMedida {
-            get {
-                return this.unidadMedidaField;
-            }
-            set {
-                this.unidadMedidaField = value;
-                this.RaisePropertyChanged("UnidadMedida");
-            }
-        }
-        
-        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
-        
-        protected void RaisePropertyChanged(string propertyName) {
-            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
-            if ((propertyChanged != null)) {
-                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
-            }
-        }
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceSesion", ReplyAction="*")]
+        System.Threading.Tasks.Task<int> ServiceSesionAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -176,11 +95,11 @@ namespace CapaGUI.ServiceReferenceWeb {
             return base.Channel.ServiceListaProductoAsync(filtro, sentido);
         }
         
-        public CapaGUI.ServiceReferenceWeb.Producto ServiceBuscaProducto(string filtro, string valor) {
+        public System.Data.DataTable ServiceBuscaProducto(string filtro, string valor) {
             return base.Channel.ServiceBuscaProducto(filtro, valor);
         }
         
-        public System.Threading.Tasks.Task<CapaGUI.ServiceReferenceWeb.Producto> ServiceBuscaProductoAsync(string filtro, string valor) {
+        public System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscaProductoAsync(string filtro, string valor) {
             return base.Channel.ServiceBuscaProductoAsync(filtro, valor);
         }
         
@@ -190,6 +109,14 @@ namespace CapaGUI.ServiceReferenceWeb {
         
         public System.Threading.Tasks.Task<bool> ServiceRegistrarUsuarioAsync(string nombre, string contra) {
             return base.Channel.ServiceRegistrarUsuarioAsync(nombre, contra);
+        }
+        
+        public int ServiceSesion() {
+            return base.Channel.ServiceSesion();
+        }
+        
+        public System.Threading.Tasks.Task<int> ServiceSesionAsync() {
+            return base.Channel.ServiceSesionAsync();
         }
     }
 }

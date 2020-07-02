@@ -43,31 +43,20 @@ namespace CapaNegocio
                 return false;
             }
         }
-
-
         // Metodo para buscar 1 cliente, se entrega un filtro correspondiente a la columa para el Where, y el valor para cerrar la clausula.
         // Selecciona solo el primer resultado.
-        public Cliente BuscaCliente(String filtro, String valor)
+        public DataTable BuscaCliente(String filtro, String valor)
         {
-            Cliente auxCliente = new Cliente();
             try
             {
                 Utils util = new Utils();
-                DataTable dt = util.ListaUtils(filtro, valor, true, "tbCliente");
-
-                auxCliente.TbUsuario_IdUsuario = (int)dt.Rows[0]["tbUsuario_IdUsuario"];
-                auxCliente.NombreCompleto = (String)dt.Rows[0]["NombreCliente"];
-                auxCliente.Edad = (int)dt.Rows[0]["Edad"];
-                auxCliente.Telefono = (int)dt.Rows[0]["Telefono"];
-                auxCliente.Email = (String)dt.Rows[0]["Email"];
-                auxCliente.Sexo = (String)dt.Rows[0]["Sexo"];
+                return util.ListaUtils(filtro, valor, true, "tbCliente");
             }
             catch (Exception e)
             {
                 Console.WriteLine("error, fallo al buscar cliente " + e + "\n");
                 return null;
             }
-            return auxCliente;
         }
 
         // Insertar metodo que liste varios clientes por filtro.

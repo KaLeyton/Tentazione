@@ -36,7 +36,7 @@ namespace CapaServicios
         }
         // Busca 1 solo producto por valor. (aunque existan 2 iguales e DB)
         [WebMethod]
-        public Producto ServiceBuscaProducto(String filtro, String valor)
+        public DataTable ServiceBuscaProducto(String filtro, String valor)
         {
             NegocioProducto auxProducto = new NegocioProducto();
             return auxProducto.BuscaProducto(filtro, valor);
@@ -49,7 +49,7 @@ namespace CapaServicios
             return auxUsuario.RegistrarUsuario(nombre,contra);
         }
         [WebMethod]
-        public int ServiceSesion()
+        public String ServiceSesion()
         {
             NegocioLogin auxLogin = new NegocioLogin();
             return auxLogin.BuscaSesion();

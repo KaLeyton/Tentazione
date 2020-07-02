@@ -11,7 +11,7 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Threading;
 using CapaServicios;
-
+using CapaNegocio;
 
 namespace CapaGUI
 {
@@ -24,12 +24,20 @@ namespace CapaGUI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Login aLogin = new Login();
-            ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxLogin = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
+            /////////////METODO WEB SERVICE
+            //ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxLogin = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
+            /////////////METODO NEGOCIO
+            NegocioLogin auxLogin = new NegocioLogin();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
+            Console.WriteLine(nombre + "AAAAAAAAA" + contrasena);
             try
             {
-                String respuesta = auxLogin.ServiceValidaLogIn(nombre, contrasena);
+                ///////////////METODO WEB SERVICE
+                //String respuesta = auxLogin.ServiceValidaLogIn(nombre, contrasena);
+                //////////////METODO NEGOCIO
+                String respuesta = auxLogin.ValidaLogIn(nombre, contrasena);
+                Console.WriteLine("SSSSSSSSSSS" + respuesta);
                 if (respuesta.Equals("Cliente"))
                 {
                     MessageBox.Show("Estimado Cliente, Bienvenido");

@@ -49,7 +49,7 @@ namespace CapaServicios
         }
         // Busca un producto en particular.
         [WebMethod]
-        public Producto ServiceBuscaProducto(String filtro, String valor)
+        public DataTable ServiceBuscaProducto(String filtro, String valor)
         {
             NegocioProducto auxProducto = new NegocioProducto();
             return auxProducto.BuscaProducto(filtro, valor);

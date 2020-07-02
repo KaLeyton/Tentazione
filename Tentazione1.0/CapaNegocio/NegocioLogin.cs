@@ -57,5 +57,25 @@ namespace CapaNegocio
                 return null;
             }
         }
+        // Busca la sesion activa del programa, para este MVP se sacrifico seguridad y escalabilidad, siendo limitado a 1 solo usuario a la vez.
+        // En futuras iteraciones se modificara.
+        public String BuscaSesion()
+        {
+            Utils utils = new Utils();
+            DataTable dt = new DataTable();
+            try
+            {
+                String CadenaSQL = "SELECT * FROM tbSesion;";
+                dt = utils.ConfigurarConexion("tbSesion", CadenaSQL);
+                String id = (String)dt.Rows[0]["Sesion"];
+                Console.WriteLine("waaaaaaaaaaaa" + id);
+                return id;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Hay problemas en la busqueda de sesiones :  " + e + "\n");
+                return null;
+            }
+        }
     }
 }

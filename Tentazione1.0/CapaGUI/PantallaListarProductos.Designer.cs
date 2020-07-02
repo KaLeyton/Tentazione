@@ -42,7 +42,7 @@
             // 
             this.dataGridViewListaProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewListaProductos.Location = new System.Drawing.Point(50, 110);
-            this.dataGridViewListaProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewListaProductos.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewListaProductos.Name = "dataGridViewListaProductos";
             this.dataGridViewListaProductos.RowHeadersWidth = 51;
             this.dataGridViewListaProductos.RowTemplate.Height = 24;
@@ -63,7 +63,7 @@
             // btnLogIn
             // 
             this.btnLogIn.Location = new System.Drawing.Point(164, 306);
-            this.btnLogIn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogIn.Margin = new System.Windows.Forms.Padding(2);
             this.btnLogIn.Name = "btnLogIn";
             this.btnLogIn.Size = new System.Drawing.Size(59, 32);
             this.btnLogIn.TabIndex = 2;
@@ -73,7 +73,7 @@
             // btnListar
             // 
             this.btnListar.Location = new System.Drawing.Point(14, 306);
-            this.btnListar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListar.Margin = new System.Windows.Forms.Padding(2);
             this.btnListar.Name = "btnListar";
             this.btnListar.Size = new System.Drawing.Size(59, 32);
             this.btnListar.TabIndex = 3;
@@ -84,7 +84,7 @@
             // btnSalir
             // 
             this.btnSalir.Location = new System.Drawing.Point(314, 305);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(59, 32);
             this.btnSalir.TabIndex = 4;
@@ -95,17 +95,18 @@
             // btnBuscarProducto
             // 
             this.btnBuscarProducto.Location = new System.Drawing.Point(251, 80);
-            this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Size = new System.Drawing.Size(56, 19);
             this.btnBuscarProducto.TabIndex = 5;
             this.btnBuscarProducto.Text = "Buscar";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // txtBuscarProducto
             // 
             this.txtBuscarProducto.Location = new System.Drawing.Point(84, 80);
-            this.txtBuscarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscarProducto.Margin = new System.Windows.Forms.Padding(2);
             this.txtBuscarProducto.Name = "txtBuscarProducto";
             this.txtBuscarProducto.Size = new System.Drawing.Size(76, 20);
             this.txtBuscarProducto.TabIndex = 6;
@@ -122,7 +123,7 @@
             this.Controls.Add(this.btnLogIn);
             this.Controls.Add(this.lblProductos);
             this.Controls.Add(this.dataGridViewListaProductos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PantallaListarProductos";
             this.Text = "PantallaListarProductos";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewListaProductos)).EndInit();

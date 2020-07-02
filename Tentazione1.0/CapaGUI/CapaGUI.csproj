@@ -94,12 +94,6 @@
     <Compile Include="PantallaAdministradorClientes.Designer.cs">
       <DependentUpon>PantallaAdministradorClientes.cs</DependentUpon>
     </Compile>
-    <Compile Include="PantallaCrearCliente.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="PantallaCrearCliente.Designer.cs">
-      <DependentUpon>PantallaCrearCliente.cs</DependentUpon>
-    </Compile>
     <Compile Include="PantallaListarProductos.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -147,9 +141,6 @@
     <EmbeddedResource Include="PantallaAdministrarProductos.resx">
       <DependentUpon>PantallaAdministrarProductos.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="PantallaCrearCliente.resx">
-      <DependentUpon>PantallaCrearCliente.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="PantallaListarProductos.resx">
       <DependentUpon>PantallaListarProductos.cs</DependentUpon>
     </EmbeddedResource>
@@ -174,20 +165,11 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="Connected Services\ServiceReferenceCliente\CapaGUI.ServiceReferenceCliente.Producto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ServiceReferenceCliente\WebServiceUsuarioCliente.wsdl" />
     <None Include="Connected Services\ServiceReferenceEmpleado\CapaGUI.ServiceReferenceEmpleado.Cliente.datasource">
       <DependentUpon>Reference.svcmap</DependentUpon>
     </None>
-    <None Include="Connected Services\ServiceReferenceEmpleado\CapaGUI.ServiceReferenceEmpleado.Producto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ServiceReferenceEmpleado\WebServiceUsuarioEmpleado.wsdl" />
-    <None Include="Connected Services\ServiceReferenceWeb\CapaGUI.ServiceReferenceWeb.Producto.datasource">
-      <DependentUpon>Reference.svcmap</DependentUpon>
-    </None>
     <None Include="Connected Services\ServiceReferenceWeb\WebServiceUsuarioWeb.wsdl" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
@@ -205,6 +187,10 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
+      <Project>{b03f0d23-e0da-485c-94d5-d331d8db25f5}</Project>
+      <Name>CapaNegocio</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaServicios\CapaServicios.csproj">
       <Project>{8af82a1e-f52d-4909-bc3f-6302c1f25b12}</Project>
       <Name>CapaServicios</Name>
