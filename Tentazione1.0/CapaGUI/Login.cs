@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
-using CapaDTO;
 using System.Threading;
 using CapaServicios;
 
@@ -43,14 +42,12 @@ namespace CapaGUI
                     MenuEmpleado pantEmpleado = new MenuEmpleado();
                     pantEmpleado.ShowDialog();
                 }
-                else
-                {
-                    MessageBox.Show("Ingresar Datos Válidos", "Alerta! nos tan hackian2");
-                }
             }
             catch (Exception ex)
             {
                 Console.WriteLine("error de logIn :  " + ex + "\n");
+                MessageBox.Show("UwU!" + "\n" + "No se encuentra en el sistema,"+ "\n" 
+                                    + "si cree que fue un error contacte con el administrador.");
             }
             aLogin.Dispose();
         }
@@ -61,8 +58,20 @@ namespace CapaGUI
         }
         private void BtnCrearUsuario_Click(object sender, EventArgs e)
         {
-            PantallaCrearCliente pCrear = new PantallaCrearCliente();
-            pCrear.ShowDialog();
+            ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxUsuario = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
+            String nombre = this.txtNombreUsuario.Text;
+            String contrasena = this.txtContrasena.Text;
+            try
+            {   // Verifica si se creo correctamente el usuario
+                if (auxUsuario.ServiceRegistrarUsuario(nombre,contrasena))
+                {
+                    MessageBox.Show("Ingresar Datos Válidos", "Utilice sus credeciales para iniciar sesion.");
+                }
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error, el nombre de usuario ya se encuentra registrado " + ex + "\n");
+            }
         }
         private void btnSalir_Click(object sender, EventArgs e)
         {

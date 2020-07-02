@@ -11,7 +11,7 @@ namespace CapaNegocio
 {
     public class NegocioEmpleado
     {
-        //Metodo para listar Empleados por columna.
+        // Metodo para listar Empleados por columna.
         public DataTable ListaEmpleado(String filtro, bool sentido)
         {
             try
@@ -21,12 +21,11 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al listar empleados " + e + "\n");
                 return null;
             }
         }
-
-        //Envia un registro de Empleado, retorna una confirmacion.
+        // Envia un registro de Empleado, retorna una confirmacion.
         public bool RegistrarEmpleado(Empleado empleado)
         {
             try
@@ -35,19 +34,19 @@ namespace CapaNegocio
                 String CadenaSQL = "INSERT INTO tbEmpleado (tbUsuario_IdUsuario, nombreCompleto,edad,telefono,email,sexo) VALUES ("
                                          + empleado.TbUsuario_IdUsuario + ",'" + empleado.NombreCompleto + "'," + empleado.Edad + ","
                                          + empleado.Telefono + ",'" + empleado.Email + "','" + empleado.Sexo + "');";
-                //Entrega confirmacion.
+                // Entrega confirmacion.
                 return utils.ConfigurarConexion("tbEmpleado", CadenaSQL, false);
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al registrar empleados " + e + "\n");
                 return false;
             }
         }
 
 
-        //Metodo para buscar 1 Empleado, se entrega un filtro correspondiente a la columa para el Where, y el valor para cerrar la clausula.
-        //Selecciona solo el primer resultado.
+        // Metodo para buscar 1 Empleado, se entrega un filtro correspondiente a la columa para el Where, y el valor para cerrar la clausula.
+        // Selecciona solo el primer resultado.
         public Empleado BuscaEmpleado(String filtro, String valor)
         {
             Empleado auxEmpleado = new Empleado();
@@ -65,17 +64,17 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al buscar empleados " + e + "\n");
                 return null;
             }
             return auxEmpleado;
         }
 
-        //Insertar metodo que liste varios Empleado por filtro.
-        //[MEJORA CONTINUA]
+        // Insertar metodo que liste varios Empleado por filtro.
+        // [MEJORA CONTINUA]
 
 
-        //Actualiza un Empleado, seleccionado por id
+        // Actualiza un Empleado, seleccionado por id
         public bool ActualizaEmpleado(Empleado empleado)
         {
             try
@@ -88,12 +87,11 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al actualizar empleados " + e + "\n");
                 return false;
             }
         }
-
-        //Elimina un Empleado, filtrado por su id
+        // Elimina un Empleado, filtrado por su id
         public bool EliminaEmpleado(int id)
         {
             try
@@ -104,7 +102,7 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al elimanar empleados " + e + "\n");
                 return false;
             }
         }

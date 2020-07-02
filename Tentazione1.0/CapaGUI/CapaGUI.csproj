@@ -205,14 +205,6 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">
-      <Project>{01dd6b9c-7756-40c0-96b8-d2780e502124}</Project>
-      <Name>CapaDTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaNegocio\CapaNegocio.csproj">
-      <Project>{b03f0d23-e0da-485c-94d5-d331d8db25f5}</Project>
-      <Name>CapaNegocio</Name>
-    </ProjectReference>
     <ProjectReference Include="..\CapaServicios\CapaServicios.csproj">
       <Project>{8af82a1e-f52d-4909-bc3f-6302c1f25b12}</Project>
       <Name>CapaServicios</Name>

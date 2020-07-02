@@ -11,7 +11,7 @@ namespace CapaNegocio
 {
     public class NegocioProducto
     {
-        //Envia un registro de producto, retorna una confirmacion.
+        // Envia un registro de producto, retorna una confirmacion.
         public bool RegistrarProducto(Producto producto)
         {
             try
@@ -20,17 +20,16 @@ namespace CapaNegocio
                 String CadenaSQL = "INSERT INTO tbProducto (SkuProducto,NombreProducto,Valor,CantPaquete,UnidadMedida) VALUES ('"
                                          + producto.Sku + "','" + producto.NombreProducto + "',"
                                          + producto.Valor + ",'" + producto.CantPaquete + "','" + producto.UnidadMedida + "');";
-                //Entrega confirmacion.
+                // Entrega confirmacion.
                 return utils.ConfigurarConexion("tbProducto", CadenaSQL, false);
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al registrar productos " + e + "\n");
                 return false;
             }
         }
-
-        //Metodo para listar productos columna.
+        // Metodo para listar productos columna.
         public DataTable ListaProducto(String filtro, bool sentido)
         {
             try
@@ -40,13 +39,12 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al listar productos " + e + "\n");
                 return null;
             }
         }
-
-        //Metodo para buscar 1 producto, se entrega un filtro correspondiente a la columa para el Where, y el valor para cerrar la clausula.
-        //Selecciona solo el primer resultado.
+        // Metodo para buscar 1 producto, se entrega un filtro correspondiente a la columa para el Where, y el valor para cerrar la clausula.
+        // Selecciona solo el primer resultado.
         public Producto BuscaProducto(String filtro, String valor)
         {
             Producto auxProducto = new Producto();
@@ -63,17 +61,16 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al buscar productos " + e + "\n");
                 return null;
             }
             return auxProducto;
         }
+        // Insertar metodo que liste varios productos por filtro.
+        // [MEJORA CONTINUA]
 
-        //Insertar metodo que liste varios productos por filtro.
-        //[MEJORA CONTINUA]
 
-
-        //Actualiza un producto, seleccionado por Sku
+        // Actualiza un producto, seleccionado por Sku
         public bool ActualizaProducto(Producto producto)
         {
             try
@@ -86,12 +83,11 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al actualizar productos " + e + "\n");
                 return false;
             }
         }
-
-        //Elimina un producto, filtrado por Sku
+        // Elimina un producto, filtrado por Sku
         public bool EliminaProducto(String sku)
         {
             try
@@ -102,7 +98,7 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al eliminar productos " + e + "\n");
                 return false;
             }
         }

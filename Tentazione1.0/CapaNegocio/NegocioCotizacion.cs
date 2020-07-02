@@ -21,7 +21,7 @@ namespace CapaNegocio
             }
             catch (Exception e)
             {
-                _ = e.Message;
+                Console.WriteLine("error, fallo al listar cotizaciones " + e + "\n");
                 return null;
             }
         }
