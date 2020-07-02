@@ -89,11 +89,11 @@ namespace CapaDatos
                 }
                 if (sentido)
                 {
-                    this.Conect.CadenaSQL += "DESC;";
+                    this.Conect.CadenaSQL += " DESC;";
                 }
                 else
                 {
-                    this.Conect.CadenaSQL += "ASC;";
+                    this.Conect.CadenaSQL += " ASC;";
                 }
                 this.Conect.conectar();
             }
@@ -129,6 +129,61 @@ namespace CapaDatos
                 return null;
             }
             return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
+        }
+        // Busca la sesion activa del programa, para este MVP se sacrifico seguridad y escalabilidad, siendo limitado a 1 solo usuario a la vez.
+        // En futuras iteraciones se modificara.
+        public int BuscaSesion()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                Utils utils = new Utils();
+                String CadenaSQL = "SELECT id FROM tbId";
+                dt = utils.ConfigurarConexion("tbId", CadenaSQL);
+                int id = (int)dt.Rows[0]["id"];
+                return id;
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("Hay problemas en la busqueda de sesiones :  " + e + "\n");
+                return 0;
+            }
+        }
+        // Configura el id del usuario
+        public bool ConfiguraSesion(String nombre, String contra)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                Utils utils = new Utils();
+                String CadenaSQL = "SELECT IdUsuario FROM tbUsuario WHERE NombreUsuario = '"
+                                         + nombre + "' AND Contrasena = '" + contra + "';";
+                dt = utils.ConfigurarConexion("tbUsuario", CadenaSQL);
+                int id = (int)dt.Rows[0]["IdUsuario"];
+                return RegistraSesion(id);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error, fallo al configurar la sesion actual " + ex + "\n");
+                return false;
+            }
+        }
+        // Registra la sesion actual.
+        private bool RegistraSesion(int id)
+        {
+            try
+            {
+                Utils utils = new Utils();
+                String CadenaSQL = "INSERT INTO tbId (id) VALUES ("
+                                    + id + ");";
+                return utils.ConfigurarConexion("tbId", CadenaSQL, false);
+
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error, fallo al registrar la sesion actual " + ex + "\n");
+                return false;
+            }
         }
     }
 }

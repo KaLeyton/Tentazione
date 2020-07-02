@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaServicios;
 
 namespace CapaGUI
 {
@@ -34,6 +35,13 @@ namespace CapaGUI
             this.Dispose();
             MenuCliente pantCliente = new MenuCliente();
             pantCliente.ShowDialog();
+        }
+
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            ServiceReferenceCliente.WebServiceUsuarioClienteSoapClient auxCliente = new ServiceReferenceCliente.WebServiceUsuarioClienteSoapClient();
+            ServiceReferenceCliente.Cliente cliente = new ServiceReferenceCliente.Cliente();
+            //todo
         }
     }
 }

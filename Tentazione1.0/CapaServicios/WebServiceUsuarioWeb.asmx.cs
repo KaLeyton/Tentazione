@@ -48,5 +48,11 @@ namespace CapaServicios
             NegocioUsuario auxUsuario = new NegocioUsuario();
             return auxUsuario.RegistrarUsuario(nombre,contra);
         }
+        [WebMethod]
+        public int ServiceSesion()
+        {
+            NegocioLogin auxLogin = new NegocioLogin();
+            return auxLogin.BuscaSesion();
+        }
     }
 }

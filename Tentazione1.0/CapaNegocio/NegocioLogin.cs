@@ -31,17 +31,25 @@ namespace CapaNegocio
         // Devuelve una respuesta sobre si las credenciales son correctas.
         public String ValidaLogIn(String nombre, String contrasena)
         {
+            Utils util = new Utils();
             DataTable dt = new DataTable();
             try
             {
                 String CadenaSQL = "SELECT Rol FROM tbUsuario WHERE NombreUsuario = '"
                                          + nombre + "' AND Contrasena = '" + contrasena + "';";
-                Console.WriteLine("sssss" + CadenaSQL);
                 dt = BuscaDatos(CadenaSQL, "tbUsuario");
-                Console.WriteLine("ssssllllls");
                 String result =  (String)dt.Rows[0]["Rol"];
-                Console.WriteLine("jkfkjhaskhj" + result);
-                return result;
+                // Invoca la configuracion
+                try
+                {
+                    util.ConfiguraSesion(nombre, contrasena);
+                    return result;
+                }
+                catch (Exception ex)
+                {
+                    Console.WriteLine("Error en la asignacion de sesion :  " + ex + "\n");
+                    return null;
+                }
             }
             catch (Exception e)
             {
