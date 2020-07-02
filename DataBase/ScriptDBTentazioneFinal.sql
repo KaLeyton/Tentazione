@@ -1,12 +1,13 @@
-DROP TABLE tbVenta ;
-DROP TABLE tbCliente ;
-DROP TABLE tbEmpleado ;
-DROP TABLE tbCotizacion ;
-DROP TABLE tbUsuario ;
-DROP TABLE tbDetalleVenta ;
-DROP TABLE tbProductoExtendido ;
-DROP TABLE tbDetalleCotizacion ;
-DROP TABLE tbProducto ;
+--DROP TABLE tbVenta ;
+--DROP TABLE tbCliente ;
+--DROP TABLE tbEmpleado ;
+--DROP TABLE tbCotizacion ;
+--DROP TABLE tbUsuario ;
+--DROP TABLE tbDetalleVenta ;
+--DROP TABLE tbProductoExtendido ;
+--DROP TABLE tbDetalleCotizacion ;
+--DROP TABLE tbProducto ;
+--DROP TABLE tbId;
 
 create table tbUsuario(IdUsuario int identity(1,1) not null,
 					   NombreUsuario varchar(20) unique not null,
@@ -65,6 +66,7 @@ create table tbProducto(SkuProducto int identity(1111,1) not null,
 						CantPaquete decimal not null,
 					    UnidadMedida varchar(15) not null);
 
+create table tbId (id int);
 
 ALTER TABLE tbUsuario ADD PRIMARY KEY (IdUsuario);
 ALTER TABLE tbVenta ADD PRIMARY KEY (IdVenta);

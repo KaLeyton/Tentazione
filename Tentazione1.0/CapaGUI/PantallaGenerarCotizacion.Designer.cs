@@ -28,146 +28,167 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblProductos = new System.Windows.Forms.Label();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
-            this.btnConfirmarCotizacion = new System.Windows.Forms.Button();
-            this.btnGenerarCotizacion = new System.Windows.Forms.Button();
-            this.btnListarProductos = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.txtBuscarProducto = new System.Windows.Forms.TextBox();
-            this.btnBuscarProducto = new System.Windows.Forms.Button();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
+            this.btnGenerarCotizacion = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnConfirmarCotizacion = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnListarProductos = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCancelar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnBuscarProducto = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCerrarSesion = new MaterialSkin.Controls.MaterialFlatButton();
+            this.txtBuscarProducto = new MaterialSkin.Controls.MaterialSingleLineTextField();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
-            // 
-            // lblProductos
-            // 
-            this.lblProductos.AutoSize = true;
-            this.lblProductos.Font = new System.Drawing.Font("Calibri", 36F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblProductos.Location = new System.Drawing.Point(100, 9);
-            this.lblProductos.Name = "lblProductos";
-            this.lblProductos.Size = new System.Drawing.Size(503, 73);
-            this.lblProductos.TabIndex = 0;
-            this.lblProductos.Text = "Generar Cotización";
             // 
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(33, 99);
+            this.dataGridView1.Location = new System.Drawing.Point(33, 160);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(496, 328);
             this.dataGridView1.TabIndex = 1;
             // 
-            // btnConfirmarCotizacion
-            // 
-            this.btnConfirmarCotizacion.Location = new System.Drawing.Point(684, 196);
-            this.btnConfirmarCotizacion.Name = "btnConfirmarCotizacion";
-            this.btnConfirmarCotizacion.Size = new System.Drawing.Size(88, 44);
-            this.btnConfirmarCotizacion.TabIndex = 2;
-            this.btnConfirmarCotizacion.Text = "Confirmar Cotizacion";
-            this.btnConfirmarCotizacion.UseVisualStyleBackColor = true;
-            // 
             // btnGenerarCotizacion
             // 
-            this.btnGenerarCotizacion.Location = new System.Drawing.Point(561, 196);
+            this.btnGenerarCotizacion.Depth = 0;
+            this.btnGenerarCotizacion.Location = new System.Drawing.Point(552, 274);
+            this.btnGenerarCotizacion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGenerarCotizacion.Name = "btnGenerarCotizacion";
-            this.btnGenerarCotizacion.Size = new System.Drawing.Size(88, 44);
-            this.btnGenerarCotizacion.TabIndex = 3;
-            this.btnGenerarCotizacion.Text = "Generar Cotizacion";
+            this.btnGenerarCotizacion.Primary = true;
+            this.btnGenerarCotizacion.Size = new System.Drawing.Size(117, 47);
+            this.btnGenerarCotizacion.TabIndex = 10;
+            this.btnGenerarCotizacion.Text = "Generar Cotización";
             this.btnGenerarCotizacion.UseVisualStyleBackColor = true;
+            this.btnGenerarCotizacion.Click += new System.EventHandler(this.btnGenerarCotizacion_Click);
+            // 
+            // btnConfirmarCotizacion
+            // 
+            this.btnConfirmarCotizacion.Depth = 0;
+            this.btnConfirmarCotizacion.Location = new System.Drawing.Point(552, 221);
+            this.btnConfirmarCotizacion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnConfirmarCotizacion.Name = "btnConfirmarCotizacion";
+            this.btnConfirmarCotizacion.Primary = true;
+            this.btnConfirmarCotizacion.Size = new System.Drawing.Size(117, 47);
+            this.btnConfirmarCotizacion.TabIndex = 11;
+            this.btnConfirmarCotizacion.Text = "Confirmar Productos";
+            this.btnConfirmarCotizacion.UseVisualStyleBackColor = true;
+            this.btnConfirmarCotizacion.Click += new System.EventHandler(this.btnConfirmarCotizacion_Click);
             // 
             // btnListarProductos
             // 
-            this.btnListarProductos.Location = new System.Drawing.Point(561, 279);
+            this.btnListarProductos.Depth = 0;
+            this.btnListarProductos.Location = new System.Drawing.Point(33, 522);
+            this.btnListarProductos.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnListarProductos.Name = "btnListarProductos";
-            this.btnListarProductos.Size = new System.Drawing.Size(88, 44);
-            this.btnListarProductos.TabIndex = 4;
+            this.btnListarProductos.Primary = true;
+            this.btnListarProductos.Size = new System.Drawing.Size(117, 47);
+            this.btnListarProductos.TabIndex = 12;
             this.btnListarProductos.Text = "Listar";
             this.btnListarProductos.UseVisualStyleBackColor = true;
+            this.btnListarProductos.Click += new System.EventHandler(this.btnListarProductos_Click);
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Depth = 0;
+            this.btnCancelar.Location = new System.Drawing.Point(552, 441);
+            this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Primary = true;
+            this.btnCancelar.Size = new System.Drawing.Size(117, 47);
+            this.btnCancelar.TabIndex = 13;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(684, 351);
+            this.btnSalir.Depth = 0;
+            this.btnSalir.Location = new System.Drawing.Point(552, 522);
+            this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(88, 44);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Primary = true;
+            this.btnSalir.Size = new System.Drawing.Size(117, 47);
+            this.btnSalir.TabIndex = 14;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // txtBuscarProducto
-            // 
-            this.txtBuscarProducto.Location = new System.Drawing.Point(561, 99);
-            this.txtBuscarProducto.Name = "txtBuscarProducto";
-            this.txtBuscarProducto.Size = new System.Drawing.Size(100, 22);
-            this.txtBuscarProducto.TabIndex = 6;
-            // 
             // btnBuscarProducto
             // 
-            this.btnBuscarProducto.Location = new System.Drawing.Point(684, 99);
+            this.btnBuscarProducto.Depth = 0;
+            this.btnBuscarProducto.Location = new System.Drawing.Point(552, 99);
+            this.btnBuscarProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscarProducto.Name = "btnBuscarProducto";
-            this.btnBuscarProducto.Size = new System.Drawing.Size(75, 23);
-            this.btnBuscarProducto.TabIndex = 7;
+            this.btnBuscarProducto.Primary = true;
+            this.btnBuscarProducto.Size = new System.Drawing.Size(117, 47);
+            this.btnBuscarProducto.TabIndex = 15;
             this.btnBuscarProducto.Text = "Buscar";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
+            this.btnBuscarProducto.Click += new System.EventHandler(this.btnBuscarProducto_Click);
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(700, 22);
+            this.btnCerrarSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCerrarSesion.Depth = 0;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(521, 30);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCerrarSesion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(87, 46);
-            this.btnCerrarSesion.TabIndex = 8;
+            this.btnCerrarSesion.Primary = false;
+            this.btnCerrarSesion.Size = new System.Drawing.Size(148, 27);
+            this.btnCerrarSesion.TabIndex = 16;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
-            // btnCancelar
+            // txtBuscarProducto
             // 
-            this.btnCancelar.Location = new System.Drawing.Point(684, 279);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(88, 44);
-            this.btnCancelar.TabIndex = 9;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            this.txtBuscarProducto.Depth = 0;
+            this.txtBuscarProducto.Hint = "";
+            this.txtBuscarProducto.Location = new System.Drawing.Point(356, 118);
+            this.txtBuscarProducto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBuscarProducto.Name = "txtBuscarProducto";
+            this.txtBuscarProducto.PasswordChar = '\0';
+            this.txtBuscarProducto.SelectedText = "";
+            this.txtBuscarProducto.SelectionLength = 0;
+            this.txtBuscarProducto.SelectionStart = 0;
+            this.txtBuscarProducto.Size = new System.Drawing.Size(173, 28);
+            this.txtBuscarProducto.TabIndex = 17;
+            this.txtBuscarProducto.Text = "Nombre Producto";
+            this.txtBuscarProducto.UseSystemPasswordChar = false;
+            this.txtBuscarProducto.Click += new System.EventHandler(this.txtBuscarProducto_Click);
             // 
             // PantallaGenerarCotizacion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(813, 458);
-            this.Controls.Add(this.btnCancelar);
+            this.ClientSize = new System.Drawing.Size(711, 617);
+            this.Controls.Add(this.txtBuscarProducto);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnBuscarProducto);
-            this.Controls.Add(this.txtBuscarProducto);
             this.Controls.Add(this.btnSalir);
+            this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnListarProductos);
-            this.Controls.Add(this.btnGenerarCotizacion);
             this.Controls.Add(this.btnConfirmarCotizacion);
+            this.Controls.Add(this.btnGenerarCotizacion);
             this.Controls.Add(this.dataGridView1);
-            this.Controls.Add(this.lblProductos);
             this.Name = "PantallaGenerarCotizacion";
-            this.Text = "PantallaProductosCliente";
+            this.Text = "Generar Cotización";
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Label lblProductos;
         private System.Windows.Forms.DataGridView dataGridView1;
-        private System.Windows.Forms.Button btnConfirmarCotizacion;
-        private System.Windows.Forms.Button btnGenerarCotizacion;
-        private System.Windows.Forms.Button btnListarProductos;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.TextBox txtBuscarProducto;
-        private System.Windows.Forms.Button btnBuscarProducto;
-        private System.Windows.Forms.Button btnCerrarSesion;
-        private System.Windows.Forms.Button btnCancelar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnGenerarCotizacion;
+        private MaterialSkin.Controls.MaterialRaisedButton btnConfirmarCotizacion;
+        private MaterialSkin.Controls.MaterialRaisedButton btnListarProductos;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCancelar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
+        private MaterialSkin.Controls.MaterialRaisedButton btnBuscarProducto;
+        private MaterialSkin.Controls.MaterialFlatButton btnCerrarSesion;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarProducto;
     }
 }
