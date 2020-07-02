@@ -22,3 +22,5 @@ C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNego
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\CapaNegocio.csproj.CopyComplete
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\CapaNegocio.dll
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaNegocio\obj\Debug\CapaNegocio.pdb
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaNegocio\bin\Debug\CapaDatos.dll
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaNegocio\bin\Debug\CapaDatos.pdb

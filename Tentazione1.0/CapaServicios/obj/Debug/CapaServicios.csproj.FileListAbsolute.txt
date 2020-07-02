@@ -87,3 +87,5 @@ C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServ
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\obj\Debug\CapaServicios.csproj.CopyComplete
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\obj\Debug\CapaServicios.dll
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaServicios\obj\Debug\CapaServicios.pdb
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaServicios\bin\CapaDatos.dll
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaServicios\bin\CapaDatos.pdb

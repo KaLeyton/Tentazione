@@ -44,9 +44,9 @@
             this.lblCrearUsuario.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCrearUsuario.Location = new System.Drawing.Point(12, 9);
             this.lblCrearUsuario.Name = "lblCrearUsuario";
-            this.lblCrearUsuario.Size = new System.Drawing.Size(297, 59);
+            this.lblCrearUsuario.Size = new System.Drawing.Size(284, 59);
             this.lblCrearUsuario.TabIndex = 0;
-            this.lblCrearUsuario.Text = "Crear Usuario";
+            this.lblCrearUsuario.Text = "Crear Cuenta";
             // 
             // lblNombreUduario
             // 

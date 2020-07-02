@@ -34,6 +34,7 @@
             this.btnPantRevisarCotizaciones = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnSalir = new System.Windows.Forms.Button();
+            this.btnEditarPerfil = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // lblMenuEmpleado
@@ -48,9 +49,9 @@
             // 
             // btnPantAdminCliente
             // 
-            this.btnPantAdminCliente.Location = new System.Drawing.Point(118, 106);
+            this.btnPantAdminCliente.Location = new System.Drawing.Point(119, 80);
             this.btnPantAdminCliente.Name = "btnPantAdminCliente";
-            this.btnPantAdminCliente.Size = new System.Drawing.Size(118, 42);
+            this.btnPantAdminCliente.Size = new System.Drawing.Size(118, 45);
             this.btnPantAdminCliente.TabIndex = 1;
             this.btnPantAdminCliente.Text = "Administrar Usuarios";
             this.btnPantAdminCliente.UseVisualStyleBackColor = true;
@@ -58,9 +59,9 @@
             // 
             // btnPantAdminProductos
             // 
-            this.btnPantAdminProductos.Location = new System.Drawing.Point(118, 165);
+            this.btnPantAdminProductos.Location = new System.Drawing.Point(119, 131);
             this.btnPantAdminProductos.Name = "btnPantAdminProductos";
-            this.btnPantAdminProductos.Size = new System.Drawing.Size(118, 42);
+            this.btnPantAdminProductos.Size = new System.Drawing.Size(118, 45);
             this.btnPantAdminProductos.TabIndex = 2;
             this.btnPantAdminProductos.Text = "Administrar Productos";
             this.btnPantAdminProductos.UseVisualStyleBackColor = true;
@@ -68,9 +69,9 @@
             // 
             // btnPantRevisarCotizaciones
             // 
-            this.btnPantRevisarCotizaciones.Location = new System.Drawing.Point(118, 224);
+            this.btnPantRevisarCotizaciones.Location = new System.Drawing.Point(119, 182);
             this.btnPantRevisarCotizaciones.Name = "btnPantRevisarCotizaciones";
-            this.btnPantRevisarCotizaciones.Size = new System.Drawing.Size(118, 42);
+            this.btnPantRevisarCotizaciones.Size = new System.Drawing.Size(118, 45);
             this.btnPantRevisarCotizaciones.TabIndex = 3;
             this.btnPantRevisarCotizaciones.Text = "Revisar Cotizaciones";
             this.btnPantRevisarCotizaciones.UseVisualStyleBackColor = true;
@@ -78,9 +79,9 @@
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(118, 283);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(119, 284);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(118, 42);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(118, 45);
             this.btnCerrarSesion.TabIndex = 4;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -88,26 +89,37 @@
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(118, 342);
+            this.btnSalir.Location = new System.Drawing.Point(119, 335);
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(118, 42);
+            this.btnSalir.Size = new System.Drawing.Size(118, 45);
             this.btnSalir.TabIndex = 5;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // MenúEmpleado
+            // btnEditarPerfil
+            // 
+            this.btnEditarPerfil.Location = new System.Drawing.Point(119, 233);
+            this.btnEditarPerfil.Name = "btnEditarPerfil";
+            this.btnEditarPerfil.Size = new System.Drawing.Size(118, 45);
+            this.btnEditarPerfil.TabIndex = 6;
+            this.btnEditarPerfil.Text = "Editar Perfil";
+            this.btnEditarPerfil.UseVisualStyleBackColor = true;
+            this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
+            // 
+            // MenuEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(369, 452);
+            this.ClientSize = new System.Drawing.Size(375, 409);
+            this.Controls.Add(this.btnEditarPerfil);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnPantRevisarCotizaciones);
             this.Controls.Add(this.btnPantAdminProductos);
             this.Controls.Add(this.btnPantAdminCliente);
             this.Controls.Add(this.lblMenuEmpleado);
-            this.Name = "MenúEmpleado";
+            this.Name = "MenuEmpleado";
             this.Text = "MenúEmpleado";
             this.Load += new System.EventHandler(this.MenúEmpleado_Load);
             this.ResumeLayout(false);
@@ -123,5 +135,6 @@
         private System.Windows.Forms.Button btnPantRevisarCotizaciones;
         private System.Windows.Forms.Button btnCerrarSesion;
         private System.Windows.Forms.Button btnSalir;
+        private System.Windows.Forms.Button btnEditarPerfil;
     }
 }
