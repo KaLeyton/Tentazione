@@ -11,17 +11,22 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Threading;
 using CapaServicios;
-
+using MaterialSkin.Controls;
+using MaterialSkin;
 
 namespace CapaGUI
 {
-    public partial class Login : Form
+    public partial class Login : MaterialForm 
     {
         public Login()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.Grey900, Primary.Brown500, Accent.LightBlue700, TextShade.WHITE);
         }
-        private void btnLogin_Click(object sender, EventArgs e)
+        private void btnLogin_Click_1(object sender, EventArgs e)
         {
             Login aLogin = new Login();
             ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxLogin = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
@@ -74,6 +79,32 @@ namespace CapaGUI
             }
         }
         private void btnSalir_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void txtNombreUsuario_Click(object sender, EventArgs e)
+        {
+            this.txtNombreUsuario.Text = String.Empty;
+        }
+
+        private void txtContrasena_Click(object sender, EventArgs e)
+        {
+            this.txtContrasena.Text = String.Empty;
+        }
+
+        private void btnVerProductos_Click_1(object sender, EventArgs e)
+        {
+            PantallaListarProductos pantListar = new PantallaListarProductos();
+            pantListar.ShowDialog();
+        }
+
+        private void btnCrearUsuario_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSalir_Click_1(object sender, EventArgs e)
         {
             Application.Exit();
         }

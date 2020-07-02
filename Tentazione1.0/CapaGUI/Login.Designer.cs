@@ -29,126 +29,136 @@
         private void InitializeComponent()
         {
             this.lblLogin = new System.Windows.Forms.Label();
-            this.txtNombreUsuario = new System.Windows.Forms.TextBox();
-            this.lblNombreUsuario = new System.Windows.Forms.Label();
-            this.lblContrasena = new System.Windows.Forms.Label();
-            this.txtContrasena = new System.Windows.Forms.TextBox();
-            this.btnLogin = new System.Windows.Forms.Button();
-            this.btnVerProductos = new System.Windows.Forms.Button();
-            this.BtnCrearUsuario = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnLogin = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnVerProductos = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnCrearUsuario = new MaterialSkin.Controls.MaterialFlatButton();
+            this.btnSalir = new MaterialSkin.Controls.MaterialFlatButton();
+            this.txtNombreUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtContrasena = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
             // 
             // lblLogin
             // 
             this.lblLogin.AutoSize = true;
             this.lblLogin.Font = new System.Drawing.Font("Calibri", 22.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLogin.Location = new System.Drawing.Point(56, 30);
-            this.lblLogin.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.lblLogin.Location = new System.Drawing.Point(77, 45);
             this.lblLogin.Name = "lblLogin";
-            this.lblLogin.Size = new System.Drawing.Size(83, 37);
+            this.lblLogin.Size = new System.Drawing.Size(0, 46);
             this.lblLogin.TabIndex = 0;
-            this.lblLogin.Text = "Login";
-            // 
-            // txtNombreUsuario
-            // 
-            this.txtNombreUsuario.Location = new System.Drawing.Point(44, 133);
-            this.txtNombreUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtNombreUsuario.Name = "txtNombreUsuario";
-            this.txtNombreUsuario.Size = new System.Drawing.Size(102, 20);
-            this.txtNombreUsuario.TabIndex = 1;
-            // 
-            // lblNombreUsuario
-            // 
-            this.lblNombreUsuario.AutoSize = true;
-            this.lblNombreUsuario.Location = new System.Drawing.Point(52, 115);
-            this.lblNombreUsuario.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblNombreUsuario.Name = "lblNombreUsuario";
-            this.lblNombreUsuario.Size = new System.Drawing.Size(86, 13);
-            this.lblNombreUsuario.TabIndex = 2;
-            this.lblNombreUsuario.Text = "Nombre Usuario:";
-            // 
-            // lblContrasena
-            // 
-            this.lblContrasena.AutoSize = true;
-            this.lblContrasena.Location = new System.Drawing.Point(63, 177);
-            this.lblContrasena.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblContrasena.Name = "lblContrasena";
-            this.lblContrasena.Size = new System.Drawing.Size(64, 13);
-            this.lblContrasena.TabIndex = 3;
-            this.lblContrasena.Text = "Contraseña:";
-            this.lblContrasena.UseWaitCursor = true;
-            // 
-            // txtContrasena
-            // 
-            this.txtContrasena.Location = new System.Drawing.Point(45, 194);
-            this.txtContrasena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.txtContrasena.Name = "txtContrasena";
-            this.txtContrasena.Size = new System.Drawing.Size(100, 20);
-            this.txtContrasena.TabIndex = 4;
-            this.txtContrasena.UseSystemPasswordChar = true;
             // 
             // btnLogin
             // 
-            this.btnLogin.Location = new System.Drawing.Point(51, 233);
-            this.btnLogin.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnLogin.AutoSize = true;
+            this.btnLogin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnLogin.Depth = 0;
+            this.btnLogin.Location = new System.Drawing.Point(63, 252);
+            this.btnLogin.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnLogin.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(87, 19);
-            this.btnLogin.TabIndex = 5;
+            this.btnLogin.Primary = false;
+            this.btnLogin.Size = new System.Drawing.Size(78, 36);
+            this.btnLogin.TabIndex = 12;
             this.btnLogin.Text = "Entrar";
             this.btnLogin.UseVisualStyleBackColor = true;
-            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
+            this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click_1);
             // 
             // btnVerProductos
             // 
-            this.btnVerProductos.Location = new System.Drawing.Point(51, 261);
-            this.btnVerProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnVerProductos.AutoSize = true;
+            this.btnVerProductos.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnVerProductos.Depth = 0;
+            this.btnVerProductos.Location = new System.Drawing.Point(63, 300);
+            this.btnVerProductos.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnVerProductos.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnVerProductos.Name = "btnVerProductos";
-            this.btnVerProductos.Size = new System.Drawing.Size(87, 19);
-            this.btnVerProductos.TabIndex = 6;
+            this.btnVerProductos.Primary = false;
+            this.btnVerProductos.Size = new System.Drawing.Size(149, 36);
+            this.btnVerProductos.TabIndex = 13;
             this.btnVerProductos.Text = "Ver Productos";
             this.btnVerProductos.UseVisualStyleBackColor = true;
-            this.btnVerProductos.Click += new System.EventHandler(this.btnVerProductos_Click);
+            this.btnVerProductos.Click += new System.EventHandler(this.btnVerProductos_Click_1);
             // 
-            // BtnCrearUsuario
+            // btnCrearUsuario
             // 
-            this.BtnCrearUsuario.Location = new System.Drawing.Point(51, 289);
-            this.BtnCrearUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.BtnCrearUsuario.Name = "BtnCrearUsuario";
-            this.BtnCrearUsuario.Size = new System.Drawing.Size(87, 19);
-            this.BtnCrearUsuario.TabIndex = 7;
-            this.BtnCrearUsuario.Text = "Crear Usuario";
-            this.BtnCrearUsuario.UseVisualStyleBackColor = true;
-            this.BtnCrearUsuario.Click += new System.EventHandler(this.BtnCrearUsuario_Click);
+            this.btnCrearUsuario.AutoSize = true;
+            this.btnCrearUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCrearUsuario.Depth = 0;
+            this.btnCrearUsuario.Location = new System.Drawing.Point(63, 348);
+            this.btnCrearUsuario.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCrearUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCrearUsuario.Name = "btnCrearUsuario";
+            this.btnCrearUsuario.Primary = false;
+            this.btnCrearUsuario.Size = new System.Drawing.Size(143, 36);
+            this.btnCrearUsuario.TabIndex = 14;
+            this.btnCrearUsuario.Text = "Crear Usuario";
+            this.btnCrearUsuario.UseVisualStyleBackColor = true;
+            this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click_1);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(51, 318);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.AutoSize = true;
+            this.btnSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnSalir.Depth = 0;
+            this.btnSalir.Location = new System.Drawing.Point(63, 396);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(87, 19);
-            this.btnSalir.TabIndex = 8;
+            this.btnSalir.Primary = false;
+            this.btnSalir.Size = new System.Drawing.Size(60, 36);
+            this.btnSalir.TabIndex = 15;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click_1);
+            // 
+            // txtNombreUsuario
+            // 
+            this.txtNombreUsuario.Depth = 0;
+            this.txtNombreUsuario.Hint = "";
+            this.txtNombreUsuario.Location = new System.Drawing.Point(27, 127);
+            this.txtNombreUsuario.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNombreUsuario.Name = "txtNombreUsuario";
+            this.txtNombreUsuario.PasswordChar = '\0';
+            this.txtNombreUsuario.SelectedText = "";
+            this.txtNombreUsuario.SelectionLength = 0;
+            this.txtNombreUsuario.SelectionStart = 0;
+            this.txtNombreUsuario.Size = new System.Drawing.Size(225, 28);
+            this.txtNombreUsuario.TabIndex = 16;
+            this.txtNombreUsuario.Text = "Nombre Usuario";
+            this.txtNombreUsuario.UseSystemPasswordChar = false;
+            this.txtNombreUsuario.Click += new System.EventHandler(this.txtNombreUsuario_Click);
+            // 
+            // txtContrasena
+            // 
+            this.txtContrasena.Depth = 0;
+            this.txtContrasena.Hint = "";
+            this.txtContrasena.Location = new System.Drawing.Point(27, 187);
+            this.txtContrasena.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtContrasena.Name = "txtContrasena";
+            this.txtContrasena.PasswordChar = '\0';
+            this.txtContrasena.SelectedText = "";
+            this.txtContrasena.SelectionLength = 0;
+            this.txtContrasena.SelectionStart = 0;
+            this.txtContrasena.Size = new System.Drawing.Size(225, 28);
+            this.txtContrasena.TabIndex = 17;
+            this.txtContrasena.Text = "Contraseña";
+            this.txtContrasena.UseSystemPasswordChar = true;
+            this.txtContrasena.Click += new System.EventHandler(this.txtContrasena_Click);
             // 
             // Login
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(186, 373);
+            this.ClientSize = new System.Drawing.Size(287, 469);
+            this.Controls.Add(this.txtContrasena);
+            this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.BtnCrearUsuario);
+            this.Controls.Add(this.btnCrearUsuario);
             this.Controls.Add(this.btnVerProductos);
             this.Controls.Add(this.btnLogin);
-            this.Controls.Add(this.txtContrasena);
-            this.Controls.Add(this.lblContrasena);
-            this.Controls.Add(this.lblNombreUsuario);
-            this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.lblLogin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Login";
-            this.Text = "Form1";
+            this.Text = "LogIn";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -157,13 +167,11 @@
         #endregion
 
         private System.Windows.Forms.Label lblLogin;
-        private System.Windows.Forms.TextBox txtNombreUsuario;
-        private System.Windows.Forms.Label lblNombreUsuario;
-        private System.Windows.Forms.Label lblContrasena;
-        private System.Windows.Forms.TextBox txtContrasena;
-        private System.Windows.Forms.Button btnLogin;
-        private System.Windows.Forms.Button btnVerProductos;
-        private System.Windows.Forms.Button BtnCrearUsuario;
-        private System.Windows.Forms.Button btnSalir;
+        private MaterialSkin.Controls.MaterialFlatButton btnLogin;
+        private MaterialSkin.Controls.MaterialFlatButton btnVerProductos;
+        private MaterialSkin.Controls.MaterialFlatButton btnCrearUsuario;
+        private MaterialSkin.Controls.MaterialFlatButton btnSalir;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreUsuario;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtContrasena;
     }
 }

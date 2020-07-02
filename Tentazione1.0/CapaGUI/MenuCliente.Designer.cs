@@ -28,70 +28,74 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.lblMenuCliente = new System.Windows.Forms.Label();
-            this.btnPantGenerarCotizacion = new System.Windows.Forms.Button();
-            this.btnPantRevisarCotizaciones = new System.Windows.Forms.Button();
-            this.btnEditarPerfil = new System.Windows.Forms.Button();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
+            this.btnPantGenerarCotizacion = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnRevisarCotizaciones = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnEditarPerfil = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCerrarSesion = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
-            // 
-            // lblMenuCliente
-            // 
-            this.lblMenuCliente.AutoSize = true;
-            this.lblMenuCliente.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblMenuCliente.Location = new System.Drawing.Point(30, 25);
-            this.lblMenuCliente.Name = "lblMenuCliente";
-            this.lblMenuCliente.Size = new System.Drawing.Size(293, 59);
-            this.lblMenuCliente.TabIndex = 0;
-            this.lblMenuCliente.Text = "Menú Cliente";
             // 
             // btnPantGenerarCotizacion
             // 
-            this.btnPantGenerarCotizacion.Location = new System.Drawing.Point(117, 108);
+            this.btnPantGenerarCotizacion.Depth = 0;
+            this.btnPantGenerarCotizacion.Location = new System.Drawing.Point(81, 85);
+            this.btnPantGenerarCotizacion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnPantGenerarCotizacion.Name = "btnPantGenerarCotizacion";
-            this.btnPantGenerarCotizacion.Size = new System.Drawing.Size(113, 43);
-            this.btnPantGenerarCotizacion.TabIndex = 1;
+            this.btnPantGenerarCotizacion.Primary = true;
+            this.btnPantGenerarCotizacion.Size = new System.Drawing.Size(165, 65);
+            this.btnPantGenerarCotizacion.TabIndex = 6;
             this.btnPantGenerarCotizacion.Text = "Generar Cotización";
             this.btnPantGenerarCotizacion.UseVisualStyleBackColor = true;
             this.btnPantGenerarCotizacion.Click += new System.EventHandler(this.btnPantGenerarCotizacion_Click);
             // 
-            // btnPantRevisarCotizaciones
+            // btnRevisarCotizaciones
             // 
-            this.btnPantRevisarCotizaciones.Location = new System.Drawing.Point(117, 158);
-            this.btnPantRevisarCotizaciones.Name = "btnPantRevisarCotizaciones";
-            this.btnPantRevisarCotizaciones.Size = new System.Drawing.Size(113, 43);
-            this.btnPantRevisarCotizaciones.TabIndex = 2;
-            this.btnPantRevisarCotizaciones.Text = "Revisar Cotizaciones";
-            this.btnPantRevisarCotizaciones.UseVisualStyleBackColor = true;
-            this.btnPantRevisarCotizaciones.Click += new System.EventHandler(this.btnPantRevisarCotizaciones_Click);
+            this.btnRevisarCotizaciones.Depth = 0;
+            this.btnRevisarCotizaciones.Location = new System.Drawing.Point(81, 167);
+            this.btnRevisarCotizaciones.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnRevisarCotizaciones.Name = "btnRevisarCotizaciones";
+            this.btnRevisarCotizaciones.Primary = true;
+            this.btnRevisarCotizaciones.Size = new System.Drawing.Size(165, 65);
+            this.btnRevisarCotizaciones.TabIndex = 7;
+            this.btnRevisarCotizaciones.Text = "Revisar Cotizaciones";
+            this.btnRevisarCotizaciones.UseVisualStyleBackColor = true;
+            this.btnRevisarCotizaciones.Click += new System.EventHandler(this.btnRevisarCotizaciones_Click);
             // 
             // btnEditarPerfil
             // 
-            this.btnEditarPerfil.Location = new System.Drawing.Point(117, 208);
+            this.btnEditarPerfil.Depth = 0;
+            this.btnEditarPerfil.Location = new System.Drawing.Point(81, 249);
+            this.btnEditarPerfil.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditarPerfil.Name = "btnEditarPerfil";
-            this.btnEditarPerfil.Size = new System.Drawing.Size(113, 43);
-            this.btnEditarPerfil.TabIndex = 3;
+            this.btnEditarPerfil.Primary = true;
+            this.btnEditarPerfil.Size = new System.Drawing.Size(165, 65);
+            this.btnEditarPerfil.TabIndex = 8;
             this.btnEditarPerfil.Text = "Editar Perfil";
             this.btnEditarPerfil.UseVisualStyleBackColor = true;
             this.btnEditarPerfil.Click += new System.EventHandler(this.btnEditarPerfil_Click);
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(117, 258);
+            this.btnCerrarSesion.Depth = 0;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(81, 331);
+            this.btnCerrarSesion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(113, 43);
-            this.btnCerrarSesion.TabIndex = 4;
+            this.btnCerrarSesion.Primary = true;
+            this.btnCerrarSesion.Size = new System.Drawing.Size(165, 65);
+            this.btnCerrarSesion.TabIndex = 9;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(117, 308);
+            this.btnSalir.Depth = 0;
+            this.btnSalir.Location = new System.Drawing.Point(81, 413);
+            this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(113, 43);
-            this.btnSalir.TabIndex = 5;
+            this.btnSalir.Primary = true;
+            this.btnSalir.Size = new System.Drawing.Size(165, 65);
+            this.btnSalir.TabIndex = 10;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
@@ -100,27 +104,24 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(351, 384);
+            this.ClientSize = new System.Drawing.Size(349, 515);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnEditarPerfil);
-            this.Controls.Add(this.btnPantRevisarCotizaciones);
+            this.Controls.Add(this.btnRevisarCotizaciones);
             this.Controls.Add(this.btnPantGenerarCotizacion);
-            this.Controls.Add(this.lblMenuCliente);
             this.Name = "MenuCliente";
             this.Text = "MenuCliente";
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
         #endregion
 
-        private System.Windows.Forms.Label lblMenuCliente;
-        private System.Windows.Forms.Button btnPantGenerarCotizacion;
-        private System.Windows.Forms.Button btnPantRevisarCotizaciones;
-        private System.Windows.Forms.Button btnEditarPerfil;
-        private System.Windows.Forms.Button btnCerrarSesion;
-        private System.Windows.Forms.Button btnSalir;
+        private MaterialSkin.Controls.MaterialRaisedButton btnPantGenerarCotizacion;
+        private MaterialSkin.Controls.MaterialRaisedButton btnRevisarCotizaciones;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEditarPerfil;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCerrarSesion;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
     }
 }
