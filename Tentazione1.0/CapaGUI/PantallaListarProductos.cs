@@ -45,7 +45,6 @@ namespace CapaGUI
                 ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxProducto = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
                 String filtro = "NombreProducto";
                 this.dataGridViewListaProductos.DataSource = auxProducto.ServiceBuscaProducto(filtro, txtBuscarProducto.Text);
-                Console.WriteLine("sdfasfa" + filtro + " " + txtBuscarProducto.Text);
             }
             catch (Exception ex)
             {

@@ -11,7 +11,6 @@ using System.Configuration;
 using System.Data.SqlClient;
 using System.Threading;
 using CapaServicios;
-using CapaNegocio;
 
 namespace CapaGUI
 {
@@ -24,20 +23,12 @@ namespace CapaGUI
         private void btnLogin_Click(object sender, EventArgs e)
         {
             Login aLogin = new Login();
-            /////////////METODO WEB SERVICE
-            //ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxLogin = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
-            /////////////METODO NEGOCIO
-            NegocioLogin auxLogin = new NegocioLogin();
+            ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxLogin = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
-            Console.WriteLine(nombre + "AAAAAAAAA" + contrasena);
             try
             {
-                ///////////////METODO WEB SERVICE
-                //String respuesta = auxLogin.ServiceValidaLogIn(nombre, contrasena);
-                //////////////METODO NEGOCIO
-                String respuesta = auxLogin.ValidaLogIn(nombre, contrasena);
-                Console.WriteLine("SSSSSSSSSSS" + respuesta);
+                String respuesta = auxLogin.ServiceValidaLogIn(nombre, contrasena);
                 if (respuesta.Equals("Cliente"))
                 {
                     MessageBox.Show("Estimado Cliente, Bienvenido");
@@ -69,11 +60,12 @@ namespace CapaGUI
             ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxUsuario = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
+            bool validad = auxUsuario.ServiceRegistrarUsuario(nombre, contrasena);
             try
             {   // Verifica si se creo correctamente el usuario
-                if (auxUsuario.ServiceRegistrarUsuario(nombre,contrasena))
+                if (validad == true)
                 {
-                    MessageBox.Show("Ingresar Datos Válidos", "Utilice sus credeciales para iniciar sesion.");
+                    MessageBox.Show("Datos Válidos", "Utilice sus credeciales para iniciar sesion.");
                 }
             }
             catch (Exception ex)

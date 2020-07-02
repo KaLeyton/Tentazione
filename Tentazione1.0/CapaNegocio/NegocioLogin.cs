@@ -68,7 +68,6 @@ namespace CapaNegocio
                 String CadenaSQL = "SELECT * FROM tbSesion;";
                 dt = utils.ConfigurarConexion("tbSesion", CadenaSQL);
                 String id = (String)dt.Rows[0]["Sesion"];
-                Console.WriteLine("waaaaaaaaaaaa" + id);
                 return id;
             }
             catch (Exception e)

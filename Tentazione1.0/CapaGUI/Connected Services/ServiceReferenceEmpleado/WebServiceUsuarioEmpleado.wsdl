@@ -130,7 +130,21 @@
       <s:element name="ServiceBuscaClienteResponse">
         <s:complexType>
           <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="ServiceBuscaClienteResult" type="tns:Cliente" />
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceBuscaClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceActualizaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="tns:Cliente" />
           </s:sequence>
         </s:complexType>
       </s:element>
@@ -144,13 +158,6 @@
           <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
         </s:sequence>
       </s:complexType>
-      <s:element name="ServiceActualizaCliente">
-        <s:complexType>
-          <s:sequence>
-            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="tns:Cliente" />
-          </s:sequence>
-        </s:complexType>
-      </s:element>
       <s:element name="ServiceActualizaClienteResponse">
         <s:complexType>
           <s:sequence>

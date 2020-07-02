@@ -46,10 +46,10 @@ namespace CapaGUI.ServiceReferenceWeb {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceSesion", ReplyAction="*")]
         [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
-        int ServiceSesion();
+        string ServiceSesion();
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceSesion", ReplyAction="*")]
-        System.Threading.Tasks.Task<int> ServiceSesionAsync();
+        System.Threading.Tasks.Task<string> ServiceSesionAsync();
     }
     
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.ServiceModel", "4.0.0.0")]
@@ -111,11 +111,11 @@ namespace CapaGUI.ServiceReferenceWeb {
             return base.Channel.ServiceRegistrarUsuarioAsync(nombre, contra);
         }
         
-        public int ServiceSesion() {
+        public string ServiceSesion() {
             return base.Channel.ServiceSesion();
         }
         
-        public System.Threading.Tasks.Task<int> ServiceSesionAsync() {
+        public System.Threading.Tasks.Task<string> ServiceSesionAsync() {
             return base.Channel.ServiceSesionAsync();
         }
     }

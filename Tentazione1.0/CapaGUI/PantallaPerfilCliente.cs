@@ -9,7 +9,6 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using CapaGUI.ServiceReferenceCliente;
 using CapaGUI.ServiceReferenceEmpleado;
-using CapaNegocio;
 using CapaServicios;
 
 namespace CapaGUI
@@ -42,30 +41,41 @@ namespace CapaGUI
 
         private void btnGuardar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                ServiceReferenceCliente.Cliente cliente = new ServiceReferenceCliente.Cliente();
+                ServiceReferenceCliente.WebServiceUsuarioClienteSoapClient auxCliente = new WebServiceUsuarioClienteSoapClient();
+                cliente.TbUsuario_IdUsuario = int.Parse(txtIdCliente.Text);
+                cliente.NombreCompleto = txtNombreCompleto.Text;
+                cliente.Edad = int.Parse(txtEdad.Text);
+                cliente.Email = txtEmail.Text;
+                cliente.Sexo = txtSexo.Text;
+                cliente.Telefono = int.Parse(txtTelefono.Text);
+
+                if(auxCliente.ServiceActualizaCliente(cliente))
+                {
+                    MessageBox.Show("Se ha actualizado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Hay problemas con al actualizar");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas con el grabado de datos, deberia volver a ingresar");
+                Console.WriteLine("Problemas con la sesion " + ex + "\n");
+            }
 
         }
         // Busca la sesion para el cliente actual.
         private String SesionUsuario()
         {
-            //VERSION CON WEB SERVICE
-            //try
-            //{
-            //    ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxWeb = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
-            //    String id = auxWeb.ServiceSesion().ToString();
-            //    return id;
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("UwU!" + "\n" + "Hay problemas con su sesion, deberia volver a ingresar");
-            //    Console.WriteLine("Problemas con la sesion " + ex + "\n");
-            //    return null;
-            //}
-            //VERSION CAPA NEGOCIO
             try
             {
-                NegocioLogin negocio = new NegocioLogin();
-                String id = negocio.BuscaSesion();
-                Console.WriteLine("dfaSSSSSSSSsfsa" + id);
+                ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxWeb = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
+                String id = auxWeb.ServiceSesion();
                 return id;
             }
             catch (Exception ex)
@@ -78,30 +88,12 @@ namespace CapaGUI
         // Retorna el cliente actual para su uso
         private DataTable BuscaCliente()
         {
-            //EN WEBSERVICE
-            //////////////////////////////////////////////////////////////////
-            //try
-            //{
-            //    ServiceReferenceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxEmpleado = new WebServiceUsuarioEmpleadoSoapClient();
-            //    String filtro = "tbUsuario_IdUsuario";
-            //    String valor = SesionUsuario().ToString();
-            //    return auxEmpleado.ServiceBuscaProducto(filtro, valor);
-            //}
-            //catch (Exception ex)
-            //{
-            //    MessageBox.Show("UwU!" + "\n" + "Hay problemas con su sesion, deberia volver a ingresar");
-            //    Console.WriteLine("Problemas con Cliente " + ex + "\n");
-            //    return null;
-            //}
-            //////////////////////////////
-            ///EN NEGOCIO
             try
             {
-                NegocioCliente negocio = new NegocioCliente();
+                ServiceReferenceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxEmpleado = new WebServiceUsuarioEmpleadoSoapClient();
                 String filtro = "tbUsuario_IdUsuario";
                 String valor = SesionUsuario();
-                Console.WriteLine("fsafsaf" + filtro + "fasfas" + valor);
-                return negocio.BuscaCliente(filtro, valor);
+                return auxEmpleado.ServiceBuscaCliente(filtro, valor);
             }
             catch (Exception ex)
             {
@@ -115,20 +107,13 @@ namespace CapaGUI
             DataTable dt = new DataTable();
             try
             {
-                //esto FALLA
                 dt = BuscaCliente();
                 txtIdCliente.Text = (dt.Rows[0]["tbUsuario_IdUsuario"]).ToString();
-                Console.WriteLine("porque no quieres funcionar uwu" + txtIdCliente.Text);
                 txtNombreCompleto.Text = (String)dt.Rows[0]["NombreCompleto"];
-                Console.WriteLine("porque no quieres funcionar uwu2" + txtNombreCompleto.Text);
                 txtEdad.Text = (dt.Rows[0]["Edad"]).ToString();
-                Console.WriteLine("porque no quieres funcionar uwu3" + txtEdad.Text);
                 txtEmail.Text = (String)dt.Rows[0]["Email"];
-                Console.WriteLine("porque no quieres funcionar uwu4" + txtEmail.Text);
                 txtSexo.Text = (String)dt.Rows[0]["Sexo"];
-                Console.WriteLine("porque no quieres funcionar uwu5" + txtSexo.Text);
                 txtTelefono.Text = (dt.Rows[0]["Telefono"]).ToString();
-                Console.WriteLine("DIME QUE SI" + txtTelefono.Text);
 
             }
             catch (Exception ex)
