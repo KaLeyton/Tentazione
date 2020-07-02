@@ -43,10 +43,10 @@ namespace CapaServicios
         }
         // Crea un nuevo usuario
         [WebMethod]
-        public bool ServiceRegistrarUsuario(Usuario usuario)
+        public bool ServiceRegistrarUsuario(String nombre, String contra)
         {
             NegocioUsuario auxUsuario = new NegocioUsuario();
-            return auxUsuario.RegistrarUsuario(usuario);
+            return auxUsuario.RegistrarUsuario(nombre,contra);
         }
     }
 }
