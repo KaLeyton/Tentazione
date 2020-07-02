@@ -68,3 +68,5 @@ C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIW
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\CapaGUIWeb.csproj.CopyComplete
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\CapaGUIWeb.dll
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaGUIWeb\obj\Debug\CapaGUIWeb.pdb
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUIWeb\bin\CapaDatos.dll
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaGUIWeb\bin\CapaDatos.pdb

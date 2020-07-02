@@ -214,7 +214,7 @@
             // 
             this.btnBuscarCliente.Location = new System.Drawing.Point(535, 104);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(75, 23);
+            this.btnBuscarCliente.Size = new System.Drawing.Size(83, 24);
             this.btnBuscarCliente.TabIndex = 20;
             this.btnBuscarCliente.Text = "Buscar";
             this.btnBuscarCliente.UseVisualStyleBackColor = true;

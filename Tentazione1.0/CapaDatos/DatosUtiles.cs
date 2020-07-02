@@ -17,7 +17,7 @@ namespace CapaDatos
         {
             this.conect = new Conexion();
             this.Conect.NombreBaseDeDatos = "Tentazione";
-            this.Conect.CadenaConexion = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
+            this.Conect.CadenaConexion = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
             this.Conect.NombreTabla = tabla;
         }
         //Metodo para seleccionar datos y retornar un DataTable
@@ -25,7 +25,7 @@ namespace CapaDatos
         {
             this.conect = new Conexion();
             this.Conect.NombreBaseDeDatos = "Tentazione";
-            this.Conect.CadenaConexion = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
+            this.Conect.CadenaConexion = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
             this.Conect.NombreTabla = tabla;
             this.Conect.CadenaSQL = sqlQuery;
             this.Conect.EsSelect = true;
@@ -40,7 +40,7 @@ namespace CapaDatos
             {
                 this.conect = new Conexion();
                 this.Conect.NombreBaseDeDatos = "Tentazione";
-                this.Conect.CadenaConexion = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
+                this.Conect.CadenaConexion = "Data Source=KALEYTON\\SQLEXPRESS;Initial Catalog=Tentazione;Integrated Security=True";
                 this.Conect.NombreTabla = tabla;
                 this.Conect.CadenaSQL = sqlQuery;
                 this.Conect.EsSelect = NoSelect;

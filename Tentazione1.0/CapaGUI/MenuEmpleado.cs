@@ -51,5 +51,13 @@ namespace CapaGUI
             PantallaAdministradorClientes pantAdminCli = new PantallaAdministradorClientes();
             pantAdminCli.ShowDialog();
         }
+
+        private void btnEditarPerfil_Click(object sender, EventArgs e)
+        {
+            PantallaPerfilEmpleado pantEditClient = new PantallaPerfilEmpleado();
+            pantEditClient.ShowDialog();
+        }
     }
 }
+
+

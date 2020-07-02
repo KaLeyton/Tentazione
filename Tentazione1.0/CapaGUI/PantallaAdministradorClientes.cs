@@ -21,8 +21,9 @@ namespace CapaGUI
         private void btnListarClientes_Click(object sender, EventArgs e)
         {
             ServiceReferenceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxServiceCliente = new ServiceReferenceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
-            this.dataGridViewClientes.DataSource = auxServiceCliente.ServiceListaClienteAsync("tbUsuario_IdUsuario", true);
-            this.dataGridViewClientes.DataMember = "tbUsuario";
+            String filtro = "tbUsuario_IdUsuario";
+            this.dataGridViewClientes.DataSource = auxServiceCliente.ServiceListaCliente(filtro,true);
+            //this.dataGridViewClientes.DataMember = "tbUsuario";
             //this.dataGridViewClientes.DataBindings();
         }
 
