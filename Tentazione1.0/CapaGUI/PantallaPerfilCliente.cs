@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using CapaNegocio;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -9,9 +10,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaGUI.ServiceReferenceCliente;
-using CapaGUI.ServiceReferenceEmpleado;
-using CapaServicios;
 
 namespace CapaGUI
 {
@@ -50,7 +48,29 @@ namespace CapaGUI
         {
             this.txtSexo.Text = String.Empty;
         }
-
+        // Deshabilita los botones
+        public void desHabilitarCampos()
+        {
+            this.txtEdad.Enabled = false;
+            this.txtEmail.Enabled = false;
+            this.txtNombreCompleto.Enabled = false;
+            this.txtSexo.Enabled = false;
+            this.txtTelefono.Enabled = false;
+        }
+        // Deshabilita ID
+        public void desHabilitarId()
+        {
+            this.txtIdCliente.Enabled = false;
+        }
+        // habilita botones
+        public void habilitarCampos()
+        {
+            this.txtEdad.Enabled = true;
+            this.txtEmail.Enabled = true;
+            this.txtNombreCompleto.Enabled = true;
+            this.txtSexo.Enabled = true;
+            this.txtTelefono.Enabled = true;
+        }
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -62,12 +82,13 @@ namespace CapaGUI
             MenuCliente pantCliente = new MenuCliente();
             pantCliente.ShowDialog();
         }
+        // Guarda cambios a productos
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
             {
-                ServiceReferenceCliente.Cliente cliente = new ServiceReferenceCliente.Cliente();
-                ServiceReferenceCliente.WebServiceUsuarioClienteSoapClient auxCliente = new WebServiceUsuarioClienteSoapClient();
+                CapaDTO.Cliente cliente = new CapaDTO.Cliente();
+                NegocioCliente auxCliente = new NegocioCliente();
                 cliente.TbUsuario_IdUsuario = int.Parse(txtIdCliente.Text);
                 cliente.NombreCompleto = txtNombreCompleto.Text;
                 cliente.Edad = int.Parse(txtEdad.Text);
@@ -75,7 +96,7 @@ namespace CapaGUI
                 cliente.Sexo = txtSexo.Text;
                 cliente.Telefono = int.Parse(txtTelefono.Text);
 
-                if (auxCliente.ServiceActualizaCliente(cliente))
+                if (auxCliente.ActualizaCliente(cliente))
                 {
                     MessageBox.Show("Se ha actualizado correctamente");
                 }
@@ -97,8 +118,8 @@ namespace CapaGUI
         {
             try
             {
-                ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxWeb = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
-                String id = auxWeb.ServiceSesion();
+                NegocioLogin auxWeb = new NegocioLogin();
+                String id = auxWeb.BuscaSesion();
                 return id;
             }
             catch (Exception ex)
@@ -113,10 +134,10 @@ namespace CapaGUI
         {
             try
             {
-                ServiceReferenceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxEmpleado = new WebServiceUsuarioEmpleadoSoapClient();
+                NegocioCliente auxCliente = new NegocioCliente();
                 String filtro = "tbUsuario_IdUsuario";
                 String valor = SesionUsuario();
-                return auxEmpleado.ServiceBuscaCliente(filtro, valor);
+                return auxCliente.BuscaCliente(filtro, valor);
             }
             catch (Exception ex)
             {
@@ -125,7 +146,14 @@ namespace CapaGUI
                 return null;
             }
         }
-        private void PantallaPerfilCliente_Load(object sender, EventArgs e)
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Login pLogin = new Login();
+            pLogin.ShowDialog();
+        }
+        // Carga todos los productos al momento de instanciar la vista
+        private void PantallaPerfilCliente_Load_1(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
             try
@@ -138,6 +166,8 @@ namespace CapaGUI
                 txtSexo.Text = (String)dt.Rows[0]["Sexo"];
                 txtTelefono.Text = (dt.Rows[0]["Telefono"]).ToString();
 
+                desHabilitarCampos();
+                desHabilitarId();
             }
             catch (Exception ex)
             {
@@ -145,11 +175,18 @@ namespace CapaGUI
                 Console.WriteLine("Problemas con la sesion " + ex + "\n");
             }
         }
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        // Habilita cmapos para edicion
+        private void btnEditar_Click(object sender, EventArgs e)
         {
-            this.Dispose();
-            Login pLogin = new Login();
-            pLogin.ShowDialog();
+            try
+            {
+                habilitarCampos();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas con la edicion de productos, deberia volver a ingresar");
+                Console.WriteLine("Problemas con la sesion " + ex + "\n");
+            }
         }
     }
 }

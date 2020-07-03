@@ -73,7 +73,6 @@ namespace CapaNegocio
                 String CadenaSQL = "UPDATE tbCliente SET nombreCompleto = '" + cliente.NombreCompleto + "', Edad = "
                                         + cliente.Edad + ", Telefono = " + cliente.Telefono + ", Email = '"
                                         + cliente.Email + "', Sexo = '" + cliente.Sexo + "' WHERE tbUsuario_IdUsuario = " + cliente.TbUsuario_IdUsuario + ";";
-                MessageBox.Show("KIEEEEEEEEEEEEE" + CadenaSQL);
                 return util.ConfigurarConexion("tbCliente", CadenaSQL, false);
             }
             catch (Exception e)

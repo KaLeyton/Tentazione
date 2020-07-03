@@ -92,7 +92,6 @@
             this.btnCrearUsuario.TabIndex = 14;
             this.btnCrearUsuario.Text = "Crear Usuario";
             this.btnCrearUsuario.UseVisualStyleBackColor = true;
-            this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click_1);
             // 
             // btnSalir
             // 

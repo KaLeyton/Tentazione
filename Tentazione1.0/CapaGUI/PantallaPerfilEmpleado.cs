@@ -1,4 +1,5 @@
-﻿using MaterialSkin;
+﻿using CapaNegocio;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -47,6 +48,29 @@ namespace CapaGUI
         {
             this.txtSexo.Text = String.Empty;
         }
+        // Deshabilita todos los campos menos ID
+        public void desHabilitarCampos()
+        {
+            this.txtEdad.Enabled = false;
+            this.txtEmail.Enabled = false;
+            this.txtNombreCompleto.Enabled = false;
+            this.txtSexo.Enabled = false;
+            this.txtTelefono.Enabled = false;
+        }
+        // Deshabilita ID
+        public void desHabilitarId()
+        {
+            this.txtIdEmpleado.Enabled = false;
+        }
+        // Habilita todos los campos, menos ID
+        public void habilitarCampos()
+        {
+            this.txtEdad.Enabled = true;
+            this.txtEmail.Enabled = true;
+            this.txtNombreCompleto.Enabled = true;
+            this.txtSexo.Enabled = true;
+            this.txtTelefono.Enabled = true;
+        }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
@@ -65,6 +89,98 @@ namespace CapaGUI
             this.Dispose();
             Login pLogin = new Login();
             pLogin.ShowDialog();
+        }
+        // Se cargan los datos del empleado
+        private void PantallaPerfilEmpleado_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                dt = BuscaEmpleado();
+                txtIdEmpleado.Text = (dt.Rows[0]["tbUsuario_IdUsuario"]).ToString();
+                txtNombreCompleto.Text = (String)dt.Rows[0]["NombreCompleto"];
+                txtEdad.Text = (dt.Rows[0]["Edad"]).ToString();
+                txtEmail.Text = (String)dt.Rows[0]["Email"];
+                txtSexo.Text = (String)dt.Rows[0]["Sexo"];
+                txtTelefono.Text = (dt.Rows[0]["Telefono"]).ToString();
+                // Deja bloqueados los campos
+                desHabilitarCampos();
+                desHabilitarId();
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas con su sesion, deberia volver a ingresar");
+                Console.WriteLine("Problemas con la sesion " + ex + "\n");
+            }
+        }
+        // Busca la sesion para el empleado actual.
+        private String SesionUsuario()
+        {
+            try
+            {
+                NegocioLogin auxWeb = new NegocioLogin();
+                String id = auxWeb.BuscaSesion();
+                return id;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas con su sesion, deberia volver a ingresar");
+                Console.WriteLine("Problemas con la sesion " + ex + "\n");
+                return null;
+            }
+        }
+        // Retorna el cliente actual para su uso
+        private DataTable BuscaEmpleado()
+        {
+            try
+            {
+                NegocioEmpleado auxEmpleado = new NegocioEmpleado();
+                String filtro = "tbUsuario_IdUsuario";
+                String valor = SesionUsuario();
+                return auxEmpleado.BuscaEmpleado(filtro, valor);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas con su sesion, deberia volver a ingresar");
+                Console.WriteLine("Problemas con Cliente " + ex + "\n");
+                return null;
+            }
+        }
+        // Guarda modificaciones a perfil
+        private void btnGuardar_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                CapaDTO.Empleado empleado = new CapaDTO.Empleado();
+                NegocioEmpleado auxEmpleado = new NegocioEmpleado();
+                empleado.TbUsuario_IdUsuario = int.Parse(txtIdEmpleado.Text);
+                empleado.NombreCompleto = txtNombreCompleto.Text;
+                empleado.Edad = int.Parse(txtEdad.Text);
+                empleado.Email = txtEmail.Text;
+                empleado.Sexo = txtSexo.Text;
+                empleado.Telefono = int.Parse(txtTelefono.Text);
+
+                if (auxEmpleado.ActualizaEmpleado(empleado))
+                {
+                    MessageBox.Show("Se ha actualizado correctamente");
+                }
+                else
+                {
+                    MessageBox.Show("Hay problemas con al actualizar");
+                }
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas con el grabado de datos, deberia volver a ingresar");
+                Console.WriteLine("Problemas con la sesion " + ex + "\n");
+            }
+
+        }
+        // Permite editar los campos.
+        private void btnEditar_Click(object sender, EventArgs e)
+        {
+            habilitarCampos();
         }
     }
 }

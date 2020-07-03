@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaServicios;
+using CapaNegocio;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -28,20 +28,20 @@ namespace CapaGUI
         {
             this.txtBuscarProducto.Text = String.Empty;
         }
-
+        // Retorna todos los productos
         private void btnListar_Click(object sender, EventArgs e)
         {
-        //    try
-        //    {
-        //        ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxProducto = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
-        //        String filtro = "NombreProducto";
-        //        this.dataGridViewListaProductos.DataSource = auxProducto.ServiceListaProducto(filtro, true);
-        //    }
-        //    catch (Exception ex)
-        //    {
-        //        Console.WriteLine("Error al listar Productos " + ex + "\n");
-        //    }
+            try
+            {
+                NegocioProducto auxProducto = new NegocioProducto();
+                String filtro = "NombreProducto";
+                this.dataGridViewListaProductos.DataSource = auxProducto.ListaProducto(filtro, true);
             }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al listar Productos " + ex + "\n");
+            }
+        }
 
         private void btnLogIn_Click(object sender, EventArgs e)
         {
@@ -55,19 +55,51 @@ namespace CapaGUI
             Application.Exit();
         }
 
+        // Busca producto para por nombre de producto
         private void btnBuscarProducto_Click(object sender, EventArgs e)
         {
             try
             {
-                ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxProducto = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
-                String filtro = "NombreProducto";
-                this.dataGridViewListaProductos.DataSource = auxProducto.ServiceBuscaProducto(filtro, txtBuscarProducto.Text);
+                NegocioProducto auxProducto = new NegocioProducto();
+                this.dataGridViewListaProductos.DataSource = BuscaProducto();
             }
             catch (Exception ex)
             {
-
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas con su busqueda, deberia volver a ingresar");
                 Console.WriteLine("Error al buscar Productos " + ex + "\n");
             }
         }
+        // Lista todos los productos al entrar al usuario
+        private void PantallaListarProductos_Load(object sender, EventArgs e)
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                NegocioProducto auxProducto = new NegocioProducto();
+                String filtro = "NombreProducto";
+                this.dataGridViewListaProductos.DataSource = auxProducto.ListaProducto(filtro, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas con su sesion, deberia volver a ingresar");
+                Console.WriteLine("Problemas con la sesion " + ex + "\n");
+            }
+        }
+        // Busca productos por nombre
+        private DataTable BuscaProducto()
+        {
+            try
+            {
+                NegocioProducto auxProducto = new NegocioProducto();
+                String filtro = "NombreProducto";
+                return auxProducto.BuscaProducto(filtro, txtBuscarProducto.Text);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas con su sesion, deberia volver a ingresar");
+                Console.WriteLine("Problemas con Cliente " + ex + "\n");
+                return null;
+            }
+        }
     }
-}
+ }

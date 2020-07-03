@@ -10,9 +10,12 @@ using System.Windows.Forms;
 using System.Configuration;
 using System.Data.SqlClient;
 using System.Threading;
-using CapaServicios;
 using MaterialSkin.Controls;
 using MaterialSkin;
+
+//Test para despues sacar, usar las mismas variables para servicios y negocio.
+using CapaNegocio;
+using CapaDTO;
 
 namespace CapaGUI
 {
@@ -29,12 +32,12 @@ namespace CapaGUI
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
             Login aLogin = new Login();
-            ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxLogin = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
+            NegocioLogin auxLogin = new NegocioLogin();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
             try
             {
-                String respuesta = auxLogin.ServiceValidaLogIn(nombre, contrasena);
+                String respuesta = auxLogin.ValidaLogIn(nombre, contrasena);
                 if (respuesta.Equals("Cliente"))
                 {
                     MessageBox.Show("Estimado Cliente, Bienvenido");
@@ -63,10 +66,10 @@ namespace CapaGUI
         }
         private void BtnCrearUsuario_Click(object sender, EventArgs e)
         {
-            ServiceReferenceWeb.WebServiceUsuarioWebSoapClient auxUsuario = new ServiceReferenceWeb.WebServiceUsuarioWebSoapClient();
+            NegocioUsuario auxUsuario = new NegocioUsuario();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
-            bool validad = auxUsuario.ServiceRegistrarUsuario(nombre, contrasena);
+            bool validad = auxUsuario.RegistrarUsuario(nombre, contrasena);
             try
             {   // Verifica si se creo correctamente el usuario
                 if (validad == true)
@@ -98,11 +101,6 @@ namespace CapaGUI
         {
             PantallaListarProductos pantListar = new PantallaListarProductos();
             pantListar.ShowDialog();
-        }
-
-        private void btnCrearUsuario_Click_1(object sender, EventArgs e)
-        {
-
         }
 
         private void btnSalir_Click_1(object sender, EventArgs e)

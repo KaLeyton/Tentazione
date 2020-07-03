@@ -86,13 +86,13 @@ namespace CapaDatos
                     this.Conect.CadenaSQL += " ASC;";
                 }
                 this.Conect.conectar();
+                return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
             }
             catch (Exception e)
             {
                 Console.WriteLine("error, fallo al utilizar listaUtil1 " + e + "\n");
                 return null;
             }
-            return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
         }
         // Version para int
         public DataTable ListaUtils(String filtro, int valor, bool sentido, String tabla)
