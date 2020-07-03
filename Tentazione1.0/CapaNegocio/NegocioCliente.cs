@@ -27,6 +27,7 @@ namespace CapaNegocio
             }
         }
         // Envia un registro de cliente, retorna una confirmacion.
+        // D E M O
         public bool RegistrarCliente(Cliente cliente)
         {
             try

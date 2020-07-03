@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using MaterialSkin;
+﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -118,8 +117,8 @@ namespace CapaGUI
         {
             try
             {
-                NegocioLogin auxWeb = new NegocioLogin();
-                String id = auxWeb.BuscaSesion();
+                ServiceWeb.WebServiceUsuarioWebSoapClient auxWeb = new ServiceWeb.WebServiceUsuarioWebSoapClient();
+                String id = auxWeb.ServiceSesion();
                 return id;
             }
             catch (Exception ex)
@@ -129,15 +128,15 @@ namespace CapaGUI
                 return null;
             }
         }
-        // Retorna el cliente actual para su uso
+        // Retorna el Empleado actual para su uso
         private DataTable BuscaEmpleado()
         {
             try
             {
-                NegocioEmpleado auxEmpleado = new NegocioEmpleado();
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxEmpleado = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
                 String filtro = "tbUsuario_IdUsuario";
                 String valor = SesionUsuario();
-                return auxEmpleado.BuscaEmpleado(filtro, valor);
+                return auxEmpleado.ServiceBuscaEmpleado(filtro, valor);
             }
             catch (Exception ex)
             {
@@ -151,8 +150,8 @@ namespace CapaGUI
         {
             try
             {
-                CapaDTO.Empleado empleado = new CapaDTO.Empleado();
-                NegocioEmpleado auxEmpleado = new NegocioEmpleado();
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxEmpelado = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                ServiceEmpleado.Empleado empleado = new ServiceEmpleado.Empleado();
                 empleado.TbUsuario_IdUsuario = int.Parse(txtIdEmpleado.Text);
                 empleado.NombreCompleto = txtNombreCompleto.Text;
                 empleado.Edad = int.Parse(txtEdad.Text);
@@ -160,7 +159,7 @@ namespace CapaGUI
                 empleado.Sexo = txtSexo.Text;
                 empleado.Telefono = int.Parse(txtTelefono.Text);
 
-                if (auxEmpleado.ActualizaEmpleado(empleado))
+                if (auxEmpelado.ServiceActualizaEmpleado(empleado))
                 {
                     MessageBox.Show("Se ha actualizado correctamente");
                 }

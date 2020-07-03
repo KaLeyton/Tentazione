@@ -106,6 +106,28 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="ServiceBuscarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ServiceBuscarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ServiceBuscarClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
   </wsdl:types>
   <wsdl:message name="ServiceActualizaUsuarioSoapIn">
@@ -138,6 +160,12 @@
   <wsdl:message name="ServiceBuscaProductoSoapOut">
     <wsdl:part name="parameters" element="tns:ServiceBuscaProductoResponse" />
   </wsdl:message>
+  <wsdl:message name="ServiceBuscarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:ServiceBuscarCliente" />
+  </wsdl:message>
+  <wsdl:message name="ServiceBuscarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:ServiceBuscarClienteResponse" />
+  </wsdl:message>
   <wsdl:portType name="WebServiceUsuarioClienteSoap">
     <wsdl:operation name="ServiceActualizaUsuario">
       <wsdl:input message="tns:ServiceActualizaUsuarioSoapIn" />
@@ -158,6 +186,10 @@
     <wsdl:operation name="ServiceBuscaProducto">
       <wsdl:input message="tns:ServiceBuscaProductoSoapIn" />
       <wsdl:output message="tns:ServiceBuscaProductoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ServiceBuscarCliente">
+      <wsdl:input message="tns:ServiceBuscarClienteSoapIn" />
+      <wsdl:output message="tns:ServiceBuscarClienteSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="WebServiceUsuarioClienteSoap" type="tns:WebServiceUsuarioClienteSoap">
@@ -207,6 +239,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="ServiceBuscarCliente">
+      <soap:operation soapAction="http://tempuri.org/ServiceBuscarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="WebServiceUsuarioClienteSoap12" type="tns:WebServiceUsuarioClienteSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -248,6 +289,15 @@
     </wsdl:operation>
     <wsdl:operation name="ServiceBuscaProducto">
       <soap12:operation soapAction="http://tempuri.org/ServiceBuscaProducto" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ServiceBuscarCliente">
+      <soap12:operation soapAction="http://tempuri.org/ServiceBuscarCliente" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

@@ -50,6 +50,13 @@ namespace CapaGUI.ServiceCliente {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaProducto", ReplyAction="*")]
         System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscaProductoAsync(string filtro, string valor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscarCliente", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable ServiceBuscarCliente(string filtro, string valor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscarCliente", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscarClienteAsync(string filtro, string valor);
     }
     
     /// <remarks/>
@@ -293,6 +300,14 @@ namespace CapaGUI.ServiceCliente {
         
         public System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscaProductoAsync(string filtro, string valor) {
             return base.Channel.ServiceBuscaProductoAsync(filtro, valor);
+        }
+        
+        public System.Data.DataTable ServiceBuscarCliente(string filtro, string valor) {
+            return base.Channel.ServiceBuscarCliente(filtro, valor);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscarClienteAsync(string filtro, string valor) {
+            return base.Channel.ServiceBuscarClienteAsync(filtro, valor);
         }
     }
 }

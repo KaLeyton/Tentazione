@@ -28,12 +28,15 @@ namespace CapaGUI
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
             ServiceWeb.WebServiceUsuarioWebSoapClient auxLogin= new ServiceWeb.WebServiceUsuarioWebSoapClient();
+            //NegocioLogin auxLogin = new NegocioLogin();
             Login aLogin = new Login();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
             try
             {
                 String respuesta = auxLogin.ServiceValidaLogIn(nombre, contrasena);
+                //String respuesta = auxLogin.ValidaLogIn(nombre, contrasena);
+                Console.WriteLine("dfasf" + respuesta);
                 if (respuesta.Equals("Cliente"))
                 {
                     MessageBox.Show("Estimado Cliente, Bienvenido");

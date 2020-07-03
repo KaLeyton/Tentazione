@@ -54,5 +54,11 @@ namespace CapaServicios
             NegocioProducto auxProducto = new NegocioProducto();
             return auxProducto.BuscaProducto(filtro, valor);
         }
+        [WebMethod]
+        public DataTable ServiceBuscarCliente(String filtro, String valor)
+        {
+            NegocioCliente auxCliente = new NegocioCliente();
+            return auxCliente.BuscaCliente(filtro, valor);
+        }
     }
 }

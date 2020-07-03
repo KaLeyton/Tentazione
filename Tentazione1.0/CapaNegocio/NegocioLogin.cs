@@ -35,15 +35,22 @@ namespace CapaNegocio
             DataTable dt = new DataTable();
             try
             {
-                String CadenaSQL = "SELECT Rol FROM tbUsuario WHERE NombreUsuario = '"
+                String CadenaSQL = "SELECT * FROM tbUsuario WHERE NombreUsuario = '"
                                          + nombre + "' AND Contrasena = '" + contrasena + "';";
                 dt = BuscaDatos(CadenaSQL, "tbUsuario");
                 String result =  (String)dt.Rows[0]["Rol"];
                 // Invoca la configuracion
                 try
                 {
-                    util.ConfiguraSesion(nombre, contrasena);
-                    return result;
+                    if (util.ConfiguraSesion(nombre, contrasena))
+                    {
+                        return result;
+                    }
+                    else
+                    {
+                        Console.WriteLine("Error UwU! en la asignacion de sesion :  " + result);
+                        return null;
+                    }
                 }
                 catch (Exception ex)
                 {

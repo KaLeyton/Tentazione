@@ -1,5 +1,4 @@
-﻿using CapaNegocio;
-using MaterialSkin;
+﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -87,8 +86,8 @@ namespace CapaGUI
         {
             try
             {
-                CapaDTO.Cliente cliente = new CapaDTO.Cliente();
-                NegocioCliente auxCliente = new NegocioCliente();
+                ServiceCliente.WebServiceUsuarioClienteSoapClient auxCliente = new ServiceCliente.WebServiceUsuarioClienteSoapClient();
+                ServiceCliente.Cliente cliente = new ServiceCliente.Cliente();
                 cliente.TbUsuario_IdUsuario = int.Parse(txtIdCliente.Text);
                 cliente.NombreCompleto = txtNombreCompleto.Text;
                 cliente.Edad = int.Parse(txtEdad.Text);
@@ -96,7 +95,7 @@ namespace CapaGUI
                 cliente.Sexo = txtSexo.Text;
                 cliente.Telefono = int.Parse(txtTelefono.Text);
 
-                if (auxCliente.ActualizaCliente(cliente))
+                if (auxCliente.ServiceActualizaCliente(cliente))
                 {
                     MessageBox.Show("Se ha actualizado correctamente");
                 }
@@ -118,8 +117,8 @@ namespace CapaGUI
         {
             try
             {
-                NegocioLogin auxWeb = new NegocioLogin();
-                String id = auxWeb.BuscaSesion();
+                ServiceWeb.WebServiceUsuarioWebSoapClient auxWeb = new ServiceWeb.WebServiceUsuarioWebSoapClient();
+                String id = auxWeb.ServiceSesion();
                 return id;
             }
             catch (Exception ex)
@@ -134,10 +133,10 @@ namespace CapaGUI
         {
             try
             {
-                NegocioCliente auxCliente = new NegocioCliente();
+                ServiceCliente.WebServiceUsuarioClienteSoapClient auxCliente = new ServiceCliente.WebServiceUsuarioClienteSoapClient();
                 String filtro = "tbUsuario_IdUsuario";
                 String valor = SesionUsuario();
-                return auxCliente.BuscaCliente(filtro, valor);
+                return auxCliente.ServiceBuscarCliente(filtro, valor);
             }
             catch (Exception ex)
             {

@@ -97,11 +97,24 @@ namespace CapaServicios
             return auxUsuario.ActualizaUsuario(usuario);
         }
         // Ingresa un nuevo cliente
+        // D E M O
         [WebMethod]
         public bool ServiceRegistraCliente(Cliente cliente)
         {
             NegocioCliente auxCliente = new NegocioCliente();
             return auxCliente.RegistrarCliente(cliente);
+        }
+        [WebMethod]
+        public DataTable ServiceBuscaEmpleado(String filtro, String valor)
+        {
+            NegocioEmpleado auxEmpleado = new NegocioEmpleado();
+            return auxEmpleado.BuscaEmpleado(filtro, valor);
+        }
+        [WebMethod]
+        public bool ServiceActualizaEmpleado(Empleado empleado)
+        {
+            NegocioEmpleado auxEmpleado = new NegocioEmpleado();
+            return auxEmpleado.ActualizaEmpleado(empleado);
         }
     }
 }

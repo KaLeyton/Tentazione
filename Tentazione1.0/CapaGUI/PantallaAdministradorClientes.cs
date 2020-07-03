@@ -7,9 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using CapaDatos;
-using CapaDTO;
-using CapaNegocio;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -68,15 +65,23 @@ namespace CapaGUI
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (edicionActiva)
+            try
             {
-                desHabilitarCampos();
+                if (edicionActiva)
+                {
+                    desHabilitarCampos();
+                }
+                if (edicionActiva == false)
+                {
+                    this.Dispose();
+                    MenuEmpleado pantEmpleado = new MenuEmpleado();
+                    pantEmpleado.ShowDialog();
+                }
             }
-            if (edicionActiva == false)
+            catch (Exception ex)
             {
-                this.Dispose();
-                MenuEmpleado pantEmpleado = new MenuEmpleado();
-                pantEmpleado.ShowDialog();
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas el modulo administrar clientes, deberia volver a ingresar");
+                Console.WriteLine("Problemas con la sesion " + ex + "\n");
             }
         }
         private void textBox1_Click(object sender, EventArgs e)
@@ -122,7 +127,7 @@ namespace CapaGUI
                 Console.WriteLine("Problemas con listar clientes " + ex + "\n");
             }
         }
-        ///
+        // busca cliente
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
@@ -213,6 +218,7 @@ namespace CapaGUI
             }
         }
         // Ingresa un nuevo cliente
+        // D E M O
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
             try

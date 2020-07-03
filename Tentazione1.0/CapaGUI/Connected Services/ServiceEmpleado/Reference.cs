@@ -100,6 +100,20 @@ namespace CapaGUI.ServiceEmpleado {
         
         [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceRegistraCliente", ReplyAction="*")]
         System.Threading.Tasks.Task<bool> ServiceRegistraClienteAsync(CapaGUI.ServiceEmpleado.Cliente cliente);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaEmpleado", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        System.Data.DataTable ServiceBuscaEmpleado(string filtro, string valor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceBuscaEmpleado", ReplyAction="*")]
+        System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscaEmpleadoAsync(string filtro, string valor);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceActualizaEmpleado", ReplyAction="*")]
+        [System.ServiceModel.XmlSerializerFormatAttribute(SupportFaults=true)]
+        bool ServiceActualizaEmpleado(CapaGUI.ServiceEmpleado.Empleado empleado);
+        
+        [System.ServiceModel.OperationContractAttribute(Action="http://tempuri.org/ServiceActualizaEmpleado", ReplyAction="*")]
+        System.Threading.Tasks.Task<bool> ServiceActualizaEmpleadoAsync(CapaGUI.ServiceEmpleado.Empleado empleado);
     }
     
     /// <remarks/>
@@ -177,6 +191,108 @@ namespace CapaGUI.ServiceEmpleado {
             set {
                 this.unidadMedidaField = value;
                 this.RaisePropertyChanged("UnidadMedida");
+            }
+        }
+        
+        public event System.ComponentModel.PropertyChangedEventHandler PropertyChanged;
+        
+        protected void RaisePropertyChanged(string propertyName) {
+            System.ComponentModel.PropertyChangedEventHandler propertyChanged = this.PropertyChanged;
+            if ((propertyChanged != null)) {
+                propertyChanged(this, new System.ComponentModel.PropertyChangedEventArgs(propertyName));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.8.3752.0")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://tempuri.org/")]
+    public partial class Empleado : object, System.ComponentModel.INotifyPropertyChanged {
+        
+        private string nombreCompletoField;
+        
+        private int edadField;
+        
+        private int telefonoField;
+        
+        private string emailField;
+        
+        private string sexoField;
+        
+        private int tbUsuario_IdUsuarioField;
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=0)]
+        public string NombreCompleto {
+            get {
+                return this.nombreCompletoField;
+            }
+            set {
+                this.nombreCompletoField = value;
+                this.RaisePropertyChanged("NombreCompleto");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=1)]
+        public int Edad {
+            get {
+                return this.edadField;
+            }
+            set {
+                this.edadField = value;
+                this.RaisePropertyChanged("Edad");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=2)]
+        public int Telefono {
+            get {
+                return this.telefonoField;
+            }
+            set {
+                this.telefonoField = value;
+                this.RaisePropertyChanged("Telefono");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=3)]
+        public string Email {
+            get {
+                return this.emailField;
+            }
+            set {
+                this.emailField = value;
+                this.RaisePropertyChanged("Email");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=4)]
+        public string Sexo {
+            get {
+                return this.sexoField;
+            }
+            set {
+                this.sexoField = value;
+                this.RaisePropertyChanged("Sexo");
+            }
+        }
+        
+        /// <remarks/>
+        [System.Xml.Serialization.XmlElementAttribute(Order=5)]
+        public int TbUsuario_IdUsuario {
+            get {
+                return this.tbUsuario_IdUsuarioField;
+            }
+            set {
+                this.tbUsuario_IdUsuarioField = value;
+                this.RaisePropertyChanged("TbUsuario_IdUsuario");
             }
         }
         
@@ -542,6 +658,22 @@ namespace CapaGUI.ServiceEmpleado {
         
         public System.Threading.Tasks.Task<bool> ServiceRegistraClienteAsync(CapaGUI.ServiceEmpleado.Cliente cliente) {
             return base.Channel.ServiceRegistraClienteAsync(cliente);
+        }
+        
+        public System.Data.DataTable ServiceBuscaEmpleado(string filtro, string valor) {
+            return base.Channel.ServiceBuscaEmpleado(filtro, valor);
+        }
+        
+        public System.Threading.Tasks.Task<System.Data.DataTable> ServiceBuscaEmpleadoAsync(string filtro, string valor) {
+            return base.Channel.ServiceBuscaEmpleadoAsync(filtro, valor);
+        }
+        
+        public bool ServiceActualizaEmpleado(CapaGUI.ServiceEmpleado.Empleado empleado) {
+            return base.Channel.ServiceActualizaEmpleado(empleado);
+        }
+        
+        public System.Threading.Tasks.Task<bool> ServiceActualizaEmpleadoAsync(CapaGUI.ServiceEmpleado.Empleado empleado) {
+            return base.Channel.ServiceActualizaEmpleadoAsync(empleado);
         }
     }
 }
