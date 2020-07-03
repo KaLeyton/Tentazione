@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaNegocio;
 using MaterialSkin;
 using MaterialSkin.Controls;
 
@@ -93,6 +94,27 @@ namespace CapaGUI
         private void btnEliminarCliente_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void PantallaAdministradorClientes_Load(object sender, EventArgs e)
+        {
+
+        }
+        // Retorna los productos actuales para su uso
+        private DataTable BuscaBlientes()
+        {
+            try
+            {
+                NegocioCliente auxCliente = new NegocioCliente();
+                String filtro = "tbUsuario_IdUsuario";
+                return auxCliente.ListaCliente(filtro, true);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas el modulo clientes, deberia volver a ingresar");
+                Console.WriteLine("Problemas la lista de clientes " + ex + "\n");
+                return null;
+            }
         }
     }
 }

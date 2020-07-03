@@ -45,7 +45,7 @@
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnBuscarProducto = new MaterialSkin.Controls.MaterialRaisedButton();
             this.btnCerrarSesion = new MaterialSkin.Controls.MaterialFlatButton();
-            this.txtNombreProucto = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtBuscarProducto = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtSku = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtCantPaquete = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtValor = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -56,20 +56,22 @@
             // dataGridViewProductos
             // 
             this.dataGridViewProductos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridViewProductos.Location = new System.Drawing.Point(22, 94);
+            this.dataGridViewProductos.Location = new System.Drawing.Point(16, 76);
+            this.dataGridViewProductos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.dataGridViewProductos.Name = "dataGridViewProductos";
             this.dataGridViewProductos.RowHeadersWidth = 51;
             this.dataGridViewProductos.RowTemplate.Height = 24;
-            this.dataGridViewProductos.Size = new System.Drawing.Size(472, 325);
+            this.dataGridViewProductos.Size = new System.Drawing.Size(354, 264);
             this.dataGridViewProductos.TabIndex = 1;
             // 
             // lblNombreProducto
             // 
             this.lblNombreProducto.AutoSize = true;
             this.lblNombreProducto.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreProducto.Location = new System.Drawing.Point(547, 205);
+            this.lblNombreProducto.Location = new System.Drawing.Point(410, 167);
+            this.lblNombreProducto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreProducto.Name = "lblNombreProducto";
-            this.lblNombreProducto.Size = new System.Drawing.Size(169, 24);
+            this.lblNombreProducto.Size = new System.Drawing.Size(129, 19);
             this.lblNombreProducto.TabIndex = 6;
             this.lblNombreProducto.Text = "Nombre Producto :";
             // 
@@ -77,9 +79,10 @@
             // 
             this.lblSku.AutoSize = true;
             this.lblSku.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSku.Location = new System.Drawing.Point(667, 167);
+            this.lblSku.Location = new System.Drawing.Point(500, 136);
+            this.lblSku.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSku.Name = "lblSku";
-            this.lblSku.Size = new System.Drawing.Size(49, 24);
+            this.lblSku.Size = new System.Drawing.Size(39, 19);
             this.lblSku.TabIndex = 7;
             this.lblSku.Text = "Sku :";
             // 
@@ -87,9 +90,10 @@
             // 
             this.lblValorProducto.AutoSize = true;
             this.lblValorProducto.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblValorProducto.Location = new System.Drawing.Point(653, 243);
+            this.lblValorProducto.Location = new System.Drawing.Point(490, 197);
+            this.lblValorProducto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblValorProducto.Name = "lblValorProducto";
-            this.lblValorProducto.Size = new System.Drawing.Size(63, 24);
+            this.lblValorProducto.Size = new System.Drawing.Size(50, 19);
             this.lblValorProducto.TabIndex = 8;
             this.lblValorProducto.Text = "Valor :";
             // 
@@ -97,9 +101,10 @@
             // 
             this.lblUnidadMedida.AutoSize = true;
             this.lblUnidadMedida.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblUnidadMedida.Location = new System.Drawing.Point(541, 319);
+            this.lblUnidadMedida.Location = new System.Drawing.Point(406, 259);
+            this.lblUnidadMedida.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblUnidadMedida.Name = "lblUnidadMedida";
-            this.lblUnidadMedida.Size = new System.Drawing.Size(175, 24);
+            this.lblUnidadMedida.Size = new System.Drawing.Size(135, 19);
             this.lblUnidadMedida.TabIndex = 9;
             this.lblUnidadMedida.Text = "Unidad de medida :";
             // 
@@ -110,18 +115,20 @@
             "Unidad",
             "Gramos ",
             "Mililitros"});
-            this.cbxUnidadMedida.Location = new System.Drawing.Point(734, 319);
+            this.cbxUnidadMedida.Location = new System.Drawing.Point(550, 259);
+            this.cbxUnidadMedida.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.cbxUnidadMedida.Name = "cbxUnidadMedida";
-            this.cbxUnidadMedida.Size = new System.Drawing.Size(154, 24);
+            this.cbxUnidadMedida.Size = new System.Drawing.Size(116, 21);
             this.cbxUnidadMedida.TabIndex = 12;
             // 
             // lblCantidadUnidad
             // 
             this.lblCantidadUnidad.AutoSize = true;
             this.lblCantidadUnidad.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblCantidadUnidad.Location = new System.Drawing.Point(521, 281);
+            this.lblCantidadUnidad.Location = new System.Drawing.Point(391, 228);
+            this.lblCantidadUnidad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblCantidadUnidad.Name = "lblCantidadUnidad";
-            this.lblCantidadUnidad.Size = new System.Drawing.Size(195, 24);
+            this.lblCantidadUnidad.Size = new System.Drawing.Size(150, 19);
             this.lblCantidadUnidad.TabIndex = 15;
             this.lblCantidadUnidad.Text = "Cantidad por Unidad :";
             // 
@@ -130,43 +137,49 @@
             this.materialTabSelector1.BaseTabControl = null;
             this.materialTabSelector1.Depth = 0;
             this.materialTabSelector1.Location = new System.Drawing.Point(0, 0);
+            this.materialTabSelector1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.materialTabSelector1.MouseState = MaterialSkin.MouseState.HOVER;
             this.materialTabSelector1.Name = "materialTabSelector1";
-            this.materialTabSelector1.Size = new System.Drawing.Size(0, 48);
+            this.materialTabSelector1.Size = new System.Drawing.Size(0, 39);
             this.materialTabSelector1.TabIndex = 0;
             // 
             // btnListarProducto
             // 
             this.btnListarProducto.Depth = 0;
-            this.btnListarProducto.Location = new System.Drawing.Point(23, 494);
+            this.btnListarProducto.Location = new System.Drawing.Point(17, 401);
+            this.btnListarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnListarProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnListarProducto.Name = "btnListarProducto";
             this.btnListarProducto.Primary = true;
-            this.btnListarProducto.Size = new System.Drawing.Size(105, 42);
+            this.btnListarProducto.Size = new System.Drawing.Size(79, 34);
             this.btnListarProducto.TabIndex = 22;
             this.btnListarProducto.Text = "Listar";
             this.btnListarProducto.UseVisualStyleBackColor = true;
+            this.btnListarProducto.Click += new System.EventHandler(this.btnListarProducto_Click);
             // 
             // btnEditarProducto
             // 
             this.btnEditarProducto.Depth = 0;
-            this.btnEditarProducto.Location = new System.Drawing.Point(206, 494);
+            this.btnEditarProducto.Location = new System.Drawing.Point(154, 401);
+            this.btnEditarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEditarProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditarProducto.Name = "btnEditarProducto";
             this.btnEditarProducto.Primary = true;
-            this.btnEditarProducto.Size = new System.Drawing.Size(105, 42);
+            this.btnEditarProducto.Size = new System.Drawing.Size(79, 34);
             this.btnEditarProducto.TabIndex = 23;
             this.btnEditarProducto.Text = "Editar";
             this.btnEditarProducto.UseVisualStyleBackColor = true;
+            this.btnEditarProducto.Click += new System.EventHandler(this.btnEditarProducto_Click);
             // 
             // btnEliminarProducto
             // 
             this.btnEliminarProducto.Depth = 0;
-            this.btnEliminarProducto.Location = new System.Drawing.Point(389, 494);
+            this.btnEliminarProducto.Location = new System.Drawing.Point(292, 401);
+            this.btnEliminarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnEliminarProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminarProducto.Name = "btnEliminarProducto";
             this.btnEliminarProducto.Primary = true;
-            this.btnEliminarProducto.Size = new System.Drawing.Size(105, 42);
+            this.btnEliminarProducto.Size = new System.Drawing.Size(79, 34);
             this.btnEliminarProducto.TabIndex = 24;
             this.btnEliminarProducto.Text = "Eliminar";
             this.btnEliminarProducto.UseVisualStyleBackColor = true;
@@ -174,11 +187,12 @@
             // btnNuevoProducto
             // 
             this.btnNuevoProducto.Depth = 0;
-            this.btnNuevoProducto.Location = new System.Drawing.Point(524, 370);
+            this.btnNuevoProducto.Location = new System.Drawing.Point(393, 301);
+            this.btnNuevoProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnNuevoProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNuevoProducto.Name = "btnNuevoProducto";
             this.btnNuevoProducto.Primary = true;
-            this.btnNuevoProducto.Size = new System.Drawing.Size(109, 49);
+            this.btnNuevoProducto.Size = new System.Drawing.Size(82, 40);
             this.btnNuevoProducto.TabIndex = 25;
             this.btnNuevoProducto.Text = "Nuevo Producto";
             this.btnNuevoProducto.UseVisualStyleBackColor = true;
@@ -187,11 +201,12 @@
             // btnGuardar
             // 
             this.btnGuardar.Depth = 0;
-            this.btnGuardar.Location = new System.Drawing.Point(654, 370);
+            this.btnGuardar.Location = new System.Drawing.Point(490, 301);
+            this.btnGuardar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnGuardar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Primary = true;
-            this.btnGuardar.Size = new System.Drawing.Size(117, 49);
+            this.btnGuardar.Size = new System.Drawing.Size(88, 40);
             this.btnGuardar.TabIndex = 26;
             this.btnGuardar.Text = "Guardar";
             this.btnGuardar.UseVisualStyleBackColor = true;
@@ -200,11 +215,12 @@
             // btnCancelar
             // 
             this.btnCancelar.Depth = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(792, 370);
+            this.btnCancelar.Location = new System.Drawing.Point(594, 301);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Primary = true;
-            this.btnCancelar.Size = new System.Drawing.Size(111, 46);
+            this.btnCancelar.Size = new System.Drawing.Size(83, 37);
             this.btnCancelar.TabIndex = 27;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = true;
@@ -213,11 +229,12 @@
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(781, 484);
+            this.btnSalir.Location = new System.Drawing.Point(586, 393);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
-            this.btnSalir.Size = new System.Drawing.Size(94, 39);
+            this.btnSalir.Size = new System.Drawing.Size(70, 32);
             this.btnSalir.TabIndex = 28;
             this.btnSalir.Text = "Salir";
             this.btnSalir.UseVisualStyleBackColor = true;
@@ -226,11 +243,12 @@
             // btnBuscarProducto
             // 
             this.btnBuscarProducto.Depth = 0;
-            this.btnBuscarProducto.Location = new System.Drawing.Point(734, 98);
+            this.btnBuscarProducto.Location = new System.Drawing.Point(550, 80);
+            this.btnBuscarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.btnBuscarProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscarProducto.Name = "btnBuscarProducto";
             this.btnBuscarProducto.Primary = true;
-            this.btnBuscarProducto.Size = new System.Drawing.Size(93, 43);
+            this.btnBuscarProducto.Size = new System.Drawing.Size(70, 35);
             this.btnBuscarProducto.TabIndex = 29;
             this.btnBuscarProducto.Text = "Buscar";
             this.btnBuscarProducto.UseVisualStyleBackColor = true;
@@ -241,45 +259,47 @@
             this.btnCerrarSesion.AutoSize = true;
             this.btnCerrarSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCerrarSesion.Depth = 0;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(730, 27);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(548, 22);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnCerrarSesion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Primary = false;
-            this.btnCerrarSesion.Size = new System.Drawing.Size(141, 36);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(114, 36);
             this.btnCerrarSesion.TabIndex = 30;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
             // 
-            // txtNombreProucto
+            // txtBuscarProducto
             // 
-            this.txtNombreProucto.Depth = 0;
-            this.txtNombreProucto.Hint = "";
-            this.txtNombreProucto.Location = new System.Drawing.Point(537, 113);
-            this.txtNombreProucto.MouseState = MaterialSkin.MouseState.HOVER;
-            this.txtNombreProucto.Name = "txtNombreProucto";
-            this.txtNombreProucto.PasswordChar = '\0';
-            this.txtNombreProucto.SelectedText = "";
-            this.txtNombreProucto.SelectionLength = 0;
-            this.txtNombreProucto.SelectionStart = 0;
-            this.txtNombreProucto.Size = new System.Drawing.Size(179, 28);
-            this.txtNombreProucto.TabIndex = 31;
-            this.txtNombreProucto.Text = "Nombre Producto";
-            this.txtNombreProucto.UseSystemPasswordChar = false;
-            this.txtNombreProucto.Click += new System.EventHandler(this.txtNombreProucto_Click);
+            this.txtBuscarProducto.Depth = 0;
+            this.txtBuscarProducto.Hint = "";
+            this.txtBuscarProducto.Location = new System.Drawing.Point(403, 92);
+            this.txtBuscarProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtBuscarProducto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtBuscarProducto.Name = "txtBuscarProducto";
+            this.txtBuscarProducto.PasswordChar = '\0';
+            this.txtBuscarProducto.SelectedText = "";
+            this.txtBuscarProducto.SelectionLength = 0;
+            this.txtBuscarProducto.SelectionStart = 0;
+            this.txtBuscarProducto.Size = new System.Drawing.Size(134, 23);
+            this.txtBuscarProducto.TabIndex = 31;
+            this.txtBuscarProducto.Text = "Nombre Producto";
+            this.txtBuscarProducto.UseSystemPasswordChar = false;
+            this.txtBuscarProducto.Click += new System.EventHandler(this.txtNombreProucto_Click);
             // 
             // txtSku
             // 
             this.txtSku.Depth = 0;
             this.txtSku.Hint = "";
-            this.txtSku.Location = new System.Drawing.Point(734, 163);
+            this.txtSku.Location = new System.Drawing.Point(550, 132);
+            this.txtSku.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtSku.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSku.Name = "txtSku";
             this.txtSku.PasswordChar = '\0';
             this.txtSku.SelectedText = "";
             this.txtSku.SelectionLength = 0;
             this.txtSku.SelectionStart = 0;
-            this.txtSku.Size = new System.Drawing.Size(154, 28);
+            this.txtSku.Size = new System.Drawing.Size(116, 23);
             this.txtSku.TabIndex = 32;
             this.txtSku.Text = "00000";
             this.txtSku.UseSystemPasswordChar = false;
@@ -289,14 +309,15 @@
             // 
             this.txtCantPaquete.Depth = 0;
             this.txtCantPaquete.Hint = "";
-            this.txtCantPaquete.Location = new System.Drawing.Point(734, 278);
+            this.txtCantPaquete.Location = new System.Drawing.Point(550, 226);
+            this.txtCantPaquete.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtCantPaquete.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtCantPaquete.Name = "txtCantPaquete";
             this.txtCantPaquete.PasswordChar = '\0';
             this.txtCantPaquete.SelectedText = "";
             this.txtCantPaquete.SelectionLength = 0;
             this.txtCantPaquete.SelectionStart = 0;
-            this.txtCantPaquete.Size = new System.Drawing.Size(154, 28);
+            this.txtCantPaquete.Size = new System.Drawing.Size(116, 23);
             this.txtCantPaquete.TabIndex = 34;
             this.txtCantPaquete.UseSystemPasswordChar = false;
             this.txtCantPaquete.Click += new System.EventHandler(this.txtCantPaquete_Click);
@@ -305,14 +326,15 @@
             // 
             this.txtValor.Depth = 0;
             this.txtValor.Hint = "";
-            this.txtValor.Location = new System.Drawing.Point(734, 239);
+            this.txtValor.Location = new System.Drawing.Point(550, 194);
+            this.txtValor.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtValor.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtValor.Name = "txtValor";
             this.txtValor.PasswordChar = '\0';
             this.txtValor.SelectedText = "";
             this.txtValor.SelectionLength = 0;
             this.txtValor.SelectionStart = 0;
-            this.txtValor.Size = new System.Drawing.Size(154, 28);
+            this.txtValor.Size = new System.Drawing.Size(116, 23);
             this.txtValor.TabIndex = 35;
             this.txtValor.Text = "000.000";
             this.txtValor.UseSystemPasswordChar = false;
@@ -322,14 +344,15 @@
             // 
             this.txtNombreProducto.Depth = 0;
             this.txtNombreProducto.Hint = "";
-            this.txtNombreProducto.Location = new System.Drawing.Point(734, 201);
+            this.txtNombreProducto.Location = new System.Drawing.Point(550, 163);
+            this.txtNombreProducto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.txtNombreProducto.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombreProducto.Name = "txtNombreProducto";
             this.txtNombreProducto.PasswordChar = '\0';
             this.txtNombreProducto.SelectedText = "";
             this.txtNombreProducto.SelectionLength = 0;
             this.txtNombreProducto.SelectionStart = 0;
-            this.txtNombreProducto.Size = new System.Drawing.Size(154, 28);
+            this.txtNombreProducto.Size = new System.Drawing.Size(116, 23);
             this.txtNombreProducto.TabIndex = 36;
             this.txtNombreProducto.Text = "Nombre";
             this.txtNombreProducto.UseSystemPasswordChar = false;
@@ -337,14 +360,14 @@
             // 
             // PantallaAdministrarProductos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(931, 577);
+            this.ClientSize = new System.Drawing.Size(698, 469);
             this.Controls.Add(this.txtNombreProducto);
             this.Controls.Add(this.txtValor);
             this.Controls.Add(this.txtCantPaquete);
             this.Controls.Add(this.txtSku);
-            this.Controls.Add(this.txtNombreProucto);
+            this.Controls.Add(this.txtBuscarProducto);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnBuscarProducto);
             this.Controls.Add(this.btnSalir);
@@ -362,8 +385,10 @@
             this.Controls.Add(this.lblSku);
             this.Controls.Add(this.lblNombreProducto);
             this.Controls.Add(this.dataGridViewProductos);
+            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
             this.Name = "PantallaAdministrarProductos";
             this.Text = "Administrar Productos";
+            this.Load += new System.EventHandler(this.PantallaAdministrarProductos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewProductos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -388,7 +413,7 @@
         private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
         private MaterialSkin.Controls.MaterialRaisedButton btnBuscarProducto;
         private MaterialSkin.Controls.MaterialFlatButton btnCerrarSesion;
-        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreProucto;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtBuscarProducto;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtSku;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtCantPaquete;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtValor;
