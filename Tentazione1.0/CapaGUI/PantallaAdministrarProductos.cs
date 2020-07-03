@@ -1,6 +1,4 @@
-﻿using CapaDTO;
-using CapaNegocio;
-using MaterialSkin;
+﻿using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -78,8 +76,8 @@ namespace CapaGUI
             {
                 String valor = txtBuscarProducto.Text;
                 string filtro = "NombreProducto";
-                NegocioProducto auxProducto = new NegocioProducto();
-                dt = auxProducto.BuscaProducto(filtro, valor);
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                dt = auxProducto.ServiceBuscaProducto(filtro, valor);
                 this.dataGridViewProductos.DataSource = dt;
                 // Seteo de las columnas
                 txtNombreProducto.Text = (String)dt.Rows[0][filtro];
@@ -99,8 +97,8 @@ namespace CapaGUI
         {
             try
             {
-                NegocioProducto auxProducto = new NegocioProducto();
-                Producto producto = new Producto();
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                ServiceEmpleado.Producto producto = new ServiceEmpleado.Producto();
 
                 producto.NombreProducto = txtNombreProducto.Text;
                 producto.Valor = Int32.Parse(txtValor.Text);
@@ -108,8 +106,9 @@ namespace CapaGUI
                 producto.UnidadMedida = cbxUnidadMedida.Text;
                 habilitarCampos();
 
-                if (auxProducto.RegistrarProducto(producto))
+                if (auxProducto.ServiceRegistrarProducto(producto))
                 {
+                    desHabilitarCampos();
                     edicionActiva = false;
                     MessageBox.Show("Se a ingresado su producto correctamente");
                 }
@@ -125,15 +124,15 @@ namespace CapaGUI
         {
             try
             {
-                NegocioProducto auxProducto = new NegocioProducto();
-                Producto producto = new Producto();
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                ServiceEmpleado.Producto producto = new ServiceEmpleado.Producto();
                 producto.Sku = txtSku.Text;
                 producto.NombreProducto = txtNombreProducto.Text;
                 producto.Valor = Int32.Parse(txtValor.Text);
                 producto.CantPaquete = Int32.Parse(txtCantPaquete.Text);
                 producto.UnidadMedida = cbxUnidadMedida.Text;
 
-                if (auxProducto.ActualizaProducto(producto))
+                if (auxProducto.ServiceActualizaProducto(producto))
                 {
                     desHabilitarCampos();
                     edicionActiva = false;
@@ -149,15 +148,23 @@ namespace CapaGUI
         // Deshabilita los campos o cierra sesion segun estado de edicion
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            if (edicionActiva)
+            try
             {
-                desHabilitarCampos();
+                if (edicionActiva)
+                {
+                    desHabilitarCampos();
+                }
+                if (edicionActiva == false)
+                {
+                    this.Dispose();
+                    MenuEmpleado pantEmpleado = new MenuEmpleado();
+                    pantEmpleado.ShowDialog();
+                }
             }
-            if (edicionActiva == false)
+            catch (Exception ex)
             {
-                this.Dispose();
-                MenuCliente pantCliente = new MenuCliente();
-                pantCliente.ShowDialog();
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas el modulo administrar productos, deberia volver a ingresar");
+                Console.WriteLine("Problemas con la sesion " + ex + "\n");
             }
         }
 
@@ -171,7 +178,7 @@ namespace CapaGUI
             DataTable dt = new DataTable();
             try
             {
-                NegocioProducto auxProducto = new NegocioProducto();
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
                 this.dataGridViewProductos.DataSource = BuscaProductos();
                 desHabilitarCampos();
                 desHabilitarId();
@@ -187,9 +194,9 @@ namespace CapaGUI
         {
             try
             {
-                NegocioProducto auxProducto = new NegocioProducto();
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
                 String filtro = "SkuProducto";
-                return auxProducto.ListaProducto(filtro, true);
+                return auxProducto.ServiceListaProducto(filtro, true);
             }
             catch (Exception ex)
             {
@@ -222,8 +229,8 @@ namespace CapaGUI
         {
             try
             {
-                NegocioProducto auxProducto = new NegocioProducto();
-                if (auxProducto.EliminaProducto(txtSku.Text))
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                if (auxProducto.ServiceEliminaProducto(txtSku.Text))
                 {
                     MessageBox.Show("Se ha eliminado correctamente");
                 }

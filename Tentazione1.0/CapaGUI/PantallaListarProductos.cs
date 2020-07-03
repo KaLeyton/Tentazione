@@ -33,9 +33,9 @@ namespace CapaGUI
         {
             try
             {
-                NegocioProducto auxProducto = new NegocioProducto();
+                ServiceCliente.WebServiceUsuarioClienteSoapClient auxProducto = new ServiceCliente.WebServiceUsuarioClienteSoapClient();
                 String filtro = "NombreProducto";
-                this.dataGridViewListaProductos.DataSource = auxProducto.ListaProducto(filtro, true);
+                this.dataGridViewListaProductos.DataSource = auxProducto.ServiceListaProducto(filtro, true);
             }
             catch (Exception ex)
             {
@@ -60,7 +60,6 @@ namespace CapaGUI
         {
             try
             {
-                NegocioProducto auxProducto = new NegocioProducto();
                 this.dataGridViewListaProductos.DataSource = BuscaProducto();
             }
             catch (Exception ex)
@@ -75,9 +74,9 @@ namespace CapaGUI
             DataTable dt = new DataTable();
             try
             {
-                NegocioProducto auxProducto = new NegocioProducto();
+                ServiceCliente.WebServiceUsuarioClienteSoapClient auxProducto = new ServiceCliente.WebServiceUsuarioClienteSoapClient();
                 String filtro = "NombreProducto";
-                this.dataGridViewListaProductos.DataSource = auxProducto.ListaProducto(filtro, true);
+                this.dataGridViewListaProductos.DataSource = auxProducto.ServiceListaProducto(filtro, true);
             }
             catch (Exception ex)
             {
@@ -90,9 +89,9 @@ namespace CapaGUI
         {
             try
             {
-                NegocioProducto auxProducto = new NegocioProducto();
+                ServiceCliente.WebServiceUsuarioClienteSoapClient auxProducto = new ServiceCliente.WebServiceUsuarioClienteSoapClient();
                 String filtro = "NombreProducto";
-                return auxProducto.BuscaProducto(filtro, txtBuscarProducto.Text);
+                return auxProducto.ServiceBuscaProducto(filtro, txtBuscarProducto.Text);
             }
             catch (Exception ex)
             {

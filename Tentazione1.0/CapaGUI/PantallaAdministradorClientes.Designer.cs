@@ -56,17 +56,17 @@
             // 
             this.dataGridViewClientes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridViewClientes.Location = new System.Drawing.Point(28, 86);
-            this.dataGridViewClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridViewClientes.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridViewClientes.Name = "dataGridViewClientes";
             this.dataGridViewClientes.RowHeadersWidth = 51;
             this.dataGridViewClientes.RowTemplate.Height = 24;
-            this.dataGridViewClientes.Size = new System.Drawing.Size(309, 234);
+            this.dataGridViewClientes.Size = new System.Drawing.Size(580, 234);
             this.dataGridViewClientes.TabIndex = 1;
             // 
             // lblNombreCompleto
             // 
             this.lblNombreCompleto.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCompleto.Location = new System.Drawing.Point(374, 127);
+            this.lblNombreCompleto.Location = new System.Drawing.Point(642, 127);
             this.lblNombreCompleto.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblNombreCompleto.Name = "lblNombreCompleto";
             this.lblNombreCompleto.Size = new System.Drawing.Size(137, 24);
@@ -76,7 +76,7 @@
             // lblEdad
             // 
             this.lblEdad.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdad.Location = new System.Drawing.Point(460, 156);
+            this.lblEdad.Location = new System.Drawing.Point(728, 156);
             this.lblEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(52, 24);
@@ -86,7 +86,7 @@
             // lblTelefono
             // 
             this.lblTelefono.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTelefono.Location = new System.Drawing.Point(442, 185);
+            this.lblTelefono.Location = new System.Drawing.Point(710, 185);
             this.lblTelefono.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblTelefono.Name = "lblTelefono";
             this.lblTelefono.Size = new System.Drawing.Size(69, 24);
@@ -96,7 +96,7 @@
             // lblEmail
             // 
             this.lblEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(459, 214);
+            this.lblEmail.Location = new System.Drawing.Point(727, 214);
             this.lblEmail.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(52, 24);
@@ -106,7 +106,7 @@
             // lblSexo
             // 
             this.lblSexo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(461, 244);
+            this.lblSexo.Location = new System.Drawing.Point(729, 244);
             this.lblSexo.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(50, 24);
@@ -117,11 +117,11 @@
             // 
             this.btnListarClientes.Depth = 0;
             this.btnListarClientes.Location = new System.Drawing.Point(28, 349);
-            this.btnListarClientes.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnListarClientes.Margin = new System.Windows.Forms.Padding(2);
             this.btnListarClientes.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnListarClientes.Name = "btnListarClientes";
             this.btnListarClientes.Primary = true;
-            this.btnListarClientes.Size = new System.Drawing.Size(70, 35);
+            this.btnListarClientes.Size = new System.Drawing.Size(93, 35);
             this.btnListarClientes.TabIndex = 24;
             this.btnListarClientes.Text = "Listar";
             this.btnListarClientes.UseVisualStyleBackColor = true;
@@ -130,12 +130,12 @@
             // btnEditarCliente
             // 
             this.btnEditarCliente.Depth = 0;
-            this.btnEditarCliente.Location = new System.Drawing.Point(149, 349);
-            this.btnEditarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEditarCliente.Location = new System.Drawing.Point(271, 349);
+            this.btnEditarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnEditarCliente.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditarCliente.Name = "btnEditarCliente";
             this.btnEditarCliente.Primary = true;
-            this.btnEditarCliente.Size = new System.Drawing.Size(70, 35);
+            this.btnEditarCliente.Size = new System.Drawing.Size(93, 35);
             this.btnEditarCliente.TabIndex = 25;
             this.btnEditarCliente.Text = "Editar";
             this.btnEditarCliente.UseVisualStyleBackColor = true;
@@ -144,12 +144,12 @@
             // btnEliminarCliente
             // 
             this.btnEliminarCliente.Depth = 0;
-            this.btnEliminarCliente.Location = new System.Drawing.Point(268, 349);
-            this.btnEliminarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnEliminarCliente.Location = new System.Drawing.Point(514, 349);
+            this.btnEliminarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnEliminarCliente.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEliminarCliente.Name = "btnEliminarCliente";
             this.btnEliminarCliente.Primary = true;
-            this.btnEliminarCliente.Size = new System.Drawing.Size(70, 35);
+            this.btnEliminarCliente.Size = new System.Drawing.Size(93, 35);
             this.btnEliminarCliente.TabIndex = 26;
             this.btnEliminarCliente.Text = "Eliminar";
             this.btnEliminarCliente.UseVisualStyleBackColor = true;
@@ -158,8 +158,8 @@
             // btnNuevoCliente
             // 
             this.btnNuevoCliente.Depth = 0;
-            this.btnNuevoCliente.Location = new System.Drawing.Point(366, 285);
-            this.btnNuevoCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnNuevoCliente.Location = new System.Drawing.Point(634, 285);
+            this.btnNuevoCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnNuevoCliente.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnNuevoCliente.Name = "btnNuevoCliente";
             this.btnNuevoCliente.Primary = true;
@@ -172,8 +172,8 @@
             // btnCancelar
             // 
             this.btnCancelar.Depth = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(605, 285);
-            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnCancelar.Location = new System.Drawing.Point(873, 285);
+            this.btnCancelar.Margin = new System.Windows.Forms.Padding(2);
             this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Primary = true;
@@ -186,8 +186,8 @@
             // btnGuardarCliente
             // 
             this.btnGuardarCliente.Depth = 0;
-            this.btnGuardarCliente.Location = new System.Drawing.Point(497, 285);
-            this.btnGuardarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnGuardarCliente.Location = new System.Drawing.Point(765, 285);
+            this.btnGuardarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnGuardarCliente.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGuardarCliente.Name = "btnGuardarCliente";
             this.btnGuardarCliente.Primary = true;
@@ -200,8 +200,8 @@
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(605, 349);
-            this.btnSalir.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnSalir.Location = new System.Drawing.Point(873, 349);
+            this.btnSalir.Margin = new System.Windows.Forms.Padding(2);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -214,8 +214,8 @@
             // btnBuscarCliente
             // 
             this.btnBuscarCliente.Depth = 0;
-            this.btnBuscarCliente.Location = new System.Drawing.Point(532, 86);
-            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(800, 86);
+            this.btnBuscarCliente.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscarCliente.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Primary = true;
@@ -227,16 +227,15 @@
             // 
             // btnCerrarSesion
             // 
-            this.btnCerrarSesion.AutoSize = true;
             this.btnCerrarSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCerrarSesion.Depth = 0;
             this.btnCerrarSesion.Font = new System.Drawing.Font("Calibri", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnCerrarSesion.Location = new System.Drawing.Point(580, 24);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(836, 29);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnCerrarSesion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Primary = false;
-            this.btnCerrarSesion.Size = new System.Drawing.Size(114, 36);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(114, 27);
             this.btnCerrarSesion.TabIndex = 32;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -246,8 +245,8 @@
             // 
             this.txtIdCliente.Depth = 0;
             this.txtIdCliente.Hint = "";
-            this.txtIdCliente.Location = new System.Drawing.Point(366, 88);
-            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtIdCliente.Location = new System.Drawing.Point(634, 88);
+            this.txtIdCliente.Margin = new System.Windows.Forms.Padding(2);
             this.txtIdCliente.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtIdCliente.Name = "txtIdCliente";
             this.txtIdCliente.PasswordChar = '\0';
@@ -265,8 +264,8 @@
             this.txtNombrecompleto.Depth = 0;
             this.txtNombrecompleto.ForeColor = System.Drawing.Color.Gray;
             this.txtNombrecompleto.Hint = "";
-            this.txtNombrecompleto.Location = new System.Drawing.Point(532, 127);
-            this.txtNombrecompleto.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombrecompleto.Location = new System.Drawing.Point(800, 127);
+            this.txtNombrecompleto.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombrecompleto.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombrecompleto.Name = "txtNombrecompleto";
             this.txtNombrecompleto.PasswordChar = '\0';
@@ -283,8 +282,8 @@
             // 
             this.txtEdad.Depth = 0;
             this.txtEdad.Hint = "";
-            this.txtEdad.Location = new System.Drawing.Point(532, 157);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEdad.Location = new System.Drawing.Point(800, 157);
+            this.txtEdad.Margin = new System.Windows.Forms.Padding(2);
             this.txtEdad.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtEdad.Name = "txtEdad";
             this.txtEdad.PasswordChar = '\0';
@@ -301,8 +300,8 @@
             // 
             this.txtTelefono.Depth = 0;
             this.txtTelefono.Hint = "";
-            this.txtTelefono.Location = new System.Drawing.Point(532, 186);
-            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtTelefono.Location = new System.Drawing.Point(800, 186);
+            this.txtTelefono.Margin = new System.Windows.Forms.Padding(2);
             this.txtTelefono.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtTelefono.Name = "txtTelefono";
             this.txtTelefono.PasswordChar = '\0';
@@ -319,8 +318,8 @@
             // 
             this.txtSexo.Depth = 0;
             this.txtSexo.Hint = "";
-            this.txtSexo.Location = new System.Drawing.Point(532, 244);
-            this.txtSexo.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtSexo.Location = new System.Drawing.Point(800, 244);
+            this.txtSexo.Margin = new System.Windows.Forms.Padding(2);
             this.txtSexo.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtSexo.Name = "txtSexo";
             this.txtSexo.PasswordChar = '\0';
@@ -337,8 +336,8 @@
             // 
             this.txtEmail.Depth = 0;
             this.txtEmail.Hint = "";
-            this.txtEmail.Location = new System.Drawing.Point(532, 215);
-            this.txtEmail.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtEmail.Location = new System.Drawing.Point(800, 215);
+            this.txtEmail.Margin = new System.Windows.Forms.Padding(2);
             this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.PasswordChar = '\0';
@@ -355,7 +354,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(705, 419);
+            this.ClientSize = new System.Drawing.Size(984, 423);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtSexo);
             this.Controls.Add(this.txtTelefono);
@@ -377,13 +376,12 @@
             this.Controls.Add(this.lblEdad);
             this.Controls.Add(this.lblNombreCompleto);
             this.Controls.Add(this.dataGridViewClientes);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PantallaAdministradorClientes";
             this.Text = "Administrar Clientes";
             this.Load += new System.EventHandler(this.PantallaAdministradorClientes_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridViewClientes)).EndInit();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 

@@ -75,8 +75,8 @@ namespace CapaGUI
             if (edicionActiva == false)
             {
                 this.Dispose();
-                MenuCliente pantCliente = new MenuCliente();
-                pantCliente.ShowDialog();
+                MenuEmpleado pantEmpleado = new MenuEmpleado();
+                pantEmpleado.ShowDialog();
             }
         }
         private void textBox1_Click(object sender, EventArgs e)
@@ -114,6 +114,7 @@ namespace CapaGUI
             try
             {
                 this.dataGridViewClientes.DataSource = BuscaClientes();
+                habilitarId();
             }
             catch (Exception ex)
             {
@@ -125,12 +126,12 @@ namespace CapaGUI
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
+            ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxCliente = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
             try
             {
                 String filtro = "tbUsuario_IdUsuario";
                 int id = Int32.Parse(txtIdCliente.Text);
-                NegocioCliente auxCliente = new NegocioCliente();
-                dt = auxCliente.BuscaCliente(filtro, id);
+                dt = auxCliente.ServiceBuscaClienteN(filtro, id);
                 this.dataGridViewClientes.DataSource = dt;
                 // Seteo de las columnas
                 txtIdCliente.Text = id.ToString();
@@ -167,8 +168,8 @@ namespace CapaGUI
         {
             try
             {
-                NegocioCliente auxCLiente = new NegocioCliente();
-                if (auxCLiente.EliminaCliente(Int32.Parse(txtIdCliente.Text)))
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxCliente = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                if (auxCliente.ServiceEliminaCliente(Int32.Parse(txtIdCliente.Text)))
                 {
                     MessageBox.Show("Se ha eliminado correctamente");
                     edicionActiva = false;
@@ -200,9 +201,9 @@ namespace CapaGUI
         {
             try
             {
-                NegocioCliente auxCliente = new NegocioCliente();
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxCliente = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
                 String filtro = "tbUsuario_IdUsuario";
-                return auxCliente.ListaCliente(filtro, true);
+                return auxCliente.ServiceListaCliente(filtro, true);
             }
             catch (Exception ex)
             {
@@ -216,16 +217,15 @@ namespace CapaGUI
         {
             try
             {
-                NegocioCliente auxCliente = new NegocioCliente();
-                Cliente cliente = new Cliente();
-
-                cliente.TbUsuario_IdUsuario = Int32.Parse(BuscaSesion());
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxCliente = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                ServiceEmpleado.Cliente cliente = new ServiceEmpleado.Cliente();
+                cliente.TbUsuario_IdUsuario = int.Parse(txtIdCliente.Text);
                 cliente.NombreCompleto = txtNombrecompleto.Text;
                 cliente.Email = txtEmail.Text;
                 cliente.Edad = Int32.Parse(txtEdad.Text);
                 cliente.Sexo = txtSexo.Text;
                 cliente.Telefono = Int32.Parse(txtTelefono.Text);
-                if (auxCliente.RegistrarCliente(cliente))
+                if (auxCliente.ServiceRegistraCliente(cliente))
                 {
                     edicionActiva = false;
                     MessageBox.Show("Se a ingresado a cliente correctamente");
@@ -242,16 +242,17 @@ namespace CapaGUI
         {
             try
             {
-                CapaDTO.Cliente cliente = new CapaDTO.Cliente();
-                NegocioCliente auxCliente = new NegocioCliente();
-                cliente.TbUsuario_IdUsuario = int.Parse(txtIdCliente.Text);
+                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxCliente = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                ServiceEmpleado.Cliente cliente = new ServiceEmpleado.Cliente();
+                cliente.TbUsuario_IdUsuario = Int32.Parse(BuscaSesion());
                 cliente.NombreCompleto = txtNombrecompleto.Text;
                 cliente.Edad = int.Parse(txtEdad.Text);
                 cliente.Email = txtEmail.Text;
                 cliente.Sexo = txtSexo.Text;
                 cliente.Telefono = int.Parse(txtTelefono.Text);
+                desHabilitarCampos();
 
-                if (auxCliente.ActualizaCliente(cliente))
+                if (auxCliente.ServiceActualizaCliente(cliente))
                 {
                     edicionActiva = false;
                     MessageBox.Show("Se ha actualizado correctamente");
@@ -273,13 +274,10 @@ namespace CapaGUI
         // En futuras iteraciones se modificara.
         public String BuscaSesion()
         {
-            Utils utils = new Utils();
-            DataTable dt = new DataTable();
+            ServiceWeb.WebServiceUsuarioWebSoapClient utils = new ServiceWeb.WebServiceUsuarioWebSoapClient();
             try
             {
-                String CadenaSQL = "SELECT * FROM tbSesion;";
-                dt = utils.ConfigurarConexion("tbSesion", CadenaSQL);
-                String id = (String)dt.Rows[0]["Sesion"];
+                String id = utils.ServiceSesion(); 
                 return id;
             }
             catch (Exception e)

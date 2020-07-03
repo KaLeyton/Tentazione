@@ -13,10 +13,6 @@ using System.Threading;
 using MaterialSkin.Controls;
 using MaterialSkin;
 
-//Test para despues sacar, usar las mismas variables para servicios y negocio.
-using CapaNegocio;
-using CapaDTO;
-
 namespace CapaGUI
 {
     public partial class Login : MaterialForm 
@@ -31,13 +27,13 @@ namespace CapaGUI
         }
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
+            ServiceWeb.WebServiceUsuarioWebSoapClient auxLogin= new ServiceWeb.WebServiceUsuarioWebSoapClient();
             Login aLogin = new Login();
-            NegocioLogin auxLogin = new NegocioLogin();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
             try
             {
-                String respuesta = auxLogin.ValidaLogIn(nombre, contrasena);
+                String respuesta = auxLogin.ServiceValidaLogIn(nombre, contrasena);
                 if (respuesta.Equals("Cliente"))
                 {
                     MessageBox.Show("Estimado Cliente, Bienvenido");
@@ -66,10 +62,10 @@ namespace CapaGUI
         }
         private void BtnCrearUsuario_Click(object sender, EventArgs e)
         {
-            NegocioUsuario auxUsuario = new NegocioUsuario();
+            ServiceWeb.WebServiceUsuarioWebSoapClient auxUsuario = new ServiceWeb.WebServiceUsuarioWebSoapClient();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
-            bool validad = auxUsuario.RegistrarUsuario(nombre, contrasena);
+            bool validad = auxUsuario.ServiceRegistrarUsuario(nombre, contrasena);
             try
             {   // Verifica si se creo correctamente el usuario
                 if (validad == true)

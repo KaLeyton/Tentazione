@@ -13,7 +13,7 @@ namespace CapaServicios
     /// Summary description for WebServiceUsuarioEmpleado
     /// </summary>
     [WebService(Namespace = "http://tempuri.org/")]
-    [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
+    [WebServiceBinding(ConformsTo = WsiProfiles.None)]
     [System.ComponentModel.ToolboxItem(false)]
     // To allow this Web Service to be called from script, using ASP.NET AJAX, uncomment the following line. 
     // [System.Web.Script.Services.ScriptService]
@@ -61,9 +61,16 @@ namespace CapaServicios
             NegocioCliente auxCliente = new NegocioCliente();
             return auxCliente.ListaCliente(filtro, sentido);
         }
-        // Busca a un cliente por columna
+        // Busca a un cliente por columna string
         [WebMethod]
-        public DataTable ServiceBuscaCliente(String filtro, String valor)
+        public DataTable ServiceBuscaClienteS(String filtro, String valor)
+        {
+            NegocioCliente auxCliente = new NegocioCliente();
+            return auxCliente.BuscaCliente(filtro, valor);
+        }
+        // Busca a un cliente por columna
+        [WebMethod(MessageName = "Busca_clientes_utilizando_un_parametro_int")]
+        public DataTable ServiceBuscaClienteN(String filtro, int valor)
         {
             NegocioCliente auxCliente = new NegocioCliente();
             return auxCliente.BuscaCliente(filtro, valor);
@@ -84,10 +91,17 @@ namespace CapaServicios
         }
         // actualiza sus credenciales
         [WebMethod]
-        public bool ActualizaUsuario(Usuario usuario)
+        public bool ServiceActualizaUsuario(Usuario usuario)
         {
             NegocioUsuario auxUsuario = new NegocioUsuario();
             return auxUsuario.ActualizaUsuario(usuario);
+        }
+        // Ingresa un nuevo cliente
+        [WebMethod]
+        public bool ServiceRegistraCliente(Cliente cliente)
+        {
+            NegocioCliente auxCliente = new NegocioCliente();
+            return auxCliente.RegistrarCliente(cliente);
         }
     }
 }

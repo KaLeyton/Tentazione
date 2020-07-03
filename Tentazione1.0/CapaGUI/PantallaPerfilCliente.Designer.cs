@@ -51,7 +51,7 @@
             // 
             this.lblIdCliente.AutoSize = true;
             this.lblIdCliente.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdCliente.Location = new System.Drawing.Point(50, 93);
+            this.lblIdCliente.Location = new System.Drawing.Point(98, 99);
             this.lblIdCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIdCliente.Name = "lblIdCliente";
             this.lblIdCliente.Size = new System.Drawing.Size(79, 19);
@@ -62,7 +62,7 @@
             // 
             this.lblNombreCliente.AutoSize = true;
             this.lblNombreCliente.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCliente.Location = new System.Drawing.Point(21, 139);
+            this.lblNombreCliente.Location = new System.Drawing.Point(43, 139);
             this.lblNombreCliente.Name = "lblNombreCliente";
             this.lblNombreCliente.Size = new System.Drawing.Size(134, 19);
             this.lblNombreCliente.TabIndex = 2;
@@ -82,7 +82,7 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(130, 259);
+            this.lblEmail.Location = new System.Drawing.Point(124, 259);
             this.lblEmail.Name = "lblEmail";
             this.lblEmail.Size = new System.Drawing.Size(53, 19);
             this.lblEmail.TabIndex = 4;
@@ -92,7 +92,7 @@
             // 
             this.lblSexo.AutoSize = true;
             this.lblSexo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(138, 299);
+            this.lblSexo.Location = new System.Drawing.Point(130, 299);
             this.lblSexo.Name = "lblSexo";
             this.lblSexo.Size = new System.Drawing.Size(47, 19);
             this.lblSexo.TabIndex = 5;
@@ -102,7 +102,7 @@
             // 
             this.lblEdad.AutoSize = true;
             this.lblEdad.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdad.Location = new System.Drawing.Point(134, 179);
+            this.lblEdad.Location = new System.Drawing.Point(128, 179);
             this.lblEdad.Name = "lblEdad";
             this.lblEdad.Size = new System.Drawing.Size(49, 19);
             this.lblEdad.TabIndex = 16;
@@ -113,7 +113,7 @@
             this.btnCerrarSesion.AutoSize = true;
             this.btnCerrarSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCerrarSesion.Depth = 0;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(236, 33);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(263, 28);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCerrarSesion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCerrarSesion.Name = "btnCerrarSesion";
@@ -227,7 +227,7 @@
             // btnEditar
             // 
             this.btnEditar.Depth = 0;
-            this.btnEditar.Location = new System.Drawing.Point(134, 347);
+            this.btnEditar.Location = new System.Drawing.Point(67, 347);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Primary = true;
@@ -240,7 +240,7 @@
             // btnGuardar
             // 
             this.btnGuardar.Depth = 0;
-            this.btnGuardar.Location = new System.Drawing.Point(267, 347);
+            this.btnGuardar.Location = new System.Drawing.Point(236, 347);
             this.btnGuardar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Primary = true;
@@ -253,7 +253,7 @@
             // btnCancelar
             // 
             this.btnCancelar.Depth = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(134, 401);
+            this.btnCancelar.Location = new System.Drawing.Point(67, 401);
             this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Primary = true;
@@ -266,7 +266,7 @@
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(267, 401);
+            this.btnSalir.Location = new System.Drawing.Point(236, 401);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
