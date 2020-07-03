@@ -28,229 +28,298 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtEdad = new System.Windows.Forms.TextBox();
             this.lblEdad = new System.Windows.Forms.Label();
-            this.btnCerrarSesion = new System.Windows.Forms.Button();
-            this.btnSalir = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnGuardar = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.txtSexo = new System.Windows.Forms.TextBox();
-            this.txtEmail = new System.Windows.Forms.TextBox();
-            this.txtTelefono = new System.Windows.Forms.TextBox();
-            this.txtNombreCompleto = new System.Windows.Forms.TextBox();
-            this.txtIdEmpleado = new System.Windows.Forms.TextBox();
             this.lblSexo = new System.Windows.Forms.Label();
             this.lblEmail = new System.Windows.Forms.Label();
             this.lblTelefono = new System.Windows.Forms.Label();
             this.lblNombreCliente = new System.Windows.Forms.Label();
             this.lblIdCliente = new System.Windows.Forms.Label();
-            this.lblPerfil = new System.Windows.Forms.Label();
+            this.btnEditar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnGuardar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCancelar = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
+            this.btnCerrarSesion = new MaterialSkin.Controls.MaterialFlatButton();
+            this.txtNombreCompleto = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtEdad = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtTelefono = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtEmail = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtSexo = new MaterialSkin.Controls.MaterialSingleLineTextField();
+            this.txtIdEmpleado = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.SuspendLayout();
-            // 
-            // txtEdad
-            // 
-            this.txtEdad.Location = new System.Drawing.Point(154, 169);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(100, 22);
-            this.txtEdad.TabIndex = 35;
             // 
             // lblEdad
             // 
             this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(95, 169);
+            this.lblEdad.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEdad.Location = new System.Drawing.Point(130, 180);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(49, 17);
+            this.lblEdad.Size = new System.Drawing.Size(62, 24);
             this.lblEdad.TabIndex = 34;
             this.lblEdad.Text = "Edad :";
-            // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(272, 24);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(73, 44);
-            this.btnCerrarSesion.TabIndex = 33;
-            this.btnCerrarSesion.Text = "Cerrar Sesión";
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
-            // btnSalir
-            // 
-            this.btnSalir.Location = new System.Drawing.Point(236, 413);
-            this.btnSalir.Name = "btnSalir";
-            this.btnSalir.Size = new System.Drawing.Size(75, 23);
-            this.btnSalir.TabIndex = 32;
-            this.btnSalir.Text = "Salir";
-            this.btnSalir.UseVisualStyleBackColor = true;
-            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Location = new System.Drawing.Point(236, 358);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(75, 23);
-            this.btnCancelar.TabIndex = 31;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnGuardar
-            // 
-            this.btnGuardar.Location = new System.Drawing.Point(132, 358);
-            this.btnGuardar.Name = "btnGuardar";
-            this.btnGuardar.Size = new System.Drawing.Size(75, 23);
-            this.btnGuardar.TabIndex = 30;
-            this.btnGuardar.Text = "Guardar";
-            this.btnGuardar.UseVisualStyleBackColor = true;
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Location = new System.Drawing.Point(28, 358);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(75, 23);
-            this.btnEditar.TabIndex = 29;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.UseVisualStyleBackColor = true;
-            // 
-            // txtSexo
-            // 
-            this.txtSexo.Location = new System.Drawing.Point(154, 294);
-            this.txtSexo.Name = "txtSexo";
-            this.txtSexo.Size = new System.Drawing.Size(100, 22);
-            this.txtSexo.TabIndex = 28;
-            // 
-            // txtEmail
-            // 
-            this.txtEmail.Location = new System.Drawing.Point(154, 251);
-            this.txtEmail.Name = "txtEmail";
-            this.txtEmail.Size = new System.Drawing.Size(100, 22);
-            this.txtEmail.TabIndex = 27;
-            // 
-            // txtTelefono
-            // 
-            this.txtTelefono.Location = new System.Drawing.Point(154, 208);
-            this.txtTelefono.Name = "txtTelefono";
-            this.txtTelefono.Size = new System.Drawing.Size(100, 22);
-            this.txtTelefono.TabIndex = 26;
-            // 
-            // txtNombreCompleto
-            // 
-            this.txtNombreCompleto.Location = new System.Drawing.Point(154, 132);
-            this.txtNombreCompleto.Name = "txtNombreCompleto";
-            this.txtNombreCompleto.Size = new System.Drawing.Size(100, 22);
-            this.txtNombreCompleto.TabIndex = 25;
-            // 
-            // txtIdEmpleado
-            // 
-            this.txtIdEmpleado.Location = new System.Drawing.Point(154, 94);
-            this.txtIdEmpleado.Name = "txtIdEmpleado";
-            this.txtIdEmpleado.Size = new System.Drawing.Size(100, 22);
-            this.txtIdEmpleado.TabIndex = 24;
             // 
             // lblSexo
             // 
             this.lblSexo.AutoSize = true;
-            this.lblSexo.Location = new System.Drawing.Point(97, 294);
+            this.lblSexo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblSexo.Location = new System.Drawing.Point(134, 300);
             this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(47, 17);
+            this.lblSexo.Size = new System.Drawing.Size(58, 24);
             this.lblSexo.TabIndex = 23;
             this.lblSexo.Text = "Sexo :";
             // 
             // lblEmail
             // 
             this.lblEmail.AutoSize = true;
-            this.lblEmail.Location = new System.Drawing.Point(94, 251);
+            this.lblEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblEmail.Location = new System.Drawing.Point(126, 260);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(50, 17);
+            this.lblEmail.Size = new System.Drawing.Size(66, 24);
             this.lblEmail.TabIndex = 22;
             this.lblEmail.Text = "Email :";
             // 
             // lblTelefono
             // 
             this.lblTelefono.AutoSize = true;
-            this.lblTelefono.Location = new System.Drawing.Point(72, 208);
+            this.lblTelefono.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTelefono.Location = new System.Drawing.Point(100, 220);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(72, 17);
+            this.lblTelefono.Size = new System.Drawing.Size(92, 24);
             this.lblTelefono.TabIndex = 21;
             this.lblTelefono.Text = "Telefono :";
             // 
             // lblNombreCliente
             // 
             this.lblNombreCliente.AutoSize = true;
-            this.lblNombreCliente.Location = new System.Drawing.Point(15, 132);
+            this.lblNombreCliente.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblNombreCliente.Location = new System.Drawing.Point(17, 140);
             this.lblNombreCliente.Name = "lblNombreCliente";
-            this.lblNombreCliente.Size = new System.Drawing.Size(129, 17);
+            this.lblNombreCliente.Size = new System.Drawing.Size(175, 24);
             this.lblNombreCliente.TabIndex = 20;
             this.lblNombreCliente.Text = "Nombre Completo :";
             // 
             // lblIdCliente
             // 
             this.lblIdCliente.AutoSize = true;
-            this.lblIdCliente.Location = new System.Drawing.Point(70, 94);
+            this.lblIdCliente.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblIdCliente.Location = new System.Drawing.Point(92, 100);
             this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(74, 17);
+            this.lblIdCliente.Size = new System.Drawing.Size(100, 24);
             this.lblIdCliente.TabIndex = 19;
             this.lblIdCliente.Text = "Id Cliente :";
             // 
-            // lblPerfil
+            // btnEditar
             // 
-            this.lblPerfil.AutoSize = true;
-            this.lblPerfil.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPerfil.Location = new System.Drawing.Point(77, 9);
-            this.lblPerfil.Name = "lblPerfil";
-            this.lblPerfil.Size = new System.Drawing.Size(130, 59);
-            this.lblPerfil.TabIndex = 18;
-            this.lblPerfil.Text = "Perfil";
+            this.btnEditar.Depth = 0;
+            this.btnEditar.Location = new System.Drawing.Point(104, 340);
+            this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnEditar.Name = "btnEditar";
+            this.btnEditar.Primary = true;
+            this.btnEditar.Size = new System.Drawing.Size(109, 42);
+            this.btnEditar.TabIndex = 36;
+            this.btnEditar.Text = "Editar";
+            this.btnEditar.UseVisualStyleBackColor = true;
+            // 
+            // btnGuardar
+            // 
+            this.btnGuardar.Depth = 0;
+            this.btnGuardar.Location = new System.Drawing.Point(253, 340);
+            this.btnGuardar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnGuardar.Name = "btnGuardar";
+            this.btnGuardar.Primary = true;
+            this.btnGuardar.Size = new System.Drawing.Size(109, 42);
+            this.btnGuardar.TabIndex = 37;
+            this.btnGuardar.Text = "Guardar";
+            this.btnGuardar.UseVisualStyleBackColor = true;
+            // 
+            // btnCancelar
+            // 
+            this.btnCancelar.Depth = 0;
+            this.btnCancelar.Location = new System.Drawing.Point(253, 395);
+            this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCancelar.Name = "btnCancelar";
+            this.btnCancelar.Primary = true;
+            this.btnCancelar.Size = new System.Drawing.Size(109, 42);
+            this.btnCancelar.TabIndex = 38;
+            this.btnCancelar.Text = "Cancelar";
+            this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
+            // 
+            // btnSalir
+            // 
+            this.btnSalir.Depth = 0;
+            this.btnSalir.Location = new System.Drawing.Point(104, 395);
+            this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnSalir.Name = "btnSalir";
+            this.btnSalir.Primary = true;
+            this.btnSalir.Size = new System.Drawing.Size(109, 42);
+            this.btnSalir.TabIndex = 39;
+            this.btnSalir.Text = "Salir";
+            this.btnSalir.UseVisualStyleBackColor = true;
+            this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
+            // 
+            // btnCerrarSesion
+            // 
+            this.btnCerrarSesion.AutoSize = true;
+            this.btnCerrarSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.btnCerrarSesion.Depth = 0;
+            this.btnCerrarSesion.Location = new System.Drawing.Point(253, 27);
+            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
+            this.btnCerrarSesion.MouseState = MaterialSkin.MouseState.HOVER;
+            this.btnCerrarSesion.Name = "btnCerrarSesion";
+            this.btnCerrarSesion.Primary = false;
+            this.btnCerrarSesion.Size = new System.Drawing.Size(141, 36);
+            this.btnCerrarSesion.TabIndex = 40;
+            this.btnCerrarSesion.Text = "Cerrar Sesión";
+            this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
+            // 
+            // txtNombreCompleto
+            // 
+            this.txtNombreCompleto.Depth = 0;
+            this.txtNombreCompleto.Font = new System.Drawing.Font("Microsoft Sans Serif", 6F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNombreCompleto.Hint = "";
+            this.txtNombreCompleto.Location = new System.Drawing.Point(198, 136);
+            this.txtNombreCompleto.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtNombreCompleto.Name = "txtNombreCompleto";
+            this.txtNombreCompleto.PasswordChar = '\0';
+            this.txtNombreCompleto.SelectedText = "";
+            this.txtNombreCompleto.SelectionLength = 0;
+            this.txtNombreCompleto.SelectionStart = 0;
+            this.txtNombreCompleto.Size = new System.Drawing.Size(196, 28);
+            this.txtNombreCompleto.TabIndex = 41;
+            this.txtNombreCompleto.Text = "Nombre Apellido";
+            this.txtNombreCompleto.UseSystemPasswordChar = false;
+            this.txtNombreCompleto.Click += new System.EventHandler(this.txtNombreCompleto_Click);
+            // 
+            // txtEdad
+            // 
+            this.txtEdad.Depth = 0;
+            this.txtEdad.Hint = "";
+            this.txtEdad.Location = new System.Drawing.Point(198, 178);
+            this.txtEdad.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtEdad.Name = "txtEdad";
+            this.txtEdad.PasswordChar = '\0';
+            this.txtEdad.SelectedText = "";
+            this.txtEdad.SelectionLength = 0;
+            this.txtEdad.SelectionStart = 0;
+            this.txtEdad.Size = new System.Drawing.Size(196, 28);
+            this.txtEdad.TabIndex = 42;
+            this.txtEdad.Text = "00";
+            this.txtEdad.UseSystemPasswordChar = false;
+            this.txtEdad.Click += new System.EventHandler(this.txtEdad_Click);
+            // 
+            // txtTelefono
+            // 
+            this.txtTelefono.Depth = 0;
+            this.txtTelefono.Hint = "";
+            this.txtTelefono.Location = new System.Drawing.Point(198, 216);
+            this.txtTelefono.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtTelefono.Name = "txtTelefono";
+            this.txtTelefono.PasswordChar = '\0';
+            this.txtTelefono.SelectedText = "";
+            this.txtTelefono.SelectionLength = 0;
+            this.txtTelefono.SelectionStart = 0;
+            this.txtTelefono.Size = new System.Drawing.Size(196, 28);
+            this.txtTelefono.TabIndex = 43;
+            this.txtTelefono.Text = "987654321";
+            this.txtTelefono.UseSystemPasswordChar = false;
+            this.txtTelefono.Click += new System.EventHandler(this.txtTelefono_Click);
+            // 
+            // txtEmail
+            // 
+            this.txtEmail.Depth = 0;
+            this.txtEmail.Hint = "";
+            this.txtEmail.Location = new System.Drawing.Point(198, 256);
+            this.txtEmail.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtEmail.Name = "txtEmail";
+            this.txtEmail.PasswordChar = '\0';
+            this.txtEmail.SelectedText = "";
+            this.txtEmail.SelectionLength = 0;
+            this.txtEmail.SelectionStart = 0;
+            this.txtEmail.Size = new System.Drawing.Size(196, 28);
+            this.txtEmail.TabIndex = 44;
+            this.txtEmail.Text = "ejemplo@uwu.xd";
+            this.txtEmail.UseSystemPasswordChar = false;
+            this.txtEmail.Click += new System.EventHandler(this.txtEmail_Click);
+            // 
+            // txtSexo
+            // 
+            this.txtSexo.Depth = 0;
+            this.txtSexo.Hint = "";
+            this.txtSexo.Location = new System.Drawing.Point(198, 296);
+            this.txtSexo.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtSexo.Name = "txtSexo";
+            this.txtSexo.PasswordChar = '\0';
+            this.txtSexo.SelectedText = "";
+            this.txtSexo.SelectionLength = 0;
+            this.txtSexo.SelectionStart = 0;
+            this.txtSexo.Size = new System.Drawing.Size(196, 28);
+            this.txtSexo.TabIndex = 45;
+            this.txtSexo.Text = "fem - masc";
+            this.txtSexo.UseSystemPasswordChar = false;
+            this.txtSexo.Click += new System.EventHandler(this.txtSexo_Click);
+            // 
+            // txtIdEmpleado
+            // 
+            this.txtIdEmpleado.Depth = 0;
+            this.txtIdEmpleado.Hint = "";
+            this.txtIdEmpleado.Location = new System.Drawing.Point(198, 96);
+            this.txtIdEmpleado.MouseState = MaterialSkin.MouseState.HOVER;
+            this.txtIdEmpleado.Name = "txtIdEmpleado";
+            this.txtIdEmpleado.PasswordChar = '\0';
+            this.txtIdEmpleado.SelectedText = "";
+            this.txtIdEmpleado.SelectionLength = 0;
+            this.txtIdEmpleado.SelectionStart = 0;
+            this.txtIdEmpleado.Size = new System.Drawing.Size(196, 28);
+            this.txtIdEmpleado.TabIndex = 46;
+            this.txtIdEmpleado.UseSystemPasswordChar = false;
             // 
             // PantallaPerfilEmpleado
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(362, 450);
+            this.ClientSize = new System.Drawing.Size(424, 466);
+            this.Controls.Add(this.txtIdEmpleado);
+            this.Controls.Add(this.txtSexo);
+            this.Controls.Add(this.txtEmail);
+            this.Controls.Add(this.txtTelefono);
             this.Controls.Add(this.txtEdad);
-            this.Controls.Add(this.lblEdad);
+            this.Controls.Add(this.txtNombreCompleto);
             this.Controls.Add(this.btnCerrarSesion);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnGuardar);
             this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.txtSexo);
-            this.Controls.Add(this.txtEmail);
-            this.Controls.Add(this.txtTelefono);
-            this.Controls.Add(this.txtNombreCompleto);
-            this.Controls.Add(this.txtIdEmpleado);
+            this.Controls.Add(this.lblEdad);
             this.Controls.Add(this.lblSexo);
             this.Controls.Add(this.lblEmail);
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblNombreCliente);
             this.Controls.Add(this.lblIdCliente);
-            this.Controls.Add(this.lblPerfil);
             this.Name = "PantallaPerfilEmpleado";
-            this.Text = "PantallaPerfilEmpleado";
+            this.Text = "Perfil";
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtEdad;
         private System.Windows.Forms.Label lblEdad;
-        private System.Windows.Forms.Button btnCerrarSesion;
-        private System.Windows.Forms.Button btnSalir;
-        private System.Windows.Forms.Button btnCancelar;
-        private System.Windows.Forms.Button btnGuardar;
-        private System.Windows.Forms.Button btnEditar;
-        private System.Windows.Forms.TextBox txtSexo;
-        private System.Windows.Forms.TextBox txtEmail;
-        private System.Windows.Forms.TextBox txtTelefono;
-        private System.Windows.Forms.TextBox txtNombreCompleto;
-        private System.Windows.Forms.TextBox txtIdEmpleado;
         private System.Windows.Forms.Label lblSexo;
         private System.Windows.Forms.Label lblEmail;
         private System.Windows.Forms.Label lblTelefono;
         private System.Windows.Forms.Label lblNombreCliente;
         private System.Windows.Forms.Label lblIdCliente;
-        private System.Windows.Forms.Label lblPerfil;
+        private MaterialSkin.Controls.MaterialRaisedButton btnEditar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnGuardar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnCancelar;
+        private MaterialSkin.Controls.MaterialRaisedButton btnSalir;
+        private MaterialSkin.Controls.MaterialFlatButton btnCerrarSesion;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreCompleto;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtEdad;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtTelefono;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtEmail;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtSexo;
+        private MaterialSkin.Controls.MaterialSingleLineTextField txtIdEmpleado;
     }
 }

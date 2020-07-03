@@ -1,4 +1,6 @@
-﻿using System;
+﻿using MaterialSkin;
+using MaterialSkin.Controls;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,23 +15,45 @@ using CapaServicios;
 
 namespace CapaGUI
 {
-    public partial class PantallaPerfilCliente : Form
+    public partial class PantallaPerfilCliente : MaterialForm
     {
         public PantallaPerfilCliente()
         {
             InitializeComponent();
+            var materialSkinManager = MaterialSkinManager.Instance;
+            materialSkinManager.AddFormToManage(this);
+            materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
+            materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.Grey900, Primary.Brown500, Accent.LightBlue700, TextShade.WHITE);
+        }
+
+        private void txtNombreCompleto_Click(object sender, EventArgs e)
+        {
+            this.txtNombreCompleto.Text = String.Empty;
+        }
+
+        private void txtEdad_Click(object sender, EventArgs e)
+        {
+            this.txtEdad.Text = String.Empty;
+        }
+
+        private void txtTelefono_Click(object sender, EventArgs e)
+        {
+            this.txtTelefono.Text = String.Empty;
+        }
+
+        private void txtEmail_Click(object sender, EventArgs e)
+        {
+            this.txtEmail.Text = String.Empty;
+        }
+
+        private void txtSexo_Click(object sender, EventArgs e)
+        {
+            this.txtSexo.Text = String.Empty;
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
         {
             Application.Exit();
-        }
-
-        private void btnCerrarSesion_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            Login pLogin = new Login();
-            pLogin.ShowDialog();
         }
 
         private void btnCancelar_Click(object sender, EventArgs e)
@@ -38,7 +62,6 @@ namespace CapaGUI
             MenuCliente pantCliente = new MenuCliente();
             pantCliente.ShowDialog();
         }
-
         private void btnGuardar_Click(object sender, EventArgs e)
         {
             try
@@ -52,7 +75,7 @@ namespace CapaGUI
                 cliente.Sexo = txtSexo.Text;
                 cliente.Telefono = int.Parse(txtTelefono.Text);
 
-                if(auxCliente.ServiceActualizaCliente(cliente))
+                if (auxCliente.ServiceActualizaCliente(cliente))
                 {
                     MessageBox.Show("Se ha actualizado correctamente");
                 }
@@ -121,6 +144,12 @@ namespace CapaGUI
                 MessageBox.Show("UwU!" + "\n" + "Hay problemas con su sesion, deberia volver a ingresar");
                 Console.WriteLine("Problemas con la sesion " + ex + "\n");
             }
+        }
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+            this.Dispose();
+            Login pLogin = new Login();
+            pLogin.ShowDialog();
         }
     }
 }
