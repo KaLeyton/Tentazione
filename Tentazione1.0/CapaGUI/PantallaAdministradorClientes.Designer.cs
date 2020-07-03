@@ -167,6 +167,7 @@
             this.btnNuevoCliente.TabIndex = 27;
             this.btnNuevoCliente.Text = "Nuevo Cliente";
             this.btnNuevoCliente.UseVisualStyleBackColor = true;
+            this.btnNuevoCliente.Click += new System.EventHandler(this.btnNuevoCliente_Click);
             // 
             // btnCancelar
             // 
@@ -194,6 +195,7 @@
             this.btnGuardarCliente.TabIndex = 29;
             this.btnGuardarCliente.Text = "Guardar";
             this.btnGuardarCliente.UseVisualStyleBackColor = true;
+            this.btnGuardarCliente.Click += new System.EventHandler(this.btnGuardarCliente_Click);
             // 
             // btnSalir
             // 

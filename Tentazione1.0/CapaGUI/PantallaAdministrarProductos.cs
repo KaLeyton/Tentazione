@@ -217,5 +217,22 @@ namespace CapaGUI
             habilitarCampos();
             edicionActiva = true;
         }
+        // Elimina producto
+        private void btnEliminarProducto_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                NegocioProducto auxProducto = new NegocioProducto();
+                if (auxProducto.EliminaProducto(txtSku.Text))
+                {
+                    MessageBox.Show("Se ha eliminado correctamente");
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("UwU!" + "\n" + "Hay problemas el modulo productos, deberia volver a ingresar");
+                Console.WriteLine("Problemas con eliminar Producto " + ex + "\n");
+            }
+        }
     }
 }

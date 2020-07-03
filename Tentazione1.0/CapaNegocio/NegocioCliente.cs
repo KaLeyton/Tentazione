@@ -59,6 +59,20 @@ namespace CapaNegocio
                 return null;
             }
         }
+        // Metodo para buscar cliente, en base a ID
+        public DataTable BuscaCliente(String filtro, int valor)
+        {
+            try
+            {
+                Utils util = new Utils();
+                return util.ListaUtils(filtro, valor, true, "tbCliente");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("error, fallo al buscar cliente " + e + "\n");
+                return null;
+            }
+        }
 
         // Insertar metodo que liste varios clientes por filtro.
         // [MEJORA CONTINUA]

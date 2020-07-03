@@ -173,6 +173,10 @@
     <Content Include="alfajorpremium.jpg" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
+      <Project>{B4489824-6D79-42B5-AE0F-3F612C9148FA}</Project>
+      <Name>CapaDatos</Name>
+    </ProjectReference>
     <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">
       <Project>{01dd6b9c-7756-40c0-96b8-d2780e502124}</Project>
       <Name>CapaDTO</Name>
