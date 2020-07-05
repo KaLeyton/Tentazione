@@ -81,7 +81,7 @@ namespace CapaDatos
                 {
                     this.Conect.CadenaSQL += " DESC;";
                 }
-                else if(sentido == false)
+                else if (sentido == false)
                 {
                     this.Conect.CadenaSQL += " ASC;";
                 }
@@ -180,5 +180,14 @@ namespace CapaDatos
                 return false;
             }
         }
+        ///PIUM PIUM
+
+        //    private int UltimoUsuario(String nombreUsuario, String contrasena)
+        //    {
+        //        String CadenaSQL = "select idIsuario  from tbUsuario where nombreUsuario =" + nombreUsuario + " and contrasena = " + contrasena + ";";
+        //        CapaDTO = this.ConfigurarConexion
+        //        return ConfigurarConexion();
+        //    }
+        //}
     }
 }

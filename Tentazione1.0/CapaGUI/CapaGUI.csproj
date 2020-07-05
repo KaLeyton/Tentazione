@@ -67,6 +67,12 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Reference.svcmap</DependentUpon>
     </Compile>
+    <Compile Include="PantallaCrearUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="PantallaCrearUsuario.Designer.cs">
+      <DependentUpon>PantallaCrearUsuario.cs</DependentUpon>
+    </Compile>
     <Compile Include="Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +149,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaAdministrarProductos.resx">
       <DependentUpon>PantallaAdministrarProductos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="PantallaCrearUsuario.resx">
+      <DependentUpon>PantallaCrearUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="PantallaListarProductos.resx">
       <DependentUpon>PantallaListarProductos.cs</DependentUpon>
@@ -221,6 +230,16 @@
     <WCFMetadataStorage Include="Connected Services\ServiceCliente\" />
     <WCFMetadataStorage Include="Connected Services\ServiceEmpleado\" />
     <WCFMetadataStorage Include="Connected Services\ServiceWeb\" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">
+      <Project>{01dd6b9c-7756-40c0-96b8-d2780e502124}</Project>
+      <Name>CapaDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaInstanciadora\CapaInstanciadora.csproj">
+      <Project>{1913ed2b-fa0f-4f76-92bf-dcbe35d938c0}</Project>
+      <Name>CapaInstanciadora</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

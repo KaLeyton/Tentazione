@@ -231,6 +231,7 @@ namespace CapaGUI
                 cliente.Edad = Int32.Parse(txtEdad.Text);
                 cliente.Sexo = txtSexo.Text;
                 cliente.Telefono = Int32.Parse(txtTelefono.Text);
+                Console.WriteLine("debug : " + cliente.TbUsuario_IdUsuario);
                 if (auxCliente.ServiceRegistraCliente(cliente))
                 {
                     edicionActiva = false;

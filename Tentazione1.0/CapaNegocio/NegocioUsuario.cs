@@ -8,6 +8,7 @@ using System.Windows.Forms;
 using CapaDTO;
 using CapaDatos;
 
+
 namespace CapaNegocio
 {
     public class NegocioUsuario
@@ -103,8 +104,8 @@ namespace CapaNegocio
                 return false;
             }
         }
-        // Elimina Usuario y devuelve una confirmacion
-        public bool EliminaUsuario(String id)
+        // Elimina Usuario y devuelve una confirmacion.
+        public bool EliminaUsuario(int id)
         {
             try
             {
