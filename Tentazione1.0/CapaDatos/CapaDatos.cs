@@ -47,6 +47,26 @@ namespace CapaDatos
                 return null;
             }
         }
+        // Inserta datos en la tabla usuario y retorna ID
+        public DataTable ConfigurarConexion(String tabla, String sqlQuery, String x)
+        {
+            try
+            {
+                this.conect = new Conexion();
+                this.Conect.NombreBaseDeDatos = "Tentazione";
+                this.Conect.CadenaConexion = "Data Source=DESKTOP-3PBKU9H;Initial Catalog=Tentazione;Integrated Security=True";
+                this.Conect.NombreTabla = tabla;
+                this.Conect.CadenaSQL = sqlQuery;
+                this.Conect.EsSelect = false;
+                this.Conect.conectar();
+                return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine("error, fallo al configurar conexion2 " + e + "\n");
+                return null;
+            }
+        }
         // Metodo para insertar datos segun parametros a base de datos.
         public bool ConfigurarConexion(String tabla, String sqlQuery, bool NoSelect)
         {
@@ -112,13 +132,13 @@ namespace CapaDatos
                     this.Conect.CadenaSQL += " ASC;";
                 }
                 this.Conect.conectar();
+                return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
             }
             catch (Exception e)
             {
                 Console.WriteLine("error, fallo al utilizar listaUtil1 " + e + "\n");
                 return null;
             }
-            return this.Conect.DbDataSet.Tables[this.Conect.NombreTabla];
         }
         // Override para el metodo de Listar, este trae todos los resultados.
         public DataTable ListaUtils(String filtro, bool sentido, String tabla)
@@ -180,14 +200,22 @@ namespace CapaDatos
                 return false;
             }
         }
-        ///PIUM PIUM
-
-        //    private int UltimoUsuario(String nombreUsuario, String contrasena)
-        //    {
-        //        String CadenaSQL = "select idIsuario  from tbUsuario where nombreUsuario =" + nombreUsuario + " and contrasena = " + contrasena + ";";
-        //        CapaDTO = this.ConfigurarConexion
-        //        return ConfigurarConexion();
-        //    }
-        //}
+        // busca el id del ultimo usuario
+        public int UltimoUsuario()
+        {
+            DataTable dt = new DataTable();
+            try
+            {
+                String CadenaSQL = "SELECT top 1 IdUsuario FROM tbUsuario ORDER BY IdUsuario DESC;";
+                dt = ConfigurarConexion("idUsuario",CadenaSQL);
+                int id = (int)dt.Rows[0]["IdUsuario"];
+                return id;
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error, fallo acceder a la tabla usuario con la sesion actual " + ex + "\n");
+                return 0;
+            }
+        }
     }
 }

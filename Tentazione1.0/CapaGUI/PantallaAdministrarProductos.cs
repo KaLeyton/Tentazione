@@ -1,4 +1,6 @@
-﻿using MaterialSkin;
+﻿using CapaDTO;
+using CapaInstanciadora;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -76,8 +78,8 @@ namespace CapaGUI
             {
                 String valor = txtBuscarProducto.Text;
                 string filtro = "NombreProducto";
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
-                dt = auxProducto.ServiceBuscaProducto(filtro, valor);
+                IntegracionProducto auxProducto = new IntegracionProducto();
+                dt = auxProducto.IBuscaProducto(filtro, valor);
                 this.dataGridViewProductos.DataSource = dt;
                 // Seteo de las columnas
                 txtNombreProducto.Text = (String)dt.Rows[0][filtro];
@@ -97,8 +99,8 @@ namespace CapaGUI
         {
             try
             {
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
-                ServiceEmpleado.Producto producto = new ServiceEmpleado.Producto();
+                IntegracionProducto auxProducto = new IntegracionProducto();
+                Producto producto = new Producto();
 
                 producto.NombreProducto = txtNombreProducto.Text;
                 producto.Valor = Int32.Parse(txtValor.Text);
@@ -106,7 +108,7 @@ namespace CapaGUI
                 producto.UnidadMedida = cbxUnidadMedida.Text;
                 habilitarCampos();
 
-                if (auxProducto.ServiceRegistrarProducto(producto))
+                if (auxProducto.IRegistrarProducto(producto))
                 {
                     desHabilitarCampos();
                     edicionActiva = false;
@@ -124,15 +126,15 @@ namespace CapaGUI
         {
             try
             {
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
-                ServiceEmpleado.Producto producto = new ServiceEmpleado.Producto();
+                IntegracionProducto auxProducto = new IntegracionProducto();
+                Producto producto = new Producto();
                 producto.Sku = txtSku.Text;
                 producto.NombreProducto = txtNombreProducto.Text;
                 producto.Valor = Int32.Parse(txtValor.Text);
                 producto.CantPaquete = Int32.Parse(txtCantPaquete.Text);
                 producto.UnidadMedida = cbxUnidadMedida.Text;
 
-                if (auxProducto.ServiceActualizaProducto(producto))
+                if (auxProducto.IActualizaProducto(producto))
                 {
                     desHabilitarCampos();
                     edicionActiva = false;
@@ -178,7 +180,7 @@ namespace CapaGUI
             DataTable dt = new DataTable();
             try
             {
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                IntegracionProducto auxProducto = new IntegracionProducto();
                 this.dataGridViewProductos.DataSource = BuscaProductos();
                 desHabilitarCampos();
                 desHabilitarId();
@@ -194,9 +196,9 @@ namespace CapaGUI
         {
             try
             {
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                IntegracionProducto auxProducto = new IntegracionProducto();
                 String filtro = "SkuProducto";
-                return auxProducto.ServiceListaProducto(filtro, true);
+                return auxProducto.IListaProducto(filtro, true);
             }
             catch (Exception ex)
             {
@@ -229,8 +231,8 @@ namespace CapaGUI
         {
             try
             {
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxProducto = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
-                if (auxProducto.ServiceEliminaProducto(txtSku.Text))
+                IntegracionProducto auxProducto = new IntegracionProducto();
+                if (auxProducto.IEliminaProducto(txtSku.Text))
                 {
                     MessageBox.Show("Se ha eliminado correctamente");
                 }

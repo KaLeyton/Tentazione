@@ -12,7 +12,7 @@ namespace CapaInstanciadora
     public class IntegracionUsuario
     {
         // Entrega nombre y contraseña y retorna un boleanod de confirmacion.
-        public bool IRegistrarUsuario(String nombre, String contra)
+        public int IRegistrarUsuario(String nombre, String contra)
         {
             NegocioUsuario auxUsuario = new NegocioUsuario();
             return auxUsuario.RegistrarUsuario(nombre,contra);
@@ -47,6 +47,18 @@ namespace CapaInstanciadora
             NegocioUsuario auxUsuario = new NegocioUsuario();
             return auxUsuario.EliminaUsuario(id);
         }
+        // Registra el ID del usuario en cliente.
+        public bool ICreaCliente(int id)
+        {
+            NegocioUsuario auxUsuario = new NegocioUsuario();
+            return auxUsuario.CreaCliente(id);
+        }
 
+        // Busca el ultimo id
+        public int IUltimoUsuario()
+        {
+            NegocioUsuario auxUsuario = new NegocioUsuario();
+            return auxUsuario.UltimoUsuario();
+        }
     }
 }

@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+//  borrar despues
+using CapaDTO;
+using CapaInstanciadora;
 
 namespace CapaGUI
 {
@@ -117,8 +120,8 @@ namespace CapaGUI
         {
             try
             {
-                ServiceWeb.WebServiceUsuarioWebSoapClient auxWeb = new ServiceWeb.WebServiceUsuarioWebSoapClient();
-                String id = auxWeb.ServiceSesion();
+                IntegracionLogin auxWeb = new IntegracionLogin();
+                String id = auxWeb.IBuscaSesion();
                 return id;
             }
             catch (Exception ex)
@@ -133,10 +136,10 @@ namespace CapaGUI
         {
             try
             {
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxEmpleado = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                IntegracionEmpleado auxEmpleado = new IntegracionEmpleado();
                 String filtro = "tbUsuario_IdUsuario";
                 String valor = SesionUsuario();
-                return auxEmpleado.ServiceBuscaEmpleado(filtro, valor);
+                return auxEmpleado.IBuscaEmpleado(filtro, valor);
             }
             catch (Exception ex)
             {
@@ -150,8 +153,8 @@ namespace CapaGUI
         {
             try
             {
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxEmpelado = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
-                ServiceEmpleado.Empleado empleado = new ServiceEmpleado.Empleado();
+                IntegracionEmpleado auxEmpleado = new IntegracionEmpleado();
+                Empleado empleado = new Empleado();
                 empleado.TbUsuario_IdUsuario = int.Parse(txtIdEmpleado.Text);
                 empleado.NombreCompleto = txtNombreCompleto.Text;
                 empleado.Edad = int.Parse(txtEdad.Text);
@@ -159,7 +162,7 @@ namespace CapaGUI
                 empleado.Sexo = txtSexo.Text;
                 empleado.Telefono = int.Parse(txtTelefono.Text);
 
-                if (auxEmpelado.ServiceActualizaEmpleado(empleado))
+                if (auxEmpleado.IActualizaEmpleado(empleado))
                 {
                     MessageBox.Show("Se ha actualizado correctamente");
                 }

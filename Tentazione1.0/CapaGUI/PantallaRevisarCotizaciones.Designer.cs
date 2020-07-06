@@ -46,6 +46,7 @@
             this.btnCerrarSesion.TabIndex = 14;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
             // 
             // label1
             // 
@@ -64,7 +65,7 @@
             this.ClientSize = new System.Drawing.Size(580, 295);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCerrarSesion);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "PantallaRevisarCotizaciones";
             this.Text = "Revisar Cotizaciones";
             this.ResumeLayout(false);

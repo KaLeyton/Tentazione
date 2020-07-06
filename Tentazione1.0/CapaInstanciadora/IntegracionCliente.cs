@@ -35,7 +35,7 @@ namespace CapaInstanciadora
             NegocioCliente auxCliente = new NegocioCliente();
             return auxCliente.BuscaCliente(filtro, valor);
         }
-        // Actualiza un cliente, seleccionado por objeto y retorna un boleanod de confirmacion..
+        // Actualiza un cliente, seleccionado por objeto y retorna un boleanod de confirmacion.
         public bool IActualizaCliente(Cliente cliente)
         {
             NegocioCliente auxCliente = new NegocioCliente();

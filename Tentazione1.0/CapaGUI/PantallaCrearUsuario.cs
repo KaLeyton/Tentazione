@@ -24,23 +24,19 @@ namespace CapaGUI
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.Grey900, Primary.Brown500, Accent.LightBlue700, TextShade.WHITE);
         }
-
-
+        // Crea usuario y para que inserte.
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
             IntegracionUsuario auxUsuario = new IntegracionUsuario();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
-            bool validad = auxUsuario.IRegistrarUsuario(nombre, contrasena);
+            int valida = auxUsuario.IRegistrarUsuario(nombre, contrasena);
+            // devolver ID o registrar
             try
             {   // Verifica si se creo correctamente el usuario
-                if (validad)
+                if (valida > 0)
                 {
-                    IntegracionCliente auxCliente = new IntegracionCliente();
-                    IntegracionLogin auxLogin = new IntegracionLogin();
-                    Cliente cliente = new Cliente();
-                    cliente.TbUsuario_IdUsuario = Int32.Parse(auxLogin.IBuscaSesion());
-                    if (auxCliente.IRegistrarCliente(cliente))
+                    if (auxUsuario.ICreaCliente(valida))
                     {
                         MessageBox.Show("Datos Válidos", "Utilice sus credeciales para iniciar sesion.");
                     }

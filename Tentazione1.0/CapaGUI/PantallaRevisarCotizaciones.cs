@@ -22,5 +22,10 @@ namespace CapaGUI
             materialSkinManager.Theme = MaterialSkinManager.Themes.LIGHT;
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.Grey900, Primary.Brown500, Accent.LightBlue700, TextShade.WHITE);
         }
+
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

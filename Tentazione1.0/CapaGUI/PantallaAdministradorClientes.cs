@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+// sacar despues
+using CapaInstanciadora;
+using CapaDTO;
 
 namespace CapaGUI
 {
@@ -131,20 +134,22 @@ namespace CapaGUI
         private void btnBuscarCliente_Click(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxCliente = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+            IntegracionCliente auxCliente = new IntegracionCliente();
             try
             {
                 String filtro = "tbUsuario_IdUsuario";
                 int id = Int32.Parse(txtIdCliente.Text);
-                dt = auxCliente.ServiceBuscaClienteN(filtro, id);
+                dt = auxCliente.IBuscaCliente(filtro, id);
                 this.dataGridViewClientes.DataSource = dt;
                 // Seteo de las columnas
                 txtIdCliente.Text = id.ToString();
-                txtNombrecompleto.Text = (String)dt.Rows[0]["NombreCompleto"];
-                txtEdad.Text = dt.Rows[0]["Edad"].ToString();
-                txtTelefono.Text = dt.Rows[0]["Telefono"].ToString();
-                txtEmail.Text = dt.Rows[0]["Email"].ToString();
-                txtSexo.Text = dt.Rows[0]["Sexo"].ToString();
+                // If Ternario, gracias Cuder San.
+                // Utilizado para seteo de campos txt.
+                txtNombrecompleto.Text = (dt.Rows[0]["NombreCompleto"] == DBNull.Value) ? string.Empty : dt.Rows[0]["NombreCompleto"].ToString();
+                txtEdad.Text = (dt.Rows[0]["Edad"] == DBNull.Value) ? string.Empty : dt.Rows[0]["Edad"].ToString();
+                txtTelefono.Text = (dt.Rows[0]["Telefono"] == DBNull.Value) ? string.Empty : dt.Rows[0]["Telefono"].ToString();
+                txtTelefono.Text = (dt.Rows[0]["Email"] == DBNull.Value) ? string.Empty : dt.Rows[0]["Email"].ToString();
+                txtTelefono.Text = (dt.Rows[0]["Sexo"] == DBNull.Value) ? string.Empty : dt.Rows[0]["Sexo"].ToString();
             }
             catch (Exception ex)
             {
@@ -152,7 +157,6 @@ namespace CapaGUI
                 Console.WriteLine("Problemas con la busqueda de Cliente " + ex + "\n");
             }
         }
-
         // Edita cliente
         private void btnEditarCliente_Click(object sender, EventArgs e)
         {
@@ -173,8 +177,8 @@ namespace CapaGUI
         {
             try
             {
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxCliente = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
-                if (auxCliente.ServiceEliminaCliente(Int32.Parse(txtIdCliente.Text)))
+                IntegracionCliente auxCliente = new IntegracionCliente();
+                if (auxCliente.IEliminaCliente(Int32.Parse(txtIdCliente.Text)))
                 {
                     MessageBox.Show("Se ha eliminado correctamente");
                     edicionActiva = false;
@@ -206,9 +210,9 @@ namespace CapaGUI
         {
             try
             {
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxCliente = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
+                IntegracionCliente auxCliente = new IntegracionCliente();
                 String filtro = "tbUsuario_IdUsuario";
-                return auxCliente.ServiceListaCliente(filtro, true);
+                return auxCliente.IListaCliente(filtro, true);
             }
             catch (Exception ex)
             {
@@ -221,10 +225,12 @@ namespace CapaGUI
         // D E M O
         private void btnNuevoCliente_Click(object sender, EventArgs e)
         {
+            PantallaCrearUsuario auxCrearUsuario = new PantallaCrearUsuario();
+            auxCrearUsuario.ShowDialog();
             try
             {
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxCliente = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
-                ServiceEmpleado.Cliente cliente = new ServiceEmpleado.Cliente();
+                IntegracionCliente auxCliente = new IntegracionCliente();
+                Cliente cliente = new Cliente();
                 cliente.TbUsuario_IdUsuario = int.Parse(txtIdCliente.Text);
                 cliente.NombreCompleto = txtNombrecompleto.Text;
                 cliente.Email = txtEmail.Text;
@@ -232,7 +238,7 @@ namespace CapaGUI
                 cliente.Sexo = txtSexo.Text;
                 cliente.Telefono = Int32.Parse(txtTelefono.Text);
                 Console.WriteLine("debug : " + cliente.TbUsuario_IdUsuario);
-                if (auxCliente.ServiceRegistraCliente(cliente))
+                if (auxCliente.IRegistrarCliente(cliente))
                 {
                     edicionActiva = false;
                     MessageBox.Show("Se a ingresado a cliente correctamente");
@@ -249,17 +255,17 @@ namespace CapaGUI
         {
             try
             {
-                ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient auxCliente = new ServiceEmpleado.WebServiceUsuarioEmpleadoSoapClient();
-                ServiceEmpleado.Cliente cliente = new ServiceEmpleado.Cliente();
-                cliente.TbUsuario_IdUsuario = Int32.Parse(BuscaSesion());
+                IntegracionUsuario auxUsuario = new IntegracionUsuario();
+                IntegracionCliente auxCliente = new IntegracionCliente();
+                Cliente cliente = new Cliente();
+                cliente.TbUsuario_IdUsuario = auxUsuario.IUltimoUsuario();
                 cliente.NombreCompleto = txtNombrecompleto.Text;
                 cliente.Edad = int.Parse(txtEdad.Text);
                 cliente.Email = txtEmail.Text;
                 cliente.Sexo = txtSexo.Text;
                 cliente.Telefono = int.Parse(txtTelefono.Text);
                 desHabilitarCampos();
-
-                if (auxCliente.ServiceActualizaCliente(cliente))
+                if (auxCliente.IActualizaCliente(cliente))
                 {
                     edicionActiva = false;
                     MessageBox.Show("Se ha actualizado correctamente");
@@ -281,10 +287,10 @@ namespace CapaGUI
         // En futuras iteraciones se modificara.
         public String BuscaSesion()
         {
-            ServiceWeb.WebServiceUsuarioWebSoapClient utils = new ServiceWeb.WebServiceUsuarioWebSoapClient();
+            IntegracionLogin auxUtils = new IntegracionLogin();
             try
             {
-                String id = utils.ServiceSesion(); 
+                String id = auxUtils.IBuscaSesion(); 
                 return id;
             }
             catch (Exception e)

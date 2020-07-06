@@ -9,6 +9,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+// borrar despues
+using CapaDTO;
+using CapaInstanciadora;
 
 namespace CapaGUI
 {
@@ -86,8 +89,8 @@ namespace CapaGUI
         {
             try
             {
-                ServiceCliente.WebServiceUsuarioClienteSoapClient auxCliente = new ServiceCliente.WebServiceUsuarioClienteSoapClient();
-                ServiceCliente.Cliente cliente = new ServiceCliente.Cliente();
+                IntegracionCliente auxCliente = new IntegracionCliente();
+                Cliente cliente = new Cliente();
                 cliente.TbUsuario_IdUsuario = int.Parse(txtIdCliente.Text);
                 cliente.NombreCompleto = txtNombreCompleto.Text;
                 cliente.Edad = int.Parse(txtEdad.Text);
@@ -95,7 +98,7 @@ namespace CapaGUI
                 cliente.Sexo = txtSexo.Text;
                 cliente.Telefono = int.Parse(txtTelefono.Text);
 
-                if (auxCliente.ServiceActualizaCliente(cliente))
+                if (auxCliente.IActualizaCliente(cliente))
                 {
                     MessageBox.Show("Se ha actualizado correctamente");
                 }
@@ -117,8 +120,8 @@ namespace CapaGUI
         {
             try
             {
-                ServiceWeb.WebServiceUsuarioWebSoapClient auxWeb = new ServiceWeb.WebServiceUsuarioWebSoapClient();
-                String id = auxWeb.ServiceSesion();
+                IntegracionLogin auxWeb = new IntegracionLogin();
+                String id = auxWeb.IBuscaSesion();
                 return id;
             }
             catch (Exception ex)
@@ -133,10 +136,10 @@ namespace CapaGUI
         {
             try
             {
-                ServiceCliente.WebServiceUsuarioClienteSoapClient auxCliente = new ServiceCliente.WebServiceUsuarioClienteSoapClient();
+                IntegracionCliente auxCliente = new IntegracionCliente();
                 String filtro = "tbUsuario_IdUsuario";
                 String valor = SesionUsuario();
-                return auxCliente.ServiceBuscarCliente(filtro, valor);
+                return auxCliente.IBuscaCliente(filtro, valor);
             }
             catch (Exception ex)
             {
@@ -152,19 +155,21 @@ namespace CapaGUI
             pLogin.ShowDialog();
         }
         // Carga todos los productos al momento de instanciar la vista
+
         private void PantallaPerfilCliente_Load_1(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
+            IntegracionCliente auxCliente = new IntegracionCliente();
             try
             {
                 dt = BuscaCliente();
                 txtIdCliente.Text = (dt.Rows[0]["tbUsuario_IdUsuario"]).ToString();
+                Console.WriteLine("asfasfasffa" + txtIdCliente.Text);
                 txtNombreCompleto.Text = (String)dt.Rows[0]["NombreCompleto"];
                 txtEdad.Text = (dt.Rows[0]["Edad"]).ToString();
                 txtEmail.Text = (String)dt.Rows[0]["Email"];
                 txtSexo.Text = (String)dt.Rows[0]["Sexo"];
                 txtTelefono.Text = (dt.Rows[0]["Telefono"]).ToString();
-
                 desHabilitarCampos();
                 desHabilitarId();
             }

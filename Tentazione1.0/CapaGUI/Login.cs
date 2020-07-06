@@ -66,14 +66,14 @@ namespace CapaGUI
         private void btnLogin_Click_1(object sender, EventArgs e)
         {
             IntegracionLogin auxLogin = new IntegracionLogin();
-            //NegocioLogin auxLogin = new NegocioLogin();
+            // NegocioLogin auxLogin = new NegocioLogin();
             Login aLogin = new Login();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
             try
             {
                 String respuesta = auxLogin.IValidaLogIn(nombre, contrasena);
-                //String respuesta = auxLogin.ValidaLogIn(nombre, contrasena);
+                // String respuesta = auxLogin.ValidaLogIn(nombre, contrasena);
                 Console.WriteLine("dfasf" + respuesta);
                 if (respuesta.Equals("Cliente"))
                 {

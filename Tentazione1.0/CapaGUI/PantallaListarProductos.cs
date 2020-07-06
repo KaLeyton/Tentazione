@@ -9,6 +9,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using MaterialSkin;
 using MaterialSkin.Controls;
+// borrar despues
+using CapaDTO;
+using CapaInstanciadora;
 
 namespace CapaGUI
 {
@@ -32,9 +35,9 @@ namespace CapaGUI
         {
             try
             {
-                ServiceCliente.WebServiceUsuarioClienteSoapClient auxProducto = new ServiceCliente.WebServiceUsuarioClienteSoapClient();
+                IntegracionProducto auxProducto = new IntegracionProducto();
                 String filtro = "NombreProducto";
-                this.dataGridViewListaProductos.DataSource = auxProducto.ServiceListaProducto(filtro, true);
+                this.dataGridViewListaProductos.DataSource = auxProducto.IListaProducto(filtro, true);
             }
             catch (Exception ex)
             {
@@ -73,9 +76,9 @@ namespace CapaGUI
             DataTable dt = new DataTable();
             try
             {
-                ServiceCliente.WebServiceUsuarioClienteSoapClient auxProducto = new ServiceCliente.WebServiceUsuarioClienteSoapClient();
+                IntegracionProducto auxProducto = new IntegracionProducto();
                 String filtro = "NombreProducto";
-                this.dataGridViewListaProductos.DataSource = auxProducto.ServiceListaProducto(filtro, true);
+                this.dataGridViewListaProductos.DataSource = auxProducto.IListaProducto(filtro, true);
             }
             catch (Exception ex)
             {
@@ -88,9 +91,9 @@ namespace CapaGUI
         {
             try
             {
-                ServiceCliente.WebServiceUsuarioClienteSoapClient auxProducto = new ServiceCliente.WebServiceUsuarioClienteSoapClient();
+                IntegracionProducto auxProducto = new IntegracionProducto();
                 String filtro = "NombreProducto";
-                return auxProducto.ServiceBuscaProducto(filtro, txtBuscarProducto.Text);
+                return auxProducto.IBuscaProducto(filtro, txtBuscarProducto.Text);
             }
             catch (Exception ex)
             {
