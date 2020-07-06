@@ -1,4 +1,6 @@
-﻿using MaterialSkin;
+﻿using CapaGUI.ServiceCliente;
+using CapaGUI.ServiceLogin;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -9,9 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-// borrar despues
-using CapaDTO;
-using CapaInstanciadora;
 
 namespace CapaGUI
 {
@@ -89,7 +88,7 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionCliente auxCliente = new IntegracionCliente();
+                WebServiceClienteSoapClient auxCliente = new WebServiceClienteSoapClient();
                 Cliente cliente = new Cliente();
                 cliente.TbUsuario_IdUsuario = int.Parse(txtIdCliente.Text);
                 cliente.NombreCompleto = txtNombreCompleto.Text;
@@ -98,7 +97,7 @@ namespace CapaGUI
                 cliente.Sexo = txtSexo.Text;
                 cliente.Telefono = int.Parse(txtTelefono.Text);
 
-                if (auxCliente.IActualizaCliente(cliente))
+                if (auxCliente.SActualizaCliente(cliente))
                 {
                     MessageBox.Show("Se ha actualizado correctamente");
                 }
@@ -120,8 +119,8 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionLogin auxWeb = new IntegracionLogin();
-                String id = auxWeb.IBuscaSesion();
+                WebServiceLoginSoapClient auxWeb = new WebServiceLoginSoapClient();
+                String id = auxWeb.SBuscaSesion();
                 return id;
             }
             catch (Exception ex)
@@ -136,10 +135,10 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionCliente auxCliente = new IntegracionCliente();
+                WebServiceClienteSoapClient auxCliente = new WebServiceClienteSoapClient();
                 String filtro = "tbUsuario_IdUsuario";
                 String valor = SesionUsuario();
-                return auxCliente.IBuscaCliente(filtro, valor);
+                return auxCliente.SBuscaClienteString(filtro, valor);
             }
             catch (Exception ex)
             {
@@ -159,7 +158,7 @@ namespace CapaGUI
         private void PantallaPerfilCliente_Load_1(object sender, EventArgs e)
         {
             DataTable dt = new DataTable();
-            IntegracionCliente auxCliente = new IntegracionCliente();
+            WebServiceClienteSoapClient auxCliente = new WebServiceClienteSoapClient();
             try
             {
                 dt = BuscaCliente();

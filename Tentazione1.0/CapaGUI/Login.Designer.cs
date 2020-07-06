@@ -31,7 +31,6 @@
             this.lblLogin = new System.Windows.Forms.Label();
             this.btnLogin = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnVerProductos = new MaterialSkin.Controls.MaterialFlatButton();
-            this.btnCrearUsuario = new MaterialSkin.Controls.MaterialFlatButton();
             this.btnSalir = new MaterialSkin.Controls.MaterialFlatButton();
             this.txtNombreUsuario = new MaterialSkin.Controls.MaterialSingleLineTextField();
             this.txtContrasena = new MaterialSkin.Controls.MaterialSingleLineTextField();
@@ -79,28 +78,12 @@
             this.btnVerProductos.UseVisualStyleBackColor = true;
             this.btnVerProductos.Click += new System.EventHandler(this.btnVerProductos_Click_1);
             // 
-            // btnCrearUsuario
-            // 
-            this.btnCrearUsuario.AutoSize = true;
-            this.btnCrearUsuario.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.btnCrearUsuario.Depth = 0;
-            this.btnCrearUsuario.Location = new System.Drawing.Point(47, 283);
-            this.btnCrearUsuario.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
-            this.btnCrearUsuario.MouseState = MaterialSkin.MouseState.HOVER;
-            this.btnCrearUsuario.Name = "btnCrearUsuario";
-            this.btnCrearUsuario.Primary = false;
-            this.btnCrearUsuario.Size = new System.Drawing.Size(116, 36);
-            this.btnCrearUsuario.TabIndex = 14;
-            this.btnCrearUsuario.Text = "Crear Usuario";
-            this.btnCrearUsuario.UseVisualStyleBackColor = true;
-            this.btnCrearUsuario.Click += new System.EventHandler(this.btnCrearUsuario_Click_1);
-            // 
             // btnSalir
             // 
             this.btnSalir.AutoSize = true;
             this.btnSalir.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(47, 322);
+            this.btnSalir.Location = new System.Drawing.Point(47, 290);
             this.btnSalir.Margin = new System.Windows.Forms.Padding(3, 5, 3, 5);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
@@ -116,7 +99,7 @@
             this.txtNombreUsuario.Depth = 0;
             this.txtNombreUsuario.Hint = "";
             this.txtNombreUsuario.Location = new System.Drawing.Point(20, 103);
-            this.txtNombreUsuario.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtNombreUsuario.Margin = new System.Windows.Forms.Padding(2);
             this.txtNombreUsuario.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtNombreUsuario.Name = "txtNombreUsuario";
             this.txtNombreUsuario.PasswordChar = '\0';
@@ -134,7 +117,7 @@
             this.txtContrasena.Depth = 0;
             this.txtContrasena.Hint = "";
             this.txtContrasena.Location = new System.Drawing.Point(20, 152);
-            this.txtContrasena.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtContrasena.Margin = new System.Windows.Forms.Padding(2);
             this.txtContrasena.MouseState = MaterialSkin.MouseState.HOVER;
             this.txtContrasena.Name = "txtContrasena";
             this.txtContrasena.PasswordChar = '\0';
@@ -155,11 +138,10 @@
             this.Controls.Add(this.txtContrasena);
             this.Controls.Add(this.txtNombreUsuario);
             this.Controls.Add(this.btnSalir);
-            this.Controls.Add(this.btnCrearUsuario);
             this.Controls.Add(this.btnVerProductos);
             this.Controls.Add(this.btnLogin);
             this.Controls.Add(this.lblLogin);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Login";
             this.Text = "LogIn";
             this.ResumeLayout(false);
@@ -172,7 +154,6 @@
         private System.Windows.Forms.Label lblLogin;
         private MaterialSkin.Controls.MaterialFlatButton btnLogin;
         private MaterialSkin.Controls.MaterialFlatButton btnVerProductos;
-        private MaterialSkin.Controls.MaterialFlatButton btnCrearUsuario;
         private MaterialSkin.Controls.MaterialFlatButton btnSalir;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtNombreUsuario;
         private MaterialSkin.Controls.MaterialSingleLineTextField txtContrasena;

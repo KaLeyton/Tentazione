@@ -52,6 +52,31 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Connected Services\ServiceCliente\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceEmpleado\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceLogin\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceProducto\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
+    <Compile Include="Connected Services\ServiceUsuario\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </Compile>
     <Compile Include="PantallaCrearUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +187,20 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <None Include="Connected Services\ServiceCliente\WebServiceCliente.wsdl" />
+    <None Include="Connected Services\ServiceEmpleado\WebServiceEmpleado.wsdl" />
+    <None Include="Connected Services\ServiceLogin\CapaGUI.ServiceLogin.SBuscaSesionResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceLogin\CapaGUI.ServiceLogin.SValidaLogInResponse.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceLogin\WebServiceLogin.wsdl" />
+    <None Include="Connected Services\ServiceProducto\WebServiceProducto.wsdl" />
+    <None Include="Connected Services\ServiceUsuario\CapaGUI.ServiceUsuario.Usuario.datasource">
+      <DependentUpon>Reference.svcmap</DependentUpon>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\WebServiceUsuario.wsdl" />
     <None Include="packages.config" />
     <None Include="Properties\DataSources\System.Data.DataSet.datasource" />
     <None Include="Properties\DataSources\System.Data.DataTable.datasource" />
@@ -180,16 +219,51 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="alfajorpremium.jpg" />
+    <None Include="Connected Services\ServiceUsuario\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceUsuario\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceUsuario\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceUsuario\WebServiceUsuario.disco" />
+    <None Include="Connected Services\ServiceProducto\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceProducto\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceProducto\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceProducto\WebServiceProducto.disco" />
+    <None Include="Connected Services\ServiceLogin\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceLogin\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceLogin\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceLogin\WebServiceLogin.disco" />
+    <None Include="Connected Services\ServiceEmpleado\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceEmpleado\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceEmpleado\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceEmpleado\WebServiceEmpleado.disco" />
+    <None Include="Connected Services\ServiceCliente\Reference.svcmap">
+      <Generator>WCF Proxy Generator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Connected Services\ServiceCliente\configuration.svcinfo" />
+    <None Include="Connected Services\ServiceCliente\configuration91.svcinfo" />
+    <None Include="Connected Services\ServiceCliente\WebServiceCliente.disco" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">
-      <Project>{01dd6b9c-7756-40c0-96b8-d2780e502124}</Project>
-      <Name>CapaDTO</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\CapaInstanciadora\CapaInstanciadora.csproj">
-      <Project>{1913ed2b-fa0f-4f76-92bf-dcbe35d938c0}</Project>
-      <Name>CapaInstanciadora</Name>
-    </ProjectReference>
+    <WCFMetadata Include="Connected Services\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadataStorage Include="Connected Services\ServiceCliente\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceEmpleado\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceLogin\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceProducto\" />
+    <WCFMetadataStorage Include="Connected Services\ServiceUsuario\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

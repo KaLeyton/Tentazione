@@ -10,6 +10,9 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaNegocio", "CapaNegocio\CapaNegocio.csproj", "{B03F0D23-E0DA-485C-94D5-D331D8DB25F5}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaGUI", "CapaGUI\CapaGUI.csproj", "{6BF38DB5-5C60-4431-8E12-224DC1E8CB21}"
+	ProjectSection(ProjectDependencies) = postProject
+		{045B5B5C-97E1-46FB-9A8C-9507E29A2E88} = {045B5B5C-97E1-46FB-9A8C-9507E29A2E88}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CapaDatos", "CapaDatos\CapaDatos.csproj", "{571DB15A-1977-470A-9088-19016ABF45C9}"
 EndProject
