@@ -55,9 +55,9 @@ namespace CapaGUI
 
         private void btnCancelar_Click(object sender, EventArgs e)
         {
-            Login alogin = new Login();
+            PantallaAdministradorClientes auxpantadmin = new PantallaAdministradorClientes();
+            auxpantadmin.ShowDialog();
             this.Dispose();
-            alogin.ShowDialog();
         }
 
         private void btnSalir_Click(object sender, EventArgs e)

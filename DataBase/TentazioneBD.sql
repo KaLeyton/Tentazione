@@ -87,7 +87,7 @@ ADD FOREIGN KEY (tbUsuario_IdUsuario) REFERENCES tbUsuario(IdUsuario);
 ALTER TABLE tbCliente
 ADD FOREIGN KEY (tbUsuario_IdUsuario) REFERENCES tbUsuario(IdUsuario);
 ALTER TABLE tbProductoExtendido
-ADD FOREIGN KEY (tbProducto_SkuProducto) REFERENCES tbProducto(SkuProducto); 
+ADD FOREIGN KEY (tbProducto_SkuProducto) REFERENCES tbProducto(SkuProducto) ON DELETE CASCADE; 
 ALTER TABLE tbVenta
 ADD FOREIGN KEY (tbCotizacion_IdCotizacion) REFERENCES tbCotizacion(IdCotizacion);
 ALTER TABLE tbVenta

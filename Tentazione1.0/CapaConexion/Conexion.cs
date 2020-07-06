@@ -182,6 +182,7 @@ namespace CapaConexion
                 catch (Exception ex)
                 {
                     MessageBox.Show("Mensaje Sistema", "Error SQL " + ex.Message);
+                    Console.WriteLine("woowowow" + ex.Message);
                     return;
                 }
 

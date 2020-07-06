@@ -84,7 +84,7 @@ namespace CapaNegocio
             try
             {
                 Utils util = new Utils();
-                String CadenaSQL = "DELETE FROM tbProducto WHERE IdProducto = '" + sku + "';";
+                String CadenaSQL = "DELETE FROM tbProducto WHERE SkuProducto = '" + sku + "';";
                 return util.ConfigurarConexion("tbProducto", CadenaSQL, false);
             }
             catch (Exception e)
