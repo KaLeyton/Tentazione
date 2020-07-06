@@ -43,7 +43,13 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform, Version=2.0.1.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Web.Infrastructure.1.0.0.0\lib\net40\Microsoft.Web.Infrastructure.dll</HintPath>
+    </Reference>
     <Reference Include="System.Web.DynamicData" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
@@ -62,15 +68,31 @@
     <Reference Include="System.EnterpriseServices" />
   </ItemGroup>
   <ItemGroup>
-    <Reference Include="Microsoft.CodeDom.Providers.DotNetCompilerPlatform">
-      <HintPath>..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\lib\net45\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Web.config" />
+    <Content Include="WebServiceCliente.asmx" />
+    <Content Include="WebServiceEmpleado.asmx" />
+    <Content Include="WebServiceLogin.asmx" />
+    <Content Include="WebServiceProducto.asmx" />
+    <Content Include="WebServiceUsuario.asmx" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="WebServiceCliente.asmx.cs">
+      <DependentUpon>WebServiceCliente.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServiceEmpleado.asmx.cs">
+      <DependentUpon>WebServiceEmpleado.asmx</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="WebServiceLogin.asmx.cs">
+      <DependentUpon>WebServiceLogin.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServiceProducto.asmx.cs">
+      <DependentUpon>WebServiceProducto.asmx</DependentUpon>
+    </Compile>
+    <Compile Include="WebServiceUsuario.asmx.cs">
+      <DependentUpon>WebServiceUsuario.asmx</DependentUpon>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
@@ -80,6 +102,16 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">
+      <Project>{01dd6b9c-7756-40c0-96b8-d2780e502124}</Project>
+      <Name>CapaDTO</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CapaInstanciadora\CapaInstanciadora.csproj">
+      <Project>{1913ed2b-fa0f-4f76-92bf-dcbe35d938c0}</Project>
+      <Name>CapaInstanciadora</Name>
+    </ProjectReference>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

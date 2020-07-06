@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SListaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sentido" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SListaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SListaClienteResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SRegistrarCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="tns:Cliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Cliente">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="TbUsuario_IdUsuario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreCompleto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Edad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Telefono" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SRegistrarClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SRegistrarClienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SBuscaClienteString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SBuscaClienteStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SBuscaClienteStringResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SBuscaClienteInt">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="valor" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SBuscaClienteIntResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SBuscaClienteIntResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SActualizaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="cliente" type="tns:Cliente" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SActualizaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SActualizaClienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SEliminaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SEliminaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SEliminaClienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SListaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:SListaCliente" />
+  </wsdl:message>
+  <wsdl:message name="SListaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:SListaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SRegistrarClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:SRegistrarCliente" />
+  </wsdl:message>
+  <wsdl:message name="SRegistrarClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:SRegistrarClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SBuscaClienteStringSoapIn">
+    <wsdl:part name="parameters" element="tns:SBuscaClienteString" />
+  </wsdl:message>
+  <wsdl:message name="SBuscaClienteStringSoapOut">
+    <wsdl:part name="parameters" element="tns:SBuscaClienteStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="SBuscaClienteIntSoapIn">
+    <wsdl:part name="parameters" element="tns:SBuscaClienteInt" />
+  </wsdl:message>
+  <wsdl:message name="SBuscaClienteIntSoapOut">
+    <wsdl:part name="parameters" element="tns:SBuscaClienteIntResponse" />
+  </wsdl:message>
+  <wsdl:message name="SActualizaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:SActualizaCliente" />
+  </wsdl:message>
+  <wsdl:message name="SActualizaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:SActualizaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SEliminaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:SEliminaCliente" />
+  </wsdl:message>
+  <wsdl:message name="SEliminaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:SEliminaClienteResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceClienteSoap">
+    <wsdl:operation name="SListaCliente">
+      <wsdl:input message="tns:SListaClienteSoapIn" />
+      <wsdl:output message="tns:SListaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SRegistrarCliente">
+      <wsdl:input message="tns:SRegistrarClienteSoapIn" />
+      <wsdl:output message="tns:SRegistrarClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaClienteString">
+      <wsdl:input message="tns:SBuscaClienteStringSoapIn" />
+      <wsdl:output message="tns:SBuscaClienteStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaClienteInt">
+      <wsdl:input message="tns:SBuscaClienteIntSoapIn" />
+      <wsdl:output message="tns:SBuscaClienteIntSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SActualizaCliente">
+      <wsdl:input message="tns:SActualizaClienteSoapIn" />
+      <wsdl:output message="tns:SActualizaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SEliminaCliente">
+      <wsdl:input message="tns:SEliminaClienteSoapIn" />
+      <wsdl:output message="tns:SEliminaClienteSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceClienteSoap" type="tns:WebServiceClienteSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SListaCliente">
+      <soap:operation soapAction="http://tempuri.org/SListaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SRegistrarCliente">
+      <soap:operation soapAction="http://tempuri.org/SRegistrarCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaClienteString">
+      <soap:operation soapAction="http://tempuri.org/SBuscaClienteString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaClienteInt">
+      <soap:operation soapAction="http://tempuri.org/SBuscaClienteInt" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SActualizaCliente">
+      <soap:operation soapAction="http://tempuri.org/SActualizaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SEliminaCliente">
+      <soap:operation soapAction="http://tempuri.org/SEliminaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceClienteSoap12" type="tns:WebServiceClienteSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SListaCliente">
+      <soap12:operation soapAction="http://tempuri.org/SListaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SRegistrarCliente">
+      <soap12:operation soapAction="http://tempuri.org/SRegistrarCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaClienteString">
+      <soap12:operation soapAction="http://tempuri.org/SBuscaClienteString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaClienteInt">
+      <soap12:operation soapAction="http://tempuri.org/SBuscaClienteInt" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SActualizaCliente">
+      <soap12:operation soapAction="http://tempuri.org/SActualizaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SEliminaCliente">
+      <soap12:operation soapAction="http://tempuri.org/SEliminaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceCliente">
+    <wsdl:port name="WebServiceClienteSoap" binding="tns:WebServiceClienteSoap">
+      <soap:address location="https://localhost:44362/WebServiceCliente.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceClienteSoap12" binding="tns:WebServiceClienteSoap12">
+      <soap12:address location="https://localhost:44362/WebServiceCliente.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

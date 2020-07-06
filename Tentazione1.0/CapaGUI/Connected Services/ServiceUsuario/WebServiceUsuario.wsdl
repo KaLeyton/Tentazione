@@ -1,0 +1,375 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SRegistrarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="nombre" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contra" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SRegistrarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SRegistrarUsuarioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SListarUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sentido" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SListarUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SListarUsuarioResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SBuscaUsuarioObj">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SBuscaUsuarioObjResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SBuscaUsuarioObjResult" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Usuario">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IdUsuario" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="NombreUsuario" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Contrasena" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Rol" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SBuscaUsuarioString">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="esId" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SBuscaUsuarioStringResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SBuscaUsuarioStringResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SActualizaUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="usuario" type="tns:Usuario" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SActualizaUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SActualizaUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SEliminaUsuario">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SEliminaUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SEliminaUsuarioResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SCreaCliente">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SCreaClienteResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SCreaClienteResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SUltimoUsuario">
+        <s:complexType />
+      </s:element>
+      <s:element name="SUltimoUsuarioResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SUltimoUsuarioResult" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SRegistrarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:SRegistrarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="SRegistrarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:SRegistrarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SListarUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:SListarUsuario" />
+  </wsdl:message>
+  <wsdl:message name="SListarUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:SListarUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SBuscaUsuarioObjSoapIn">
+    <wsdl:part name="parameters" element="tns:SBuscaUsuarioObj" />
+  </wsdl:message>
+  <wsdl:message name="SBuscaUsuarioObjSoapOut">
+    <wsdl:part name="parameters" element="tns:SBuscaUsuarioObjResponse" />
+  </wsdl:message>
+  <wsdl:message name="SBuscaUsuarioStringSoapIn">
+    <wsdl:part name="parameters" element="tns:SBuscaUsuarioString" />
+  </wsdl:message>
+  <wsdl:message name="SBuscaUsuarioStringSoapOut">
+    <wsdl:part name="parameters" element="tns:SBuscaUsuarioStringResponse" />
+  </wsdl:message>
+  <wsdl:message name="SActualizaUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:SActualizaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="SActualizaUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:SActualizaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SEliminaUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:SEliminaUsuario" />
+  </wsdl:message>
+  <wsdl:message name="SEliminaUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:SEliminaUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:message name="SCreaClienteSoapIn">
+    <wsdl:part name="parameters" element="tns:SCreaCliente" />
+  </wsdl:message>
+  <wsdl:message name="SCreaClienteSoapOut">
+    <wsdl:part name="parameters" element="tns:SCreaClienteResponse" />
+  </wsdl:message>
+  <wsdl:message name="SUltimoUsuarioSoapIn">
+    <wsdl:part name="parameters" element="tns:SUltimoUsuario" />
+  </wsdl:message>
+  <wsdl:message name="SUltimoUsuarioSoapOut">
+    <wsdl:part name="parameters" element="tns:SUltimoUsuarioResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceUsuarioSoap">
+    <wsdl:operation name="SRegistrarUsuario">
+      <wsdl:input message="tns:SRegistrarUsuarioSoapIn" />
+      <wsdl:output message="tns:SRegistrarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SListarUsuario">
+      <wsdl:input message="tns:SListarUsuarioSoapIn" />
+      <wsdl:output message="tns:SListarUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaUsuarioObj">
+      <wsdl:input message="tns:SBuscaUsuarioObjSoapIn" />
+      <wsdl:output message="tns:SBuscaUsuarioObjSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaUsuarioString">
+      <wsdl:input message="tns:SBuscaUsuarioStringSoapIn" />
+      <wsdl:output message="tns:SBuscaUsuarioStringSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SActualizaUsuario">
+      <wsdl:input message="tns:SActualizaUsuarioSoapIn" />
+      <wsdl:output message="tns:SActualizaUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SEliminaUsuario">
+      <wsdl:input message="tns:SEliminaUsuarioSoapIn" />
+      <wsdl:output message="tns:SEliminaUsuarioSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SCreaCliente">
+      <wsdl:input message="tns:SCreaClienteSoapIn" />
+      <wsdl:output message="tns:SCreaClienteSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SUltimoUsuario">
+      <wsdl:input message="tns:SUltimoUsuarioSoapIn" />
+      <wsdl:output message="tns:SUltimoUsuarioSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceUsuarioSoap" type="tns:WebServiceUsuarioSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SRegistrarUsuario">
+      <soap:operation soapAction="http://tempuri.org/SRegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SListarUsuario">
+      <soap:operation soapAction="http://tempuri.org/SListarUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaUsuarioObj">
+      <soap:operation soapAction="http://tempuri.org/SBuscaUsuarioObj" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaUsuarioString">
+      <soap:operation soapAction="http://tempuri.org/SBuscaUsuarioString" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SActualizaUsuario">
+      <soap:operation soapAction="http://tempuri.org/SActualizaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SEliminaUsuario">
+      <soap:operation soapAction="http://tempuri.org/SEliminaUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SCreaCliente">
+      <soap:operation soapAction="http://tempuri.org/SCreaCliente" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SUltimoUsuario">
+      <soap:operation soapAction="http://tempuri.org/SUltimoUsuario" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceUsuarioSoap12" type="tns:WebServiceUsuarioSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SRegistrarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/SRegistrarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SListarUsuario">
+      <soap12:operation soapAction="http://tempuri.org/SListarUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaUsuarioObj">
+      <soap12:operation soapAction="http://tempuri.org/SBuscaUsuarioObj" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaUsuarioString">
+      <soap12:operation soapAction="http://tempuri.org/SBuscaUsuarioString" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SActualizaUsuario">
+      <soap12:operation soapAction="http://tempuri.org/SActualizaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SEliminaUsuario">
+      <soap12:operation soapAction="http://tempuri.org/SEliminaUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SCreaCliente">
+      <soap12:operation soapAction="http://tempuri.org/SCreaCliente" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SUltimoUsuario">
+      <soap12:operation soapAction="http://tempuri.org/SUltimoUsuario" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceUsuario">
+    <wsdl:port name="WebServiceUsuarioSoap" binding="tns:WebServiceUsuarioSoap">
+      <soap:address location="https://localhost:44362/WebServiceUsuario.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceUsuarioSoap12" binding="tns:WebServiceUsuarioSoap12">
+      <soap12:address location="https://localhost:44362/WebServiceUsuario.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

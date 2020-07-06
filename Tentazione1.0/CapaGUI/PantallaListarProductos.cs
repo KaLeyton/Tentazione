@@ -7,11 +7,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using CapaGUI.ServiceProducto;
 using MaterialSkin;
 using MaterialSkin.Controls;
-// borrar despues
-using CapaDTO;
-using CapaInstanciadora;
 
 namespace CapaGUI
 {
@@ -35,9 +33,9 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionProducto auxProducto = new IntegracionProducto();
+                WebServiceProductoSoapClient auxProducto = new WebServiceProductoSoapClient();
                 String filtro = "NombreProducto";
-                this.dataGridViewListaProductos.DataSource = auxProducto.IListaProducto(filtro, true);
+                this.dataGridViewListaProductos.DataSource = auxProducto.SListaProducto(filtro, true);
             }
             catch (Exception ex)
             {
@@ -76,9 +74,9 @@ namespace CapaGUI
             DataTable dt = new DataTable();
             try
             {
-                IntegracionProducto auxProducto = new IntegracionProducto();
+                WebServiceProductoSoapClient auxProducto = new WebServiceProductoSoapClient();
                 String filtro = "NombreProducto";
-                this.dataGridViewListaProductos.DataSource = auxProducto.IListaProducto(filtro, true);
+                this.dataGridViewListaProductos.DataSource = auxProducto.SListaProducto(filtro, true);
             }
             catch (Exception ex)
             {
@@ -91,9 +89,9 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionProducto auxProducto = new IntegracionProducto();
+                WebServiceProductoSoapClient auxProducto = new WebServiceProductoSoapClient();
                 String filtro = "NombreProducto";
-                return auxProducto.IBuscaProducto(filtro, txtBuscarProducto.Text);
+                return auxProducto.SBuscaProducto(filtro, txtBuscarProducto.Text);
             }
             catch (Exception ex)
             {

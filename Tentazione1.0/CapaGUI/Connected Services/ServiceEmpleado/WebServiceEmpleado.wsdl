@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="SListaEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+            <s:element minOccurs="1" maxOccurs="1" name="sentido" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SListaEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SListaEmpleadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SRegistrarEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empleado" type="tns:Empleado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Empleado">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="NombreCompleto" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Edad" type="s:int" />
+          <s:element minOccurs="1" maxOccurs="1" name="Telefono" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Sexo" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="TbUsuario_IdUsuario" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="SRegistrarEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SRegistrarEmpleadoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SBuscaEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="filtro" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="valor" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SBuscaEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SBuscaEmpleadoResult">
+              <s:complexType>
+                <s:sequence>
+                  <s:any minOccurs="0" maxOccurs="unbounded" namespace="http://www.w3.org/2001/XMLSchema" processContents="lax" />
+                  <s:any minOccurs="1" namespace="urn:schemas-microsoft-com:xml-diffgram-v1" processContents="lax" />
+                </s:sequence>
+              </s:complexType>
+            </s:element>
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SActualizaEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="empleado" type="tns:Empleado" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SActualizaEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SActualizaEmpleadoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SEliminaEmpleado">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="id" type="s:int" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SEliminaEmpleadoResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="SEliminaEmpleadoResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="SListaEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:SListaEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="SListaEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:SListaEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SRegistrarEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:SRegistrarEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="SRegistrarEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:SRegistrarEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SBuscaEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:SBuscaEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="SBuscaEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:SBuscaEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SActualizaEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:SActualizaEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="SActualizaEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:SActualizaEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:message name="SEliminaEmpleadoSoapIn">
+    <wsdl:part name="parameters" element="tns:SEliminaEmpleado" />
+  </wsdl:message>
+  <wsdl:message name="SEliminaEmpleadoSoapOut">
+    <wsdl:part name="parameters" element="tns:SEliminaEmpleadoResponse" />
+  </wsdl:message>
+  <wsdl:portType name="WebServiceEmpleadoSoap">
+    <wsdl:operation name="SListaEmpleado">
+      <wsdl:input message="tns:SListaEmpleadoSoapIn" />
+      <wsdl:output message="tns:SListaEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SRegistrarEmpleado">
+      <wsdl:input message="tns:SRegistrarEmpleadoSoapIn" />
+      <wsdl:output message="tns:SRegistrarEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaEmpleado">
+      <wsdl:input message="tns:SBuscaEmpleadoSoapIn" />
+      <wsdl:output message="tns:SBuscaEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SActualizaEmpleado">
+      <wsdl:input message="tns:SActualizaEmpleadoSoapIn" />
+      <wsdl:output message="tns:SActualizaEmpleadoSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SEliminaEmpleado">
+      <wsdl:input message="tns:SEliminaEmpleadoSoapIn" />
+      <wsdl:output message="tns:SEliminaEmpleadoSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebServiceEmpleadoSoap" type="tns:WebServiceEmpleadoSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SListaEmpleado">
+      <soap:operation soapAction="http://tempuri.org/SListaEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SRegistrarEmpleado">
+      <soap:operation soapAction="http://tempuri.org/SRegistrarEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaEmpleado">
+      <soap:operation soapAction="http://tempuri.org/SBuscaEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SActualizaEmpleado">
+      <soap:operation soapAction="http://tempuri.org/SActualizaEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SEliminaEmpleado">
+      <soap:operation soapAction="http://tempuri.org/SEliminaEmpleado" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebServiceEmpleadoSoap12" type="tns:WebServiceEmpleadoSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="SListaEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/SListaEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SRegistrarEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/SRegistrarEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SBuscaEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/SBuscaEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SActualizaEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/SActualizaEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SEliminaEmpleado">
+      <soap12:operation soapAction="http://tempuri.org/SEliminaEmpleado" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebServiceEmpleado">
+    <wsdl:port name="WebServiceEmpleadoSoap" binding="tns:WebServiceEmpleadoSoap">
+      <soap:address location="https://localhost:44362/WebServiceEmpleado.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebServiceEmpleadoSoap12" binding="tns:WebServiceEmpleadoSoap12">
+      <soap12:address location="https://localhost:44362/WebServiceEmpleado.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

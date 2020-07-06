@@ -1,5 +1,4 @@
-﻿using CapaDTO;
-using CapaInstanciadora;
+﻿using CapaGUI.ServiceProducto;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -78,8 +77,8 @@ namespace CapaGUI
             {
                 String valor = txtBuscarProducto.Text;
                 string filtro = "NombreProducto";
-                IntegracionProducto auxProducto = new IntegracionProducto();
-                dt = auxProducto.IBuscaProducto(filtro, valor);
+                WebServiceProductoSoapClient auxProducto = new WebServiceProductoSoapClient();
+                dt = auxProducto.SBuscaProducto(filtro, valor);
                 this.dataGridViewProductos.DataSource = dt;
                 // Seteo de las columnas
                 txtNombreProducto.Text = (String)dt.Rows[0][filtro];
@@ -99,7 +98,7 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionProducto auxProducto = new IntegracionProducto();
+                WebServiceProductoSoapClient auxProducto = new WebServiceProductoSoapClient();
                 Producto producto = new Producto();
 
                 producto.NombreProducto = txtNombreProducto.Text;
@@ -108,7 +107,7 @@ namespace CapaGUI
                 producto.UnidadMedida = cbxUnidadMedida.Text;
                 habilitarCampos();
 
-                if (auxProducto.IRegistrarProducto(producto))
+                if (auxProducto.SRegistrarProducto(producto))
                 {
                     desHabilitarCampos();
                     edicionActiva = false;
@@ -126,7 +125,7 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionProducto auxProducto = new IntegracionProducto();
+                WebServiceProductoSoapClient auxProducto = new WebServiceProductoSoapClient();
                 Producto producto = new Producto();
                 producto.Sku = txtSku.Text;
                 producto.NombreProducto = txtNombreProducto.Text;
@@ -134,7 +133,7 @@ namespace CapaGUI
                 producto.CantPaquete = Int32.Parse(txtCantPaquete.Text);
                 producto.UnidadMedida = cbxUnidadMedida.Text;
 
-                if (auxProducto.IActualizaProducto(producto))
+                if (auxProducto.SActualizaProducto(producto))
                 {
                     desHabilitarCampos();
                     edicionActiva = false;
@@ -180,7 +179,7 @@ namespace CapaGUI
             DataTable dt = new DataTable();
             try
             {
-                IntegracionProducto auxProducto = new IntegracionProducto();
+                WebServiceProductoSoapClient auxProducto = new WebServiceProductoSoapClient();
                 this.dataGridViewProductos.DataSource = BuscaProductos();
                 desHabilitarCampos();
                 desHabilitarId();
@@ -196,9 +195,9 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionProducto auxProducto = new IntegracionProducto();
+                WebServiceProductoSoapClient auxProducto = new WebServiceProductoSoapClient();
                 String filtro = "SkuProducto";
-                return auxProducto.IListaProducto(filtro, true);
+                return auxProducto.SListaProducto(filtro, true);
             }
             catch (Exception ex)
             {
@@ -231,8 +230,8 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionProducto auxProducto = new IntegracionProducto();
-                if (auxProducto.IEliminaProducto(txtSku.Text))
+                WebServiceProductoSoapClient auxProducto = new WebServiceProductoSoapClient();
+                if (auxProducto.SEliminaProducto(txtSku.Text))
                 {
                     MessageBox.Show("Se ha eliminado correctamente");
                 }

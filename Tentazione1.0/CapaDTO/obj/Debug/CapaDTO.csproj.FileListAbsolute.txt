@@ -15,4 +15,3 @@ C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaDTO\
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.csproj.CoreCompileInputs.cache
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.dll
 C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.pdb
-C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.csprojAssemblyReference.cache

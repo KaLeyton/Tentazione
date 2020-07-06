@@ -1,5 +1,4 @@
-﻿using CapaDTO;
-using CapaInstanciadora;
+﻿using CapaGUI.ServiceUsuario;
 using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
@@ -27,16 +26,16 @@ namespace CapaGUI
         // Crea usuario y para que inserte.
         private void btnCrearUsuario_Click(object sender, EventArgs e)
         {
-            IntegracionUsuario auxUsuario = new IntegracionUsuario();
+            WebServiceUsuarioSoapClient auxUsuario = new WebServiceUsuarioSoapClient();
             String nombre = this.txtNombreUsuario.Text;
             String contrasena = this.txtContrasena.Text;
-            int valida = auxUsuario.IRegistrarUsuario(nombre, contrasena);
+            int valida = auxUsuario.SRegistrarUsuario(nombre, contrasena);
             // devolver ID o registrar
             try
             {   // Verifica si se creo correctamente el usuario
                 if (valida > 0)
                 {
-                    if (auxUsuario.ICreaCliente(valida))
+                    if (auxUsuario.SCreaCliente(valida))
                     {
                         MessageBox.Show("Datos Válidos", "Utilice sus credeciales para iniciar sesion.");
                     }

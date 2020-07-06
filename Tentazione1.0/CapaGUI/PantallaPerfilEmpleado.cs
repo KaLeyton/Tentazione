@@ -1,4 +1,6 @@
-﻿using MaterialSkin;
+﻿using CapaGUI.ServiceEmpleado;
+using CapaGUI.ServiceLogin;
+using MaterialSkin;
 using MaterialSkin.Controls;
 using System;
 using System.Collections.Generic;
@@ -9,9 +11,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-//  borrar despues
-using CapaDTO;
-using CapaInstanciadora;
 
 namespace CapaGUI
 {
@@ -120,8 +119,8 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionLogin auxWeb = new IntegracionLogin();
-                String id = auxWeb.IBuscaSesion();
+                WebServiceLoginSoapClient auxWeb = new WebServiceLoginSoapClient();
+                String id = auxWeb.SBuscaSesion();
                 return id;
             }
             catch (Exception ex)
@@ -136,10 +135,10 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionEmpleado auxEmpleado = new IntegracionEmpleado();
+                WebServiceEmpleadoSoapClient auxEmpleado = new WebServiceEmpleadoSoapClient();
                 String filtro = "tbUsuario_IdUsuario";
                 String valor = SesionUsuario();
-                return auxEmpleado.IBuscaEmpleado(filtro, valor);
+                return auxEmpleado.SBuscaEmpleado(filtro, valor);
             }
             catch (Exception ex)
             {
@@ -153,7 +152,7 @@ namespace CapaGUI
         {
             try
             {
-                IntegracionEmpleado auxEmpleado = new IntegracionEmpleado();
+                WebServiceEmpleadoSoapClient auxEmpleado = new WebServiceEmpleadoSoapClient();
                 Empleado empleado = new Empleado();
                 empleado.TbUsuario_IdUsuario = int.Parse(txtIdEmpleado.Text);
                 empleado.NombreCompleto = txtNombreCompleto.Text;
@@ -162,7 +161,7 @@ namespace CapaGUI
                 empleado.Sexo = txtSexo.Text;
                 empleado.Telefono = int.Parse(txtTelefono.Text);
 
-                if (auxEmpleado.IActualizaEmpleado(empleado))
+                if (auxEmpleado.SActualizaEmpleado(empleado))
                 {
                     MessageBox.Show("Se ha actualizado correctamente");
                 }
