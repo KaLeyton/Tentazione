@@ -8,26 +8,35 @@ using System.Windows.Forms;
 using CapaDTO;
 using CapaDatos;
 
+
 namespace CapaNegocio
 {
     public class NegocioUsuario
     {
         // Debe recibir usuario.rol como por defecto como Cliente.
-        public bool RegistrarUsuario(String nombre, String contra)
+        public int RegistrarUsuario(String nombre, String contra)
         {
+            DataTable dt = new DataTable();
             String rol = "Cliente";
             try
             {
                 Utils util = new Utils();
                 string CadenaSQL = "INSERT INTO tbUsuario (NombreUsuario,Contrasena,Rol) VALUES ('" 
-                                    + nombre + "','"+ contra + "','" + rol + "');";
-
-                return util.ConfigurarConexion("tbUsuario", CadenaSQL, false);
+                                    + nombre + "','"+ contra + "','" + rol + "');";               
+                if (util.ConfigurarConexion("tbUsuario", CadenaSQL, false))
+                {
+                    return util.UltimoUsuario();
+                }
+                else
+                {
+                    Console.WriteLine("error, fallo al registrar su usuario en BD" + "\n");
+                    return 0;
+                }
             }
             catch (Exception e)
             {
                 Console.WriteLine("error, fallo al registrar su usuario " + e + "\n");
-                return false;
+                return 0;
             }
         }
         // Listara los usuarios
@@ -103,8 +112,8 @@ namespace CapaNegocio
                 return false;
             }
         }
-        // Elimina Usuario y devuelve una confirmacion
-        public bool EliminaUsuario(String id)
+        // Elimina Usuario y devuelve una confirmacion.
+        public bool EliminaUsuario(int id)
         {
             try
             {
@@ -117,6 +126,35 @@ namespace CapaNegocio
                 Console.WriteLine("error, fallo al eliminar usuarios " + e + "\n");
                 return false;
             }
+        }
+        // Registra id de usuario creado en tabla cliente
+        public bool CreaCliente(int id)
+        {       
+            try
+            {
+                Utils util = new Utils();
+                String CadenaSQL = "INSERT INTO tbCliente (tbUsuario_IdUsuario) VALUES (" + id + ");";
+                return util.ConfigurarConexion("tbCliente", CadenaSQL, false);
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error, fallo al ingresar ID de usuari la tabla cliente " + ex + "\n");
+                return false;
+            }
+        }
+        // Busca el ultimo id de usuario creado
+        public int UltimoUsuario()
+        {
+            try
+            {
+                Utils util = new Utils();
+                return util.UltimoUsuario();
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("error, fallo al buscar el ultimo ID de usuario en la tabla " + ex + "\n");
+                return 0;
+            }            
         }
     }
 }

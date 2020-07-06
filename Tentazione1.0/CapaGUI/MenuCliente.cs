@@ -32,7 +32,8 @@ namespace CapaGUI
         }
         private void btnRevisarCotizaciones_Click(object sender, EventArgs e)
         {
-
+            PantallaGenerarCotizacion pantMejora = new PantallaGenerarCotizacion();
+            pantMejora.ShowDialog();
         }
         private void btnEditarPerfil_Click(object sender, EventArgs e)
         {

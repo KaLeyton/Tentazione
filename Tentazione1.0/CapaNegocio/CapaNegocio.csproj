@@ -52,7 +52,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CapaDatos\CapaDatos.csproj">
-      <Project>{b4489824-6d79-42b5-ae0f-3f612c9148fa}</Project>
+      <Project>{571db15a-1977-470a-9088-19016abf45c9}</Project>
       <Name>CapaDatos</Name>
     </ProjectReference>
     <ProjectReference Include="..\CapaDTO\CapaDTO.csproj">

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+// [MEJORA CONTINUA]
+// ESTA FUNCIONALIDAD FUE RECHAZADA PARA LA ENTREGA DEBIDO A DIFICULTADES EN EL DESARROLLO, SE AGENDA PARA SIGUIENTE ITERACION.
 namespace CapaNegocio
 {
     public class NegocioCotizacion

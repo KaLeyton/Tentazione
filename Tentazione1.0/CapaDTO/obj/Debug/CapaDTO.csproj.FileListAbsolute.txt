@@ -7,5 +7,12 @@ C:\Users\jazz_\source\repos\Tentazione\CapaDTO\obj\Debug\CapaDTO.pdb
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaDTO\bin\Debug\CapaDTO.dll
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaDTO\bin\Debug\CapaDTO.pdb
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.csproj.CoreCompileInputs.cache
+C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.csproj.csprojAssemblyReference.cache
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.dll
 C:\Users\jazz_\source\repos\Repo\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.pdb
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaDTO\bin\Debug\CapaDTO.dll
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaDTO\bin\Debug\CapaDTO.pdb
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.csproj.CoreCompileInputs.cache
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.dll
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.pdb
+C:\Users\KarenLeytonMejias\Documents\PurasWeas\Tentazione\Tentazione1.0\CapaDTO\obj\Debug\CapaDTO.csprojAssemblyReference.cache

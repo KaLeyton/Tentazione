@@ -47,27 +47,18 @@ namespace CapaNegocio
 
         // Metodo para buscar 1 Empleado, se entrega un filtro correspondiente a la columa para el Where, y el valor para cerrar la clausula.
         // Selecciona solo el primer resultado.
-        public Empleado BuscaEmpleado(String filtro, String valor)
+        public DataTable BuscaEmpleado(String filtro, String valor)
         {
-            Empleado auxEmpleado = new Empleado();
             try
             {
                 Utils util = new Utils();
-                DataTable dt = util.ListaUtils(filtro, valor, true, "tbEmpleado");
-
-                auxEmpleado.TbUsuario_IdUsuario = (int)dt.Rows[0]["tbUsuario_IdUsuario"];
-                auxEmpleado.NombreCompleto = (String)dt.Rows[0]["NombreCompleto"];
-                auxEmpleado.Edad = (int)dt.Rows[0]["Edad"];
-                auxEmpleado.Telefono = (int)dt.Rows[0]["Telefono"];
-                auxEmpleado.Email = (String)dt.Rows[0]["Email"];
-                auxEmpleado.Sexo = (String)dt.Rows[0]["Sexo"];
+                return util.ListaUtils(filtro, valor, true, "tbEmpleado");
             }
             catch (Exception e)
             {
-                Console.WriteLine("error, fallo al buscar empleados " + e + "\n");
+                Console.WriteLine("error, fallo al buscar Empleado " + e + "\n");
                 return null;
             }
-            return auxEmpleado;
         }
 
         // Insertar metodo que liste varios Empleado por filtro.

@@ -17,8 +17,8 @@ namespace CapaNegocio
             try
             {
                 Utils utils = new Utils();
-                String CadenaSQL = "INSERT INTO tbProducto (SkuProducto,NombreProducto,Valor,CantPaquete,UnidadMedida) VALUES ('"
-                                         + producto.Sku + "','" + producto.NombreProducto + "',"
+                String CadenaSQL = "INSERT INTO tbProducto (NombreProducto,Valor,CantPaquete,UnidadMedida) VALUES ('"
+                                         + producto.NombreProducto + "',"
                                          + producto.Valor + ",'" + producto.CantPaquete + "','" + producto.UnidadMedida + "');";
                 // Entrega confirmacion.
                 return utils.ConfigurarConexion("tbProducto", CadenaSQL, false);
@@ -84,7 +84,7 @@ namespace CapaNegocio
             try
             {
                 Utils util = new Utils();
-                String CadenaSQL = "DELETE FROM tbProducto WHERE IdProducto = '" + sku + "';";
+                String CadenaSQL = "DELETE FROM tbProducto WHERE SkuProducto = '" + sku + "';";
                 return util.ConfigurarConexion("tbProducto", CadenaSQL, false);
             }
             catch (Exception e)

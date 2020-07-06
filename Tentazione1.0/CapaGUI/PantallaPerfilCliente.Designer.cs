@@ -47,26 +47,14 @@
             this.btnSalir = new MaterialSkin.Controls.MaterialRaisedButton();
             this.SuspendLayout();
             // 
-            // lblPerfil
-            // 
-            this.lblPerfil.AutoSize = true;
-            this.lblPerfil.Font = new System.Drawing.Font("Calibri", 28.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblPerfil.Location = new System.Drawing.Point(55, 24);
-            this.lblPerfil.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblPerfil.Name = "lblPerfil";
-            this.lblPerfil.Size = new System.Drawing.Size(102, 46);
-            this.lblPerfil.TabIndex = 0;
-            this.lblPerfil.Text = "Perfil";
-            // 
-            // lblIdCliente
-            // 
             // lblIdCliente
             // 
             this.lblIdCliente.AutoSize = true;
             this.lblIdCliente.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblIdCliente.Location = new System.Drawing.Point(96, 99);
+            this.lblIdCliente.Location = new System.Drawing.Point(98, 99);
+            this.lblIdCliente.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.lblIdCliente.Name = "lblIdCliente";
-            this.lblIdCliente.Size = new System.Drawing.Size(100, 24);
+            this.lblIdCliente.Size = new System.Drawing.Size(79, 19);
             this.lblIdCliente.TabIndex = 1;
             this.lblIdCliente.Text = "Id Cliente :";
             // 
@@ -74,9 +62,9 @@
             // 
             this.lblNombreCliente.AutoSize = true;
             this.lblNombreCliente.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblNombreCliente.Location = new System.Drawing.Point(21, 139);
+            this.lblNombreCliente.Location = new System.Drawing.Point(43, 139);
             this.lblNombreCliente.Name = "lblNombreCliente";
-            this.lblNombreCliente.Size = new System.Drawing.Size(175, 24);
+            this.lblNombreCliente.Size = new System.Drawing.Size(134, 19);
             this.lblNombreCliente.TabIndex = 2;
             this.lblNombreCliente.Text = "Nombre Completo :";
             // 
@@ -86,7 +74,7 @@
             this.lblTelefono.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTelefono.Location = new System.Drawing.Point(104, 219);
             this.lblTelefono.Name = "lblTelefono";
-            this.lblTelefono.Size = new System.Drawing.Size(92, 24);
+            this.lblTelefono.Size = new System.Drawing.Size(73, 19);
             this.lblTelefono.TabIndex = 3;
             this.lblTelefono.Text = "Telefono :";
             // 
@@ -94,9 +82,9 @@
             // 
             this.lblEmail.AutoSize = true;
             this.lblEmail.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEmail.Location = new System.Drawing.Point(130, 259);
+            this.lblEmail.Location = new System.Drawing.Point(124, 259);
             this.lblEmail.Name = "lblEmail";
-            this.lblEmail.Size = new System.Drawing.Size(66, 24);
+            this.lblEmail.Size = new System.Drawing.Size(53, 19);
             this.lblEmail.TabIndex = 4;
             this.lblEmail.Text = "Email :";
             // 
@@ -104,9 +92,9 @@
             // 
             this.lblSexo.AutoSize = true;
             this.lblSexo.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblSexo.Location = new System.Drawing.Point(138, 299);
+            this.lblSexo.Location = new System.Drawing.Point(130, 299);
             this.lblSexo.Name = "lblSexo";
-            this.lblSexo.Size = new System.Drawing.Size(58, 24);
+            this.lblSexo.Size = new System.Drawing.Size(47, 19);
             this.lblSexo.TabIndex = 5;
             this.lblSexo.Text = "Sexo :";
             // 
@@ -114,22 +102,23 @@
             // 
             this.lblEdad.AutoSize = true;
             this.lblEdad.Font = new System.Drawing.Font("Calibri", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblEdad.Location = new System.Drawing.Point(134, 179);
+            this.lblEdad.Location = new System.Drawing.Point(128, 179);
             this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(62, 24);
+            this.lblEdad.Size = new System.Drawing.Size(49, 19);
             this.lblEdad.TabIndex = 16;
             this.lblEdad.Text = "Edad :";
             // 
             // btnCerrarSesion
             // 
+            this.btnCerrarSesion.AutoSize = true;
             this.btnCerrarSesion.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.btnCerrarSesion.Depth = 0;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(236, 33);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(263, 28);
             this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(4, 6, 4, 6);
             this.btnCerrarSesion.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Primary = false;
-            this.btnCerrarSesion.Size = new System.Drawing.Size(141, 26);
+            this.btnCerrarSesion.Size = new System.Drawing.Size(114, 36);
             this.btnCerrarSesion.TabIndex = 18;
             this.btnCerrarSesion.Text = "Cerrar Sesión";
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -146,7 +135,7 @@
             this.txtIdCliente.SelectedText = "";
             this.txtIdCliente.SelectionLength = 0;
             this.txtIdCliente.SelectionStart = 0;
-            this.txtIdCliente.Size = new System.Drawing.Size(175, 28);
+            this.txtIdCliente.Size = new System.Drawing.Size(175, 23);
             this.txtIdCliente.TabIndex = 19;
             this.txtIdCliente.UseSystemPasswordChar = false;
             // 
@@ -161,7 +150,7 @@
             this.txtNombreCompleto.SelectedText = "";
             this.txtNombreCompleto.SelectionLength = 0;
             this.txtNombreCompleto.SelectionStart = 0;
-            this.txtNombreCompleto.Size = new System.Drawing.Size(175, 28);
+            this.txtNombreCompleto.Size = new System.Drawing.Size(175, 23);
             this.txtNombreCompleto.TabIndex = 20;
             this.txtNombreCompleto.Text = "Nombre Apellido";
             this.txtNombreCompleto.UseSystemPasswordChar = false;
@@ -178,7 +167,7 @@
             this.txtEdad.SelectedText = "";
             this.txtEdad.SelectionLength = 0;
             this.txtEdad.SelectionStart = 0;
-            this.txtEdad.Size = new System.Drawing.Size(175, 28);
+            this.txtEdad.Size = new System.Drawing.Size(175, 23);
             this.txtEdad.TabIndex = 21;
             this.txtEdad.Text = "00";
             this.txtEdad.UseSystemPasswordChar = false;
@@ -195,7 +184,7 @@
             this.txtTelefono.SelectedText = "";
             this.txtTelefono.SelectionLength = 0;
             this.txtTelefono.SelectionStart = 0;
-            this.txtTelefono.Size = new System.Drawing.Size(175, 28);
+            this.txtTelefono.Size = new System.Drawing.Size(175, 23);
             this.txtTelefono.TabIndex = 22;
             this.txtTelefono.Text = "987654321";
             this.txtTelefono.UseSystemPasswordChar = false;
@@ -212,7 +201,7 @@
             this.txtEmail.SelectedText = "";
             this.txtEmail.SelectionLength = 0;
             this.txtEmail.SelectionStart = 0;
-            this.txtEmail.Size = new System.Drawing.Size(175, 28);
+            this.txtEmail.Size = new System.Drawing.Size(175, 23);
             this.txtEmail.TabIndex = 23;
             this.txtEmail.Text = "ejemplo@uwu.xd";
             this.txtEmail.UseSystemPasswordChar = false;
@@ -229,7 +218,7 @@
             this.txtSexo.SelectedText = "";
             this.txtSexo.SelectionLength = 0;
             this.txtSexo.SelectionStart = 0;
-            this.txtSexo.Size = new System.Drawing.Size(175, 28);
+            this.txtSexo.Size = new System.Drawing.Size(175, 23);
             this.txtSexo.TabIndex = 24;
             this.txtSexo.Text = "fem-masc";
             this.txtSexo.UseSystemPasswordChar = false;
@@ -238,7 +227,7 @@
             // btnEditar
             // 
             this.btnEditar.Depth = 0;
-            this.btnEditar.Location = new System.Drawing.Point(134, 347);
+            this.btnEditar.Location = new System.Drawing.Point(67, 347);
             this.btnEditar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Primary = true;
@@ -246,11 +235,12 @@
             this.btnEditar.TabIndex = 25;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnGuardar
             // 
             this.btnGuardar.Depth = 0;
-            this.btnGuardar.Location = new System.Drawing.Point(267, 347);
+            this.btnGuardar.Location = new System.Drawing.Point(236, 347);
             this.btnGuardar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnGuardar.Name = "btnGuardar";
             this.btnGuardar.Primary = true;
@@ -262,9 +252,8 @@
             // 
             // btnCancelar
             // 
-
             this.btnCancelar.Depth = 0;
-            this.btnCancelar.Location = new System.Drawing.Point(134, 401);
+            this.btnCancelar.Location = new System.Drawing.Point(67, 401);
             this.btnCancelar.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Primary = true;
@@ -277,7 +266,7 @@
             // btnSalir
             // 
             this.btnSalir.Depth = 0;
-            this.btnSalir.Location = new System.Drawing.Point(267, 401);
+            this.btnSalir.Location = new System.Drawing.Point(236, 401);
             this.btnSalir.MouseState = MaterialSkin.MouseState.HOVER;
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Primary = true;
@@ -287,42 +276,10 @@
             this.btnSalir.UseVisualStyleBackColor = true;
             this.btnSalir.Click += new System.EventHandler(this.btnSalir_Click);
             // 
-            // btnCerrarSesion
-            // 
-            this.btnCerrarSesion.Location = new System.Drawing.Point(201, 37);
-            this.btnCerrarSesion.Margin = new System.Windows.Forms.Padding(2);
-            this.btnCerrarSesion.Name = "btnCerrarSesion";
-            this.btnCerrarSesion.Size = new System.Drawing.Size(55, 36);
-            this.btnCerrarSesion.TabIndex = 15;
-            this.btnCerrarSesion.Text = "Cerrar Sesión";
-            this.btnCerrarSesion.UseVisualStyleBackColor = true;
-            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrarSesion_Click);
-            // 
-            // lblEdad
-            // 
-            this.lblEdad.AutoSize = true;
-            this.lblEdad.Location = new System.Drawing.Point(68, 154);
-            this.lblEdad.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.lblEdad.Name = "lblEdad";
-            this.lblEdad.Size = new System.Drawing.Size(38, 13);
-            this.lblEdad.TabIndex = 16;
-            this.lblEdad.Text = "Edad :";
-            // 
-            // txtEdad
-            // 
-            this.txtEdad.Location = new System.Drawing.Point(112, 154);
-            this.txtEdad.Margin = new System.Windows.Forms.Padding(2);
-            this.txtEdad.Name = "txtEdad";
-            this.txtEdad.Size = new System.Drawing.Size(76, 20);
-            this.txtEdad.TabIndex = 17;
-            // 
             // PantallaPerfilCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.txtEdad);
-            this.Controls.Add(this.lblEdad);
-            this.Controls.Add(this.btnCerrarSesion);
             this.ClientSize = new System.Drawing.Size(409, 467);
             this.Controls.Add(this.btnSalir);
             this.Controls.Add(this.btnCancelar);
@@ -341,11 +298,9 @@
             this.Controls.Add(this.lblTelefono);
             this.Controls.Add(this.lblNombreCliente);
             this.Controls.Add(this.lblIdCliente);
-            this.Controls.Add(this.lblPerfil);
             this.Name = "PantallaPerfilCliente";
-            this.Text = "PantallaPerfilCliente";
-            this.Load += new System.EventHandler(this.PantallaPerfilCliente_Load);
             this.Text = "Perfil";
+            this.Load += new System.EventHandler(this.PantallaPerfilCliente_Load_1);
             this.ResumeLayout(false);
             this.PerformLayout();
 

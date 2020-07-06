@@ -7,17 +7,17 @@
 --DROP TABLE tbProductoExtendido ;
 --DROP TABLE tbDetalleCotizacion ;
 --DROP TABLE tbProducto ;
---DROP TABLE tbId;
+--DROP TABLE tbSesion;
 
 create table tbUsuario(IdUsuario int identity(1,1) not null,
 					   NombreUsuario varchar(20) unique not null,
 					   Contrasena varchar(15) not null,
 					   Rol varchar(10) not null);
 
-create table tbCliente(NombreCompleto varchar(50) not null,
+create table tbCliente(NombreCompleto varchar(50),
 					   Edad int,
 					   Telefono int,
-					   Email varchar(100) not null,
+					   Email varchar(100),
 					   Sexo varchar(15),
 					   tbUsuario_IdUsuario int not null);
 
@@ -66,7 +66,8 @@ create table tbProducto(SkuProducto int identity(1111,1) not null,
 						CantPaquete decimal not null,
 					    UnidadMedida varchar(15) not null);
 
-create table tbSesion (id int not null, Sesion varchar(10) not null);
+create table tbSesion (id int not null, 
+					   Sesion varchar(10) not null);
 
 ALTER TABLE tbUsuario ADD PRIMARY KEY (IdUsuario);
 ALTER TABLE tbVenta ADD PRIMARY KEY (IdVenta);
@@ -86,7 +87,7 @@ ADD FOREIGN KEY (tbUsuario_IdUsuario) REFERENCES tbUsuario(IdUsuario);
 ALTER TABLE tbCliente
 ADD FOREIGN KEY (tbUsuario_IdUsuario) REFERENCES tbUsuario(IdUsuario);
 ALTER TABLE tbProductoExtendido
-ADD FOREIGN KEY (tbProducto_SkuProducto) REFERENCES tbProducto(SkuProducto); 
+ADD FOREIGN KEY (tbProducto_SkuProducto) REFERENCES tbProducto(SkuProducto) ON DELETE CASCADE; 
 ALTER TABLE tbVenta
 ADD FOREIGN KEY (tbCotizacion_IdCotizacion) REFERENCES tbCotizacion(IdCotizacion);
 ALTER TABLE tbVenta
@@ -120,7 +121,9 @@ INSERT INTO tbCliente (NombreCompleto, Edad, Telefono, Email, Sexo, tbUsuario_Id
 INSERT INTO tbCliente (NombreCompleto, Edad, Telefono, Email, Sexo, tbUsuario_IdUsuario) VALUES ('Gonzalo Gonzalez', 47, 724865193, 'gongonzalez@ipy.xd', 'masc', 5);
 INSERT INTO tbCliente (NombreCompleto, Edad, Telefono, Email, Sexo, tbUsuario_IdUsuario) VALUES ('Martin Martinez', 34, 764325891, 'marmartinez@ipy.xd', 'ninguno', 6);
 INSERT INTO tbCliente (NombreCompleto, Edad, Telefono, Email, Sexo, tbUsuario_IdUsuario) VALUES ('Miguel Rojas', 23, 654987321, 'migrojas@ipy.xd', 'fem', 7);
-INSERT INTO tbCliente (NombreCompleto, Edad, Telefono, Email, Sexo, tbUsuario_IdUsuario) VALUES ('Chritian Villarroel', 26, 741852963, 'chrvillaroel@ipy.xd', 'masc', 8);
+INSERT INTO tbCliente (NombreCompleto, Edad, Telefono, Email, Sexo, tbUsuario_IdUsuario) VALUES ('Christian Villarroel', 26, 741852963, 'chrvillaroel@ipy.xd', 'masc', 8);
+
+INSERT INTO tbSesion (id, Sesion) VALUES (0, '0');
 
 INSERT INTO tbProducto (NombreProducto, Valor, CantPaquete, UnidadMedida) VALUES ('Doblon', 2500, 30,'Unidades');
 INSERT INTO tbProducto (NombreProducto, Valor, CantPaquete, UnidadMedida) VALUES ('Galletas Sabor Coco', 2500, 800,'Gramos');

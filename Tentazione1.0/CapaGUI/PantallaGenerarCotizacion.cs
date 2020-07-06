@@ -6,6 +6,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.ServiceModel.Configuration;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -23,43 +24,18 @@ namespace CapaGUI
             materialSkinManager.ColorScheme = new ColorScheme(Primary.BlueGrey800, Primary.Grey900, Primary.Brown500, Accent.LightBlue700, TextShade.WHITE);
         }
 
-        private void txtBuscarProducto_Click(object sender, EventArgs e)
-        {
-            this.txtBuscarProducto.Text = String.Empty;
-        }
-
-        private void btnBuscarProducto_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnConfirmarCotizacion_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnGenerarCotizacion_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnCancelar_Click(object sender, EventArgs e)
-        {
-            this.Dispose();
-            MenuCliente pantCliente = new MenuCliente();
-            pantCliente.ShowDialog();
-        }
-
         private void btnSalir_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            this.Dispose();
+            MenuCliente auxmenu = new MenuCliente();
+            auxmenu.ShowDialog();
         }
 
-        private void btnListarProductos_Click(object sender, EventArgs e)
+        private void btnCerrarSesion_Click(object sender, EventArgs e)
         {
             this.Dispose();
-            Login pLogin = new Login();
-            pLogin.ShowDialog();
+            Login auxlogin = new Login();
+            auxlogin.ShowDialog();
         }
     }
 }

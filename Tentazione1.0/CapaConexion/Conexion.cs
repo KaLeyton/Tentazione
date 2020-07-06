@@ -166,6 +166,7 @@ namespace CapaConexion
                 catch (Exception ex)
                 {
                     MessageBox.Show("Mensaje Sistema", "Error al cargar el DataSet " + ex.Message);
+                    Console.WriteLine("Mensaje Sistema", "Error al cargar el DataSet " + ex.Message);
                     return;
                 }
 
@@ -181,6 +182,7 @@ namespace CapaConexion
                 catch (Exception ex)
                 {
                     MessageBox.Show("Mensaje Sistema", "Error SQL " + ex.Message);
+                    Console.WriteLine("woowowow" + ex.Message);
                     return;
                 }
 
